@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySqlTest.Sandbox.Implementation
+namespace NerdBlock.Sandbox.Implementation
 {
     /// <summary>
     /// Represents the results of a postgresql query
@@ -18,6 +18,7 @@ namespace MySqlTest.Sandbox.Implementation
         private DataTable myTable;
 
         private int myRowIndex = 0;
+        private int myNumRows;
 
         /// <summary>
         /// Gets the data row at the current pointer
@@ -37,7 +38,7 @@ namespace MySqlTest.Sandbox.Implementation
         /// </summary>
         public int NumRows
         {
-            get { return myTable.Rows.Count; }
+            get { return myNumRows; }
         }
         /// <summary>
         /// Gets the index of the current row in the data results
@@ -46,17 +47,56 @@ namespace MySqlTest.Sandbox.Implementation
         {
             get { return myRowIndex; }
         }
+        /// <summary>
+        /// Gets whether or not the query has failed
+        /// </summary>
+        public bool HasFailed
+        {
+            get { return myNumRows == -1; }
+        }
 
         /// <summary>
         /// Creates a new query result from the given data adapter
         /// </summary>
-        /// <param name="adapter">The data adapter to create the result set from</param>
-        public PgQueryResult(NpgsqlDataAdapter adapter)
+        /// <param name="command">The command to create the result set from</param>
+        /// <param name="isNonQuery">True if the command is not a query, such as a insert, update, or delete</param>
+        public PgQueryResult(NpgsqlCommand command, bool isSelect)
         {
-            myDataAdapter = adapter;
-            myDataSet = new DataSet();
-            myDataAdapter.Fill(myDataSet);
-            myTable = myDataSet.Tables[0];
+            if (!isSelect)
+            {
+                try
+                {
+                    myNumRows = command.ExecuteNonQuery();
+                }
+                catch(PostgresException e)
+                {
+                    myNumRows = -1;
+                    QueryTable.Database.LastFailReason = new QueryFail()
+                    {
+                        Message = e.Message,
+                        Exception = e,
+                        Reason = (QueryFailReason)e.ErrorCode
+                    };
+                    Logger.Log(LogLevel.Warn, e.MessageText);
+                }
+            }
+            else
+            {
+
+                try
+                {
+                    myDataAdapter = new NpgsqlDataAdapter(command);
+                    myDataSet = new DataSet();
+                    myDataAdapter.Fill(myDataSet);
+                    myTable = myDataSet.Tables[0];
+                    myNumRows = myTable.Rows.Count;
+                }
+                catch (PostgresException e)
+                {
+                    myNumRows = -1;
+                    Logger.Log(LogLevel.Warn, e.MessageText);
+                }
+            }
         }
 
         /// <summary>

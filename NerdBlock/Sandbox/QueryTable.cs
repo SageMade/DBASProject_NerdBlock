@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using MySqlTest.Sandbox.Implementation;
+using NerdBlock.Sandbox.Implementation;
 
-namespace MySqlTest.Sandbox
+namespace NerdBlock.Sandbox
 {
     public static class QueryTable
     {

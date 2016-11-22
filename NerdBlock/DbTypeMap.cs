@@ -3,7 +3,7 @@ using Npgsql;
 using NpgsqlTypes;
 using System.Collections.Generic;
 
-namespace MySqlTest
+namespace NerdBlock
 {
     public static class DbTypeMap
     {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Npgsql;
 using NpgsqlTypes;
 
-namespace MySqlTest.Sandbox.Implementation
+namespace NerdBlock.Sandbox.Implementation
 {
     /// <summary>
     /// Represents a postgresql implementation of the IDatabase interface
@@ -24,6 +24,12 @@ namespace MySqlTest.Sandbox.Implementation
             get { return myDatabaseConnection; }
         }
 
+        public QueryFail LastFailReason
+        {
+            get;
+            set;
+        }
+
         public IQueryResult Execute(IQuery query)
         {
             NpgsqlCommand command = query.QueryObject as NpgsqlCommand;
@@ -33,13 +39,17 @@ namespace MySqlTest.Sandbox.Implementation
 
             command.Connection = myDatabaseConnection;
                         
-            return new PgQueryResult(new NpgsqlDataAdapter(command));
+            return new PgQueryResult(command, query.HasResults);
         }
 
         public IQueryResult Execute(string query)
         {
             NpgsqlCommand command = new NpgsqlCommand(query, myDatabaseConnection);
-            return new PgQueryResult(new NpgsqlDataAdapter(command));
+
+            if (query.ToLower().Contains("select"))
+                return new PgQueryResult(command, true);
+            else
+                return new PgQueryResult(command, false);
         }
 
         public void Init(DbConnectData connectData)
@@ -54,6 +64,8 @@ namespace MySqlTest.Sandbox.Implementation
 
             myDatabaseConnection = new NpgsqlConnection(builder);
             myDatabaseConnection.Open();
+
+            LastFailReason = null;
         }
     }
 }

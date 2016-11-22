@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using Npgsql;
 
 
-using MySqlTest.Sandbox.Implementation;
-using MySqlTest.Sandbox;
+using NerdBlock.Sandbox.Implementation;
+using NerdBlock.Sandbox;
 using System.Threading;
+using System.Windows.Forms;
 
-namespace MySqlTest
+namespace NerdBlock
 {
     class Program
     {
@@ -44,7 +45,23 @@ namespace MySqlTest
             address.State = "Ontario";
             address.Country = "Canada";
 
-            address.Create();
+            bool sucess = address.Create();
+
+            if (!sucess)
+            {
+                MessageBox.Show("Could not save model");
+            }
+
+
+            AddressModel address2 = new AddressModel();
+            address2.StreetAddress = "173 Ellesmere Rd";
+            address2.State = "Ontario";
+            address2.Country = "Canada";
+            address2.Create();
+
+            AddressModel model = new AddressModel(70);
+
+            AddressModel[] canadianAddress = AddressModel.SearchCountry("Canada");
             
             try
             {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySqlTest.Sandbox
+namespace NerdBlock.Sandbox
 {
     /// <summary>
     /// Represents the results of a query, and provides access to it's resulting data. This

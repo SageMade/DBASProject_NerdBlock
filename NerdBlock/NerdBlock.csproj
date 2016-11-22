@@ -7,8 +7,8 @@
     <ProjectGuid>{FA4858CB-EE87-4D9C-8C15-F469171FC93F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MySqlTest</RootNamespace>
-    <AssemblyName>MySqlTest</AssemblyName>
+    <RootNamespace>NerdBlock</RootNamespace>
+    <AssemblyName>NerdBlock</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbTypeMap.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,6 +69,8 @@
     <Compile Include="Sandbox\Implementation\PgDatabase.cs" />
     <Compile Include="Sandbox\Implementation\PgQuery.cs" />
     <Compile Include="Sandbox\Implementation\PgQueryResult.cs" />
+    <Compile Include="Sandbox\QueryFail.cs" />
+    <Compile Include="Sandbox\QueryFailReason.cs" />
     <Compile Include="Sandbox\QueryTable.cs" />
     <Compile Include="Sandbox\IQuery.cs" />
     <Compile Include="Sandbox\IQueryResult.cs" />

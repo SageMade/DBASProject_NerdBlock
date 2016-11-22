@@ -1,4 +1,4 @@
-﻿namespace MySqlTest.Sandbox
+﻿namespace NerdBlock.Sandbox
 {
     /// <summary>
     /// Represents a single query that can be executed against a database
@@ -9,6 +9,11 @@
         /// Gets the SQL source of the query
         /// </summary>
         string SqlSource { get; }
+
+        /// <summary>
+        /// Gets whether this query actually returns results (i.e. is it a select statement)
+        /// </summary>
+        bool HasResults { get; }
 
         /// <summary>
         /// Gets a handle to the underlying database command object

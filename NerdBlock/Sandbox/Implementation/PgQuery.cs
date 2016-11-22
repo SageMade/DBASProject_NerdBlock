@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 using Npgsql;
 using System.Text.RegularExpressions;
 
-namespace MySqlTest.Sandbox.Implementation
+namespace NerdBlock.Sandbox.Implementation
 {
     public class PgQuery : IQuery
     {
         private NpgsqlCommand myCommand;
+        private bool isSelect;
 
         public object QueryObject
         {
@@ -28,25 +29,33 @@ namespace MySqlTest.Sandbox.Implementation
             get { return myCommand.Parameters.Count; }
         }
 
-        public PgQuery(IDatabase database, string query)
+        public bool HasResults
+        {
+            get { return isSelect; }
+        }
+
+        public PgQuery(IDatabase database, bool hasReturn, string query)
         {
             myCommand = new NpgsqlCommand(query, database.ConnectionObject as NpgsqlConnection);
             myCommand.Prepare();
+            isSelect = hasReturn;
         }
-        public PgQuery(IDatabase database, string query, params object[] commandParams)
+        public PgQuery(IDatabase database, bool hasReturn, string query, params object[] commandParams)
         {
             query = string.Format(query, commandParams);
             myCommand = new NpgsqlCommand(query, database.ConnectionObject as NpgsqlConnection);
             
             myCommand.Prepare();
+            isSelect = hasReturn;
         }
 
-        public PgQuery(IDatabase database, NpgsqlParameter[] sqlParams, string query, params object[] commandParams)
+        public PgQuery(IDatabase database, NpgsqlParameter[] sqlParams, bool hasReturn, string query, params object[] commandParams)
         {
             query = string.Format(query, commandParams);
             myCommand = new NpgsqlCommand(query, database.ConnectionObject as NpgsqlConnection);
             myCommand.Parameters.AddRange(sqlParams);
             myCommand.Prepare();
+            isSelect = hasReturn;
         }
 
 

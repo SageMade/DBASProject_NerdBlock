@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySqlTest.Sandbox.Implementation
+namespace NerdBlock.Sandbox.Implementation
 {
     public class AddressModel : IModel<AddressModel>
     {
@@ -61,8 +61,30 @@ namespace MySqlTest.Sandbox.Implementation
                 new NpgsqlParameter("4", NpgsqlDbType.Integer),
                 new NpgsqlParameter("5", NpgsqlDbType.Integer),
             };
-            PgQuery insert = new PgQuery(QueryTable.Database, insertParams, "insert into {0} (street_address, state, country, apt_num, unit_num) VALUES (@1, @2, @3, @4, @5)", TABLE_NAME);
+            PgQuery insert = new PgQuery(QueryTable.Database, insertParams, false, "insert into {0} (street_address, state, country, apt_num, unit_num) VALUES (@1, @2, @3, @4, @5)", TABLE_NAME);
             QueryTable.RegisterQuery("address_insert", insert);
+
+            insertParams = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter("1", NpgsqlDbType.Integer)
+            };
+            PgQuery search = new PgQuery(QueryTable.Database, insertParams, true, "select (street_address, state, country, apt_num, unit_num) from {0} where id=@1", TABLE_NAME);
+            QueryTable.RegisterQuery("address_search_id", search);
+
+
+            NpgsqlParameter[] commandParams = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter("1", NpgsqlDbType.Varchar)
+            };
+            PgQuery countrySearch = new PgQuery(QueryTable.Database, commandParams, true, "select (street_address, state, country, apt_num, unit_num) from {0} where country ILIKE @1", TABLE_NAME);
+            QueryTable.RegisterQuery("address_search_country", countrySearch);
+        }
+
+        public AddressModel(int id) : this()
+        {
+            myId = id;
+
+            Read();
         }
 
         public AddressModel()
@@ -93,7 +115,22 @@ namespace MySqlTest.Sandbox.Implementation
 
         public bool Read()
         {
-            throw new NotImplementedException();
+            IQueryResult result = QueryTable.Execute("address_search_id", myId);
+
+            if (result.NumRows == 1)
+            {
+                object[] results =(object[])result.Row.ItemArray[0];
+                myUnit = (int)results[4];
+                myApartmentNumber = (int)results[3];
+
+                myStreetAddress = (string)results[0];
+                myState = (string)results[1];
+                myCountry = (string)results[2];
+
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Update()
@@ -109,6 +146,37 @@ namespace MySqlTest.Sandbox.Implementation
         public AddressModel[] Query(AddressModel search)
         {
             throw new NotImplementedException();
+        }
+        
+        public static AddressModel[] SearchCountry(string country)
+        {
+            IQueryResult queryResult = QueryTable.Execute("address_search_country", country);
+            
+            if (queryResult.NumRows > 0)
+            {
+                AddressModel[] result = new AddressModel[queryResult.NumRows];
+
+                for (int index = 0; index < result.Length; index++)
+                {
+                    object[] results = (object[])queryResult.Row.ItemArray[0];
+
+                    AddressModel model = new AddressModel();
+                    model.myUnit = (int)results[4];
+                    model.myApartmentNumber = (int)results[3];
+
+                    model.myStreetAddress = (string)results[0];
+                    model.myState = (string)results[1];
+                    model.myCountry = (string)results[2];
+
+                    result[index] = model;
+
+                    queryResult.MoveNext();
+                }
+
+                return result;
+            }
+            else
+                return new AddressModel[0];
         }
     }
 }

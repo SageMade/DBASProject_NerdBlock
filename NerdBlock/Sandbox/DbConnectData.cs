@@ -1,4 +1,4 @@
-﻿namespace MySqlTest.Sandbox
+﻿namespace NerdBlock.Sandbox
 {
     /// <summary>
     /// Represents the conenction information to use when connecting to a database

@@ -1,12 +1,14 @@
 ﻿using Npgsql;
 
-namespace MySqlTest.Sandbox
+namespace NerdBlock.Sandbox
 {
     /// <summary>
     /// Represents a connection to a database
     /// </summary>
     public interface IDatabase
     {
+        QueryFail LastFailReason { get; set; }
+
         /// <summary>
         /// Gets the underlying database connection object
         /// </summary>

@@ -1,4 +1,4 @@
-﻿namespace MySqlTest
+﻿namespace NerdBlock
 {
     partial class Login
     {
