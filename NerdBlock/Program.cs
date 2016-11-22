@@ -16,14 +16,19 @@ namespace MySqlTest
     {
         static void Main(string[] args)
         {
-            DbConnectData data = new DbConnectData()
+            using (MainForm form = new MainForm())
             {
-                Host = "localhost",
-                Database = "testing",
-                Username = "test",
-                Password = "password",
-                Port = -1
-            };
+                form.ShowDialog();
+            }
+
+                DbConnectData data = new DbConnectData()
+                {
+                    Host = "localhost",
+                    Database = "testing",
+                    Username = "test",
+                    Password = "password",
+                    Port = -1
+                };
 
             PgDatabase database = new PgDatabase();
             database.Init(data);
