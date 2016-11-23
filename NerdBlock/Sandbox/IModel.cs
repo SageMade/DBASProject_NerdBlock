@@ -10,7 +10,7 @@ namespace NerdBlock.Sandbox
     /// Represents an item that supports C.R.U.D operations on the database
     /// <typeparam name="ChildClass">The type of the class that is implementing this interface</typeparam>
     /// </summary>
-    public interface IModel<ChildClass> : IQueryable<ChildClass>
+    public interface IModel<ChildClass>
     {
         /// <summary>
         /// Inserts this item into the database
@@ -34,6 +34,6 @@ namespace NerdBlock.Sandbox
         /// Handles deleting this item from the database
         /// </summary>
         /// <returns>True if successful, false if otherwise</returns>
-        bool Delete();
+        bool Delete();        
     }
 }

@@ -52,7 +52,6 @@ namespace NerdBlock
                 MessageBox.Show("Could not save model");
             }
 
-
             AddressModel address2 = new AddressModel();
             address2.StreetAddress = "173 Ellesmere Rd";
             address2.State = "Ontario";
@@ -61,7 +60,17 @@ namespace NerdBlock
 
             AddressModel model = new AddressModel(70);
 
+            model.Country = "Zimbabwe";
+            sucess = model.Update();
+            if (!sucess)
+            {
+                MessageBox.Show("Could not update model");
+            }
+
             AddressModel[] canadianAddress = AddressModel.SearchCountry("Canada");
+
+            if (canadianAddress.Length > 0)
+                canadianAddress[0].Delete();
             
             try
             {

@@ -147,8 +147,11 @@
     <Compile Include="Sandbox\Implementation\PgDatabase.cs" />
     <Compile Include="Sandbox\Implementation\PgQuery.cs" />
     <Compile Include="Sandbox\Implementation\PgQueryResult.cs" />
+    <Compile Include="Sandbox\Implementation\Utils.cs" />
     <Compile Include="Sandbox\QueryFail.cs" />
     <Compile Include="Sandbox\QueryFailReason.cs" />
+    <Compile Include="Sandbox\QueryParam.cs" />
+    <Compile Include="Sandbox\QueryParamType.cs" />
     <Compile Include="Sandbox\QueryTable.cs" />
     <Compile Include="Sandbox\IQuery.cs" />
     <Compile Include="Sandbox\IQueryResult.cs" />

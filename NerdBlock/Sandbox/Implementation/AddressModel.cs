@@ -53,31 +53,32 @@ namespace NerdBlock.Sandbox.Implementation
 
         static AddressModel()
         {
-            NpgsqlParameter[] insertParams = new NpgsqlParameter[] 
-            {
-                new NpgsqlParameter("1", NpgsqlDbType.Varchar),
-                new NpgsqlParameter("2", NpgsqlDbType.Varchar),
-                new NpgsqlParameter("3", NpgsqlDbType.Varchar),
-                new NpgsqlParameter("4", NpgsqlDbType.Integer),
-                new NpgsqlParameter("5", NpgsqlDbType.Integer),
-            };
-            PgQuery insert = new PgQuery(QueryTable.Database, insertParams, false, "insert into {0} (street_address, state, country, apt_num, unit_num) VALUES (@1, @2, @3, @4, @5)", TABLE_NAME);
-            QueryTable.RegisterQuery("address_insert", insert);
+            QueryTable.RegisterQuery("address_insert", 
+                QueryTable.Database.PrepareQuery(
+                    string.Format("insert into {0} (street_address, state, country, apt_num, unit_num) VALUES (@1, @2, @3, @4, @5)", TABLE_NAME),
+                    QueryParamType.VarChar, QueryParamType.VarChar, QueryParamType.VarChar, QueryParamType.Integer, QueryParamType.Integer)
+                );
+            
+            QueryTable.RegisterQuery("address_update",
+                QueryTable.Database.PrepareQuery(
+                    string.Format("update {0} set street_address=@2, state=@3, country=@4, apt_num=@5, unit_num=@6 where id=@1", TABLE_NAME),
+                    QueryParamType.Integer, QueryParamType.VarChar, QueryParamType.VarChar, QueryParamType.VarChar, QueryParamType.Integer, QueryParamType.Integer)
+                );
+            
+            QueryTable.RegisterQuery("address_search_id",
+                QueryTable.Database.PrepareQuery(
+                    string.Format("select (street_address, state, country, apt_num, unit_num) from {0} where id=@1", TABLE_NAME), QueryParamType.Integer)
+                );
 
-            insertParams = new NpgsqlParameter[]
-            {
-                new NpgsqlParameter("1", NpgsqlDbType.Integer)
-            };
-            PgQuery search = new PgQuery(QueryTable.Database, insertParams, true, "select (street_address, state, country, apt_num, unit_num) from {0} where id=@1", TABLE_NAME);
-            QueryTable.RegisterQuery("address_search_id", search);
-
-
-            NpgsqlParameter[] commandParams = new NpgsqlParameter[]
-            {
-                new NpgsqlParameter("1", NpgsqlDbType.Varchar)
-            };
-            PgQuery countrySearch = new PgQuery(QueryTable.Database, commandParams, true, "select (street_address, state, country, apt_num, unit_num) from {0} where country ILIKE @1", TABLE_NAME);
-            QueryTable.RegisterQuery("address_search_country", countrySearch);
+            QueryTable.RegisterQuery("address_delete",
+                QueryTable.Database.PrepareQuery(
+                    string.Format("delete from {0} where id=@1", TABLE_NAME), QueryParamType.Integer)
+                );
+            
+            QueryTable.RegisterQuery("address_search_country",
+                QueryTable.Database.PrepareQuery(
+                    string.Format("select (street_address, state, country, apt_num, unit_num, id) from {0} where country ILIKE @1", TABLE_NAME), QueryParamType.VarChar)
+                );
         }
 
         public AddressModel(int id) : this()
@@ -110,7 +111,12 @@ namespace NerdBlock.Sandbox.Implementation
 
         public bool Delete()
         {
-            throw new NotImplementedException();
+            IQueryResult result = QueryTable.Execute("address_delete", myId);
+
+            if (result.NumRows > 0)
+                return true;
+            else
+                return false;
         }
 
         public bool Read()
@@ -135,7 +141,12 @@ namespace NerdBlock.Sandbox.Implementation
 
         public bool Update()
         {
-            throw new NotImplementedException();
+            IQueryResult result = QueryTable.Execute("address_update", myId, myStreetAddress, myState, myCountry, myApartmentNumber, myUnit);
+
+            if (result.NumRows > 0)
+                return true;
+            else
+                return false;
         }
 
         public AddressModel[] Execute()
@@ -160,7 +171,7 @@ namespace NerdBlock.Sandbox.Implementation
                 {
                     object[] results = (object[])queryResult.Row.ItemArray[0];
 
-                    AddressModel model = new AddressModel();
+                    AddressModel model = new AddressModel((int)results[5]);
                     model.myUnit = (int)results[4];
                     model.myApartmentNumber = (int)results[3];
 

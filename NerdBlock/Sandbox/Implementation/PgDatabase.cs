@@ -67,5 +67,20 @@ namespace NerdBlock.Sandbox.Implementation
 
             LastFailReason = null;
         }
+
+        public IQuery PrepareQuery(string sql, params QueryParamType[] parameters)
+        {
+            NpgsqlParameter[] npsqlParameters = new NpgsqlParameter[parameters.Length];
+
+            for (int index = 0; index < parameters.Length; index ++)
+                npsqlParameters[index] = new NpgsqlParameter((index + 1).ToString(), parameters[index].ToNpgsql());
+
+            return new PgQuery(QueryTable.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
+        }
+
+        public IQuery PrepareQuery(string sql, params QueryParam[] parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
