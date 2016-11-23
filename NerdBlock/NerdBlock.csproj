@@ -49,78 +49,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployee.cs">
+    <Compile Include="Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddEmployee.Designer.cs">
+    <Compile Include="Views\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrder.cs">
+    <Compile Include="Views\AddOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddOrder.Designer.cs">
+    <Compile Include="Views\AddOrder.Designer.cs">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="BlockShipping.cs">
+    <Compile Include="Views\BlockShipping.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BlockShipping.Designer.cs">
+    <Compile Include="Views\BlockShipping.Designer.cs">
       <DependentUpon>BlockShipping.cs</DependentUpon>
     </Compile>
-    <Compile Include="BlockTheme.cs">
+    <Compile Include="Views\BlockTheme.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BlockTheme.Designer.cs">
+    <Compile Include="Views\BlockTheme.Designer.cs">
       <DependentUpon>BlockTheme.cs</DependentUpon>
     </Compile>
-    <Compile Include="BoxesSoldPerTheme.cs">
+    <Compile Include="Views\BoxesSoldPerTheme.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BoxesSoldPerTheme.Designer.cs">
+    <Compile Include="Views\BoxesSoldPerTheme.Designer.cs">
       <DependentUpon>BoxesSoldPerTheme.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContentOfBoxes.cs">
+    <Compile Include="Views\ContentOfBoxes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ContentOfBoxes.Designer.cs">
+    <Compile Include="Views\ContentOfBoxes.Designer.cs">
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
     </Compile>
     <Compile Include="DbTypeMap.cs" />
-    <Compile Include="DisplayTickets.cs">
+    <Compile Include="Views\DisplayTickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DisplayTickets.Designer.cs">
+    <Compile Include="Views\DisplayTickets.Designer.cs">
       <DependentUpon>DisplayTickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeSearch.cs">
+    <Compile Include="Views\EmployeeSearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EmployeeSearch.Designer.cs">
+    <Compile Include="Views\EmployeeSearch.Designer.cs">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtraProductShipped.cs">
+    <Compile Include="Views\ExtraProductShipped.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ExtraProductShipped.Designer.cs">
+    <Compile Include="Views\ExtraProductShipped.Designer.cs">
       <DependentUpon>ExtraProductShipped.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.cs">
+    <Compile Include="Views\Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Inventory.Designer.cs">
+    <Compile Include="Views\Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="LineWorker.cs">
+    <Compile Include="Views\LineWorker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LineWorker.Designer.cs">
+    <Compile Include="Views\LineWorker.Designer.cs">
       <DependentUpon>LineWorker.cs</DependentUpon>
     </Compile>
     <Compile Include="Logger.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Views\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -129,16 +129,16 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderPage.cs">
+    <Compile Include="Views\OrderPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OrderPage.Designer.cs">
+    <Compile Include="Views\OrderPage.Designer.cs">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductInfo.cs">
+    <Compile Include="Views\ProductInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProductInfo.Designer.cs">
+    <Compile Include="Views\ProductInfo.Designer.cs">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -155,38 +155,38 @@
     <Compile Include="Sandbox\QueryTable.cs" />
     <Compile Include="Sandbox\IQuery.cs" />
     <Compile Include="Sandbox\IQueryResult.cs" />
-    <Compile Include="Sample.cs">
+    <Compile Include="Views\Sample.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Sample.Designer.cs">
+    <Compile Include="Views\Sample.Designer.cs">
       <DependentUpon>Sample.cs</DependentUpon>
     </Compile>
     <Compile Include="Sandbox\Implementation\AddressModel.cs" />
     <Compile Include="Sandbox\IDatabase.cs" />
     <Compile Include="Sandbox\IModel.cs" />
     <Compile Include="Sandbox\IQueryable.cs" />
-    <Compile Include="SearchCustomer.cs">
+    <Compile Include="Views\SearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SearchCustomer.Designer.cs">
+    <Compile Include="Views\SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubscriptionPage.cs">
+    <Compile Include="Views\SubscriptionPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SubscriptionPage.Designer.cs">
+    <Compile Include="Views\SubscriptionPage.Designer.cs">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewEditEmployee.cs">
+    <Compile Include="Views\ViewEditEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewEditEmployee.Designer.cs">
+    <Compile Include="Views\ViewEditEmployee.Designer.cs">
       <DependentUpon>ViewEditEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewEditOrder.cs">
+    <Compile Include="Views\ViewEditOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewEditOrder.Designer.cs">
+    <Compile Include="Views\ViewEditOrder.Designer.cs">
       <DependentUpon>ViewEditOrder.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -195,64 +195,64 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddEmployee.resx">
+    <EmbeddedResource Include="Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrder.resx">
+    <EmbeddedResource Include="Views\AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BlockShipping.resx">
+    <EmbeddedResource Include="Views\BlockShipping.resx">
       <DependentUpon>BlockShipping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BlockTheme.resx">
+    <EmbeddedResource Include="Views\BlockTheme.resx">
       <DependentUpon>BlockTheme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BoxesSoldPerTheme.resx">
+    <EmbeddedResource Include="Views\BoxesSoldPerTheme.resx">
       <DependentUpon>BoxesSoldPerTheme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentOfBoxes.resx">
+    <EmbeddedResource Include="Views\ContentOfBoxes.resx">
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DisplayTickets.resx">
+    <EmbeddedResource Include="Views\DisplayTickets.resx">
       <DependentUpon>DisplayTickets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeSearch.resx">
+    <EmbeddedResource Include="Views\EmployeeSearch.resx">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExtraProductShipped.resx">
+    <EmbeddedResource Include="Views\ExtraProductShipped.resx">
       <DependentUpon>ExtraProductShipped.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory.resx">
+    <EmbeddedResource Include="Views\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LineWorker.resx">
+    <EmbeddedResource Include="Views\LineWorker.resx">
       <DependentUpon>LineWorker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderPage.resx">
+    <EmbeddedResource Include="Views\OrderPage.resx">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductInfo.resx">
+    <EmbeddedResource Include="Views\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sample.resx">
+    <EmbeddedResource Include="Views\Sample.resx">
       <DependentUpon>Sample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchCustomer.resx">
+    <EmbeddedResource Include="Views\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubscriptionPage.resx">
+    <EmbeddedResource Include="Views\SubscriptionPage.resx">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewEditEmployee.resx">
+    <EmbeddedResource Include="Views\ViewEditEmployee.resx">
       <DependentUpon>ViewEditEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewEditOrder.resx">
+    <EmbeddedResource Include="Views\ViewEditOrder.resx">
       <DependentUpon>ViewEditOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
