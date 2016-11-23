@@ -10,3 +10,6 @@ C:\Users\shawn\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\bin\Debug\NerdBl
 C:\Users\shawn\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\bin\Debug\NerdBlock.pdb
 C:\Users\shawn\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\obj\Debug\NerdBlock.exe
 C:\Users\shawn\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\obj\Debug\NerdBlock.pdb
+C:\Users\Daniel\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\bin\Debug\NerdBlock.exe.config
+C:\Users\Daniel\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\obj\Debug\NerdBlock.exe
+C:\Users\Daniel\Documents\GitHub\DBASProject_NerdBlock\NerdBlock\obj\Debug\NerdBlock.pdb
