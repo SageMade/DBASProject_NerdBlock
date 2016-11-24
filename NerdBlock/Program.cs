@@ -22,14 +22,8 @@ namespace NerdBlock
                 form.ShowDialog();
             }
 
-                DbConnectData data = new DbConnectData()
-                {
-                    Host = "localhost",
-                    Database = "testing",
-                    Username = "test",
-                    Password = "password",
-                    Port = -1
-                };
+            DbConnectData data = DbConnectData.FromFile("DBConfig.txt.local");
+
 
             PgDatabase database = new PgDatabase();
             database.Init(data);

@@ -50,6 +50,10 @@ namespace NerdBlock.Sandbox.Implementation
             get { return myUnit; }
             set { myUnit = value; isDirty = true; }
         }
+        public bool IsDirty
+        {
+            get { return isDirty; }
+        }
 
         static AddressModel()
         {
@@ -104,7 +108,10 @@ namespace NerdBlock.Sandbox.Implementation
             IQueryResult result = QueryTable.Execute("address_insert", myStreetAddress, myState, myCountry, myApartmentNumber, myUnit);
 
             if (result.NumRows > 0)
+            {
+                isDirty = false;
                 return true;
+            }
             else
                 return false;
         }
@@ -144,21 +151,15 @@ namespace NerdBlock.Sandbox.Implementation
             IQueryResult result = QueryTable.Execute("address_update", myId, myStreetAddress, myState, myCountry, myApartmentNumber, myUnit);
 
             if (result.NumRows > 0)
+            {
+                isDirty = false;
+
                 return true;
+            }
             else
                 return false;
         }
-
-        public AddressModel[] Execute()
-        {
-            throw new NotImplementedException();
-        }
-
-        public AddressModel[] Query(AddressModel search)
-        {
-            throw new NotImplementedException();
-        }
-        
+                
         public static AddressModel[] SearchCountry(string country)
         {
             IQueryResult queryResult = QueryTable.Execute("address_search_country", country);
