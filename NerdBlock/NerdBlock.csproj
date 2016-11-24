@@ -141,6 +141,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LostDamagedItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LostDamagedItems.Designer.cs">
+      <DependentUpon>LostDamagedItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\OrderPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LostDamagedItems.resx">
+      <DependentUpon>LostDamagedItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\OrderPage.resx">
       <DependentUpon>OrderPage.cs</DependentUpon>
