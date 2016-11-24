@@ -51,13 +51,12 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtActiveStatus = new System.Windows.Forms.TextBox();
+            this.btnTerminate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(179, 191);
+            this.btnEdit.Location = new System.Drawing.Point(147, 191);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 45;
@@ -240,28 +239,20 @@
             this.lblID.TabIndex = 23;
             this.lblID.Text = "ID";
             // 
-            // label1
+            // btnTerminate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(233, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Active Status";
-            // 
-            // txtActiveStatus
-            // 
-            this.txtActiveStatus.Location = new System.Drawing.Point(309, 157);
-            this.txtActiveStatus.Name = "txtActiveStatus";
-            this.txtActiveStatus.Size = new System.Drawing.Size(100, 20);
-            this.txtActiveStatus.TabIndex = 47;
+            this.btnTerminate.Location = new System.Drawing.Point(228, 191);
+            this.btnTerminate.Name = "btnTerminate";
+            this.btnTerminate.Size = new System.Drawing.Size(75, 23);
+            this.btnTerminate.TabIndex = 46;
+            this.btnTerminate.Text = "Terminate";
+            this.btnTerminate.UseVisualStyleBackColor = true;
             // 
             // ViewEditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtActiveStatus);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnTerminate);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtPostalCode);
             this.Controls.Add(this.txtProvince);
@@ -317,7 +308,6 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtActiveStatus;
+        private System.Windows.Forms.Button btnTerminate;
     }
 }
