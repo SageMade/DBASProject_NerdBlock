@@ -37,18 +37,12 @@
             this.tsmInventory = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmTickets = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.myTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.administrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +50,7 @@
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.sample1 = new NerdBlock.Sample();
+            this.login1 = new NerdBlock.Login();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -68,9 +62,7 @@
             this.applicationToolStripMenuItem,
             this.tsmTasking,
             this.tsmInventory,
-            this.tsmTickets,
             this.tsmStaff,
-            this.tsmAdmin,
             this.customerToolStripMenuItem,
             this.ordersToolStripMenuItem});
             this.mnuMainBar.Location = new System.Drawing.Point(0, 0);
@@ -92,18 +84,18 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(109, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // tsmTasking
@@ -124,48 +116,14 @@
             // searchToolStripMenuItem3
             // 
             this.searchToolStripMenuItem3.Name = "searchToolStripMenuItem3";
-            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
+            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem3.Text = "Search";
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.updateToolStripMenuItem1.Text = "Update";
-            // 
-            // tsmTickets
-            // 
-            this.tsmTickets.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchToolStripMenuItem1,
-            this.toolStripMenuItem3,
-            this.myTicketsToolStripMenuItem,
-            this.allTicketsToolStripMenuItem});
-            this.tsmTickets.Name = "tsmTickets";
-            this.tsmTickets.Size = new System.Drawing.Size(56, 20);
-            this.tsmTickets.Text = "Tickets";
-            // 
-            // searchToolStripMenuItem1
-            // 
-            this.searchToolStripMenuItem1.Name = "searchToolStripMenuItem1";
-            this.searchToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
-            this.searchToolStripMenuItem1.Text = "Search";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(128, 6);
-            // 
-            // myTicketsToolStripMenuItem
-            // 
-            this.myTicketsToolStripMenuItem.Name = "myTicketsToolStripMenuItem";
-            this.myTicketsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.myTicketsToolStripMenuItem.Text = "My Tickets";
-            // 
-            // allTicketsToolStripMenuItem
-            // 
-            this.allTicketsToolStripMenuItem.Name = "allTicketsToolStripMenuItem";
-            this.allTicketsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.allTicketsToolStripMenuItem.Text = "All Tickets";
             // 
             // tsmStaff
             // 
@@ -182,37 +140,31 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // terminateToolStripMenuItem
             // 
             this.terminateToolStripMenuItem.Name = "terminateToolStripMenuItem";
-            this.terminateToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.terminateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.terminateToolStripMenuItem.Text = "Terminate";
-            // 
-            // tsmAdmin
-            // 
-            this.tsmAdmin.Name = "tsmAdmin";
-            this.tsmAdmin.Size = new System.Drawing.Size(55, 20);
-            this.tsmAdmin.Text = "Admin";
             // 
             // customerToolStripMenuItem
             // 
@@ -226,13 +178,13 @@
             // searchToolStripMenuItem2
             // 
             this.searchToolStripMenuItem2.Name = "searchToolStripMenuItem2";
-            this.searchToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
+            this.searchToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem2.Text = "Search";
             // 
             // administrationToolStripMenuItem
             // 
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.administrationToolStripMenuItem.Text = "Register";
             // 
             // ordersToolStripMenuItem
@@ -262,19 +214,19 @@
             // pnlMainContent
             // 
             this.pnlMainContent.AutoScroll = true;
-            this.pnlMainContent.Controls.Add(this.sample1);
+            this.pnlMainContent.Controls.Add(this.login1);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Size = new System.Drawing.Size(996, 536);
             this.pnlMainContent.TabIndex = 3;
             // 
-            // sample1
+            // login1
             // 
-            this.sample1.Location = new System.Drawing.Point(247, 12);
-            this.sample1.Name = "sample1";
-            this.sample1.Size = new System.Drawing.Size(484, 898);
-            this.sample1.TabIndex = 0;
+            this.login1.Location = new System.Drawing.Point(369, 201);
+            this.login1.Name = "login1";
+            this.login1.Size = new System.Drawing.Size(201, 108);
+            this.login1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -303,9 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmTasking;
         private System.Windows.Forms.ToolStripMenuItem tsmInventory;
-        private System.Windows.Forms.ToolStripMenuItem tsmTickets;
         private System.Windows.Forms.ToolStripMenuItem tsmStaff;
-        private System.Windows.Forms.ToolStripMenuItem tsmAdmin;
         private System.Windows.Forms.ToolStrip tsApplicationInfo;
         private System.Windows.Forms.ToolStripLabel tslTime;
         private System.Windows.Forms.Panel pnlMainContent;
@@ -314,10 +264,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem myTicketsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem allTicketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
@@ -327,6 +273,6 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem administrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
-        private Sample sample1;
+        private Login login1;
     }
 }

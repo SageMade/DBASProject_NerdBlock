@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sandbox\Backend\DataModelAttributes.cs" />
+    <Compile Include="Sandbox\Backend\ModelDataAccess.cs" />
+    <Compile Include="Sandbox\Backend\QueryBuilder.cs" />
     <Compile Include="Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +272,9 @@
     <None Include="DBConfig.txt.local">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sandbox\Frontend\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
