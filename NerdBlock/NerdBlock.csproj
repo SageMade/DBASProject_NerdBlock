@@ -101,6 +101,12 @@
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
     </Compile>
     <Compile Include="DbTypeMap.cs" />
+    <Compile Include="Views\CustomerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerInfo.Designer.cs">
+      <DependentUpon>CustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DisplayTickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ContentOfBoxes.resx">
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerInfo.resx">
+      <DependentUpon>CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DisplayTickets.resx">
       <DependentUpon>DisplayTickets.cs</DependentUpon>
