@@ -198,6 +198,12 @@
     <Compile Include="Views\SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shipping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shipping.Designer.cs">
+      <DependentUpon>Shipping.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SubscriptionPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     <EmbeddedResource Include="Views\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shipping.resx">
+      <DependentUpon>Shipping.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SubscriptionPage.resx">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,9 +310,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sandbox\Frontend\" />
     <Content Include="SQL\Database.sql" />
     <Content Include="SQL\Records.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sandbox\Frontend\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
