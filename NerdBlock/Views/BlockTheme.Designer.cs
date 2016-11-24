@@ -28,91 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTheme1 = new System.Windows.Forms.Button();
-            this.btnTheme2 = new System.Windows.Forms.Button();
-            this.btnTheme3 = new System.Windows.Forms.Button();
-            this.btnTheme4 = new System.Windows.Forms.Button();
-            this.btnTheme5 = new System.Windows.Forms.Button();
-            this.btnTheme6 = new System.Windows.Forms.Button();
+            this.lstThemes = new System.Windows.Forms.ListBox();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnTheme1
+            // lstThemes
             // 
-            this.btnTheme1.Location = new System.Drawing.Point(57, 71);
-            this.btnTheme1.Name = "btnTheme1";
-            this.btnTheme1.Size = new System.Drawing.Size(208, 83);
-            this.btnTheme1.TabIndex = 0;
-            this.btnTheme1.Text = "Theme1";
-            this.btnTheme1.UseVisualStyleBackColor = true;
+            this.lstThemes.FormattingEnabled = true;
+            this.lstThemes.ItemHeight = 16;
+            this.lstThemes.Location = new System.Drawing.Point(19, 57);
+            this.lstThemes.Name = "lstThemes";
+            this.lstThemes.Size = new System.Drawing.Size(666, 404);
+            this.lstThemes.TabIndex = 0;
             // 
-            // btnTheme2
+            // dtpDate
             // 
-            this.btnTheme2.Location = new System.Drawing.Point(271, 71);
-            this.btnTheme2.Name = "btnTheme2";
-            this.btnTheme2.Size = new System.Drawing.Size(208, 83);
-            this.btnTheme2.TabIndex = 1;
-            this.btnTheme2.Text = "Theme2";
-            this.btnTheme2.UseVisualStyleBackColor = true;
+            this.dtpDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.CustomFormat = "MM/yyyy";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(227, 17);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpDate.TabIndex = 8;
             // 
-            // btnTheme3
+            // label1
             // 
-            this.btnTheme3.Location = new System.Drawing.Point(57, 160);
-            this.btnTheme3.Name = "btnTheme3";
-            this.btnTheme3.Size = new System.Drawing.Size(208, 83);
-            this.btnTheme3.TabIndex = 2;
-            this.btnTheme3.Text = "Theme3";
-            this.btnTheme3.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Months Block Series";
             // 
-            // btnTheme4
+            // btnAdd
             // 
-            this.btnTheme4.Location = new System.Drawing.Point(271, 160);
-            this.btnTheme4.Name = "btnTheme4";
-            this.btnTheme4.Size = new System.Drawing.Size(208, 83);
-            this.btnTheme4.TabIndex = 3;
-            this.btnTheme4.Text = "Theme4";
-            this.btnTheme4.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(556, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(129, 23);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Add New Block";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // btnTheme5
+            // btnEdit
             // 
-            this.btnTheme5.Location = new System.Drawing.Point(57, 249);
-            this.btnTheme5.Name = "btnTheme5";
-            this.btnTheme5.Size = new System.Drawing.Size(208, 83);
-            this.btnTheme5.TabIndex = 4;
-            this.btnTheme5.Text = "Theme5";
-            this.btnTheme5.UseVisualStyleBackColor = true;
-            // 
-            // btnTheme6
-            // 
-            this.btnTheme6.Location = new System.Drawing.Point(271, 249);
-            this.btnTheme6.Name = "btnTheme6";
-            this.btnTheme6.Size = new System.Drawing.Size(208, 83);
-            this.btnTheme6.TabIndex = 5;
-            this.btnTheme6.Text = "Theme6";
-            this.btnTheme6.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(556, 28);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(129, 23);
+            this.btnEdit.TabIndex = 12;
+            this.btnEdit.Text = "Edit Block";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // BlockTheme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnTheme6);
-            this.Controls.Add(this.btnTheme5);
-            this.Controls.Add(this.btnTheme4);
-            this.Controls.Add(this.btnTheme3);
-            this.Controls.Add(this.btnTheme2);
-            this.Controls.Add(this.btnTheme1);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.lstThemes);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BlockTheme";
-            this.Size = new System.Drawing.Size(530, 390);
+            this.Size = new System.Drawing.Size(707, 480);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnTheme1;
-        private System.Windows.Forms.Button btnTheme2;
-        private System.Windows.Forms.Button btnTheme3;
-        private System.Windows.Forms.Button btnTheme4;
-        private System.Windows.Forms.Button btnTheme5;
-        private System.Windows.Forms.Button btnTheme6;
+        private System.Windows.Forms.ListBox lstThemes;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

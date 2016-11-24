@@ -52,6 +52,12 @@
     <Compile Include="Sandbox\Backend\DataModelAttributes.cs" />
     <Compile Include="Sandbox\Backend\ModelDataAccess.cs" />
     <Compile Include="Sandbox\Backend\QueryBuilder.cs" />
+    <Compile Include="Views\AddEditBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddEditBlock.Designer.cs">
+      <DependentUpon>AddEditBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LostDamagedItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LostDamagedItems.Designer.cs">
+      <DependentUpon>LostDamagedItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\OrderPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +216,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\AddEditBlock.resx">
+      <DependentUpon>AddEditBlock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +261,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\LostDamagedItems.resx">
+      <DependentUpon>LostDamagedItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\OrderPage.resx">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +293,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sandbox\Frontend\" />
+    <Content Include="SQL\Database.sql" />
+    <Content Include="SQL\Records.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -50,7 +50,9 @@
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
+
             this.login1 = new NerdBlock.Login();
+
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -214,7 +216,9 @@
             // pnlMainContent
             // 
             this.pnlMainContent.AutoScroll = true;
+
             this.pnlMainContent.Controls.Add(this.login1);
+
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
             this.pnlMainContent.Name = "pnlMainContent";
