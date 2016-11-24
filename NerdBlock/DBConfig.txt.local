@@ -1,5 +1,5 @@
 ﻿Host: localhost
-Database: testing
-Username: test
+Database: dbnerdblock
+Username: postgres
 Password: password
 Port: -1

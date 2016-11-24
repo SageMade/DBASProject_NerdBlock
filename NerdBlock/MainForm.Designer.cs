@@ -56,7 +56,6 @@
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.sample1 = new NerdBlock.Sample();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -262,19 +261,11 @@
             // pnlMainContent
             // 
             this.pnlMainContent.AutoScroll = true;
-            this.pnlMainContent.Controls.Add(this.sample1);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Size = new System.Drawing.Size(996, 536);
             this.pnlMainContent.TabIndex = 3;
-            // 
-            // sample1
-            // 
-            this.sample1.Location = new System.Drawing.Point(247, 12);
-            this.sample1.Name = "sample1";
-            this.sample1.Size = new System.Drawing.Size(484, 898);
-            this.sample1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -327,6 +318,5 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem administrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
-        private Sample sample1;
     }
 }
