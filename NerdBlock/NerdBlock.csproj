@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\AddEditBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddEditBlock.Designer.cs">
+      <DependentUpon>AddEditBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\AddEditBlock.resx">
+      <DependentUpon>AddEditBlock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
