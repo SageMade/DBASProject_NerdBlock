@@ -312,11 +312,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL\Database.sql" />
-    <Content Include="SQL\Records.sql" />
+    <Folder Include="Sandbox\Frontend\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sandbox\Frontend\" />
+    <Content Include="SQL\Database.sql" />
+    <Content Include="SQL\Records.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
