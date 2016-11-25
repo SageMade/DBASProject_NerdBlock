@@ -51,5 +51,13 @@ namespace NerdBlock.Sandbox
         /// <param name="query">The compiled query to perform</param>
         /// <returns>The results of the query</returns>
         IQueryResult Execute(IQuery query);
+
+        /// <summary>
+        /// Handles executing a query and returning the results
+        /// </summary>
+        /// <param name="query">The compiled query to perform</param>
+        /// <param name="parameters">The parameters for the query</param>
+        /// <returns>The results of the query</returns>
+        IQueryResult Execute(IQuery query, params object[] parameters);
     }
 }

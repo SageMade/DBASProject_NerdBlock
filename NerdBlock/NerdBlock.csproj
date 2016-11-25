@@ -49,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sandbox\Backend\DataAccess.cs" />
     <Compile Include="Sandbox\Backend\DataModelAttributes.cs" />
     <Compile Include="Sandbox\Backend\ModelDataAccess.cs" />
-    <Compile Include="Sandbox\Backend\QueryBuilder.cs" />
+    <Compile Include="Sandbox\Backend\Models\Address.cs" />
+    <Compile Include="Sandbox\Backend\Util.cs" />
     <Compile Include="Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>

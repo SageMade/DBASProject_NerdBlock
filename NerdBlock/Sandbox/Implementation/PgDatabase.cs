@@ -80,7 +80,30 @@ namespace NerdBlock.Sandbox.Implementation
 
         public IQuery PrepareQuery(string sql, params QueryParam[] parameters)
         {
-            throw new NotImplementedException();
+            NpgsqlParameter[] npsqlParameters = new NpgsqlParameter[parameters.Length];
+
+            for (int index = 0; index < parameters.Length; index++)
+                npsqlParameters[index] = new NpgsqlParameter(parameters[index].Name, parameters[index].Type.ToNpgsql());
+
+            return new PgQuery(QueryTable.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
+        }
+
+        public IQueryResult Execute(IQuery query, params object[] parameters)
+        {
+            NpgsqlCommand command = query.QueryObject as NpgsqlCommand;
+
+            if (command == null)
+                throw new ArgumentException("Query is not an Npgsql Command object");
+
+            command.Connection = myDatabaseConnection;
+
+            if (parameters.Length != query.ParameterCount)
+                throw new ArgumentException("Parameter count mismatch");
+
+            for (int index = 0; index < query.ParameterCount; index++)
+                query.SetParameter(index, parameters[index]);
+            
+            return new PgQueryResult(command, query.HasResults);
         }
     }
 }

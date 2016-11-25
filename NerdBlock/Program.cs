@@ -10,6 +10,8 @@ using NerdBlock.Sandbox.Implementation;
 using NerdBlock.Sandbox;
 using System.Threading;
 using System.Windows.Forms;
+using NerdBlock.Sandbox.Backend.Models;
+using NerdBlock.Sandbox.Backend;
 
 namespace NerdBlock
 {
@@ -32,8 +34,9 @@ namespace NerdBlock
                 Thread.Sleep(1);
 
             QueryTable.Database = database;
+            DataAccess.Database = database;
 
-
+            /*
             AddressModel address = new AddressModel();
             address.StreetAddress = "12 Bluenose Lane";
             address.State = "Ontario";
@@ -46,7 +49,22 @@ namespace NerdBlock
             {
                 MessageBox.Show("Could not save model");
             }
+            */
 
+            ModelDataAccess<Address> access = new ModelDataAccess<Address>();
+
+            Address test = new Address();
+            test.StreetAddress = "12 Bluenose Lane";
+            test.Country = "Canada";
+            test.State = "Ontario";
+
+            bool result1 = access.Insert(test);
+
+            bool result2 = access.Exists(test, false);
+
+            //DataAccess.Insert(test);
+
+            /*
             AddressModel address2 = new AddressModel();
             address2.StreetAddress = "173 Ellesmere Rd";
             address2.State = "Ontario";
@@ -75,6 +93,7 @@ namespace NerdBlock
             {
 
             }
+            */
         }
     }
 }

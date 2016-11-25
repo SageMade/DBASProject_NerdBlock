@@ -19,10 +19,12 @@ namespace NerdBlock.Sandbox.Backend
     public class DataField : Attribute
     {
         public string FieldName;
+        public QueryParamType FieldType;
 
-        public DataField(string fieldName)
+        public DataField(string fieldName, QueryParamType fieldType)
         {
             FieldName = fieldName;
+            FieldType = fieldType;
         }
     }
     
