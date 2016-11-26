@@ -59,6 +59,8 @@ namespace NerdBlock
             Employee employee1 = new Employee();
             employee1.FirstName = "Shawn";
             employee1.LastName = "Matthews";
+            employee1.SIN = "696969699";
+            employee1.JoinDate = DateTime.Now;
 
             employee1.Address = test;
 

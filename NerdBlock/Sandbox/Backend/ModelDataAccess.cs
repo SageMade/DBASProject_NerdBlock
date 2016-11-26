@@ -47,9 +47,9 @@ namespace NerdBlock.Sandbox.Backend
 
                 // IF the database does not contain something that matches, add one
                 if (!DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
-                    DataAccess.Insert(myDependencies[index].PropertyType, pValue);
+                    DataAccess.InsertWeak(myDependencies[index].PropertyType, pValue);
 
-                myDependencies[index].SetValue(model, DataAccess.Match(myDependencies[index].PropertyType, pValue));
+                myDependencies[index].SetValue(model, DataAccess.MatchWeak(myDependencies[index].PropertyType, pValue)[0]);
             }
 
             // We need to build two sides of the query, allocate strings
@@ -303,7 +303,7 @@ namespace NerdBlock.Sandbox.Backend
             for(int index = 0; index < myModelProperties.Length; index ++)
             {
                 DataField field = myModelProperties[index].GetCustomAttribute<DataField>();
-                myModelProperties[index].SetValue(result, queryResult.Row[field.FieldName]);
+                myModelProperties[index].SetValue(result, Convert.ChangeType(queryResult.Row[field.FieldName], myModelProperties[index].PropertyType));
             }
 
             return result;

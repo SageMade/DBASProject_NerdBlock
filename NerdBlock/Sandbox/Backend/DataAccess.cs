@@ -69,6 +69,13 @@ namespace NerdBlock.Sandbox.Backend
             return __GetDataAccess<T>().GetMatches(match);
         }
 
+        public static object[] MatchWeak(Type modelType, object match)
+        {
+            MethodInfo mi = typeof(DataAccess).GetMethod("Match", BindingFlags.Public | BindingFlags.Static);
+            mi = mi.MakeGenericMethod(modelType);
+            return (object[])mi.Invoke(null, new object[] { match });
+        }
+
         public static bool Exists<T>(T match, bool matchNull = false) where T : new()
         {
             ModelDataAccess<T> da = __GetDataAccess<T>();
@@ -87,7 +94,7 @@ namespace NerdBlock.Sandbox.Backend
             return __GetDataAccess<T>().Insert(model);
         }
 
-        public static bool Insert(Type modelType, object model)
+        public static bool InsertWeak(Type modelType, object model)
         {
             MethodInfo mi = typeof(DataAccess).GetMethod("Insert", BindingFlags.Static | BindingFlags.Public);
             mi = mi.MakeGenericMethod(modelType);
