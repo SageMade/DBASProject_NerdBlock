@@ -64,7 +64,7 @@ namespace NerdBlock.Sandbox.Backend
             return myDataAccessors[typeof(T)] as ModelDataAccess<T>;
         }
 
-        internal static T[] Match<T>(T match) where T : new()
+        public static T[] Match<T>(T match) where T : new()
         {
             return __GetDataAccess<T>().GetMatches(match);
         }
@@ -75,23 +75,23 @@ namespace NerdBlock.Sandbox.Backend
             return da.Exists(match, matchNull);
         }
 
-        public static bool Exists(Type modelType, object match, bool matchNull = false)
+        public static bool ExistsWeak(Type modelType, object match, bool matchNull = false)
         {
-            MethodInfo mi = typeof(DataAccess).GetMethod("Exists", BindingFlags.Static);
+            MethodInfo mi = typeof(DataAccess).GetMethod("Exists", BindingFlags.Public | BindingFlags.Static);
             mi = mi.MakeGenericMethod(modelType);
-            return (bool)mi.Invoke(null, new[] { match, matchNull });
+            return (bool)mi.Invoke(null, new object[] { match, matchNull });
         }
 
-        public static void Insert<T>(T model) where T : new()
+        public static bool Insert<T>(T model) where T : new()
         {
-            __GetDataAccess<T>().Insert(model);
+            return __GetDataAccess<T>().Insert(model);
         }
 
-        public static void Insert(Type modelType, object model)
+        public static bool Insert(Type modelType, object model)
         {
-            MethodInfo mi = typeof(DataAccess).GetMethod("Insert", BindingFlags.Static);
+            MethodInfo mi = typeof(DataAccess).GetMethod("Insert", BindingFlags.Static | BindingFlags.Public);
             mi = mi.MakeGenericMethod(modelType);
-            mi.Invoke(null, new[] { model });
+            return (bool)mi.Invoke(null, new[] { model });
         }
 
         public static int ExecuteStatement(string query, QueryParam[] qParams, params object[] parameters)
@@ -102,12 +102,19 @@ namespace NerdBlock.Sandbox.Backend
             return result.NumRows;
         }
 
-        internal static object GetPrimaryKey(Type propertyType, object value)
+        public static object GetPrimaryKey<T>(T value) where T : new()
         {
-            throw new NotImplementedException();
+            return __GetDataAccess<T>().GetPrimaryKey(value);
         }
 
-        internal static IQueryResult ExecuteQuery(string query, QueryParam[] qParams, object[] parameters)
+        public static object GetPrimaryKeyWeak(Type propertyType, object value)
+        {
+            MethodInfo mi = typeof(DataAccess).GetMethod("GetPrimaryKey", BindingFlags.Public | BindingFlags.Static);
+            mi = mi.MakeGenericMethod(propertyType);
+            return mi.Invoke(null, new object[] { value });
+        }
+
+        public static IQueryResult ExecuteQuery(string query, QueryParam[] qParams, object[] parameters)
         {
             IQuery dbQuery = Database.PrepareQuery(query, qParams);
             return Database.Execute(dbQuery, parameters);

@@ -42,14 +42,14 @@ namespace NerdBlock.Sandbox.Backend
                 // Get the value from the property
                 object pValue = myDependencies[index].GetValue(model);
 
+                if (pValue == null && myDependencies[index].GetCustomAttribute<Nullable>() == null)
+                    throw new InvalidOperationException("Cannot insert with a missing dependancy");
+
                 // IF the database does not contain something that matches, add one
-                if (!DataAccess.Exists(myDependencies[index].PropertyType, pValue))
-                {
-                    // Insert the item into the database
+                if (!DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
                     DataAccess.Insert(myDependencies[index].PropertyType, pValue);
-                    // Update the model instance to now point to the DB model
-                    myDependencies[index].SetValue(model, DataAccess.Match(pValue));
-                }
+
+                myDependencies[index].SetValue(model, DataAccess.Match(myDependencies[index].PropertyType, pValue));
             }
 
             // We need to build two sides of the query, allocate strings
@@ -82,7 +82,7 @@ namespace NerdBlock.Sandbox.Backend
                     else if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)
                     {
                         // Use the DataAccess to get the primary key value for the instance
-                        object key = DataAccess.GetPrimaryKey(myModelProperties[index].PropertyType, value);
+                        object key = DataAccess.GetPrimaryKeyWeak(myModelProperties[index].PropertyType, value);
 
                         // Append the field name to the left string
                         insertLeft += dField.FieldName + ",";
@@ -120,6 +120,17 @@ namespace NerdBlock.Sandbox.Backend
             return results > 0;
         }
 
+        public object GetPrimaryKey(T value) 
+        {
+            for (int index = 0; index < myModelProperties.Length; index ++)
+            {
+                if (myModelProperties[index].GetCustomAttribute<PrimaryKey>() != null)
+                    return myModelProperties[index].GetValue(value);
+            }
+
+            return null;
+        }
+
         public bool Exists(T match, bool matchNull)
         {
             // Iterate over dependancies
@@ -129,7 +140,7 @@ namespace NerdBlock.Sandbox.Backend
                 object pValue = myDependencies[index].GetValue(match);
 
                 // IF the database does not contain something that matches, we know that we cannot have this instance
-                if (!DataAccess.Exists(myDependencies[index].PropertyType, pValue))
+                if (!DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
                 {
                     return false;
                 }
@@ -162,7 +173,7 @@ namespace NerdBlock.Sandbox.Backend
                 else if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)
                 {
                     // Use the DataAccess to get the primary key value for the instance
-                    object key = DataAccess.GetPrimaryKey(myModelProperties[index].PropertyType, value);
+                    object key = DataAccess.GetPrimaryKeyWeak(myModelProperties[index].PropertyType, value);
 
                     // Append the the field name to the search
                     searchTerms += string.Format("{0}=@{0},", dField.FieldName);
@@ -211,7 +222,7 @@ namespace NerdBlock.Sandbox.Backend
                 object pValue = myDependencies[index].GetValue(match);
 
                 // IF the database does not contain something that matches, we know that we cannot have this instance
-                if (!DataAccess.Exists(myDependencies[index].PropertyType, pValue))
+                if (!DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
                 {
                     return new T[0];
                 }
@@ -242,7 +253,7 @@ namespace NerdBlock.Sandbox.Backend
                 else if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)
                 {
                     // Use the DataAccess to get the primary key value for the instance
-                    object key = DataAccess.GetPrimaryKey(myModelProperties[index].PropertyType, value);
+                    object key = DataAccess.GetPrimaryKeyWeak(myModelProperties[index].PropertyType, value);
 
                     // Append the the field name to the search
                     searchTerms += string.Format("{0}=@{0},", dField.FieldName);

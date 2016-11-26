@@ -50,17 +50,23 @@ namespace NerdBlock
                 MessageBox.Show("Could not save model");
             }
             */
-
-            ModelDataAccess<Address> access = new ModelDataAccess<Address>();
-
+            
             Address test = new Address();
             test.StreetAddress = "12 Bluenose Lane";
             test.Country = "Canada";
             test.State = "Ontario";
 
-            bool result1 = access.Insert(test);
+            Employee employee1 = new Employee();
+            employee1.FirstName = "Shawn";
+            employee1.LastName = "Matthews";
 
-            bool result2 = access.Exists(test, false);
+            employee1.Address = test;
+
+            bool result1 = DataAccess.Insert(employee1);
+
+            bool result2 = DataAccess.Insert(test);
+
+            bool result3 = DataAccess.Exists(test);
 
             //DataAccess.Insert(test);
 
