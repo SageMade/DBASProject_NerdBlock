@@ -66,6 +66,11 @@ namespace NerdBlock
 
             bool result1 = DataAccess.Insert(employee1);
 
+            if (!result1)
+                employee1.JoinDate = null;
+
+            Employee[] employees = DataAccess.Match(employee1);
+
             bool result2 = DataAccess.Insert(test);
 
             bool result3 = DataAccess.Exists(test);

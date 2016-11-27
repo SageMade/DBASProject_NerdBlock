@@ -121,6 +121,18 @@ namespace NerdBlock.Sandbox.Backend
             return mi.Invoke(null, new object[] { value });
         }
 
+        public static object FromForeignKey<T>(object value) where T : new()
+        {
+            return __GetDataAccess<T>().GetFromPrimaryKey(value);
+        }
+
+        public static object FromForeignKeyWeak(Type propertyType, object value)
+        {
+            MethodInfo mi = typeof(DataAccess).GetMethod("FromForeignKey", BindingFlags.Public | BindingFlags.Static);
+            mi = mi.MakeGenericMethod(propertyType);
+            return mi.Invoke(null, new object[] { value });
+        }
+
         public static IQueryResult ExecuteQuery(string query, QueryParam[] qParams, object[] parameters)
         {
             IQuery dbQuery = Database.PrepareQuery(query, qParams);
