@@ -53,7 +53,15 @@
     <Compile Include="Sandbox\Backend\DataModelAttributes.cs" />
     <Compile Include="Sandbox\Backend\ModelDataAccess.cs" />
     <Compile Include="Sandbox\Backend\Models\Address.cs" />
+    <Compile Include="Sandbox\Backend\Models\BillingInfo.cs" />
+    <Compile Include="Sandbox\Backend\Models\BlockSeries.cs" />
+    <Compile Include="Sandbox\Backend\Models\Customer.cs" />
     <Compile Include="Sandbox\Backend\Models\Employee.cs" />
+    <Compile Include="Sandbox\Backend\Models\EmployeeJob.cs" />
+    <Compile Include="Sandbox\Backend\Models\EmployeeRole.cs" />
+    <Compile Include="Sandbox\Backend\Models\Genre.cs" />
+    <Compile Include="Sandbox\Backend\Models\PaymentInstance.cs" />
+    <Compile Include="Sandbox\Backend\Models\Subscription.cs" />
     <Compile Include="Sandbox\Backend\Util.cs" />
     <Compile Include="Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>
