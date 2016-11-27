@@ -112,7 +112,6 @@ namespace NerdBlock.Sandbox.Backend
                         insertParams.Add(value);
                     }
                 }
-
             }
 
             // Prep the final query
@@ -296,9 +295,9 @@ namespace NerdBlock.Sandbox.Backend
             {
                 // Get the value from the property
                 object pValue = myDependencies[index].GetValue(match);
-
+                
                 // IF the database does not contain something that matches, we know that we cannot have this instance
-                if (!DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
+                if (pValue != null && !DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
                 {
                     return new T[0];
                 }
@@ -404,7 +403,7 @@ namespace NerdBlock.Sandbox.Backend
                     else
                     {
                         if (pi.GetCustomAttribute<ForeignKey>() != null)
-                            pi.SetValue(result, DataAccess.FromForeignKeyWeak(pi.PropertyType, value));
+                            pi.SetValue(result, DataAccess.FromPrimaryKeyWeak(pi.PropertyType, value));
                         else
                             pi.SetValue(result, Convert.ChangeType(value, pi.PropertyType.GenericTypeArguments[0]));
                     }
@@ -412,7 +411,7 @@ namespace NerdBlock.Sandbox.Backend
                 else
                 {
                     if (pi.GetCustomAttribute<ForeignKey>() != null)
-                        pi.SetValue(result, DataAccess.FromForeignKeyWeak(pi.PropertyType, value));
+                        pi.SetValue(result, DataAccess.FromPrimaryKeyWeak(pi.PropertyType, value));
                     else
                         pi.SetValue(result, Convert.ChangeType(value, pi.PropertyType));
                 }

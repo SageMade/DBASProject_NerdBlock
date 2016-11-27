@@ -26,5 +26,8 @@ namespace NerdBlock.Sandbox.Backend.Models
 
         [DataField("specialrequests", QueryParamType.Text), Nullable]
         public string Requests { get; set; } = null;
+
+        [DataField("postalcode", QueryParamType.VarChar)]
+        public string PostalCode { get; set; } = null;
     }
 }

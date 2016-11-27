@@ -121,14 +121,14 @@ namespace NerdBlock.Sandbox.Backend
             return mi.Invoke(null, new object[] { value });
         }
 
-        public static object FromForeignKey<T>(object value) where T : new()
+        public static T FromPrimaryKey<T>(object value) where T : new()
         {
             return __GetDataAccess<T>().GetFromPrimaryKey(value);
         }
 
-        public static object FromForeignKeyWeak(Type propertyType, object value)
+        public static object FromPrimaryKeyWeak(Type propertyType, object value)
         {
-            MethodInfo mi = typeof(DataAccess).GetMethod("FromForeignKey", BindingFlags.Public | BindingFlags.Static);
+            MethodInfo mi = typeof(DataAccess).GetMethod("FromPrimaryKey", BindingFlags.Public | BindingFlags.Static);
             mi = mi.MakeGenericMethod(propertyType);
             return mi.Invoke(null, new object[] { value });
         }

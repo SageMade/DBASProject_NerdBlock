@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NerdBlock.Sandbox.Backend;
+using NerdBlock.Sandbox.Backend.Models;
+using NerdBlock.Sandbox.Frontend.Implementation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,15 @@ namespace NerdBlock
         public MainForm()
         {
             InitializeComponent();
+
+            AddEmployeeFiller filler = new AddEmployeeFiller();
+            filler.View = addEmployee1;
+
+            Employee search = new Employee() { FirstName = "Shawn", LastName = "Matthews" };
+
+            Employee[] results = DataAccess.Match(search);
+            
+            filler.Fill(results[0]);
         }
     }
 }

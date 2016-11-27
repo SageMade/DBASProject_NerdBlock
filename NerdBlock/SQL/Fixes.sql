@@ -1,0 +1,1 @@
+alter table tbladdress add postalcode varchar(10) not null default 'A0A0A0';

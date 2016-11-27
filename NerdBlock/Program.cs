@@ -19,10 +19,6 @@ namespace NerdBlock
     {
         static void Main(string[] args)
         {
-            using (MainForm form = new MainForm())
-            {
-                form.ShowDialog();
-            }
 
             DbConnectData data = DbConnectData.FromFile("DBConfig.txt.local");
 
@@ -36,6 +32,10 @@ namespace NerdBlock
             QueryTable.Database = database;
             DataAccess.Database = database;
 
+            using (MainForm form = new MainForm())
+            {
+                form.ShowDialog();
+            }
             /*
             AddressModel address = new AddressModel();
             address.StreetAddress = "12 Bluenose Lane";
@@ -55,6 +55,7 @@ namespace NerdBlock
             test.StreetAddress = "12 Bluenose Lane";
             test.Country = "Canada";
             test.State = "Ontario";
+            test.PostalCode = "L1B1P5";
 
             Employee employee1 = new Employee();
             employee1.FirstName = "Shawn";
@@ -70,7 +71,7 @@ namespace NerdBlock
                 employee1.JoinDate = null;
 
             Employee[] employees = DataAccess.Match(employee1);
-
+                        
             bool result2 = DataAccess.Insert(test);
 
             bool result3 = DataAccess.Exists(test);

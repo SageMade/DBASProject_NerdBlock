@@ -55,6 +55,8 @@
     <Compile Include="Sandbox\Backend\Models\Address.cs" />
     <Compile Include="Sandbox\Backend\Models\Employee.cs" />
     <Compile Include="Sandbox\Backend\Util.cs" />
+    <Compile Include="Sandbox\Frontend\Implementation\AddEmployeeFiller.cs" />
+    <Compile Include="Sandbox\Frontend\ViewFiller.cs" />
     <Compile Include="Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,9 +314,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sandbox\Frontend\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SQL\Database.sql" />
     <Content Include="SQL\Records.sql" />

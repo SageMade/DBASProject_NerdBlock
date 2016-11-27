@@ -50,9 +50,7 @@
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-
-            this.login1 = new NerdBlock.Login();
-
+            this.addEmployee1 = new NerdBlock.AddEmployee();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -86,18 +84,18 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(109, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // tsmTasking
@@ -118,13 +116,13 @@
             // searchToolStripMenuItem3
             // 
             this.searchToolStripMenuItem3.Name = "searchToolStripMenuItem3";
-            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
             this.searchToolStripMenuItem3.Text = "Search";
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.updateToolStripMenuItem1.Text = "Update";
             // 
             // tsmStaff
@@ -142,30 +140,30 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // terminateToolStripMenuItem
             // 
             this.terminateToolStripMenuItem.Name = "terminateToolStripMenuItem";
-            this.terminateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.terminateToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.terminateToolStripMenuItem.Text = "Terminate";
             // 
             // customerToolStripMenuItem
@@ -180,13 +178,13 @@
             // searchToolStripMenuItem2
             // 
             this.searchToolStripMenuItem2.Name = "searchToolStripMenuItem2";
-            this.searchToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.searchToolStripMenuItem2.Text = "Search";
             // 
             // administrationToolStripMenuItem
             // 
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.administrationToolStripMenuItem.Text = "Register";
             // 
             // ordersToolStripMenuItem
@@ -216,21 +214,19 @@
             // pnlMainContent
             // 
             this.pnlMainContent.AutoScroll = true;
-
-            this.pnlMainContent.Controls.Add(this.login1);
-
+            this.pnlMainContent.Controls.Add(this.addEmployee1);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Size = new System.Drawing.Size(996, 536);
             this.pnlMainContent.TabIndex = 3;
             // 
-            // login1
+            // addEmployee1
             // 
-            this.login1.Location = new System.Drawing.Point(369, 201);
-            this.login1.Name = "login1";
-            this.login1.Size = new System.Drawing.Size(201, 108);
-            this.login1.TabIndex = 0;
+            this.addEmployee1.Location = new System.Drawing.Point(278, 169);
+            this.addEmployee1.Name = "addEmployee1";
+            this.addEmployee1.Size = new System.Drawing.Size(440, 198);
+            this.addEmployee1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -277,6 +273,6 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem administrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
-        private Login login1;
+        private AddEmployee addEmployee1;
     }
 }
