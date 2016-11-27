@@ -22,7 +22,7 @@ namespace NerdBlock.Sandbox.Backend.Models
         public string State { get; set; }
 
         [DataField("apartmentnumber", QueryParamType.Integer), Nullable]
-        public int? ApartNumber { get; set; }
+        public int? ApartmentNumber { get; set; }
 
         [DataField("specialrequests", QueryParamType.Text), Nullable]
         public string SpecialRequests { get; set; }
