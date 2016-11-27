@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NerdBlock.Sandbox.Backend.Models
 {
     [DataModel("tblemployeejob")]
-    class EmployeeJob
+    public class EmployeeJob
     {
         [DataField("employeeid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblemployee", "employeeid")]
         public int? EmployeeId { get; set; }

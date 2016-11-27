@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NerdBlock.Sandbox.Backend.Models
 {
     [DataModel("tblpaymentinstance")]
-    class PaymentInstance
+    public class PaymentInstance
     {
         [DataField("subscriptionid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblsubscriptionid", "subscriptionid")]
         public int? SubscriptionId { get; set; }

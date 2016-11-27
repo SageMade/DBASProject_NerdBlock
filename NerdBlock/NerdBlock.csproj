@@ -62,11 +62,17 @@
     <Compile Include="Sandbox\Backend\Models\EmployeeJob.cs" />
     <Compile Include="Sandbox\Backend\Models\EmployeeRole.cs" />
     <Compile Include="Sandbox\Backend\Models\Genre.cs" />
+    <Compile Include="Sandbox\Backend\Models\MortarStore.cs" />
+    <Compile Include="Sandbox\Backend\Models\Order.cs" />
+    <Compile Include="Sandbox\Backend\Models\OrderLineitem.cs" />
     <Compile Include="Sandbox\Backend\Models\PaymentInstance.cs" />
     <Compile Include="Sandbox\Backend\Models\Product.cs" />
     <Compile Include="Sandbox\Backend\Models\Subscription.cs" />
     <Compile Include="Sandbox\Backend\Models\SubscriptionFullfillment.cs" />
     <Compile Include="Sandbox\Backend\Models\Supplier.cs" />
+    <Compile Include="Sandbox\Backend\Models\SupplierContact.cs" />
+    <Compile Include="Sandbox\Backend\Models\Transfer.cs" />
+    <Compile Include="Sandbox\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Sandbox\Backend\Util.cs" />
     <Compile Include="Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>

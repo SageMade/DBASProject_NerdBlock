@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace NerdBlock.Sandbox.Backend.Models
 {
-    [DataModel("tblBlockItem")]
-    public class BlockItem
+    [DataModel("tblorderlineitem")]
+    public class OrderLineitem
     {
-        [DataField("blockid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblblock", "blockid")]
-        public int? BlockId { get; set; }
+        [DataField("orderid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblorder", "orderid")]
+        public int? OrderId { get; set; }
 
         [DataField("productid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblproduct", "productid")]
-        public int? ProducId { get; set; }
+        public int? ProductId { get; set; }
 
         [DataField("quantity", QueryParamType.Integer)]
         public int? Quantity { get; set; }
+
+        [DataField("batchcost", QueryParamType.Money)]
+        public decimal? BatchCost { get; set; }
     }
 }
