@@ -12,6 +12,8 @@ using System.Threading;
 using System.Windows.Forms;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Frontend.Winforms.Views;
+using NerdBlock.Engine.Frontend;
 
 namespace NerdBlock
 {
@@ -31,6 +33,10 @@ namespace NerdBlock
 
             QueryTable.Database = database;
             DataAccess.Database = database;
+
+            ViewManager.RegisterView("show_employee", new AddEmployee());
+
+            WinformViewManager.Run("show_employee");
 
             using (MainForm form = new MainForm())
             {

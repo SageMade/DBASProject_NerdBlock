@@ -10,6 +10,11 @@ namespace NerdBlock.Engine.Frontend
     {
         private static Dictionary<string, IView> myViews;
 
+        static ViewManager()
+        {
+            myViews = new Dictionary<string, IView>();
+        }
+
         public static void RegisterView(string name, IView view)
         {
             myViews.Add(name, view);
