@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Sandbox
+namespace NerdBlock.Engine
 {
     /// <summary>
     /// Represents an item that supports C.R.U.D operations on the database

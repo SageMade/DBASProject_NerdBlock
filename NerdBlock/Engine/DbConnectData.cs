@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace NerdBlock.Sandbox
+namespace NerdBlock.Engine
 {
     /// <summary>
     /// Represents the conenction information to use when connecting to a database

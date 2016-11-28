@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class AddProduct : UserControl
+    public partial class AddProduct : ViewBase
     {
         public AddProduct()
         {
