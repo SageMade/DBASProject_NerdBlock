@@ -210,6 +210,7 @@
             this.txtDateArrived.Name = "txtDateArrived";
             this.txtDateArrived.Size = new System.Drawing.Size(100, 20);
             this.txtDateArrived.TabIndex = 19;
+            this.txtDateArrived.TextChanged += new System.EventHandler(this.txtDateArrived_TextChanged);
             // 
             // btnAddOrder
             // 

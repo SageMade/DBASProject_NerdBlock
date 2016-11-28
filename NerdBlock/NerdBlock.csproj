@@ -77,6 +77,8 @@
     <Compile Include="Engine\Frontend\IFillable.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddEmployeeFiller.cs" />
+    <Compile Include="Engine\Frontend\Implementation\AddOrderFiller.cs" />
+    <Compile Include="Engine\Frontend\Implementation\AddProductFiller.cs" />
     <Compile Include="Engine\Frontend\IView.cs" />
     <Compile Include="Engine\Frontend\ReflectedInput.cs" />
     <Compile Include="Engine\Frontend\ViewManager.cs" />

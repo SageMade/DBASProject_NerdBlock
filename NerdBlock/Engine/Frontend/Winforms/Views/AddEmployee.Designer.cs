@@ -35,7 +35,6 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblCell = new System.Windows.Forms.Label();
             this.lblAddress1 = new System.Windows.Forms.Label();
-            this.lblAddress2 = new System.Windows.Forms.Label();
             this.lblPartFullTime = new System.Windows.Forms.Label();
             this.lblProvince = new System.Windows.Forms.Label();
             this.lblPostalCode = new System.Windows.Forms.Label();
@@ -46,11 +45,12 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtCell = new System.Windows.Forms.TextBox();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
-            this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.txtPartFullTime = new System.Windows.Forms.TextBox();
             this.txtProvince = new System.Windows.Forms.TextBox();
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblAddress2 = new System.Windows.Forms.Label();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblID
@@ -116,15 +116,6 @@
             this.lblAddress1.Size = new System.Drawing.Size(54, 13);
             this.lblAddress1.TabIndex = 6;
             this.lblAddress1.Text = "Address 1";
-            // 
-            // lblAddress2
-            // 
-            this.lblAddress2.AutoSize = true;
-            this.lblAddress2.Location = new System.Drawing.Point(249, 53);
-            this.lblAddress2.Name = "lblAddress2";
-            this.lblAddress2.Size = new System.Drawing.Size(51, 13);
-            this.lblAddress2.TabIndex = 7;
-            this.lblAddress2.Text = "Address2";
             // 
             // lblPartFullTime
             // 
@@ -202,13 +193,6 @@
             this.txtAddress1.Size = new System.Drawing.Size(100, 20);
             this.txtAddress1.TabIndex = 17;
             // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Location = new System.Drawing.Point(306, 50);
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress2.TabIndex = 18;
-            // 
             // txtPartFullTime
             // 
             this.txtPartFullTime.Location = new System.Drawing.Point(306, 76);
@@ -238,6 +222,22 @@
             this.btnSubmit.TabIndex = 22;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            // 
+            // lblAddress2
+            // 
+            this.lblAddress2.AutoSize = true;
+            this.lblAddress2.Location = new System.Drawing.Point(249, 53);
+            this.lblAddress2.Name = "lblAddress2";
+            this.lblAddress2.Size = new System.Drawing.Size(51, 13);
+            this.lblAddress2.TabIndex = 7;
+            this.lblAddress2.Text = "Address2";
+            // 
+            // txtAddress2
+            // 
+            this.txtAddress2.Location = new System.Drawing.Point(306, 50);
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(100, 20);
+            this.txtAddress2.TabIndex = 18;
             // 
             // AddEmployee
             // 
@@ -282,7 +282,6 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblCell;
         private System.Windows.Forms.Label lblAddress1;
-        private System.Windows.Forms.Label lblAddress2;
         private System.Windows.Forms.Label lblPartFullTime;
         private System.Windows.Forms.Label lblProvince;
         private System.Windows.Forms.Label lblPostalCode;
@@ -293,10 +292,11 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtCell;
         private System.Windows.Forms.TextBox txtAddress1;
-        private System.Windows.Forms.TextBox txtAddress2;
         private System.Windows.Forms.TextBox txtPartFullTime;
         private System.Windows.Forms.TextBox txtProvince;
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblAddress2;
+        private System.Windows.Forms.TextBox txtAddress2;
     }
 }
