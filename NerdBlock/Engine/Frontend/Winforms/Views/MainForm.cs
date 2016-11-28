@@ -1,6 +1,7 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend.Implementation;
+using NerdBlock.Engine.LogicLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,33 +20,16 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            AddEmployeeFiller filler = new AddEmployeeFiller(addEmployee1);
+            tsiEmployeeAdd.Click += (X, Y) => TryAction("goto_employee_add");
+            tsiEmployeeSearch.Click += (X, Y) => TryAction("goto_employee_search");
+        }
 
-            Employee insert = new Employee()
-            {
-                FirstName = "Shawn",
-                LastName = "Matthews",
-                SIN = "123456789",
-                DateJoined = DateTime.Now,
-                Email = "me@shawnm.ca",
-                Phone = 9058096006,
-                HomeAddress = new Address()
-                {
-                    StreetAddress = "12 Bluenose Lane",
-                    State = "Ontario",
-                    PostalCode = "L1B1P5",
-                    Country = "Country",
+        private void TryAction(string name)
+        {
+            string msg = null;
 
-                }
-            };
-
-            DataAccess.Insert(insert);
-
-            Employee search = new Employee() { FirstName = "Shawn", LastName = "Matthews" };
-
-            Employee[] results = DataAccess.Match(search);
-            
-            filler.FillFrom(results[0]);
+            if (!LogicManager.TryPerformAction(name, out msg))
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

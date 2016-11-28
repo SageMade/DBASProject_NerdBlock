@@ -41,5 +41,16 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             if (!LogicManager.TryPerformAction(actionName, out msg))
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // ViewBase
+            // 
+            this.Name = "ViewBase";
+            this.ResumeLayout(false);
+
+        }
     }
 }

@@ -35,5 +35,17 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
             ViewManager.Show("AddEmployee");
         }
+
+        [BusinessAction("goto_employee_add")]
+        public void ShowAdd()
+        {
+            ViewManager.Show("AddEmployee");
+        }
+
+        [BusinessAction("goto_employee_search")]
+        public void ShowSearch()
+        {
+            ViewManager.Show("EmployeeSearch");
+        }
     }
 }

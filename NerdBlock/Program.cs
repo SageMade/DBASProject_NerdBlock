@@ -34,7 +34,8 @@ namespace NerdBlock
             LogicManager.LoadRules();
             LogicManager.LoadActions();
 
-            ViewManager.Run("AddEmployee");
+            ViewManager.Run("AddProduct");
+            IViewFillable fillable = ViewManager.CurrentView() as IViewFillable;
         }
     }
 }

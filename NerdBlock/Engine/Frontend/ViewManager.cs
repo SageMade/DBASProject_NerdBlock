@@ -41,5 +41,10 @@ namespace NerdBlock.Engine.Frontend
         {
             return Implementation.GetView(name);
         }
+
+        public static IView CurrentView()
+        {
+            return Implementation.CurrentView;
+        }
     }
 }

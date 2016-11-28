@@ -339,6 +339,9 @@
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\SubscriptionPage.resx">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ViewBase.resx">
+      <DependentUpon>ViewBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ViewEditEmployee.resx">
       <DependentUpon>ViewEditEmployee.cs</DependentUpon>
     </EmbeddedResource>

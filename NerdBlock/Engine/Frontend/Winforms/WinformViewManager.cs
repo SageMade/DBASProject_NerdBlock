@@ -14,6 +14,12 @@ namespace NerdBlock.Engine.Frontend.Winforms
 
         private Dictionary<string, IView> myViews;
 
+        public IView CurrentView
+        {
+            get;
+            private set;
+        }
+
         public WinformViewManager()
         {
             myMainForm = new MainForm();
@@ -39,13 +45,18 @@ namespace NerdBlock.Engine.Frontend.Winforms
         public void ShowView(ViewBase control)
         {
             for (int index = 0; index < myContentPanel.Controls.Count; index++)
-                myContentPanel.Controls[index].Dispose();
+                myContentPanel.Controls[index].Hide();
 
             control.Anchor = AnchorStyles.None;
             control.Left = (myContentPanel.Width / 2) - (control.Width / 2);
             control.Top = (myContentPanel.Height / 2) - (control.Height / 2);
 
-            myContentPanel.Controls.Add(control);
+            if (!myContentPanel.Controls.Contains(control))
+                myContentPanel.Controls.Add(control);
+
+            control.Show();
+
+            CurrentView = control;
         }
         
         public IView GetView(string name)
@@ -56,15 +67,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
         public void ShowView(IView view)
         {
             ViewBase control = view as ViewBase;
-
-            for (int index = 0; index < myContentPanel.Controls.Count; index++)
-                myContentPanel.Controls[index].Dispose();
-
-            control.Anchor = AnchorStyles.None;
-            control.Left = (myContentPanel.Width / 2) - (control.Width / 2);
-            control.Top = (myContentPanel.Height / 2) - (control.Height / 2);
-
-            myContentPanel.Controls.Add(control);
+            ShowView(control);
         }
 
         public void RegisterView(string name, IView view)
