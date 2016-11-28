@@ -16,5 +16,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
