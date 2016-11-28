@@ -13,12 +13,12 @@ namespace NerdBlock.Sandbox.Backend.Models
         public int? StoreId { get; set; }
 
         [DataField("address", QueryParamType.Integer), ForeignKey("tbladdress", "addressid")]
-        public int? Address { get; set; }
+        public Address Address { get; set; }
 
         [DataField("phonenumber", QueryParamType.Long)]
         public long? PhoneNumber { get; set; }
 
         [DataField("generalmanager", QueryParamType.Integer), ForeignKey("tblemployees", "emploeeid")]
-        public int? GeneralManager { get; set; }
+        public Employee GeneralManager { get; set; }
     }
 }
