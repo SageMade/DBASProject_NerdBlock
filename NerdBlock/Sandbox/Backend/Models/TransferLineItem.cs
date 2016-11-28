@@ -10,10 +10,10 @@ namespace NerdBlock.Sandbox.Backend.Models
     public class TransferLineItem
     {
         [DataField("transferid", QueryParamType.Integer), PrimaryKey, ForeignKey("tbltransfer", "transferid")]
-        public int? TransferId { get; set; }
+        public Transfer TransferId { get; set; }
 
         [DataField("productid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblproduct", "productid")]
-        public int? ProductId { get; set; }
+        public Product ProductId { get; set; }
 
         [DataField("quantity", QueryParamType.Integer)]
         public int? Quantity { get; set; }

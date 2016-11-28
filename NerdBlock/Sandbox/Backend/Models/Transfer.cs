@@ -13,7 +13,7 @@ namespace NerdBlock.Sandbox.Backend.Models
         public int? TransferId { get; set; }
 
         [DataField("storeid", QueryParamType.Integer), ForeignKey("tblmortarstore", "storeid")]
-        public int? StoreId { get; set; }
+        public MortarStore StoreId { get; set; }
 
         [DataField("transferdate", QueryParamType.Date)]
         public DateTime? TransferDate { get; set; }

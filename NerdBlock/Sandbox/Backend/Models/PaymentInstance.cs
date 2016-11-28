@@ -10,13 +10,13 @@ namespace NerdBlock.Sandbox.Backend.Models
     public class PaymentInstance
     {
         [DataField("subscriptionid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblsubscriptionid", "subscriptionid")]
-        public int? SubscriptionId { get; set; }
+        public Subscription SubscriptionId { get; set; }
 
         [DataField("paymentdate", QueryParamType.Date), PrimaryKey]
         public DateTime? PaymentDate { get; set; }
 
         [DataField("billinginfoid", QueryParamType.Integer), ForeignKey("tblbillinginfo", "billinginfoid")]
-        public int? BillingInfoId { get; set; }
+        public BillingInfo BillingInfoId { get; set; }
 
         [DataField("ispayed", QueryParamType.Boolean)]
         public bool? IsPayed { get; set; }

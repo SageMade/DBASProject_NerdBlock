@@ -10,10 +10,10 @@ namespace NerdBlock.Sandbox.Backend.Models
     public class BlockItem
     {
         [DataField("blockid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblblock", "blockid")]
-        public int? BlockId { get; set; }
+        public Block BlockId { get; set; }
 
         [DataField("productid", QueryParamType.Integer), PrimaryKey, ForeignKey("tblproduct", "productid")]
-        public int? ProducId { get; set; }
+        public Product ProducId { get; set; }
 
         [DataField("quantity", QueryParamType.Integer)]
         public int? Quantity { get; set; }

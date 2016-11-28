@@ -13,7 +13,7 @@ namespace NerdBlock.Sandbox.Backend.Models
         public int? SeriesId { get; set; }
 
         [DataField("genreid", QueryParamType.Integer), ForeignKey("tblgenre", "genreid")]
-        public int? GenreId { get; set; }
+        public Genre GenreId { get; set; }
 
         [DataField("title", QueryParamType.VarChar)]
         public string Title { get; set; }

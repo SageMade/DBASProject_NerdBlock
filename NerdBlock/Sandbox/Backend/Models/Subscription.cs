@@ -13,10 +13,10 @@ namespace NerdBlock.Sandbox.Backend.Models
         public int? SubscriptionId { get; set; }
 
         [DataField("customerid", QueryParamType.Integer), ForeignKey("tblcustomer", "customerid")]
-        public int? CustomerId { get; set; }
+        public Customer CustomerId { get; set; }
 
         [DataField("seriesid", QueryParamType.Integer), ForeignKey("tblblockSeries", "seriesid")]
-        public int? SeriesId { get; set; }
+        public BlockSeries SeriesId { get; set; }
 
         [DataField("startedon", QueryParamType.Date)]
         public DateTime? StartedOn { get; set; }
@@ -28,6 +28,6 @@ namespace NerdBlock.Sandbox.Backend.Models
         public string BillingType { get; set; }
 
         [DataField("shippingaddress", QueryParamType.Integer), ForeignKey("tbladdress", "addressid")]
-        public int? ShippingAddress { get; set; }
+        public Address ShippingAddress { get; set; }
     }
 }

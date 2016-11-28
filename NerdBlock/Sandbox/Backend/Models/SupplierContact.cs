@@ -13,7 +13,7 @@ namespace NerdBlock.Sandbox.Backend.Models
         public int? ContactId { get; set; }
 
         [DataField("company", QueryParamType.Integer), ForeignKey("tblsupplier", "supplierid")]
-        public int? Company { get; set; }
+        public Supplier Company { get; set; }
 
         [DataField("firstname", QueryParamType.VarChar)]
         public string FirstName { get; set; }

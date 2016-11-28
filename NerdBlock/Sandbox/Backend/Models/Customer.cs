@@ -37,9 +37,9 @@ namespace NerdBlock.Sandbox.Backend.Models
         public string LastName { get; set; }
 
         [DataField("homeaddress", QueryParamType.Integer), ForeignKey("tbladdress", "id")]
-        public int? HomeAddress { get; set; }
+        public Address HomeAddress { get; set; }
 
         [DataField("billingaddress", QueryParamType.Integer), ForeignKey("tbladdress", "id"), Nullable]
-        public int? BillingAddress { get; set; }
+        public Address BillingAddress { get; set; }
     }
 }

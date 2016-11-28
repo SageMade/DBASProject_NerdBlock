@@ -16,9 +16,9 @@ namespace NerdBlock.Sandbox.Backend.Models
         public DateTime? DateOrdered { get; set; }
 
         [DataField("orderedby", QueryParamType.Integer), ForeignKey("tblemployees", "employeeid")]
-        public int? OrderedBy { get; set; }
+        public Employee OrderedBy { get; set; }
 
         [DataField("supplierid", QueryParamType.Integer), ForeignKey("tblsuppliercontact", "contactid")]
-        public int? SupplierId { get; set; }
+        public SupplierContact SupplierId { get; set; }
     }
 }

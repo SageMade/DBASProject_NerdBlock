@@ -16,7 +16,7 @@ namespace NerdBlock.Sandbox.Backend.Models
         public string Company { get; set; }
 
         [DataField("address", QueryParamType.Integer), ForeignKey("tbladdress", "addressid")]
-        public int? Address { get; set; }
+        public Address Address { get; set; }
 
         [DataField("phone", QueryParamType.Long)]
         public long? Phone { get; set; }

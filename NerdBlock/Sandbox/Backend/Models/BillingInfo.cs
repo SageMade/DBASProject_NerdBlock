@@ -16,7 +16,7 @@ namespace NerdBlock.Sandbox.Backend.Models
         public string PaymentType { get; set; }
 
         [DataField("address", QueryParamType.Integer), ForeignKey("tbladdress", "addressid"), Nullable]
-        public int? Address { get; set; }
+        public Address Address { get; set; }
 
         [DataField("accountnum", QueryParamType.Long), Nullable]
         public long? AccountNum { get; set; }
