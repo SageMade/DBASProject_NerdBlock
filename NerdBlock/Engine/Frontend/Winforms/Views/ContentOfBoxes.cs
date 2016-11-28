@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class ContentOfBoxes : UserControl
+    public partial class ContentOfBoxes : ViewBase
     {
         public ContentOfBoxes()
         {

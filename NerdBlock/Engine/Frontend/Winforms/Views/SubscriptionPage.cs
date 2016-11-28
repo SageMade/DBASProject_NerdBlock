@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class SubscriptionPage : UserControl
+    public partial class SubscriptionPage : ViewBase
     {
         public SubscriptionPage()
         {

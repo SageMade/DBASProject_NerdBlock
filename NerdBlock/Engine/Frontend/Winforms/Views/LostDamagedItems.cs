@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class LostDamagedItems : UserControl
+    public partial class LostDamagedItems : ViewBase
     {
         public LostDamagedItems()
         {

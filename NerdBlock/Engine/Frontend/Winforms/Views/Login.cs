@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class Login : UserControl
+    public partial class Login : ViewBase
     {
         public Login()
         {

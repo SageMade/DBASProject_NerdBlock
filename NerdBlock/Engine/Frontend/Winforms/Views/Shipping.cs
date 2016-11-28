@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class Shipping : UserControl
+    public partial class Shipping : ViewBase
     {
         public Shipping()
         {

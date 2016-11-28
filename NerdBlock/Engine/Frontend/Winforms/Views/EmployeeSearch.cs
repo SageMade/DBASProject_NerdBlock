@@ -12,7 +12,7 @@ using NerdBlock.Engine.Backend.Models;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class EmployeeSearch : UserControl
+    public partial class EmployeeSearch : ViewBase
     {
         public EmployeeSearch()
         {

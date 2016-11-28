@@ -15,7 +15,7 @@ using System.Windows.Forms;
 /// </summary>
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class CustomerInfo : UserControl
+    public partial class CustomerInfo : ViewBase
     {
         public CustomerInfo()
         {

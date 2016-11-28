@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class BoxesSoldPerTheme : UserControl
+    public partial class BoxesSoldPerTheme : ViewBase
     {
         public BoxesSoldPerTheme()
         {

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class ViewEditOrder : UserControl
+    public partial class ViewEditOrder : ViewBase
     {
         public ViewEditOrder()
         {

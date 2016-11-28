@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class LineWorker : UserControl
+    public partial class LineWorker : ViewBase
     {
         public LineWorker()
         {

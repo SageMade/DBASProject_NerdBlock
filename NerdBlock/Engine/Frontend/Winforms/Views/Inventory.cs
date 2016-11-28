@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class Inventory : UserControl
+    public partial class Inventory : ViewBase
     {
         public Inventory()
         {

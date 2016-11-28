@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class BlockShipping : UserControl
+    public partial class BlockShipping : ViewBase
     {
         public BlockShipping()
         {

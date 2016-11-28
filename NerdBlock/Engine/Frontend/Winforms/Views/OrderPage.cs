@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class OrderPage : UserControl
+    public partial class OrderPage : ViewBase
     {
         public OrderPage()
         {
