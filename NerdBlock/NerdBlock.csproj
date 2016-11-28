@@ -75,8 +75,10 @@
     <Compile Include="Engine\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Engine\Backend\Util.cs" />
     <Compile Include="Engine\Frontend\IFillable.cs" />
+    <Compile Include="Engine\Frontend\IInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddEmployeeFiller.cs" />
     <Compile Include="Engine\Frontend\IView.cs" />
+    <Compile Include="Engine\Frontend\ReflectedInput.cs" />
     <Compile Include="Engine\Frontend\ViewManager.cs" />
     <Compile Include="Engine\Frontend\Winforms\FillerBase.cs" />
     <Compile Include="Engine\Frontend\Winforms\IViewManagerImplementation.cs" />
@@ -132,7 +134,6 @@
     <Compile Include="Engine\Frontend\Winforms\Views\ContentOfBoxes.Designer.cs">
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbTypeMap.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\CustomerInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +170,10 @@
     <Compile Include="Engine\Frontend\Winforms\Views\LineWorker.Designer.cs">
       <DependentUpon>LineWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Engine\LogicLayer\BusinessRule.cs" />
+    <Compile Include="Engine\LogicLayer\Context.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\EmployeeValidation.cs" />
+    <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\Login.cs">
       <SubType>UserControl</SubType>
@@ -224,7 +229,6 @@
       <DependentUpon>Sample.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Backend\IDatabase.cs" />
-    <Compile Include="Engine\Backend\IQueryable.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\SearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -342,9 +346,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Engine\LogicLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SQL\Constraints.sql" />
     <Content Include="SQL\Database.sql" />

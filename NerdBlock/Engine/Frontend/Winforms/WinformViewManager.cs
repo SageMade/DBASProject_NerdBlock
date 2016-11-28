@@ -1,6 +1,8 @@
 ﻿using NerdBlock.Engine.Frontend.Winforms.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms
@@ -68,6 +70,21 @@ namespace NerdBlock.Engine.Frontend.Winforms
         public void RegisterView(string name, IView view)
         {
             myViews.Add(name, view);
+        }
+
+        public void ReflectLoadViews(Assembly assembly = null)
+        {
+            if (assembly == null)
+                assembly = Assembly.GetExecutingAssembly();
+
+            Type[] types = assembly.GetTypes().Where(
+                T => T.BaseType == typeof(ViewBase)).ToArray();
+
+            for (int index = 0; index < types.Length; index++)
+            {
+                ViewBase item = Activator.CreateInstance(types[index]) as ViewBase;
+                ViewManager.RegisterView(types[index].Name, item);
+            }
         }
     }
 }

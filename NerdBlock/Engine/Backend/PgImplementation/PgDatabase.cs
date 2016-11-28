@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Npgsql;
 using NpgsqlTypes;
 using NerdBlock.Engine.Backend;
+using System.Threading;
 
 namespace NerdBlock.Engine.Backend.PgImplementation
 {
@@ -67,6 +68,9 @@ namespace NerdBlock.Engine.Backend.PgImplementation
             myDatabaseConnection.Open();
 
             LastFailReason = null;
+
+            while ((ConnectionObject as NpgsqlConnection).State != System.Data.ConnectionState.Open)
+                Thread.Sleep(1);
         }
 
         public IQuery PrepareQuery(string sql, params QueryParamType[] parameters)
