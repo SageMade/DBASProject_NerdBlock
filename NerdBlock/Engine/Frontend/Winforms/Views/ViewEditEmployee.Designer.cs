@@ -33,14 +33,12 @@
             this.txtProvince = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblPostalCode = new System.Windows.Forms.Label();
             this.lblProvince = new System.Windows.Forms.Label();
             this.lblAddress1 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.lblPosition = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
@@ -57,7 +55,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(145, 256);
+            this.btnEdit.Location = new System.Drawing.Point(145, 226);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 45;
@@ -87,17 +85,10 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(70, 205);
+            this.txtPhone.Location = new System.Drawing.Point(70, 181);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(100, 20);
             this.txtPhone.TabIndex = 38;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(70, 179);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(100, 20);
-            this.txtPosition.TabIndex = 37;
             // 
             // txtLastName
             // 
@@ -143,20 +134,11 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(16, 208);
+            this.lblPhone.Location = new System.Drawing.Point(16, 184);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(48, 13);
             this.lblPhone.TabIndex = 27;
             this.lblPhone.Text = "Phone #";
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Location = new System.Drawing.Point(20, 182);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(44, 13);
-            this.lblPosition.TabIndex = 26;
-            this.lblPosition.Text = "Position";
             // 
             // lblLastName
             // 
@@ -187,7 +169,7 @@
             // 
             // btnTerminate
             // 
-            this.btnTerminate.Location = new System.Drawing.Point(226, 256);
+            this.btnTerminate.Location = new System.Drawing.Point(226, 226);
             this.btnTerminate.Name = "btnTerminate";
             this.btnTerminate.Size = new System.Drawing.Size(75, 23);
             this.btnTerminate.TabIndex = 46;
@@ -280,14 +262,12 @@
             this.Controls.Add(this.txtProvince);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblPostalCode);
             this.Controls.Add(this.lblProvince);
             this.Controls.Add(this.lblAddress1);
             this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.lblPosition);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblID);
@@ -305,14 +285,12 @@
         private System.Windows.Forms.TextBox txtProvince;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblPostalCode;
         private System.Windows.Forms.Label lblProvince;
         private System.Windows.Forms.Label lblAddress1;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblID;
