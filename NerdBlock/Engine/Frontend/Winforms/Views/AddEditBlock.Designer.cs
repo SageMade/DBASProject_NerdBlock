@@ -32,6 +32,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.grpBlockSummary = new System.Windows.Forms.GroupBox();
+            this.cbSeries = new System.Windows.Forms.ComboBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.lblCustCost = new System.Windows.Forms.Label();
@@ -41,9 +44,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.cbSeries = new System.Windows.Forms.ComboBox();
+            this.btnAddItem = new System.Windows.Forms.Button();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +98,31 @@
             this.grpBlockSummary.TabIndex = 4;
             this.grpBlockSummary.TabStop = false;
             this.grpBlockSummary.Text = "Block Summary";
+            // 
+            // cbSeries
+            // 
+            this.cbSeries.FormattingEnabled = true;
+            this.cbSeries.Location = new System.Drawing.Point(115, 63);
+            this.cbSeries.Name = "cbSeries";
+            this.cbSeries.Size = new System.Drawing.Size(205, 28);
+            this.cbSeries.TabIndex = 1;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(115, 26);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(206, 27);
+            this.txtTitle.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 25);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Title";
             // 
             // label6
             // 
@@ -164,7 +190,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(290, 9);
+            this.btnSave.Location = new System.Drawing.Point(376, 9);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(161, 43);
             this.btnSave.TabIndex = 9;
@@ -180,35 +206,20 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // btnAddItem
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 25);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Title";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(115, 26);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(206, 27);
-            this.txtTitle.TabIndex = 16;
-            // 
-            // cbSeries
-            // 
-            this.cbSeries.FormattingEnabled = true;
-            this.cbSeries.Location = new System.Drawing.Point(115, 63);
-            this.cbSeries.Name = "cbSeries";
-            this.cbSeries.Size = new System.Drawing.Size(205, 28);
-            this.cbSeries.TabIndex = 1;
+            this.btnAddItem.Location = new System.Drawing.Point(195, 9);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(161, 43);
+            this.btnAddItem.TabIndex = 11;
+            this.btnAddItem.Text = "Add item";
+            this.btnAddItem.UseVisualStyleBackColor = true;
             // 
             // AddEditBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNew);
@@ -242,5 +253,6 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSeries;
+        private System.Windows.Forms.Button btnAddItem;
     }
 }

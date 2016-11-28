@@ -36,48 +36,54 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.lstEmployeeInfo = new System.Windows.Forms.ListBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 27);
+            this.label1.Location = new System.Drawing.Point(40, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(147, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Number of Employees";
             // 
             // lblNumberOfEmployees
             // 
             this.lblNumberOfEmployees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNumberOfEmployees.Location = new System.Drawing.Point(146, 27);
+            this.lblNumberOfEmployees.Location = new System.Drawing.Point(195, 33);
+            this.lblNumberOfEmployees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumberOfEmployees.Name = "lblNumberOfEmployees";
-            this.lblNumberOfEmployees.Size = new System.Drawing.Size(57, 13);
+            this.lblNumberOfEmployees.Size = new System.Drawing.Size(76, 16);
             this.lblNumberOfEmployees.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 28);
+            this.label2.Location = new System.Drawing.Point(304, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Employee ID";
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(301, 25);
+            this.txtEmployeeID.Location = new System.Drawing.Point(401, 31);
+            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(100, 20);
+            this.txtEmployeeID.Size = new System.Drawing.Size(132, 22);
             this.txtEmployeeID.TabIndex = 3;
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(407, 23);
+            this.btnView.Location = new System.Drawing.Point(543, 28);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.Size = new System.Drawing.Size(76, 28);
             this.btnView.TabIndex = 4;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
@@ -85,53 +91,70 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 68);
+            this.label3.Location = new System.Drawing.Point(44, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Employee ID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 68);
+            this.label4.Location = new System.Drawing.Point(181, 84);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Employee Name";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(252, 68);
+            this.label5.Location = new System.Drawing.Point(336, 84);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Employee Position";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(366, 68);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Part Time/Full Time";
             // 
             // lstEmployeeInfo
             // 
             this.lstEmployeeInfo.FormattingEnabled = true;
-            this.lstEmployeeInfo.Location = new System.Drawing.Point(36, 96);
+            this.lstEmployeeInfo.ItemHeight = 16;
+            this.lstEmployeeInfo.Location = new System.Drawing.Point(48, 118);
+            this.lstEmployeeInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstEmployeeInfo.Name = "lstEmployeeInfo";
-            this.lstEmployeeInfo.Size = new System.Drawing.Size(429, 134);
+            this.lstEmployeeInfo.Size = new System.Drawing.Size(571, 164);
             this.lstEmployeeInfo.TabIndex = 9;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(493, 84);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(61, 17);
+            this.lblPhone.TabIndex = 10;
+            this.lblPhone.Text = "Phone #";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(519, 290);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(100, 28);
+            this.btnEdit.TabIndex = 46;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // EmployeeSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.lstEmployeeInfo);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -140,8 +163,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNumberOfEmployees);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeSearch";
-            this.Size = new System.Drawing.Size(500, 252);
+            this.Size = new System.Drawing.Size(667, 328);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,7 +181,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lstEmployeeInfo;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

@@ -120,12 +120,6 @@
     <Compile Include="Engine\Frontend\Winforms\Views\AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\BlockShipping.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\BlockShipping.Designer.cs">
-      <DependentUpon>BlockShipping.cs</DependentUpon>
-    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\BlockTheme.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -286,9 +280,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockShipping.resx">
-      <DependentUpon>BlockShipping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockTheme.resx">
       <DependentUpon>BlockTheme.cs</DependentUpon>
