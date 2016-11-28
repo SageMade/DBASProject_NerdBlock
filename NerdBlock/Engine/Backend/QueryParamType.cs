@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NerdBlock.Engine
+namespace NerdBlock.Engine.Backend
 {
     /// <summary>
     /// Represents the data type that a query parameter excepts

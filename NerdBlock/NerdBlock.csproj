@@ -202,32 +202,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Engine\DbConnectData.cs" />
+    <Compile Include="Engine\Backend\DbConnectData.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\ViewBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\WinformViewManager.cs" />
-    <Compile Include="Engine\Implementation\PgDatabase.cs" />
-    <Compile Include="Engine\Implementation\PgQuery.cs" />
-    <Compile Include="Engine\Implementation\PgQueryResult.cs" />
-    <Compile Include="Engine\Implementation\Utils.cs" />
-    <Compile Include="Engine\QueryFail.cs" />
-    <Compile Include="Engine\QueryFailReason.cs" />
-    <Compile Include="Engine\QueryParam.cs" />
-    <Compile Include="Engine\QueryParamType.cs" />
-    <Compile Include="Engine\QueryTable.cs" />
-    <Compile Include="Engine\IQuery.cs" />
-    <Compile Include="Engine\IQueryResult.cs" />
+    <Compile Include="Engine\Backend\PgImplementation\PgDatabase.cs" />
+    <Compile Include="Engine\Backend\PgImplementation\PgQuery.cs" />
+    <Compile Include="Engine\Backend\PgImplementation\PgQueryResult.cs" />
+    <Compile Include="Engine\Backend\PgImplementation\Utils.cs" />
+    <Compile Include="Engine\Backend\QueryFail.cs" />
+    <Compile Include="Engine\Backend\QueryFailReason.cs" />
+    <Compile Include="Engine\Backend\QueryParam.cs" />
+    <Compile Include="Engine\Backend\QueryParamType.cs" />
+    <Compile Include="Engine\Backend\IQuery.cs" />
+    <Compile Include="Engine\Backend\IQueryResult.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\Sample.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\Sample.Designer.cs">
       <DependentUpon>Sample.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Implementation\AddressModel.cs" />
-    <Compile Include="Engine\IDatabase.cs" />
-    <Compile Include="Engine\IModel.cs" />
-    <Compile Include="Engine\IQueryable.cs" />
+    <Compile Include="Engine\Backend\IDatabase.cs" />
+    <Compile Include="Engine\Backend\IQueryable.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\SearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -345,7 +342,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Engine\LogicLayer\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="SQL\Constraints.sql" />
     <Content Include="SQL\Database.sql" />

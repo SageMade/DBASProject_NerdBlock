@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
-
-
-using NerdBlock.Engine.Implementation;
 using NerdBlock.Engine;
 using System.Threading;
 using System.Windows.Forms;
@@ -16,6 +13,7 @@ using NerdBlock.Engine.Frontend.Winforms.Views;
 using NerdBlock.Engine.Frontend;
 using System.Reflection;
 using NerdBlock.Engine.Frontend.Winforms;
+using NerdBlock.Engine.Backend.PgImplementation;
 
 namespace NerdBlock
 {
@@ -25,15 +23,13 @@ namespace NerdBlock
         {
 
             DbConnectData data = DbConnectData.FromFile("DBConfig.txt.local");
-
-
+            
             PgDatabase database = new PgDatabase();
             database.Init(data);
 
             while ((database.ConnectionObject as NpgsqlConnection).State != System.Data.ConnectionState.Open)
                 Thread.Sleep(1);
-
-            QueryTable.Database = database;
+            
             DataAccess.Database = database;
 
             ViewManager.Implementation = new WinformViewManager();

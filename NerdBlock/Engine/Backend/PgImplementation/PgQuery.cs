@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Npgsql;
 using System.Text.RegularExpressions;
 
-namespace NerdBlock.Engine.Implementation
+namespace NerdBlock.Engine.Backend.PgImplementation
 {
     public class PgQuery : IQuery
     {

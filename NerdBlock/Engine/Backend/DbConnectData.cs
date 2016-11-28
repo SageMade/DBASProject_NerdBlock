@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace NerdBlock.Engine
+namespace NerdBlock.Engine.Backend
 {
     /// <summary>
     /// Represents the conenction information to use when connecting to a database

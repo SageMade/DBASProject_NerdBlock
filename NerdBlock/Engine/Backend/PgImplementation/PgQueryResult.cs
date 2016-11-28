@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Engine.Implementation
+namespace NerdBlock.Engine.Backend.PgImplementation
 {
     /// <summary>
     /// Represents the results of a postgresql query
@@ -71,7 +71,7 @@ namespace NerdBlock.Engine.Implementation
                 catch(PostgresException e)
                 {
                     myNumRows = -1;
-                    QueryTable.Database.LastFailReason = new QueryFail()
+                    DataAccess.Database.LastFailReason = new QueryFail()
                     {
                         Message = e.Message,
                         Exception = e,

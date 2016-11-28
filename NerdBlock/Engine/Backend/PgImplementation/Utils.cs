@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Engine.Implementation
+namespace NerdBlock.Engine.Backend.PgImplementation
 {
     public static class Utils
     {

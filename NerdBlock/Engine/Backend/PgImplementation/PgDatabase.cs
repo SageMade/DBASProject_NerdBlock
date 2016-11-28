@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 using Npgsql;
 using NpgsqlTypes;
+using NerdBlock.Engine.Backend;
 
-namespace NerdBlock.Engine.Implementation
+namespace NerdBlock.Engine.Backend.PgImplementation
 {
     /// <summary>
     /// Represents a postgresql implementation of the IDatabase interface
@@ -75,7 +76,7 @@ namespace NerdBlock.Engine.Implementation
             for (int index = 0; index < parameters.Length; index ++)
                 npsqlParameters[index] = new NpgsqlParameter((index + 1).ToString(), parameters[index].ToNpgsql());
 
-            return new PgQuery(QueryTable.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
+            return new PgQuery(DataAccess.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
         }
 
         public IQuery PrepareQuery(string sql, params QueryParam[] parameters)
@@ -85,7 +86,7 @@ namespace NerdBlock.Engine.Implementation
             for (int index = 0; index < parameters.Length; index++)
                 npsqlParameters[index] = new NpgsqlParameter(parameters[index].Name, parameters[index].Type.ToNpgsql());
 
-            return new PgQuery(QueryTable.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
+            return new PgQuery(DataAccess.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
         }
 
         public IQueryResult Execute(IQuery query, params object[] parameters)

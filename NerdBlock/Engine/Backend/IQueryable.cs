@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Engine
+namespace NerdBlock.Engine.Backend
 {
     /// <summary>
     /// Represents an object that can be queried from the database. This does not necessarily support C.R.U.D operations, but
