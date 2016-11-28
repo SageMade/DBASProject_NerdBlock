@@ -1,4 +1,6 @@
-﻿namespace NerdBlock
+﻿using NerdBlock.Frontend.Winforms.Views;
+
+namespace NerdBlock
 {
     partial class MainForm
     {
@@ -50,7 +52,7 @@
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.addEmployee1 = new NerdBlock.AddEmployee();
+            this.addEmployee1 = new NerdBlock.Frontend.Winforms.Views.AddEmployee();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();

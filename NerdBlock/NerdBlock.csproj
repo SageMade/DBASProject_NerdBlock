@@ -76,101 +76,103 @@
     <Compile Include="Sandbox\Backend\Util.cs" />
     <Compile Include="Sandbox\Frontend\IFillable.cs" />
     <Compile Include="Sandbox\Frontend\Implementation\AddEmployeeFiller.cs" />
+    <Compile Include="Sandbox\Frontend\IView.cs" />
+    <Compile Include="Sandbox\Frontend\ViewManager.cs" />
     <Compile Include="Sandbox\Frontend\Winforms\FillerBase.cs" />
     <Compile Include="Sandbox\Frontend\Winforms\TextBoxFiller.cs" />
     <Compile Include="Sandbox\Frontend\Winforms\LabelFiller.cs" />
     <Compile Include="Sandbox\Frontend\Winforms\ViewFillerBase.cs" />
     <Compile Include="Sandbox\Frontend\IViewFillable.cs" />
-    <Compile Include="Views\AddEditBlock.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\AddEditBlock.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddEditBlock.Designer.cs">
       <DependentUpon>AddEditBlock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddEmployee.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\AddEmployee.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddOrder.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\AddOrder.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddOrder.Designer.cs">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddProduct.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\AddProduct.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BlockShipping.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\BlockShipping.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\BlockShipping.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\BlockShipping.Designer.cs">
       <DependentUpon>BlockShipping.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BlockTheme.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\BlockTheme.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\BlockTheme.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\BlockTheme.Designer.cs">
       <DependentUpon>BlockTheme.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BoxesSoldPerTheme.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\BoxesSoldPerTheme.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\BoxesSoldPerTheme.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\BoxesSoldPerTheme.Designer.cs">
       <DependentUpon>BoxesSoldPerTheme.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ContentOfBoxes.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ContentOfBoxes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ContentOfBoxes.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ContentOfBoxes.Designer.cs">
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
     </Compile>
     <Compile Include="DbTypeMap.cs" />
-    <Compile Include="Views\CustomerInfo.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\CustomerInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CustomerInfo.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\CustomerInfo.Designer.cs">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\DisplayTickets.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\DisplayTickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\DisplayTickets.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\DisplayTickets.Designer.cs">
       <DependentUpon>DisplayTickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EmployeeSearch.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\EmployeeSearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\EmployeeSearch.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\EmployeeSearch.Designer.cs">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ExtraProductShipped.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ExtraProductShipped.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ExtraProductShipped.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ExtraProductShipped.Designer.cs">
       <DependentUpon>ExtraProductShipped.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Inventory.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Inventory.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\LineWorker.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\LineWorker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\LineWorker.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\LineWorker.Designer.cs">
       <DependentUpon>LineWorker.cs</DependentUpon>
     </Compile>
     <Compile Include="Logger.cs" />
-    <Compile Include="Views\Login.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Login.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -179,22 +181,22 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\LostDamagedItems.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\LostDamagedItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\LostDamagedItems.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\LostDamagedItems.Designer.cs">
       <DependentUpon>LostDamagedItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OrderPage.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\OrderPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\OrderPage.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\OrderPage.Designer.cs">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductInfo.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ProductInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ProductInfo.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ProductInfo.Designer.cs">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -211,44 +213,44 @@
     <Compile Include="Sandbox\QueryTable.cs" />
     <Compile Include="Sandbox\IQuery.cs" />
     <Compile Include="Sandbox\IQueryResult.cs" />
-    <Compile Include="Views\Sample.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Sample.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Sample.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Sample.Designer.cs">
       <DependentUpon>Sample.cs</DependentUpon>
     </Compile>
     <Compile Include="Sandbox\Implementation\AddressModel.cs" />
     <Compile Include="Sandbox\IDatabase.cs" />
     <Compile Include="Sandbox\IModel.cs" />
     <Compile Include="Sandbox\IQueryable.cs" />
-    <Compile Include="Views\SearchCustomer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\SearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\SearchCustomer.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shipping.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Shipping.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Shipping.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\Shipping.Designer.cs">
       <DependentUpon>Shipping.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SubscriptionPage.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\SubscriptionPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\SubscriptionPage.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\SubscriptionPage.Designer.cs">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewEditEmployee.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ViewEditEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ViewEditEmployee.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ViewEditEmployee.Designer.cs">
       <DependentUpon>ViewEditEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewEditOrder.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ViewEditOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ViewEditOrder.Designer.cs">
+    <Compile Include="Sandbox\Frontend\Winforms\Views\ViewEditOrder.Designer.cs">
       <DependentUpon>ViewEditOrder.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -257,79 +259,79 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\AddEditBlock.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\AddEditBlock.resx">
       <DependentUpon>AddEditBlock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AddEmployee.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AddOrder.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AddProduct.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\BlockShipping.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\BlockShipping.resx">
       <DependentUpon>BlockShipping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\BlockTheme.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\BlockTheme.resx">
       <DependentUpon>BlockTheme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\BoxesSoldPerTheme.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\BoxesSoldPerTheme.resx">
       <DependentUpon>BoxesSoldPerTheme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ContentOfBoxes.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\ContentOfBoxes.resx">
       <DependentUpon>ContentOfBoxes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CustomerInfo.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\DisplayTickets.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\DisplayTickets.resx">
       <DependentUpon>DisplayTickets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EmployeeSearch.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\EmployeeSearch.resx">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExtraProductShipped.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\ExtraProductShipped.resx">
       <DependentUpon>ExtraProductShipped.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Inventory.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\LineWorker.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\LineWorker.resx">
       <DependentUpon>LineWorker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Login.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\LostDamagedItems.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\LostDamagedItems.resx">
       <DependentUpon>LostDamagedItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\OrderPage.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\OrderPage.resx">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ProductInfo.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Sample.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\Sample.resx">
       <DependentUpon>Sample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SearchCustomer.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shipping.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\Shipping.resx">
       <DependentUpon>Shipping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SubscriptionPage.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\SubscriptionPage.resx">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ViewEditEmployee.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\ViewEditEmployee.resx">
       <DependentUpon>ViewEditEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ViewEditOrder.resx">
+    <EmbeddedResource Include="Sandbox\Frontend\Winforms\Views\ViewEditOrder.resx">
       <DependentUpon>ViewEditOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
