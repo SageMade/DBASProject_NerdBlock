@@ -76,10 +76,10 @@
     <Compile Include="Sandbox\Backend\Util.cs" />
     <Compile Include="Sandbox\Frontend\IFillable.cs" />
     <Compile Include="Sandbox\Frontend\Implementation\AddEmployeeFiller.cs" />
-    <Compile Include="Sandbox\Frontend\FillerBase.cs" />
-    <Compile Include="Sandbox\Frontend\TextBoxFiller.cs" />
-    <Compile Include="Sandbox\Frontend\LabelFiller.cs" />
-    <Compile Include="Sandbox\Frontend\ViewFillerBase.cs" />
+    <Compile Include="Sandbox\Frontend\Winforms\FillerBase.cs" />
+    <Compile Include="Sandbox\Frontend\Winforms\TextBoxFiller.cs" />
+    <Compile Include="Sandbox\Frontend\Winforms\LabelFiller.cs" />
+    <Compile Include="Sandbox\Frontend\Winforms\ViewFillerBase.cs" />
     <Compile Include="Sandbox\Frontend\IViewFillable.cs" />
     <Compile Include="Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>

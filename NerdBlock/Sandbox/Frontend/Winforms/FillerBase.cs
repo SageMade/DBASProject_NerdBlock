@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NerdBlock.Sandbox.Frontend
+namespace NerdBlock.Sandbox.Frontend.Winforms
 {
     /// <summary>
     /// Represents a reflection-based approach to the IFillable interface. This is for the Winforms frontend only
