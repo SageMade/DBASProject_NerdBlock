@@ -7,24 +7,13 @@ using System.Threading.Tasks;
 
 namespace NerdBlock.Sandbox.Frontend.Implementation
 {
-    public class AddEmployeeFiller : ViewFiller<Employee>
+    public class AddEmployeeFiller : ViewFillerBase
     {
         public AddEmployee View;
 
-        public void Fill(Employee value)
+        public AddEmployeeFiller(AddEmployee view)
         {
-            if (value != null)
-            {
-                View.Controls["txtID"].Text = value.ID.ToString();
-                View.Controls["txtFirstName"].Text = value.FirstName;
-                View.Controls["txtLastName"].Text = value.LastName;
 
-                View.Controls["txtPhone"].Text = value.Phone?.ToString();
-
-                View.Controls["txtAddress1"].Text = value.Address.StreetAddress;
-                View.Controls["txtProvince"].Text = value.Address.State;
-                View.Controls["txtPostalCode"].Text = value.Address.PostalCode;
-            }
         }
     }
 }

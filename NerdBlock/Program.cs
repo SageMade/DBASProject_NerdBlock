@@ -61,14 +61,14 @@ namespace NerdBlock
             employee1.FirstName = "Shawn";
             employee1.LastName = "Matthews";
             employee1.SIN = "696969699";
-            employee1.JoinDate = DateTime.Now;
+            employee1.DateJoined = DateTime.Now;
 
-            employee1.Address = test;
+            employee1.HomeAddress = test;
 
             bool result1 = DataAccess.Insert(employee1);
 
             if (!result1)
-                employee1.JoinDate = null;
+                employee1.DateJoined = null;
 
             Employee[] employees = DataAccess.Match(employee1);
                         

@@ -241,8 +241,8 @@ namespace NerdBlock.Sandbox.Backend
                 if (value == null)
                 {
                     // If we do not allow null, throw an exception, otherwise ignore
-                    if (myModelProperties[index].GetCustomAttribute<Nullable>() == null)
-                        throw new InvalidOperationException("Cannot search with non-nullable field not set");
+                    //if (myModelProperties[index].GetCustomAttribute<Nullable>() == null)
+                        //throw new InvalidOperationException("Cannot search with non-nullable field not set");
                 }
                 // Next see if this is a foreign key
                 else if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)

@@ -74,8 +74,12 @@
     <Compile Include="Sandbox\Backend\Models\Transfer.cs" />
     <Compile Include="Sandbox\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Sandbox\Backend\Util.cs" />
+    <Compile Include="Sandbox\Frontend\IFillable.cs" />
     <Compile Include="Sandbox\Frontend\Implementation\AddEmployeeFiller.cs" />
-    <Compile Include="Sandbox\Frontend\ViewFiller.cs" />
+    <Compile Include="Sandbox\Frontend\FillerBase.cs" />
+    <Compile Include="Sandbox\Frontend\LabelFiller.cs" />
+    <Compile Include="Sandbox\Frontend\ViewFillerBase.cs" />
+    <Compile Include="Sandbox\Frontend\IViewFillable.cs" />
     <Compile Include="Views\AddEditBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -335,7 +339,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="SQL\Constraints.sql" />
     <Content Include="SQL\Database.sql" />
+    <Content Include="SQL\Fixes.sql" />
     <Content Include="SQL\Records.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
