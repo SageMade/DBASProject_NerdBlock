@@ -142,11 +142,11 @@
     <Compile Include="Engine\Frontend\Winforms\Views\CustomerInfo.Designer.cs">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\DisplayTickets.cs">
+    <Compile Include="Engine\Frontend\Winforms\Views\CustomerSearchList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\DisplayTickets.Designer.cs">
-      <DependentUpon>DisplayTickets.cs</DependentUpon>
+    <Compile Include="Engine\Frontend\Winforms\Views\CustomerSearchList.Designer.cs">
+      <DependentUpon>CustomerSearchList.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\EmployeeSearch.cs">
       <SubType>UserControl</SubType>
@@ -297,8 +297,8 @@
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\DisplayTickets.resx">
-      <DependentUpon>DisplayTickets.cs</DependentUpon>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\CustomerSearchList.resx">
+      <DependentUpon>CustomerSearchList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\EmployeeSearch.resx">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>

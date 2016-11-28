@@ -16,5 +16,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
         }
+
+        private void ContentOfBoxes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

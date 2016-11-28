@@ -33,12 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lstExtraProduct = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 54);
+            this.label1.Location = new System.Drawing.Point(39, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 54);
+            this.label2.Location = new System.Drawing.Point(148, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -56,7 +57,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(248, 54);
+            this.label3.Location = new System.Drawing.Point(244, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 2;
@@ -65,7 +66,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(333, 54);
+            this.label4.Location = new System.Drawing.Point(329, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 3;
@@ -74,22 +75,33 @@
             // lstExtraProduct
             // 
             this.lstExtraProduct.FormattingEnabled = true;
-            this.lstExtraProduct.Location = new System.Drawing.Point(46, 83);
+            this.lstExtraProduct.Location = new System.Drawing.Point(42, 143);
             this.lstExtraProduct.Name = "lstExtraProduct";
             this.lstExtraProduct.Size = new System.Drawing.Size(420, 186);
             this.lstExtraProduct.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(167, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Extra Product Shipping";
             // 
             // ExtraProductShipped
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lstExtraProduct);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ExtraProductShipped";
-            this.Size = new System.Drawing.Size(509, 297);
+            this.Size = new System.Drawing.Size(509, 348);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstExtraProduct;
+        private System.Windows.Forms.Label label5;
     }
 }

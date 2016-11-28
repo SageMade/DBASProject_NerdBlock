@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class DisplayTickets : ViewBase
+    public partial class CustomerSearchList : UserControl
     {
-        public DisplayTickets()
+        public CustomerSearchList()
         {
             InitializeComponent();
         }
