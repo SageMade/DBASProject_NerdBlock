@@ -14,6 +14,7 @@ using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Frontend.Winforms.Views;
 using NerdBlock.Engine.Frontend;
+using System.Reflection;
 
 namespace NerdBlock
 {
@@ -34,14 +35,17 @@ namespace NerdBlock
             QueryTable.Database = database;
             DataAccess.Database = database;
 
-            ViewManager.RegisterView("show_employee", new AddEmployee());
-
-            WinformViewManager.Run("show_employee");
-
-            using (MainForm form = new MainForm())
+            Type[] types = Assembly.GetExecutingAssembly().GetTypes().Where(
+                T => T.BaseType == typeof(ViewBase)).ToArray();
+            
+            for (int index = 0; index < types.Length; index++)
             {
-                form.ShowDialog();
+                ViewBase item = Activator.CreateInstance(types[index]) as ViewBase;
+                ViewManager.RegisterView(types[index].Name, item);
             }
+            
+            WinformViewManager.Run("Login");
+            
             /*
             AddressModel address = new AddressModel();
             address.StreetAddress = "12 Bluenose Lane";
