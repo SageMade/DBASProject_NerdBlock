@@ -16,6 +16,8 @@ namespace NerdBlock.Sandbox.Frontend.Implementation
         public AddEmployeeFiller(AddEmployee view)
         {
             AddFiller("FirstName", new TextBoxFiller<Employee>((TextBox)view.Controls["txtFirstName"], "FirstName"));
+            AddFiller("LastName", new TextBoxFiller<Employee>((TextBox)view.Controls["txtLastName"], "LastName"));
+            //AddFiller("SIN", new TextBoxFiller<Employee>((TextBox)view.Controls["txtSIN"], "SIN"));
         }
     }
 }

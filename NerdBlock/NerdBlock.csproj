@@ -77,6 +77,7 @@
     <Compile Include="Sandbox\Frontend\IFillable.cs" />
     <Compile Include="Sandbox\Frontend\Implementation\AddEmployeeFiller.cs" />
     <Compile Include="Sandbox\Frontend\FillerBase.cs" />
+    <Compile Include="Sandbox\Frontend\TextBoxFiller.cs" />
     <Compile Include="Sandbox\Frontend\LabelFiller.cs" />
     <Compile Include="Sandbox\Frontend\ViewFillerBase.cs" />
     <Compile Include="Sandbox\Frontend\IViewFillable.cs" />
