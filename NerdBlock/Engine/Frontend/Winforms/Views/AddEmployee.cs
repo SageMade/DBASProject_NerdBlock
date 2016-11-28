@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NerdBlock.Engine.Frontend.Winforms.Views;
+using NerdBlock.Engine.Frontend.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -17,10 +18,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            Inputs.Add(new ReflectedInput("FirstName", txtFirstName, "Text"));
-            Inputs.Add(new ReflectedInput("LastName", txtLastName, "Text"));
-            Inputs.Add(new ReflectedInput("SIN", txtCell, "Text"));
-            Inputs.Add(new ReflectedInput("Phone", txtPhone, "Text"));
+            Inputs.Add(new TextBoxInput("FirstName", txtFirstName));
+            Inputs.Add(new TextBoxInput("LastName", txtLastName));
+            //Inputs.Add(new TextBoxInput("SIN", txtSIN));
+            Inputs.Add(new TextBoxInput("Phone", txtPhone));
 
             btnSubmit.Click += (X, Y) => AttemptAction("insert_employee");
         }
