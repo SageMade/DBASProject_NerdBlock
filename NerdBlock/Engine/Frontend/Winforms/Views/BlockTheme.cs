@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NerdBlock.Frontend.Winforms.Views
+namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     public partial class BlockTheme : UserControl
     {

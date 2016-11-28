@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Sandbox
+namespace NerdBlock.Engine
 {
     public class QueryFail
     {

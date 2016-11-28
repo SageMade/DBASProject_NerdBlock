@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NerdBlock.Sandbox.Frontend;
-using NerdBlock.Sandbox.Frontend.Winforms.Views;
+using NerdBlock.Engine.Frontend;
+using NerdBlock.Engine.Frontend.Winforms.Views;
 
-namespace NerdBlock.Frontend.Winforms.Views
+namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     public partial class AddEditBlock : ViewBase
     {

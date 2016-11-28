@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-namespace NerdBlock.Sandbox
+namespace NerdBlock.Engine
 {
     /// <summary>
     /// Represents a connection to a database

@@ -1,4 +1,4 @@
-﻿namespace NerdBlock.Frontend.Winforms.Views
+﻿namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     partial class ContentOfBoxes
     {

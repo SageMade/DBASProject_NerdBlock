@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using NerdBlock.Engine.Implementation;
 
-namespace NerdBlock.Sandbox
+namespace NerdBlock.Engine
 {
     public static class QueryTable
     {

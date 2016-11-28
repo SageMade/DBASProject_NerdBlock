@@ -1,4 +1,4 @@
-﻿using NerdBlock.Frontend.Winforms.Views;
+﻿using NerdBlock.Engine.Frontend.Winforms.Views;
 
 namespace NerdBlock
 {
@@ -52,7 +52,7 @@ namespace NerdBlock
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.addEmployee1 = new NerdBlock.Frontend.Winforms.Views.AddEmployee();
+            this.addEmployee1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddEmployee();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();

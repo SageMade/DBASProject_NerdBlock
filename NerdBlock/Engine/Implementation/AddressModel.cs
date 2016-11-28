@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Sandbox.Implementation
+namespace NerdBlock.Engine.Implementation
 {
     public class AddressModel : IModel<AddressModel>
     {

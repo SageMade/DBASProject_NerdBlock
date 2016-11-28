@@ -1,4 +1,4 @@
-﻿namespace NerdBlock.Sandbox
+﻿namespace NerdBlock.Engine
 {
     /// <summary>
     /// Represents a single query that can be executed against a database

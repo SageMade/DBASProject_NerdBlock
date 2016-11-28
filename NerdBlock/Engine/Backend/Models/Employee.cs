@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Sandbox.Backend.Models
+namespace NerdBlock.Engine.Backend.Models
 {
     [DataModel("tblemployees")]
     public class Employee

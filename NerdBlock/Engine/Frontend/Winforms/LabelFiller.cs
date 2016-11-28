@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NerdBlock.Sandbox.Frontend.Winforms
+namespace NerdBlock.Engine.Frontend.Winforms
 {
     /// <summary>
     /// Represents an IFiller implementation that fills a label with a value

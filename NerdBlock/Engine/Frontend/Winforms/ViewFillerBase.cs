@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NerdBlock.Sandbox.Frontend.Winforms
+namespace NerdBlock.Engine.Frontend.Winforms
 {
     /// <summary>
     /// A base implementation of IViewFillable that uses a dictionary to reference IFillables

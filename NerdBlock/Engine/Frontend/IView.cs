@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Sandbox.Frontend
+namespace NerdBlock.Engine.Frontend
 {
     /// <summary>
     /// Represents a view that displays data

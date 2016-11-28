@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerdBlock.Sandbox.Frontend
+namespace NerdBlock.Engine.Frontend
 {
     /// <summary>
     /// Represents an object that is used to fill a field in a view control
