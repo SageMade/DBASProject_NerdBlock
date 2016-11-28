@@ -28,253 +28,315 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblOrderID = new System.Windows.Forms.Label();
-            this.lblProductName = new System.Windows.Forms.Label();
             this.lblQuantityOrdered = new System.Windows.Forms.Label();
-            this.lblIndiviualPrice = new System.Windows.Forms.Label();
+            this.txtQuantityOrdered = new System.Windows.Forms.TextBox();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grpOrderInfo = new System.Windows.Forms.GroupBox();
+            this.cbProductID = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.grpNewProduct = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chbNewProduct = new System.Windows.Forms.CheckBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.txtProductName = new System.Windows.Forms.TextBox();
-            this.txtQuantityOrdered = new System.Windows.Forms.TextBox();
-            this.txtIndividualPrice = new System.Windows.Forms.TextBox();
-            this.txtTotalOrderPrice = new System.Windows.Forms.TextBox();
-            this.txtAddress1 = new System.Windows.Forms.TextBox();
-            this.txtAddress2 = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtDateOrdered = new System.Windows.Forms.TextBox();
-            this.txtDateArrived = new System.Windows.Forms.TextBox();
-            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.txtWidth = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtDepth = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbSupplierID = new System.Windows.Forms.ComboBox();
+            this.grpOrderInfo.SuspendLayout();
+            this.grpNewProduct.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblOrderID
-            // 
-            this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(48, 35);
-            this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(47, 13);
-            this.lblOrderID.TabIndex = 0;
-            this.lblOrderID.Text = "Order ID";
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(20, 61);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(75, 13);
-            this.lblProductName.TabIndex = 1;
-            this.lblProductName.Text = "Product Name";
             // 
             // lblQuantityOrdered
             // 
             this.lblQuantityOrdered.AutoSize = true;
-            this.lblQuantityOrdered.Location = new System.Drawing.Point(8, 87);
+            this.lblQuantityOrdered.Location = new System.Drawing.Point(239, 30);
+            this.lblQuantityOrdered.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantityOrdered.Name = "lblQuantityOrdered";
-            this.lblQuantityOrdered.Size = new System.Drawing.Size(87, 13);
+            this.lblQuantityOrdered.Size = new System.Drawing.Size(118, 17);
             this.lblQuantityOrdered.TabIndex = 2;
             this.lblQuantityOrdered.Text = "Quantity Ordered";
             // 
-            // lblIndiviualPrice
-            // 
-            this.lblIndiviualPrice.AutoSize = true;
-            this.lblIndiviualPrice.Location = new System.Drawing.Point(16, 113);
-            this.lblIndiviualPrice.Name = "lblIndiviualPrice";
-            this.lblIndiviualPrice.Size = new System.Drawing.Size(79, 13);
-            this.lblIndiviualPrice.TabIndex = 3;
-            this.lblIndiviualPrice.Text = "Individual Price";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 139);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Total Order Price";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(223, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Address 1";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(223, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Address 2";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(229, 87);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Phone #";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(206, 113);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Date Ordered";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(211, 139);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Date Arrived";
-            // 
-            // txtOrderID
-            // 
-            this.txtOrderID.Location = new System.Drawing.Point(101, 32);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(100, 20);
-            this.txtOrderID.TabIndex = 10;
-            // 
-            // txtProductName
-            // 
-            this.txtProductName.Location = new System.Drawing.Point(101, 58);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(100, 20);
-            this.txtProductName.TabIndex = 11;
-            // 
             // txtQuantityOrdered
             // 
-            this.txtQuantityOrdered.Location = new System.Drawing.Point(101, 84);
+            this.txtQuantityOrdered.Location = new System.Drawing.Point(368, 26);
+            this.txtQuantityOrdered.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQuantityOrdered.Name = "txtQuantityOrdered";
-            this.txtQuantityOrdered.Size = new System.Drawing.Size(100, 20);
+            this.txtQuantityOrdered.Size = new System.Drawing.Size(120, 22);
             this.txtQuantityOrdered.TabIndex = 12;
-            // 
-            // txtIndividualPrice
-            // 
-            this.txtIndividualPrice.Location = new System.Drawing.Point(101, 110);
-            this.txtIndividualPrice.Name = "txtIndividualPrice";
-            this.txtIndividualPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtIndividualPrice.TabIndex = 13;
-            // 
-            // txtTotalOrderPrice
-            // 
-            this.txtTotalOrderPrice.Location = new System.Drawing.Point(101, 136);
-            this.txtTotalOrderPrice.Name = "txtTotalOrderPrice";
-            this.txtTotalOrderPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtTotalOrderPrice.TabIndex = 14;
-            // 
-            // txtAddress1
-            // 
-            this.txtAddress1.Location = new System.Drawing.Point(283, 32);
-            this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress1.TabIndex = 15;
-            // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Location = new System.Drawing.Point(283, 58);
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress2.TabIndex = 16;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(283, 84);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 20);
-            this.txtPhone.TabIndex = 17;
-            // 
-            // txtDateOrdered
-            // 
-            this.txtDateOrdered.Location = new System.Drawing.Point(283, 110);
-            this.txtDateOrdered.Name = "txtDateOrdered";
-            this.txtDateOrdered.Size = new System.Drawing.Size(100, 20);
-            this.txtDateOrdered.TabIndex = 18;
-            // 
-            // txtDateArrived
-            // 
-            this.txtDateArrived.Location = new System.Drawing.Point(283, 136);
-            this.txtDateArrived.Name = "txtDateArrived";
-            this.txtDateArrived.Size = new System.Drawing.Size(100, 20);
-            this.txtDateArrived.TabIndex = 19;
-            this.txtDateArrived.TextChanged += new System.EventHandler(this.txtDateArrived_TextChanged);
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.Location = new System.Drawing.Point(283, 162);
+            this.btnAddOrder.Location = new System.Drawing.Point(377, 172);
+            this.btnAddOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnAddOrder.Size = new System.Drawing.Size(132, 30);
             this.btnAddOrder.TabIndex = 20;
             this.btnAddOrder.Text = "Add Order";
             this.btnAddOrder.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Add New Order";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 17);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Product ID";
+            // 
+            // grpOrderInfo
+            // 
+            this.grpOrderInfo.Controls.Add(this.cbSupplierID);
+            this.grpOrderInfo.Controls.Add(this.button1);
+            this.grpOrderInfo.Controls.Add(this.label6);
+            this.grpOrderInfo.Controls.Add(this.cbProductID);
+            this.grpOrderInfo.Controls.Add(this.lblQuantityOrdered);
+            this.grpOrderInfo.Controls.Add(this.label1);
+            this.grpOrderInfo.Controls.Add(this.txtQuantityOrdered);
+            this.grpOrderInfo.Location = new System.Drawing.Point(14, 47);
+            this.grpOrderInfo.Name = "grpOrderInfo";
+            this.grpOrderInfo.Size = new System.Drawing.Size(495, 118);
+            this.grpOrderInfo.TabIndex = 28;
+            this.grpOrderInfo.TabStop = false;
+            this.grpOrderInfo.Text = "Order Information";
+            // 
+            // cbProductID
+            // 
+            this.cbProductID.FormattingEnabled = true;
+            this.cbProductID.Location = new System.Drawing.Point(103, 26);
+            this.cbProductID.Name = "cbProductID";
+            this.cbProductID.Size = new System.Drawing.Size(121, 24);
+            this.cbProductID.TabIndex = 27;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Product ID";
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(113, 42);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(111, 22);
+            this.txtProductID.TabIndex = 29;
+            // 
+            // grpNewProduct
+            // 
+            this.grpNewProduct.Controls.Add(this.txtDescription);
+            this.grpNewProduct.Controls.Add(this.txtDepth);
+            this.grpNewProduct.Controls.Add(this.txtHeight);
+            this.grpNewProduct.Controls.Add(this.txtWidth);
+            this.grpNewProduct.Controls.Add(this.label10);
+            this.grpNewProduct.Controls.Add(this.label9);
+            this.grpNewProduct.Controls.Add(this.label7);
+            this.grpNewProduct.Controls.Add(this.label5);
+            this.grpNewProduct.Controls.Add(this.txtProductName);
+            this.grpNewProduct.Controls.Add(this.label4);
+            this.grpNewProduct.Controls.Add(this.txtProductID);
+            this.grpNewProduct.Controls.Add(this.label3);
+            this.grpNewProduct.Location = new System.Drawing.Point(14, 209);
+            this.grpNewProduct.Name = "grpNewProduct";
+            this.grpNewProduct.Size = new System.Drawing.Size(495, 194);
+            this.grpNewProduct.TabIndex = 0;
+            this.grpNewProduct.TabStop = false;
+            this.grpNewProduct.Text = "New Product Information";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 17);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Product Name";
+            // 
+            // chbNewProduct
+            // 
+            this.chbNewProduct.AutoSize = true;
+            this.chbNewProduct.Location = new System.Drawing.Point(25, 178);
+            this.chbNewProduct.Name = "chbNewProduct";
+            this.chbNewProduct.Size = new System.Drawing.Size(118, 21);
+            this.chbNewProduct.TabIndex = 29;
+            this.chbNewProduct.Text = "New Product?";
+            this.chbNewProduct.UseVisualStyleBackColor = true;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(113, 70);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(111, 22);
+            this.txtProductName.TabIndex = 31;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(62, 101);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 17);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Width";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(57, 131);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Height";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(60, 160);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 17);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Depth";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(240, 42);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Description";
+            // 
+            // txtWidth
+            // 
+            this.txtWidth.Location = new System.Drawing.Point(113, 101);
+            this.txtWidth.Name = "txtWidth";
+            this.txtWidth.Size = new System.Drawing.Size(111, 22);
+            this.txtWidth.TabIndex = 36;
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.Location = new System.Drawing.Point(113, 131);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(111, 22);
+            this.txtHeight.TabIndex = 37;
+            // 
+            // txtDepth
+            // 
+            this.txtDepth.Location = new System.Drawing.Point(113, 159);
+            this.txtDepth.Name = "txtDepth";
+            this.txtDepth.Size = new System.Drawing.Size(111, 22);
+            this.txtDepth.TabIndex = 38;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(243, 70);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(245, 111);
+            this.txtDescription.TabIndex = 39;
+            this.txtDescription.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 60);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 17);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Supplier ID";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(103, 85);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 27);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Add Supplier";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cbSupplierID
+            // 
+            this.cbSupplierID.FormattingEnabled = true;
+            this.cbSupplierID.Location = new System.Drawing.Point(103, 56);
+            this.cbSupplierID.Name = "cbSupplierID";
+            this.cbSupplierID.Size = new System.Drawing.Size(121, 24);
+            this.cbSupplierID.TabIndex = 31;
+            // 
             // AddOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chbNewProduct);
+            this.Controls.Add(this.grpNewProduct);
+            this.Controls.Add(this.grpOrderInfo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddOrder);
-            this.Controls.Add(this.txtDateArrived);
-            this.Controls.Add(this.txtDateOrdered);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtAddress2);
-            this.Controls.Add(this.txtAddress1);
-            this.Controls.Add(this.txtTotalOrderPrice);
-            this.Controls.Add(this.txtIndividualPrice);
-            this.Controls.Add(this.txtQuantityOrdered);
-            this.Controls.Add(this.txtProductName);
-            this.Controls.Add(this.txtOrderID);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblIndiviualPrice);
-            this.Controls.Add(this.lblQuantityOrdered);
-            this.Controls.Add(this.lblProductName);
-            this.Controls.Add(this.lblOrderID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddOrder";
-            this.Size = new System.Drawing.Size(395, 196);
+            this.Size = new System.Drawing.Size(520, 417);
+            this.Load += new System.EventHandler(this.AddOrder_Load);
+            this.grpOrderInfo.ResumeLayout(false);
+            this.grpOrderInfo.PerformLayout();
+            this.grpNewProduct.ResumeLayout(false);
+            this.grpNewProduct.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblOrderID;
-        private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblQuantityOrdered;
-        private System.Windows.Forms.Label lblIndiviualPrice;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtOrderID;
-        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtQuantityOrdered;
-        private System.Windows.Forms.TextBox txtIndividualPrice;
-        private System.Windows.Forms.TextBox txtTotalOrderPrice;
-        private System.Windows.Forms.TextBox txtAddress1;
-        private System.Windows.Forms.TextBox txtAddress2;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtDateOrdered;
-        private System.Windows.Forms.TextBox txtDateArrived;
         private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grpOrderInfo;
+        private System.Windows.Forms.ComboBox cbProductID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.GroupBox grpNewProduct;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chbNewProduct;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.TextBox txtDepth;
+        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.TextBox txtWidth;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox txtDescription;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbSupplierID;
+        private System.Windows.Forms.Button button1;
     }
 }
