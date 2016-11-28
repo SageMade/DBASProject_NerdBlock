@@ -15,7 +15,7 @@ namespace NerdBlock.Engine.LogicLayer
             myContextObjects = new Dictionary<string, object>();
         }
 
-        public static object GetObject(string valueName)
+        public static object GetValue(string valueName)
         {
             if (myContextObjects.ContainsKey(valueName))
                 return myContextObjects[valueName];
@@ -23,12 +23,25 @@ namespace NerdBlock.Engine.LogicLayer
                 return null;
         }
 
-        public static bool HasObject(string valueName)
+        public static T GetValue<T>(string valueName)
+        {
+            if (myContextObjects.ContainsKey(valueName))
+                return (T)myContextObjects[valueName];
+            else
+                return default(T);
+        }
+
+        public static bool HasValue(string valueName)
         {
             return myContextObjects.ContainsKey(valueName);
         }
 
-        public static void SetObject(string valueName, object value)
+        public static void Clear()
+        {
+            myContextObjects.Clear();
+        }
+
+        public static void SetValue(string valueName, object value)
         {
             if (myContextObjects.ContainsKey(valueName))
                 myContextObjects[valueName] = value;

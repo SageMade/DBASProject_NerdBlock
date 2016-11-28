@@ -28,11 +28,18 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         public void AttemptAction(string actionName)
         {
+            Context.Clear();
+
             for(int index = 0; index < Inputs.Count; index ++)
             {
                 IInput input = Inputs[index];
-                Context.SetObject(input.Name, input.Value);
+                Context.SetValue(input.Name, input.Value);
             }
+
+            string msg = null;
+
+            if (!LogicManager.TryPerformAction(actionName, out msg))
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

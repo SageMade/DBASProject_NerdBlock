@@ -32,6 +32,7 @@ namespace NerdBlock
             ViewManager.Implementation = new WinformViewManager();
             ViewManager.Implementation.ReflectLoadViews();
             LogicManager.LoadRules();
+            LogicManager.LoadActions();
 
             ViewManager.Run("AddEmployee");
         }

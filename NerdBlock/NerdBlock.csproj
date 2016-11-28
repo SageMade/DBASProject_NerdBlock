@@ -172,8 +172,11 @@
     <Compile Include="Engine\Frontend\Winforms\Views\LineWorker.Designer.cs">
       <DependentUpon>LineWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Engine\LogicLayer\BusinessAction.cs" />
     <Compile Include="Engine\LogicLayer\BusinessRule.cs" />
     <Compile Include="Engine\LogicLayer\Context.cs" />
+    <Compile Include="Engine\LogicLayer\BusinessActionContainer.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\Employee.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\EmployeeValidation.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Logger.cs" />

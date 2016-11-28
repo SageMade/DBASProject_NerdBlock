@@ -16,9 +16,10 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             {
                 bool result = true;
 
-                string fName = Context.GetObject("FirstName") as string;
-                string lName = Context.GetObject("LastName") as string;
-                string sin = Context.GetObject("SIN") as string;
+                string fName = Context.GetValue("FirstName") as string;
+                string lName = Context.GetValue("LastName") as string;
+                string sin = Context.GetValue("SIN") as string;
+                string phone = Context.GetValue("Phone") as string;
 
                 long tempVal = -1;
 
@@ -39,11 +40,21 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
                     result = false;
                     reason += "SIN must be exactly 9 characters" + Environment.NewLine;
                 }
-
-                if (!!long.TryParse(sin, out tempVal))
+                else if (!long.TryParse(sin, out tempVal))
                 {
                     result = false;
                     reason += "SIN must be numeric" + Environment.NewLine;
+                }
+
+                if (string.IsNullOrWhiteSpace(phone) || phone.Replace(" ", "").Length < 10)
+                {
+                    result = false;
+                    reason += "Phone # must be at least 10 characters" + Environment.NewLine;
+                }
+                else if (!long.TryParse(phone.Replace(" ", "").Replace("-", ""), out tempVal))
+                {
+                    result = false;
+                    reason += "Phone # must be numeric" + Environment.NewLine;
                 }
 
                 return result;
