@@ -43,13 +43,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCountry = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbState = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbRole = new System.Windows.Forms.ComboBox();
+            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -190,14 +192,6 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Country";
             // 
-            // txtCountry
-            // 
-            this.txtCountry.Location = new System.Drawing.Point(363, 117);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(145, 22);
-            this.txtCountry.TabIndex = 28;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -252,17 +246,44 @@
             this.cbRole.Size = new System.Drawing.Size(133, 24);
             this.cbRole.TabIndex = 34;
             // 
+            // txtCountry
+            // 
+            this.txtCountry.Location = new System.Drawing.Point(364, 117);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(144, 22);
+            this.txtCountry.TabIndex = 35;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(50, 215);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(30, 17);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "SIN";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(88, 212);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(133, 22);
+            this.textBox2.TabIndex = 37;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbState);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -302,12 +323,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbState;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbRole;
+        private System.Windows.Forms.TextBox txtCountry;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
