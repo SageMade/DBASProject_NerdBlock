@@ -16,7 +16,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         public void ShowView()
         {
-            WinformViewManager.ShowView(this);
+            ViewManager.Show(this);
         }
     }
 }

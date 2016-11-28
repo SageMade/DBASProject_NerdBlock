@@ -3,35 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NerdBlock.Engine.Frontend.Winforms;
 
 namespace NerdBlock.Engine.Frontend
 {
     public static class ViewManager
     {
-        private static Dictionary<string, IView> myViews;
+        private static Dictionary<string, Action> myViewActions;
+
+        public static IViewManagerImplementation Implementation
+        { get; set; }
 
         static ViewManager()
         {
-            myViews = new Dictionary<string, IView>();
+            myViewActions = new Dictionary<string, Action>();
         }
 
         public static void RegisterView(string name, IView view)
         {
-            myViews.Add(name, view);
+            Implementation.RegisterView(name, view);
+        }
+
+        public static bool HasAction(string name)
+        {
+            return myViewActions.ContainsKey(name);
+        }
+        
+        public static void Run(string initialView)
+        {
+            Implementation.Run(initialView);
+        }
+
+        public static void RegisterAction(string name, Action action)
+        {
+            myViewActions.Add(name, action);
+        }
+
+        public static void InvokeAction(string name)
+        {
+            myViewActions[name].Invoke();
         }
 
         public static void Show(string name)
         {
-            if (myViews.ContainsKey(name))
-                myViews[name].ShowView();
+            Implementation.ShowView(name);
+        }
+
+        public static void Show(IView view)
+        {
+            Implementation.ShowView(view);
         }
 
         public static IView GetView(string name)
         {
-            if (myViews.ContainsKey(name))
-                return myViews[name];
-            else
-                return null;
+            return Implementation.GetView(name);
         }
     }
 }

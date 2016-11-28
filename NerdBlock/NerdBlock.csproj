@@ -79,6 +79,7 @@
     <Compile Include="Engine\Frontend\IView.cs" />
     <Compile Include="Engine\Frontend\ViewManager.cs" />
     <Compile Include="Engine\Frontend\Winforms\FillerBase.cs" />
+    <Compile Include="Engine\Frontend\Winforms\IViewManagerImplementation.cs" />
     <Compile Include="Engine\Frontend\Winforms\TextBoxFiller.cs" />
     <Compile Include="Engine\Frontend\Winforms\LabelFiller.cs" />
     <Compile Include="Engine\Frontend\Winforms\ViewFillerBase.cs" />
@@ -175,10 +176,10 @@
     <Compile Include="Engine\Frontend\Winforms\Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Engine\Frontend\Winforms\Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Engine\Frontend\Winforms\Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\LostDamagedItems.cs">
@@ -205,7 +206,7 @@
     <Compile Include="Engine\Frontend\Winforms\Views\ViewBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\WinformViewManager.cs" />
+    <Compile Include="Engine\Frontend\Winforms\WinformViewManager.cs" />
     <Compile Include="Engine\Implementation\PgDatabase.cs" />
     <Compile Include="Engine\Implementation\PgQuery.cs" />
     <Compile Include="Engine\Implementation\PgQueryResult.cs" />
@@ -308,7 +309,7 @@
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\LostDamagedItems.resx">

@@ -15,6 +15,7 @@ using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Frontend.Winforms.Views;
 using NerdBlock.Engine.Frontend;
 using System.Reflection;
+using NerdBlock.Engine.Frontend.Winforms;
 
 namespace NerdBlock
 {
@@ -35,6 +36,8 @@ namespace NerdBlock
             QueryTable.Database = database;
             DataAccess.Database = database;
 
+            ViewManager.Implementation = new WinformViewManager();
+
             Type[] types = Assembly.GetExecutingAssembly().GetTypes().Where(
                 T => T.BaseType == typeof(ViewBase)).ToArray();
             
@@ -43,8 +46,8 @@ namespace NerdBlock
                 ViewBase item = Activator.CreateInstance(types[index]) as ViewBase;
                 ViewManager.RegisterView(types[index].Name, item);
             }
-            
-            WinformViewManager.Run("Login");
+
+            ViewManager.Run("Login");
             
             /*
             AddressModel address = new AddressModel();

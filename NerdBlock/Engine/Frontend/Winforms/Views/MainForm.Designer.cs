@@ -1,6 +1,6 @@
 ﻿using NerdBlock.Engine.Frontend.Winforms.Views;
 
-namespace NerdBlock
+namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     partial class MainForm
     {
