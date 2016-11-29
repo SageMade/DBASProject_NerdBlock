@@ -41,5 +41,11 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
 
         }
+
+        //Goes to AddProduct
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

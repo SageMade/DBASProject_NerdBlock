@@ -60,6 +60,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // 
             // mnuMainBar
             // 
+            this.mnuMainBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMainBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationToolStripMenuItem,
             this.tsmTasking,
@@ -69,7 +70,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.ordersToolStripMenuItem});
             this.mnuMainBar.Location = new System.Drawing.Point(0, 0);
             this.mnuMainBar.Name = "mnuMainBar";
-            this.mnuMainBar.Size = new System.Drawing.Size(996, 24);
+            this.mnuMainBar.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.mnuMainBar.Size = new System.Drawing.Size(1328, 28);
             this.mnuMainBar.TabIndex = 1;
             this.mnuMainBar.Text = "menuStrip1";
             // 
@@ -80,30 +82,30 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.toolStripMenuItem1,
             this.tsiExitProgram});
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
-            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.applicationToolStripMenuItem.Text = "Application";
             // 
             // tsiLogout
             // 
             this.tsiLogout.Name = "tsiLogout";
-            this.tsiLogout.Size = new System.Drawing.Size(112, 22);
+            this.tsiLogout.Size = new System.Drawing.Size(131, 26);
             this.tsiLogout.Text = "Logout";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(109, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 6);
             // 
             // tsiExitProgram
             // 
             this.tsiExitProgram.Name = "tsiExitProgram";
-            this.tsiExitProgram.Size = new System.Drawing.Size(112, 22);
+            this.tsiExitProgram.Size = new System.Drawing.Size(131, 26);
             this.tsiExitProgram.Text = "Exit";
             // 
             // tsmTasking
             // 
             this.tsmTasking.Name = "tsmTasking";
-            this.tsmTasking.Size = new System.Drawing.Size(59, 20);
+            this.tsmTasking.Size = new System.Drawing.Size(69, 24);
             this.tsmTasking.Text = "Tasking";
             // 
             // tsmInventory
@@ -112,19 +114,19 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.searchToolStripMenuItem3,
             this.updateToolStripMenuItem1});
             this.tsmInventory.Name = "tsmInventory";
-            this.tsmInventory.Size = new System.Drawing.Size(69, 20);
+            this.tsmInventory.Size = new System.Drawing.Size(82, 24);
             this.tsmInventory.Text = "Inventory";
             // 
             // searchToolStripMenuItem3
             // 
             this.searchToolStripMenuItem3.Name = "searchToolStripMenuItem3";
-            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
+            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(133, 26);
             this.searchToolStripMenuItem3.Text = "Search";
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(133, 26);
             this.updateToolStripMenuItem1.Text = "Update";
             // 
             // tsmStaff
@@ -136,36 +138,36 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiEmployeeUpdate,
             this.tsiEmployeeTerminate});
             this.tsmStaff.Name = "tsmStaff";
-            this.tsmStaff.Size = new System.Drawing.Size(43, 20);
+            this.tsmStaff.Size = new System.Drawing.Size(52, 24);
             this.tsmStaff.Text = "Staff";
             // 
             // tsiEmployeeSearch
             // 
             this.tsiEmployeeSearch.Name = "tsiEmployeeSearch";
-            this.tsiEmployeeSearch.Size = new System.Drawing.Size(152, 22);
+            this.tsiEmployeeSearch.Size = new System.Drawing.Size(150, 26);
             this.tsiEmployeeSearch.Text = "Search";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(147, 6);
             // 
             // tsiEmployeeAdd
             // 
             this.tsiEmployeeAdd.Name = "tsiEmployeeAdd";
-            this.tsiEmployeeAdd.Size = new System.Drawing.Size(152, 22);
+            this.tsiEmployeeAdd.Size = new System.Drawing.Size(150, 26);
             this.tsiEmployeeAdd.Text = "Add";
             // 
             // tsiEmployeeUpdate
             // 
             this.tsiEmployeeUpdate.Name = "tsiEmployeeUpdate";
-            this.tsiEmployeeUpdate.Size = new System.Drawing.Size(152, 22);
+            this.tsiEmployeeUpdate.Size = new System.Drawing.Size(150, 26);
             this.tsiEmployeeUpdate.Text = "Update";
             // 
             // tsiEmployeeTerminate
             // 
             this.tsiEmployeeTerminate.Name = "tsiEmployeeTerminate";
-            this.tsiEmployeeTerminate.Size = new System.Drawing.Size(152, 22);
+            this.tsiEmployeeTerminate.Size = new System.Drawing.Size(150, 26);
             this.tsiEmployeeTerminate.Text = "Terminate";
             // 
             // customerToolStripMenuItem
@@ -174,35 +176,36 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiCustomerSearch,
             this.tsiCustomerAdd});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // tsiCustomerSearch
             // 
             this.tsiCustomerSearch.Name = "tsiCustomerSearch";
-            this.tsiCustomerSearch.Size = new System.Drawing.Size(116, 22);
+            this.tsiCustomerSearch.Size = new System.Drawing.Size(138, 26);
             this.tsiCustomerSearch.Text = "Search";
             // 
             // tsiCustomerAdd
             // 
             this.tsiCustomerAdd.Name = "tsiCustomerAdd";
-            this.tsiCustomerAdd.Size = new System.Drawing.Size(116, 22);
+            this.tsiCustomerAdd.Size = new System.Drawing.Size(138, 26);
             this.tsiCustomerAdd.Text = "Register";
             // 
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.ordersToolStripMenuItem.Text = "Orders";
             // 
             // tsApplicationInfo
             // 
             this.tsApplicationInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tsApplicationInfo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsApplicationInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslTime});
-            this.tsApplicationInfo.Location = new System.Drawing.Point(0, 560);
+            this.tsApplicationInfo.Location = new System.Drawing.Point(0, 695);
             this.tsApplicationInfo.Name = "tsApplicationInfo";
-            this.tsApplicationInfo.Size = new System.Drawing.Size(996, 25);
+            this.tsApplicationInfo.Size = new System.Drawing.Size(1328, 25);
             this.tsApplicationInfo.TabIndex = 2;
             this.tsApplicationInfo.Text = "toolStrip1";
             // 
@@ -210,7 +213,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // 
             this.tslTime.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tslTime.Name = "tslTime";
-            this.tslTime.Size = new System.Drawing.Size(28, 22);
+            this.tslTime.Size = new System.Drawing.Size(36, 22);
             this.tslTime.Text = "0:00";
             // 
             // pnlMainContent
@@ -219,27 +222,30 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.pnlMainContent.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pnlMainContent.Controls.Add(this.addProduct1);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
+            this.pnlMainContent.Location = new System.Drawing.Point(0, 28);
+            this.pnlMainContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(996, 536);
+            this.pnlMainContent.Size = new System.Drawing.Size(1328, 667);
             this.pnlMainContent.TabIndex = 3;
             // 
             // addProduct1
             // 
-            this.addProduct1.Location = new System.Drawing.Point(274, 148);
+            this.addProduct1.Location = new System.Drawing.Point(365, 182);
+            this.addProduct1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.addProduct1.Name = "addProduct1";
-            this.addProduct1.Size = new System.Drawing.Size(431, 223);
+            this.addProduct1.Size = new System.Drawing.Size(575, 274);
             this.addProduct1.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 585);
+            this.ClientSize = new System.Drawing.Size(1328, 720);
             this.Controls.Add(this.pnlMainContent);
             this.Controls.Add(this.tsApplicationInfo);
             this.Controls.Add(this.mnuMainBar);
             this.MainMenuStrip = this.mnuMainBar;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.mnuMainBar.ResumeLayout(false);
