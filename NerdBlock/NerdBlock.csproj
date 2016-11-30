@@ -59,7 +59,6 @@
     <Compile Include="Engine\Backend\Models\BlockSeries.cs" />
     <Compile Include="Engine\Backend\Models\Customer.cs" />
     <Compile Include="Engine\Backend\Models\Employee.cs" />
-    <Compile Include="Engine\Backend\Models\EmployeeJob.cs" />
     <Compile Include="Engine\Backend\Models\EmployeeRole.cs" />
     <Compile Include="Engine\Backend\Models\Genre.cs" />
     <Compile Include="Engine\Backend\Models\MortarStore.cs" />
@@ -81,7 +80,8 @@
     <Compile Include="Engine\Frontend\Implementation\AddOrderFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddProductFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddSupplierFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\ComboBoxInput.cs" />
+    <Compile Include="Engine\Frontend\Implementation\ComboBoxValueInput.cs" />
+    <Compile Include="Engine\Frontend\Implementation\ComboBoxTextInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\ProductInfoFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\TextBoxInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\ViewEditEmployeeFiller.cs" />

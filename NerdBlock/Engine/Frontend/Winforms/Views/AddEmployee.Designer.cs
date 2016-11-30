@@ -77,7 +77,7 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(14, 98);
+            this.lblPhone.Location = new System.Drawing.Point(15, 98);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(48, 13);
             this.lblPhone.TabIndex = 3;
@@ -95,7 +95,7 @@
             // lblPartFullTime
             // 
             this.lblPartFullTime.AutoSize = true;
-            this.lblPartFullTime.Location = new System.Drawing.Point(28, 123);
+            this.lblPartFullTime.Location = new System.Drawing.Point(29, 123);
             this.lblPartFullTime.Name = "lblPartFullTime";
             this.lblPartFullTime.Size = new System.Drawing.Size(32, 13);
             this.lblPartFullTime.TabIndex = 4;
@@ -218,7 +218,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 147);
+            this.label6.Location = new System.Drawing.Point(32, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 5;

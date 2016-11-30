@@ -35,14 +35,21 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                 address.ApartmentNumber = aptNum;
             else
                 address.ApartmentNumber = null;
-
             employee.HomeAddress = address;
 
-            DataAccess.Insert(employee);
 
-            ViewManager.ShowFlash("Employee added", FlashMessageType.Good);
-            
-            ViewManager.Show("AddEmployee");
+            employee.Role = Context.GetValue<EmployeeRole>("Role");
+
+            if (DataAccess.Insert(employee))
+            {
+                ViewManager.ShowFlash("Employee added", FlashMessageType.Good);
+
+                ViewManager.Show("AddEmployee");
+            }
+            else
+            {
+                ViewManager.ShowFlash("Failed to add employee:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+            }
         }
 
         [BusinessAction("goto_employee_add")]

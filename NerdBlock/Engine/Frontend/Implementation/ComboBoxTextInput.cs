@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Implementation
 {
-    public class ComboBoxInput : IInput
+    public class ComboBoxTextInput : IInput
     {
         private ComboBox myControl;
 
@@ -22,7 +22,7 @@ namespace NerdBlock.Engine.Frontend.Implementation
             get { return myControl.Text; }
         }
 
-        public ComboBoxInput(string valueName, ComboBox input)
+        public ComboBoxTextInput(string valueName, ComboBox input)
         {
             Name = valueName;
             myControl = input;

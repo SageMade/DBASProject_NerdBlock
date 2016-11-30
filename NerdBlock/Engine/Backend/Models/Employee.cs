@@ -35,5 +35,8 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("homeaddress", QueryParamType.Integer), ForeignKey("tbladdress", "id")]
         public Address HomeAddress { get; set; }
+
+        [DataField("roleid", QueryParamType.Integer), ForeignKey("tblemployeerole", "roleid")]
+        public EmployeeRole Role { get; set; }
     }
 }
