@@ -9,5 +9,7 @@ CREATE UNIQUE INDEX empl_uni_sin ON tblemployees (sin);
 alter table tbladdress drop constraint if exists addr_3col_uni_indx;
 alter table tbladdress drop constraint if exists addr_4col_uni_indx;
 
-create unique index addr_5col_uni on tbladdress (streetaddress, state, country, city, postalcode);
-create unique index addr_6col_uni on tbladdress (streetaddress, state, country, city, postalcode, apartmentnumber);
+create unique index addr_5col_uni on tbladdress (streetaddress, state, country, city, postalcode)
+    WHERE apartmentnumber IS NULL;
+create unique index addr_6col_uni on tbladdress (streetaddress, state, country, city, postalcode, apartmentnumber)
+    WHERE apartmentnumber IS NOT NULL;
