@@ -63,5 +63,11 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             ViewManager.Show("EmployeeSearch");
         }
+
+        [BusinessAction("goto_employee_update")]
+        public void ShowUpdate()
+        {
+            ViewManager.Show("ViewEditEmployee");
+        }
     }
 }

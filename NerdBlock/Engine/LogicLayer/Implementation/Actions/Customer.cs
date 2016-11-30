@@ -12,6 +12,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
     [BusinessActionContainer]
     public class Customer
     {
+        [BusinessAction("goto_customer_search")]
         public void ShowSearch()
         {
             ViewManager.Show("CustomerSearch");

@@ -24,6 +24,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             tsiEmployeeAdd.Click += (X, Y) => TryAction("goto_employee_add");
             tsiEmployeeSearch.Click += (X, Y) => TryAction("goto_employee_search");
+            tsiEmployeeUpdate.Click += (X, Y) => TryAction("goto_employee_update");
             tsiLogin.Click += (X, Y) => TryAction("goto_login");
             tsiCustomerSearch.Click += (X, Y) => TryAction("goto_customer_search");
         }

@@ -12,6 +12,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
     [BusinessActionContainer]
     public class LoginActions
     {
+        [BusinessAction("goto_login")]
         public void ShowLogin()
         {
             ViewManager.Show("Login");
