@@ -16,12 +16,16 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
+
             InitializeComponent();
 
             tsiEmployeeAdd.Click += (X, Y) => TryAction("goto_employee_add");
             tsiEmployeeSearch.Click += (X, Y) => TryAction("goto_employee_search");
+            tsiLogin.Click += (X, Y) => TryAction("goto_login");
+            tsiCustomerSearch.Click += (X, Y) => TryAction("goto_customer_search");
         }
 
         private void TryAction(string name)
@@ -31,5 +35,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             if (!LogicManager.TryPerformAction(name, out msg))
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
     }
 }

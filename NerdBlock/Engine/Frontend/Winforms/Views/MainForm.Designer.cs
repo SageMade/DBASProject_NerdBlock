@@ -32,6 +32,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             this.mnuMainBar = new System.Windows.Forms.MenuStrip();
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsiExitProgram = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,15 +50,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiCustomerSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiCustomerAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
-            this.tslTime = new System.Windows.Forms.ToolStripLabel();
-            this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
-            this.tsiLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReports = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiEmployeeBreakdown = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSeriesBreakdown = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiInventoryBreakdown = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
+            this.tslTime = new System.Windows.Forms.ToolStripLabel();
+            this.pnlMainContent = new System.Windows.Forms.Panel();
+            this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -90,6 +90,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
             this.applicationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.applicationToolStripMenuItem.Text = "Application";
+            // 
+            // tsiLogin
+            // 
+            this.tsiLogin.Name = "tsiLogin";
+            this.tsiLogin.Size = new System.Drawing.Size(152, 22);
+            this.tsiLogin.Text = "Login";
             // 
             // tsiLogout
             // 
@@ -203,6 +209,34 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ordersToolStripMenuItem.Text = "Orders";
             // 
+            // tsmReports
+            // 
+            this.tsmReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiEmployeeBreakdown,
+            this.tsiSeriesBreakdown,
+            this.tsiInventoryBreakdown});
+            this.tsmReports.Name = "tsmReports";
+            this.tsmReports.Size = new System.Drawing.Size(59, 20);
+            this.tsmReports.Text = "Reports";
+            // 
+            // tsiEmployeeBreakdown
+            // 
+            this.tsiEmployeeBreakdown.Name = "tsiEmployeeBreakdown";
+            this.tsiEmployeeBreakdown.Size = new System.Drawing.Size(198, 22);
+            this.tsiEmployeeBreakdown.Text = "Employee Breakdown";
+            // 
+            // tsiSeriesBreakdown
+            // 
+            this.tsiSeriesBreakdown.Name = "tsiSeriesBreakdown";
+            this.tsiSeriesBreakdown.Size = new System.Drawing.Size(198, 22);
+            this.tsiSeriesBreakdown.Text = "Block Series Breakdown";
+            // 
+            // tsiInventoryBreakdown
+            // 
+            this.tsiInventoryBreakdown.Name = "tsiInventoryBreakdown";
+            this.tsiInventoryBreakdown.Size = new System.Drawing.Size(198, 22);
+            this.tsiInventoryBreakdown.Text = "Inventory Breakdown";
+            // 
             // tsApplicationInfo
             // 
             this.tsApplicationInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -240,40 +274,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.addProduct1.Name = "addProduct1";
             this.addProduct1.Size = new System.Drawing.Size(431, 223);
             this.addProduct1.TabIndex = 0;
-            // 
-            // tsiLogin
-            // 
-            this.tsiLogin.Name = "tsiLogin";
-            this.tsiLogin.Size = new System.Drawing.Size(152, 22);
-            this.tsiLogin.Text = "Login";
-            // 
-            // tsmReports
-            // 
-            this.tsmReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiEmployeeBreakdown,
-            this.tsiSeriesBreakdown,
-            this.tsiInventoryBreakdown});
-            this.tsmReports.Name = "tsmReports";
-            this.tsmReports.Size = new System.Drawing.Size(59, 20);
-            this.tsmReports.Text = "Reports";
-            // 
-            // tsiEmployeeBreakdown
-            // 
-            this.tsiEmployeeBreakdown.Name = "tsiEmployeeBreakdown";
-            this.tsiEmployeeBreakdown.Size = new System.Drawing.Size(198, 22);
-            this.tsiEmployeeBreakdown.Text = "Employee Breakdown";
-            // 
-            // tsiSeriesBreakdown
-            // 
-            this.tsiSeriesBreakdown.Name = "tsiSeriesBreakdown";
-            this.tsiSeriesBreakdown.Size = new System.Drawing.Size(198, 22);
-            this.tsiSeriesBreakdown.Text = "Block Series Breakdown";
-            // 
-            // tsiInventoryBreakdown
-            // 
-            this.tsiInventoryBreakdown.Name = "tsiInventoryBreakdown";
-            this.tsiInventoryBreakdown.Size = new System.Drawing.Size(198, 22);
-            this.tsiInventoryBreakdown.Text = "Inventory Breakdown";
             // 
             // MainForm
             // 
