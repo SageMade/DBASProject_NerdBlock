@@ -226,6 +226,7 @@
             // 
             // cbRole
             // 
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(66, 147);
             this.cbRole.Margin = new System.Windows.Forms.Padding(2);

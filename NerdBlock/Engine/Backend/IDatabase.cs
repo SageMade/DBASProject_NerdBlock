@@ -21,6 +21,13 @@ namespace NerdBlock.Engine.Backend
         void Init(DbConnectData connectData);
 
         /// <summary>
+        /// Handles preparing a new query without parameters
+        /// </summary>
+        /// <param name="sql">The source sql for this query</param>
+        /// <returns>The prepared query</returns>
+        IQuery PrepareQuery(string sql);
+
+        /// <summary>
         /// Handles preparing a new query with the given sql and query parameters
         /// </summary>
         /// <param name="sql">The source sql for this query</param>

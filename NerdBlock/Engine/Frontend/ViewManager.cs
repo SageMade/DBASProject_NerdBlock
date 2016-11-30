@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Frontend.Winforms;
 
 namespace NerdBlock.Engine.Frontend
@@ -50,6 +52,16 @@ namespace NerdBlock.Engine.Frontend
         public static void ShowFlash(string message, FlashMessageType flashType)
         {
             Implementation.ShowFlash(message, flashType);
+        }
+
+        public static void PopulateList<ValueType, TargetType>(TargetType targetObject) where ValueType : new()
+        {
+            Implementation.PopulateList<ValueType, TargetType>(targetObject);
+        }
+
+        public static void PopulateFromQuery<TargetType>(TargetType targetObject, IQueryResult queryResult, int nameIndex = 0)
+        {
+            Implementation.PopulateFromQuery<TargetType>(targetObject, queryResult, nameIndex);
         }
     }
 }

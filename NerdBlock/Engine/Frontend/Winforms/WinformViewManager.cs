@@ -1,4 +1,5 @@
-﻿using NerdBlock.Engine.Frontend.Winforms.Views;
+﻿using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Frontend.Winforms.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -106,6 +107,38 @@ namespace NerdBlock.Engine.Frontend.Winforms
                 case FlashMessageType.Fatal:
                     MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     break;
+            }
+        }
+
+        public void PopulateList<ValueType, TargetType>(TargetType targetObject) where ValueType : new()
+        {
+            if (typeof(TargetType) == typeof(ComboBox))
+            {
+                ValueType[] values = DataAccess.SelectAll<ValueType>();
+
+                ComboBox target = targetObject as ComboBox;
+
+                for(int index = 0; index < values.Length; index ++)
+                {
+                    target.Items.Add(values[index]);
+                }
+
+                if (values.Length > 0 && target.DropDownStyle == ComboBoxStyle.DropDownList)
+                    target.SelectedIndex = 0;
+            }
+        }
+
+        public void PopulateFromQuery<TargetType>(TargetType targetObject, IQueryResult query, int nameIndex = 0)
+        {
+            if (typeof(TargetType) == typeof(ComboBox))
+            {
+                ComboBox target = targetObject as ComboBox;
+
+                for (int index = 0; index < query.NumRows; index++)
+                {
+                    target.Items.Add(query.Row[nameIndex]);
+                    query.MoveNext();
+                }
             }
         }
     }

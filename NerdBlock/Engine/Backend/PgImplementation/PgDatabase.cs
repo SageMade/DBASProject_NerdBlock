@@ -93,6 +93,11 @@ namespace NerdBlock.Engine.Backend.PgImplementation
             return new PgQuery(DataAccess.Database, npsqlParameters, sql.ToLower().Contains("select"), sql);
         }
 
+        public IQuery PrepareQuery(string sql)
+        {
+            return new PgQuery(DataAccess.Database, sql.ToLower().Contains("select"), sql);
+        }
+
         public IQueryResult Execute(IQuery query, params object[] parameters)
         {
             NpgsqlCommand command = query.QueryObject as NpgsqlCommand;

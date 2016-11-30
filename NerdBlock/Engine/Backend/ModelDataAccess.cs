@@ -123,6 +123,38 @@ namespace NerdBlock.Engine.Backend
             return results > 0;
         }
 
+        public T[] SelectAll()
+        {
+            // We need to build two sides of the query, allocate strings
+            string searchTerms = "";
+            
+            // Iterate over each property
+            for (int index = 0; index < myModelProperties.Length; index++)
+            {
+                // Get the DataField attribute
+                DataField dField = myModelProperties[index].GetCustomAttribute<DataField>();
+
+                searchTerms += dField.FieldName + ",";
+            }
+
+            // Prep the final query
+            string query = string.Format("select {1} from {0}", myTableName, searchTerms.Trim(','));
+
+            // Execute the query
+            IQueryResult result = DataAccess.ExecuteQuery(query);
+
+            T[] results = new T[result.NumRows];
+
+            for (int index = 0; index < results.Length; index++)
+            {
+                results[index] = __Decode(result);
+                result.MoveNext();
+            }
+
+            // Return true if at least one row was effected
+            return results;
+        }
+
         /// <summary>
         /// Gets the value from the database with the given primary key
         /// </summary>

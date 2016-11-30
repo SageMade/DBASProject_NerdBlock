@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using NerdBlock.Engine.Backend;
+using System.Reflection;
 
 namespace NerdBlock.Engine.Frontend.Winforms
 {
@@ -19,5 +20,9 @@ namespace NerdBlock.Engine.Frontend.Winforms
         void ReflectLoadViews(Assembly assembly = null);
 
         void ShowFlash(string message, FlashMessageType flashType);
+
+        void PopulateList<ValueType, TargetType>(TargetType targetObject) where ValueType : new();
+
+        void PopulateFromQuery<TargetType>(TargetType targetObject, IQueryResult query, int nameIndex = 0);
     }
 }

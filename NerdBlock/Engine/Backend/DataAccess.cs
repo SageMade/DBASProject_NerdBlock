@@ -56,6 +56,18 @@ namespace NerdBlock.Engine.Backend
                 throw new KeyNotFoundException(string.Format("No query by the name of \"{0}\" found", queryName));
         }
 
+        public static IQueryResult ExecuteQuery(string query, QueryParam[] qParams, object[] parameters)
+        {
+            IQuery dbQuery = Database.PrepareQuery(query, qParams);
+            return Database.Execute(dbQuery, parameters);
+        }
+
+        public static IQueryResult ExecuteQuery(string query)
+        {
+            IQuery dbQuery = Database.PrepareQuery(query);
+            return Database.Execute(dbQuery);
+        }
+
         private static ModelDataAccess<T> __GetDataAccess<T>() where T : new()
         {
             if (!myDataAccessors.ContainsKey(typeof(T)))
@@ -100,6 +112,11 @@ namespace NerdBlock.Engine.Backend
             return (bool)mi.Invoke(null, new[] { model });
         }
 
+        public static ValueType[] SelectAll<ValueType>() where ValueType : new()
+        {
+            return __GetDataAccess<ValueType>().SelectAll();
+        }
+
         public static int ExecuteStatement(string query, QueryParam[] qParams, params object[] parameters)
         {
             IQuery dbQuery = Database.PrepareQuery(query, qParams);
@@ -130,12 +147,6 @@ namespace NerdBlock.Engine.Backend
             MethodInfo mi = typeof(DataAccess).GetMethod("FromPrimaryKey", BindingFlags.Public | BindingFlags.Static);
             mi = mi.MakeGenericMethod(propertyType);
             return mi.Invoke(null, new object[] { value });
-        }
-
-        public static IQueryResult ExecuteQuery(string query, QueryParam[] qParams, object[] parameters)
-        {
-            IQuery dbQuery = Database.PrepareQuery(query, qParams);
-            return Database.Execute(dbQuery, parameters);
         }
     }
 }
