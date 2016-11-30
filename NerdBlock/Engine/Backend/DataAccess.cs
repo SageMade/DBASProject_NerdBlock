@@ -78,8 +78,7 @@ namespace NerdBlock.Engine.Backend
 
         public static bool Exists<T>(T match, bool matchNull = false) where T : new()
         {
-            ModelDataAccess<T> da = __GetDataAccess<T>();
-            return da.Exists(match, matchNull);
+            return __GetDataAccess<T>().Exists(match, matchNull);
         }
 
         public static bool ExistsWeak(Type modelType, object match, bool matchNull = false)

@@ -89,5 +89,24 @@ namespace NerdBlock.Engine.Frontend.Winforms
                 ViewManager.RegisterView(types[index].Name, item);
             }
         }
+
+        public void ShowFlash(string message, FlashMessageType flashType)
+        {
+            switch (flashType)
+            {
+                case FlashMessageType.Neutral:
+                 MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case FlashMessageType.Good:
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    break;
+                case FlashMessageType.Bad:
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case FlashMessageType.Fatal:
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    break;
+            }
+        }
     }
 }

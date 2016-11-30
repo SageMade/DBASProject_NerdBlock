@@ -19,7 +19,7 @@ namespace NerdBlock.Engine.Frontend.Implementation
 
         public object Value
         {
-            get { return myControl.SelectedValue; }
+            get { return myControl.Text; }
         }
 
         public ComboBoxInput(string valueName, ComboBox input)

@@ -80,7 +80,7 @@ namespace NerdBlock.Engine.Backend
                     {
                         // If we do not allow null, throw an exception, otherwise ignore
                         if (myModelProperties[index].GetCustomAttribute<Nullable>() == null)
-                            throw new InvalidOperationException("Cannot insert with non-nullable field not set");
+                            throw new InvalidOperationException("Cannot insert with non-nullable field not set: " + myModelProperties[index].Name);
                     }
                     // Next see if this is a foreign key
                     else if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)
@@ -208,79 +208,7 @@ namespace NerdBlock.Engine.Backend
         /// <returns>True if a match is found, false if otherwise</returns>
         public bool Exists(T match, bool matchChildren)
         {
-            // Iterate over dependancies
-            for (int index = 0; index < myDependencies.Length; index++)
-            {
-                // Get the value from the property
-                object pValue = myDependencies[index].GetValue(match);
-
-                // IF the database does not contain something that matches, we know that we cannot have this instance
-                if (matchChildren && !DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
-                {
-                    return false;
-                }
-            }
-
-            // We need to build two sides of the query, allocate strings
-            string searchTerms = "";
-            string resultValues = "";
-
-            // We also need to store a list of values to insert as well as a list of query parameters
-            List<object> insertParams = new List<object>();
-            List<QueryParam> queryParams = new List<QueryParam>();
-
-            // Iterate over each property
-            for (int index = 0; index < myModelProperties.Length; index++)
-            {
-                // Get the value of the property
-                object value = myModelProperties[index].GetValue(match);
-                // Get the DataField attribute
-                DataField dField = myModelProperties[index].GetCustomAttribute<DataField>();
-
-                // Check for a null value
-                if (value == null)
-                {
-                    // If we do not allow null, throw an exception, otherwise ignore
-                    //if (myModelProperties[index].GetCustomAttribute<Nullable>() == null)
-                        //throw new InvalidOperationException("Cannot search with non-nullable field not set");
-                }
-                // Next see if this is a foreign key
-                else if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)
-                {
-                    // Use the DataAccess to get the primary key value for the instance
-                    object key = DataAccess.GetPrimaryKeyWeak(myModelProperties[index].PropertyType, value);
-
-                    // Append the the field name to the search
-                    searchTerms += string.Format("{0}=@{0},", dField.FieldName);
-
-                    // Make and insert the query parameter
-                    queryParams.Add(new QueryParam(dField.FieldName, dField.FieldType));
-                    // Add that key value we got
-                    insertParams.Add(key);
-                }
-                // Otherwise it is a regular data field
-                else if (myModelProperties[index].GetCustomAttribute<PrimaryKey>() == null)
-                {
-                    // Append the the field name to the search
-                    searchTerms += string.Format("{0}=@{0} AND ", dField.FieldName);
-
-                    // Make and insert the query parameter
-                    queryParams.Add(new QueryParam(dField.FieldName, dField.FieldType));
-                    // Add that key value we got
-                    insertParams.Add(value);
-                }
-
-                resultValues += dField.FieldName + ",";
-            }
-
-            // Prep the final query
-            string query = string.Format("select {1} from {0} where {2}", myTableName, resultValues.Trim(','), searchTerms.Remove(searchTerms.Length - 5, 4).Trim());
-
-            // Execute the query
-            IQueryResult result = DataAccess.ExecuteQuery(query, queryParams.ToArray(), insertParams.ToArray());
-
-            // Return true if at least one row was effected
-            return result.NumRows > 0;
+            return GetMatches(match).Length != 0;
         }
 
         /// <summary>

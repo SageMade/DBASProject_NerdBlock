@@ -46,5 +46,10 @@ namespace NerdBlock.Engine.Frontend
         {
             return Implementation.CurrentView;
         }
+
+        public static void ShowFlash(string message, FlashMessageType flashType)
+        {
+            Implementation.ShowFlash(message, flashType);
+        }
     }
 }

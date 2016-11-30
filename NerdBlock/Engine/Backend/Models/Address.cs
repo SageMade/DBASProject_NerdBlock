@@ -21,6 +21,9 @@ namespace NerdBlock.Engine.Backend.Models
         [DataField("state", QueryParamType.VarChar)]
         public string State { get; set; }
 
+        [DataField("city", QueryParamType.VarChar)]
+        public string City { get; set; }
+
         [DataField("apartmentnumber", QueryParamType.Integer), Nullable]
         public int? ApartmentNumber { get; set; }
 

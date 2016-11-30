@@ -17,22 +17,31 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             Employee employee = new Employee();
             employee.FirstName = Context.GetValue<string>("FirstName");
-            employee.FirstName = Context.GetValue<string>("LastName");
+            employee.LastName = Context.GetValue<string>("LastName");
             employee.SIN = Context.GetValue<string>("SIN");
+            employee.Email = Context.GetValue<string>("Email");
             employee.Phone = long.Parse(Context.GetValue<string>("Phone").Replace(" ", "").Replace("-",""));
             employee.DateJoined = DateTime.Now;
-            employee.Email = null;
 
             Address address = new Address();
-            address.StreetAddress = Context.GetValue<string>("StreetAddress");
-            address.Country = Context.GetValue<string>("Country");
-            address.State = Context.GetValue<string>("State");
-            address.PostalCode= Context.GetValue<string>("PostalCode");
+            address.StreetAddress = Context.GetValue<string>("Address.StreetAddress");
+            address.Country = Context.GetValue<string>("Address.Country");
+            address.State = Context.GetValue<string>("Address.State");
+            address.PostalCode= Context.GetValue<string>("Address.PostalCode");
+            address.City = Context.GetValue<string>("Address.City");
+
+            int aptNum = -1;
+            if (int.TryParse(Context.GetValue<string>("Address.AptNum"), out aptNum))
+                address.ApartmentNumber = aptNum;
+            else
+                address.ApartmentNumber = null;
 
             employee.HomeAddress = address;
 
             DataAccess.Insert(employee);
 
+            ViewManager.ShowFlash("Employee added", FlashMessageType.Good);
+            
             ViewManager.Show("AddEmployee");
         }
 

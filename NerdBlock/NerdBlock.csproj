@@ -74,6 +74,7 @@
     <Compile Include="Engine\Backend\Models\Transfer.cs" />
     <Compile Include="Engine\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Engine\Backend\Util.cs" />
+    <Compile Include="Engine\Frontend\FlashMessageType.cs" />
     <Compile Include="Engine\Frontend\IFillable.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddEmployeeFiller.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Engine\Frontend\ViewManager.cs" />
     <Compile Include="Engine\Frontend\Winforms\FillerBase.cs" />
     <Compile Include="Engine\Frontend\Winforms\IViewManagerImplementation.cs" />
+    <Compile Include="Engine\Frontend\Winforms\TextComboBox.cs" />
     <Compile Include="Engine\Frontend\Winforms\TextBoxFiller.cs" />
     <Compile Include="Engine\Frontend\Winforms\LabelFiller.cs" />
     <Compile Include="Engine\Frontend\Winforms\ViewFillerBase.cs" />

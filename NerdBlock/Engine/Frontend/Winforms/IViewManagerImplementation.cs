@@ -17,5 +17,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
         void RegisterView(string name, IView view);
 
         void ReflectLoadViews(Assembly assembly = null);
+
+        void ShowFlash(string message, FlashMessageType flashType);
     }
 }
