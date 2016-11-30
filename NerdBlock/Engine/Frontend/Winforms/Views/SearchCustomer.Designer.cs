@@ -37,12 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.chkA = new System.Windows.Forms.CheckBox();
-            this.chkB = new System.Windows.Forms.CheckBox();
-            this.chkC = new System.Windows.Forms.CheckBox();
-            this.chkD = new System.Windows.Forms.CheckBox();
-            this.chkE = new System.Windows.Forms.CheckBox();
-            this.chkNone = new System.Windows.Forms.CheckBox();
+            this.cbTheme = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 126);
+            this.label4.Location = new System.Drawing.Point(74, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 6;
@@ -113,90 +108,34 @@
             "Active",
             "Inactive",
             "All"});
-            this.comboBox1.Location = new System.Drawing.Point(58, 123);
+            this.comboBox1.Location = new System.Drawing.Point(117, 105);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
             this.comboBox1.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(236, 126);
+            this.label5.Location = new System.Drawing.Point(71, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Theme";
             // 
-            // chkA
+            // cbTheme
             // 
-            this.chkA.AutoSize = true;
-            this.chkA.Location = new System.Drawing.Point(239, 142);
-            this.chkA.Name = "chkA";
-            this.chkA.Size = new System.Drawing.Size(33, 17);
-            this.chkA.TabIndex = 9;
-            this.chkA.Text = "A";
-            this.chkA.UseVisualStyleBackColor = true;
-            // 
-            // chkB
-            // 
-            this.chkB.AutoSize = true;
-            this.chkB.Location = new System.Drawing.Point(239, 165);
-            this.chkB.Name = "chkB";
-            this.chkB.Size = new System.Drawing.Size(33, 17);
-            this.chkB.TabIndex = 10;
-            this.chkB.Text = "B";
-            this.chkB.UseVisualStyleBackColor = true;
-            // 
-            // chkC
-            // 
-            this.chkC.AutoSize = true;
-            this.chkC.Location = new System.Drawing.Point(239, 188);
-            this.chkC.Name = "chkC";
-            this.chkC.Size = new System.Drawing.Size(33, 17);
-            this.chkC.TabIndex = 11;
-            this.chkC.Text = "C";
-            this.chkC.UseVisualStyleBackColor = true;
-            // 
-            // chkD
-            // 
-            this.chkD.AutoSize = true;
-            this.chkD.Location = new System.Drawing.Point(239, 211);
-            this.chkD.Name = "chkD";
-            this.chkD.Size = new System.Drawing.Size(34, 17);
-            this.chkD.TabIndex = 12;
-            this.chkD.Text = "D";
-            this.chkD.UseVisualStyleBackColor = true;
-            // 
-            // chkE
-            // 
-            this.chkE.AutoSize = true;
-            this.chkE.Location = new System.Drawing.Point(239, 234);
-            this.chkE.Name = "chkE";
-            this.chkE.Size = new System.Drawing.Size(33, 17);
-            this.chkE.TabIndex = 13;
-            this.chkE.Text = "E";
-            this.chkE.UseVisualStyleBackColor = true;
-            // 
-            // chkNone
-            // 
-            this.chkNone.AutoSize = true;
-            this.chkNone.Location = new System.Drawing.Point(239, 257);
-            this.chkNone.Name = "chkNone";
-            this.chkNone.Size = new System.Drawing.Size(52, 17);
-            this.chkNone.TabIndex = 14;
-            this.chkNone.Text = "None";
-            this.chkNone.UseVisualStyleBackColor = true;
+            this.cbTheme.FormattingEnabled = true;
+            this.cbTheme.Location = new System.Drawing.Point(117, 151);
+            this.cbTheme.Name = "cbTheme";
+            this.cbTheme.Size = new System.Drawing.Size(100, 21);
+            this.cbTheme.TabIndex = 9;
+            this.cbTheme.SelectedIndexChanged += new System.EventHandler(this.cbTheme_SelectedIndexChanged);
             // 
             // SearchCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chkNone);
-            this.Controls.Add(this.chkE);
-            this.Controls.Add(this.chkD);
-            this.Controls.Add(this.chkC);
-            this.Controls.Add(this.chkB);
-            this.Controls.Add(this.chkA);
+            this.Controls.Add(this.cbTheme);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
@@ -224,11 +163,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox chkA;
-        private System.Windows.Forms.CheckBox chkB;
-        private System.Windows.Forms.CheckBox chkC;
-        private System.Windows.Forms.CheckBox chkD;
-        private System.Windows.Forms.CheckBox chkE;
-        private System.Windows.Forms.CheckBox chkNone;
+        private System.Windows.Forms.ComboBox cbTheme;
     }
 }
