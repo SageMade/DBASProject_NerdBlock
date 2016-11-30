@@ -27,6 +27,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             tsiEmployeeUpdate.Click += (X, Y) => TryAction("goto_employee_update");
             tsiLogin.Click += (X, Y) => TryAction("goto_login");
             tsiCustomerSearch.Click += (X, Y) => TryAction("goto_customer_search");
+            tsiInventorySearch.Click += (X, Y) => TryAction("goto_inventory_search");
+            tsiInventoryUpdate.Click += (X, Y) => TryAction("goto_inventory_update");
+            tsiInventoryLostDamaged.Click += (X, Y) => TryAction("goto_inventory_lost_damaged");
+            
         }
 
         private void TryAction(string name)
@@ -36,6 +40,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             if (!LogicManager.TryPerformAction(name, out msg))
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
 
     }
 }
