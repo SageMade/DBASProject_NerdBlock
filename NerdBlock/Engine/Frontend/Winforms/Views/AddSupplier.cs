@@ -16,5 +16,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
         }
+
+        private void txtContact_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

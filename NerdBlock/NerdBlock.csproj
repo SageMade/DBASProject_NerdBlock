@@ -80,8 +80,12 @@
     <Compile Include="Engine\Frontend\Implementation\AddEmployeeFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddOrderFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\AddProductFiller.cs" />
+    <Compile Include="Engine\Frontend\Implementation\AddSupplierFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\ComboBoxInput.cs" />
+    <Compile Include="Engine\Frontend\Implementation\ProductInfoFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\TextBoxInput.cs" />
+    <Compile Include="Engine\Frontend\Implementation\ViewEditEmployeeFiller.cs" />
+    <Compile Include="Engine\Frontend\Implementation\ViewEditOrderFiller.cs" />
     <Compile Include="Engine\Frontend\IView.cs" />
     <Compile Include="Engine\Frontend\ReflectedInput.cs" />
     <Compile Include="Engine\Frontend\ViewManager.cs" />
