@@ -99,7 +99,7 @@
             this.dgvGenres.Name = "dgvGenres";
             this.dgvGenres.ReadOnly = true;
             this.dgvGenres.RowHeadersVisible = false;
-            this.dgvGenres.Size = new System.Drawing.Size(364, 218);
+            this.dgvGenres.Size = new System.Drawing.Size(364, 213);
             this.dgvGenres.TabIndex = 0;
             // 
             // clmName
@@ -137,19 +137,20 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.btnViewSeries);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(2, 233);
+            this.panel1.Location = new System.Drawing.Point(2, 228);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(364, 29);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(364, 34);
             this.panel1.TabIndex = 2;
             // 
             // btnViewSeries
             // 
-            this.btnViewSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewSeries.Location = new System.Drawing.Point(286, 3);
+            this.btnViewSeries.Location = new System.Drawing.Point(255, 5);
+            this.btnViewSeries.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewSeries.Name = "btnViewSeries";
-            this.btnViewSeries.Size = new System.Drawing.Size(75, 23);
-            this.btnViewSeries.TabIndex = 1;
-            this.btnViewSeries.Text = "button1";
+            this.btnViewSeries.Size = new System.Drawing.Size(103, 23);
+            this.btnViewSeries.TabIndex = 14;
+            this.btnViewSeries.Text = "View Series Info";
             this.btnViewSeries.UseVisualStyleBackColor = true;
             // 
             // groupBox3
