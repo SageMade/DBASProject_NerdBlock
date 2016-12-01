@@ -33,13 +33,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnViewSeries = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chbInitialActive = new System.Windows.Forms.CheckBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.btnViewSeries = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +100,17 @@
             this.label4.Size = new System.Drawing.Size(269, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Genre Name  |  Is Active?  |  # Of Series";
+            // 
+            // btnViewSeries
+            // 
+            this.btnViewSeries.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnViewSeries.Location = new System.Drawing.Point(2, 242);
+            this.btnViewSeries.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewSeries.Name = "btnViewSeries";
+            this.btnViewSeries.Size = new System.Drawing.Size(269, 19);
+            this.btnViewSeries.TabIndex = 14;
+            this.btnViewSeries.Text = "View Series Info";
+            this.btnViewSeries.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -166,17 +177,6 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(76, 20);
             this.txtTitle.TabIndex = 11;
-            // 
-            // btnViewSeries
-            // 
-            this.btnViewSeries.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnViewSeries.Location = new System.Drawing.Point(2, 242);
-            this.btnViewSeries.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViewSeries.Name = "btnViewSeries";
-            this.btnViewSeries.Size = new System.Drawing.Size(269, 19);
-            this.btnViewSeries.TabIndex = 14;
-            this.btnViewSeries.Text = "View Series Info";
-            this.btnViewSeries.UseVisualStyleBackColor = true;
             // 
             // BlockGenres
             // 
