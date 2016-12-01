@@ -37,6 +37,8 @@
       <HintPath>..\packages\Npgsql.3.1.8\lib\net451\Npgsql.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -47,6 +49,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\Backend\DataAccess.cs" />
@@ -96,11 +99,17 @@
     <Compile Include="Engine\Frontend\Winforms\LabelFiller.cs" />
     <Compile Include="Engine\Frontend\Winforms\ViewFillerBase.cs" />
     <Compile Include="Engine\Frontend\IViewFillable.cs" />
-    <Compile Include="Engine\Frontend\Winforms\Views\AddEditBlock.cs">
+    <Compile Include="Engine\Frontend\Winforms\Views\BlockQueries.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\AddEditBlock.Designer.cs">
-      <DependentUpon>AddEditBlock.cs</DependentUpon>
+    <Compile Include="Engine\Frontend\Winforms\Views\BlockQueries.Designer.cs">
+      <DependentUpon>BlockQueries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\Blocks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\Blocks.Designer.cs">
+      <DependentUpon>Blocks.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
@@ -268,8 +277,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddEditBlock.resx">
-      <DependentUpon>AddEditBlock.cs</DependentUpon>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockQueries.resx">
+      <DependentUpon>BlockQueries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Blocks.resx">
+      <DependentUpon>Blocks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
@@ -346,7 +358,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="SQL\Constraints.sql" />
     <Content Include="SQL\Database.sql" />

@@ -34,7 +34,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpSeries = new System.Windows.Forms.GroupBox();
-            this.cbTheme = new System.Windows.Forms.ComboBox();
+            this.cbGenre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbSeries = new System.Windows.Forms.ListBox();
             this.btnBlocks = new System.Windows.Forms.Button();
@@ -103,23 +103,23 @@
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
             // 
-            // cbTheme
+            // cbGenre
             // 
-            this.cbTheme.FormattingEnabled = true;
-            this.cbTheme.Location = new System.Drawing.Point(251, 27);
-            this.cbTheme.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTheme.Name = "cbTheme";
-            this.cbTheme.Size = new System.Drawing.Size(102, 21);
-            this.cbTheme.TabIndex = 9;
+            this.cbGenre.FormattingEnabled = true;
+            this.cbGenre.Location = new System.Drawing.Point(251, 27);
+            this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGenre.Name = "cbGenre";
+            this.cbGenre.Size = new System.Drawing.Size(102, 21);
+            this.cbGenre.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(206, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Theme";
+            this.label6.Text = "Genre";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // lbSeries
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnBlocks);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbTheme);
+            this.Controls.Add(this.cbGenre);
             this.Controls.Add(this.grpSeries);
             this.Controls.Add(this.label5);
             this.Name = "BlockSeries";
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpSeries;
         private System.Windows.Forms.ListBox lbSeries;
-        private System.Windows.Forms.ComboBox cbTheme;
+        private System.Windows.Forms.ComboBox cbGenre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBlocks;
     }
