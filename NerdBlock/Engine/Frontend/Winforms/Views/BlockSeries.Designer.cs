@@ -33,12 +33,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpSeries = new System.Windows.Forms.GroupBox();
             this.cbTheme = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnSeriesInfo = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.lbSeries = new System.Windows.Forms.ListBox();
+            this.btnBlocks = new System.Windows.Forms.Button();
+            this.grpSeries.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +72,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 12);
+            this.label5.Location = new System.Drawing.Point(17, 23);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 20);
@@ -89,19 +89,19 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Volume";
             // 
-            // groupBox1
+            // grpSeries
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(21, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 256);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grpSeries.Controls.Add(this.lbSeries);
+            this.grpSeries.Controls.Add(this.label3);
+            this.grpSeries.Controls.Add(this.label1);
+            this.grpSeries.Controls.Add(this.label2);
+            this.grpSeries.Controls.Add(this.label4);
+            this.grpSeries.Location = new System.Drawing.Point(21, 53);
+            this.grpSeries.Name = "grpSeries";
+            this.grpSeries.Size = new System.Drawing.Size(332, 256);
+            this.grpSeries.TabIndex = 8;
+            this.grpSeries.TabStop = false;
+            this.grpSeries.Text = "Series";
             // 
             // cbTheme
             // 
@@ -115,42 +115,43 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(186, 30);
+            this.label6.Location = new System.Drawing.Point(206, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Theme";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // listBox1
+            // lbSeries
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(14, 54);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(298, 186);
-            this.listBox1.TabIndex = 8;
+            this.lbSeries.FormattingEnabled = true;
+            this.lbSeries.Location = new System.Drawing.Point(14, 54);
+            this.lbSeries.Name = "lbSeries";
+            this.lbSeries.Size = new System.Drawing.Size(298, 186);
+            this.lbSeries.TabIndex = 8;
             // 
-            // btnSeriesInfo
+            // btnBlocks
             // 
-            this.btnSeriesInfo.Location = new System.Drawing.Point(243, 315);
-            this.btnSeriesInfo.Name = "btnSeriesInfo";
-            this.btnSeriesInfo.Size = new System.Drawing.Size(110, 23);
-            this.btnSeriesInfo.TabIndex = 10;
-            this.btnSeriesInfo.Text = "View Series Info";
-            this.btnSeriesInfo.UseVisualStyleBackColor = true;
+            this.btnBlocks.Location = new System.Drawing.Point(243, 315);
+            this.btnBlocks.Name = "btnBlocks";
+            this.btnBlocks.Size = new System.Drawing.Size(110, 23);
+            this.btnBlocks.TabIndex = 10;
+            this.btnBlocks.Text = "View Blocks";
+            this.btnBlocks.UseVisualStyleBackColor = true;
             // 
             // BlockSeries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnSeriesInfo);
+            this.Controls.Add(this.btnBlocks);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbTheme);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpSeries);
             this.Controls.Add(this.label5);
             this.Name = "BlockSeries";
             this.Size = new System.Drawing.Size(368, 345);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpSeries.ResumeLayout(false);
+            this.grpSeries.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,10 +163,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox grpSeries;
+        private System.Windows.Forms.ListBox lbSeries;
         private System.Windows.Forms.ComboBox cbTheme;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnSeriesInfo;
+        private System.Windows.Forms.Button btnBlocks;
     }
 }
