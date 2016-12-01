@@ -15,12 +15,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
            
             //Output - 2
             ViewManager.PopulateList<Genre, ComboBox>(cbGenre);
-            //Add lbSeries
+            //Add lstSeries
 
             //Controls - 1 DONE
             btnBlocks.Click += (X, Y) =>
             {
-                Context.SetValue("TargetSeries", lbSeries.SelectedItem);
+                Context.SetValue("TargetSeries", lstSeries.SelectedItem);
                 Context.SetValue("TargetGenre", cbGenre.SelectedItem);
                 AttemptAction("goto_blockseries");
             };

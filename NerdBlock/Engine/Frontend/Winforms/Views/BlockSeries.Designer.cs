@@ -34,9 +34,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpSeries = new System.Windows.Forms.GroupBox();
+            this.lstSeries = new System.Windows.Forms.ListBox();
             this.cbGenre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbSeries = new System.Windows.Forms.ListBox();
             this.btnBlocks = new System.Windows.Forms.Button();
             this.grpSeries.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +78,6 @@
             this.label5.Size = new System.Drawing.Size(86, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Series Info";
-
             // 
             // label3
             // 
@@ -91,7 +90,7 @@
             // 
             // grpSeries
             // 
-            this.grpSeries.Controls.Add(this.lbSeries);
+            this.grpSeries.Controls.Add(this.lstSeries);
             this.grpSeries.Controls.Add(this.label3);
             this.grpSeries.Controls.Add(this.label1);
             this.grpSeries.Controls.Add(this.label2);
@@ -102,6 +101,14 @@
             this.grpSeries.TabIndex = 8;
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
+            // 
+            // lstSeries
+            // 
+            this.lstSeries.FormattingEnabled = true;
+            this.lstSeries.Location = new System.Drawing.Point(14, 54);
+            this.lstSeries.Name = "lstSeries";
+            this.lstSeries.Size = new System.Drawing.Size(298, 186);
+            this.lstSeries.TabIndex = 8;
             // 
             // cbGenre
             // 
@@ -120,14 +127,6 @@
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Genre";
-            // 
-            // lbSeries
-            // 
-            this.lbSeries.FormattingEnabled = true;
-            this.lbSeries.Location = new System.Drawing.Point(14, 54);
-            this.lbSeries.Name = "lbSeries";
-            this.lbSeries.Size = new System.Drawing.Size(298, 186);
-            this.lbSeries.TabIndex = 8;
             // 
             // btnBlocks
             // 
@@ -163,7 +162,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpSeries;
-        private System.Windows.Forms.ListBox lbSeries;
+        private System.Windows.Forms.ListBox lstSeries;
         private System.Windows.Forms.ComboBox cbGenre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBlocks;
