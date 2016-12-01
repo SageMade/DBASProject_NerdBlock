@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NerdBlock.Engine.Frontend.Winforms.Views;
-using NerdBlock.Engine.Backend.Models;
-using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.LogicLayer;
 using NerdBlock.Engine.Frontend.Winforms.Implementation;
+using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -20,15 +10,17 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         public BlockQueries()
         {
             InitializeComponent();
-            //Input
+            //Input - 3 DONE
             Inputs.Add(new ComboBoxValueInput("Block.genre", cbGenre));
             Inputs.Add(new ComboBoxValueInput("Block.series", cbSeries));
-            Inputs.Add(new ComboBoxValueInput("Sortby", cbSort));
 
-            //Output
-            //Add output for list box.
+            //Output - 3
+            ViewManager.PopulateList<Backend.Models.Genre, ComboBox>(cbGenre);
+            ViewManager.PopulateList<Backend.Models.BlockSeries, ComboBox>(cbSeries);
+            //Listbox
 
-            //Controls
+
+            //Controls - 2 DONE
             btnAdd.Click += (X, Y) => AttemptAction("goto_block");
 
             btnEdit.Click += (X, Y) =>
@@ -36,11 +28,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 Context.SetValue("TargetBlock", lstSeries.SelectedItem);
                 AttemptAction("goto_block");
             };
-
-        }
-
-        private void BlockQueries_Load(object sender, EventArgs e)
-        {
 
         }
     }

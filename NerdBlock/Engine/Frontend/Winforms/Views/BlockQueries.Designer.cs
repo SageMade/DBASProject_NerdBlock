@@ -42,15 +42,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbSort = new System.Windows.Forms.ComboBox();
             this.grpSeries.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(201, 18);
+            this.label6.Location = new System.Drawing.Point(20, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 10;
@@ -59,7 +57,7 @@
             // cbGenre
             // 
             this.cbGenre.FormattingEnabled = true;
-            this.cbGenre.Location = new System.Drawing.Point(242, 15);
+            this.cbGenre.Location = new System.Drawing.Point(61, 40);
             this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
             this.cbGenre.Name = "cbGenre";
             this.cbGenre.Size = new System.Drawing.Size(102, 21);
@@ -185,30 +183,10 @@
             this.btnEdit.Text = "Edit Block";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Sort By";
-            // 
-            // cbSort
-            // 
-            this.cbSort.FormattingEnabled = true;
-            this.cbSort.Location = new System.Drawing.Point(61, 38);
-            this.cbSort.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(102, 21);
-            this.cbSort.TabIndex = 21;
-            // 
             // BlockQueries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cbSort);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.grpSeries);
@@ -219,7 +197,6 @@
             this.Controls.Add(this.cbGenre);
             this.Name = "BlockQueries";
             this.Size = new System.Drawing.Size(362, 329);
-            this.Load += new System.EventHandler(this.BlockQueries_Load);
             this.grpSeries.ResumeLayout(false);
             this.grpSeries.PerformLayout();
             this.ResumeLayout(false);
@@ -243,7 +220,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbSort;
     }
 }

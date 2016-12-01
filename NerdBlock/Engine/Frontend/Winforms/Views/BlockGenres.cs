@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NerdBlock.Engine.LogicLayer;
+﻿using NerdBlock.Engine.LogicLayer;
 using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
@@ -18,15 +9,15 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            //Inputs
+            //Inputs - 3 DONE
             Inputs.Add(new TextBoxInput("Genre.Title", txtTitle));
             Inputs.Add(new TextBoxInput("Genre.Description", txtDescription));
             Inputs.Add(new CheckBoxInput("Genre.IsActive", chbInitialActive));
 
-            //Outputs
+            //Outputs - 1
             //Need to add output for lstSeries.
 
-            //Controls
+            //Controls - 2 DONE
             btnAdd.Click += (X, Y) => AttemptAction("insert_genre");
             btnViewSeries.Click += (X, Y) =>
             {
