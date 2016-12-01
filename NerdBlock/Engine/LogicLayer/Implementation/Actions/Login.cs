@@ -15,7 +15,12 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [BusinessAction("login")]
         public void Login()
         {
+            Employee auth = DataAccess.SelectAll<Employee>().First();
 
+            Session.Set("Auth.Employee", auth);
+
+            ViewManager.InitAuth(auth.Role);
+            ViewManager.Show("BlockGenres");
         }
 
         [BusinessAction("goto_login")]

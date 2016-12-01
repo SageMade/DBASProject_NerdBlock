@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend.Winforms;
 
 namespace NerdBlock.Engine.Frontend
@@ -28,7 +29,12 @@ namespace NerdBlock.Engine.Frontend
         {
             Implementation.RegisterView(name, view);
         }
-                
+
+        public static void InitAuth(object authObject)
+        {
+            Implementation.InitAuth(authObject);
+        }
+
         public static void Run(string initialView)
         {
             Implementation.Run(initialView);

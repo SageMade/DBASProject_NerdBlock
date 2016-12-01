@@ -1,4 +1,5 @@
 ﻿using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend.Winforms.Views;
 using System;
 using System.Collections.Generic;
@@ -138,6 +139,19 @@ namespace NerdBlock.Engine.Frontend.Winforms
                 {
                     target.Items.Add(query.Row[nameIndex]);
                     query.MoveNext();
+                }
+            }
+        }
+
+        public void InitAuth(object authObject)
+        {
+            EmployeeRole role = authObject as EmployeeRole;
+
+            if (role != null)
+            {
+                foreach (KeyValuePair<string, ToolStripItem> kvp in myMainForm.ToolStripMapping.Mapping)
+                {
+                    kvp.Value.Visible = role.HasAccess(kvp.Key);
                 }
             }
         }

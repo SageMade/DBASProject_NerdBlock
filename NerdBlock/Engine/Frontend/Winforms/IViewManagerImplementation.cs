@@ -24,5 +24,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
         void PopulateList<ValueType, TargetType>(TargetType targetObject) where ValueType : new();
 
         void PopulateFromQuery<TargetType>(TargetType targetObject, IQueryResult query, int nameIndex = 0);
+
+        void InitAuth(object authObject);
     }
 }

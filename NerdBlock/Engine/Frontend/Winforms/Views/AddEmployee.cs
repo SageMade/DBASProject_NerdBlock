@@ -33,9 +33,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput("Address.City", txtCity));
             Inputs.Add(new TextBoxInput("Address.PostalCode", txtPostalCode));
             Inputs.Add(new TextBoxInput("Address.AptNum", txtAptNum));
-
+                        
             ViewManager.PopulateList<EmployeeRole, ComboBox>(cbRole);
-            ViewManager.PopulateFromQuery<ComboBox>(cbState, DataAccess.ExecuteQuery("select state from tbladdress group by state order by state"));
+            ViewManager.PopulateFromQuery(cbState, DataAccess.ExecuteQuery("select state from tbladdress group by state order by state"));
 
             btnSubmit.Click += (X, Y) => AttemptAction("insert_employee");
         }

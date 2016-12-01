@@ -15,19 +15,29 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     public partial class MainForm : Form
     {
+        public ToolStripMap ToolStripMapping
+        {
+            get;
+            private set;
+        }
 
         public MainForm()
         {
+            ToolStripMapping = new ToolStripMap();
 
             InitializeComponent();
 
+            ToolStripMapping.Add<AddEmployee>(tsiEmployeeAdd);
+            ToolStripMapping.Add<EmployeeSearch>(tsiEmployeeAdd);
+
+            tsiLogin.Visible = true;
+            tsiExitProgram.Visible = true;
+
             tsiEmployeeAdd.Click += (X, Y) => TryAction("goto_employee_add");
             tsiEmployeeSearch.Click += (X, Y) => TryAction("goto_employee_search");
-            tsiEmployeeUpdate.Click += (X, Y) => TryAction("goto_employee_update");
             tsiLogin.Click += (X, Y) => TryAction("goto_login");
             tsiCustomerSearch.Click += (X, Y) => TryAction("goto_customer_search");
             tsiInventorySearch.Click += (X, Y) => TryAction("goto_inventory_search");
-            tsiInventoryUpdate.Click += (X, Y) => TryAction("goto_inventory_update");
             tsiInventoryLostDamaged.Click += (X, Y) => TryAction("goto_inventory_lost_damaged");
             tsiInventoryOverstock.Click += (X, Y) => TryAction("goto_inventory_overstock");
             tsiBlocksAdd.Click += (X, Y) => TryAction("goto_blocks_add");
@@ -43,7 +53,31 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             if (!LogicManager.TryPerformAction(name, out msg))
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        
+        public class ToolStripMap
+        {
+            public Dictionary<string, ToolStripItem> Mapping
+            {
+                get;
+                private set;
+            }
 
+            public ToolStripMap()
+            {
+                Mapping = new Dictionary<string, ToolStripItem>();
+            }
 
+            public void Add<T>(ToolStripItem item)
+            {
+                Mapping.Add(typeof(T).Name, item);
+                item.Visible = false;
+            }
+
+            public void Add(string viewName, ToolStripItem item)
+            {
+                Mapping.Add(viewName, item);
+                item.Visible = false;
+            }
+        }
     }
 }

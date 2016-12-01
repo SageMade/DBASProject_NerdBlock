@@ -15,6 +15,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         public Login()
         {
             InitializeComponent();
+
+            btnSubmit.Click += (X, Y) => AttemptAction("login");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
