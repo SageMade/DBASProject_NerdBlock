@@ -156,5 +156,10 @@ namespace NerdBlock.Engine.Frontend.Winforms
                 }
             }
         }
+
+        public void CloseProgram()
+        {
+            myMainForm.Close();
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace NerdBlock.Engine.Frontend
     {
         public static IViewManagerImplementation Implementation
         { get; set; }
-
+        
         public static IView CurrentView
         {
             get { return Implementation.CurrentView; }
@@ -23,6 +23,11 @@ namespace NerdBlock.Engine.Frontend
         static ViewManager()
         {
 
+        }
+
+        public static void CloseProgram()
+        {
+            Implementation.CloseProgram();
         }
 
         public static void RegisterView(string name, IView view)

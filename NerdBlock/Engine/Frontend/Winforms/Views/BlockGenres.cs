@@ -12,7 +12,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Inputs - 3 DONE
             Inputs.Add(new TextBoxInput("Genre.Title", txtTitle));
             Inputs.Add(new TextBoxInput("Genre.Description", txtDescription));
-            Inputs.Add(new CheckBoxInput("Genre.IsActive", chbInitialActive));
 
             //Outputs - 1
             Outputs.Add(new DataGridOutput("Series", dgvGenres));

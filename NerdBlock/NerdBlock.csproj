@@ -177,6 +177,7 @@
     <Compile Include="Engine\LogicLayer\BusinessRule.cs" />
     <Compile Include="Engine\LogicLayer\Context.cs" />
     <Compile Include="Engine\LogicLayer\BusinessActionContainer.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\Application.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Blocks.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Customer.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Employee.cs" />

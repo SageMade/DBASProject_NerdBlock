@@ -40,7 +40,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chbInitialActive = new System.Windows.Forms.CheckBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -63,7 +62,8 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(176, 119);
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(293, 125);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(71, 19);
@@ -157,7 +157,6 @@
             // 
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.chbInitialActive);
             this.groupBox3.Controls.Add(this.txtDescription);
             this.groupBox3.Controls.Add(this.txtTitle);
             this.groupBox3.Controls.Add(this.btnAdd);
@@ -191,24 +190,13 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Title";
             // 
-            // chbInitialActive
-            // 
-            this.chbInitialActive.AutoSize = true;
-            this.chbInitialActive.Location = new System.Drawing.Point(155, 32);
-            this.chbInitialActive.Margin = new System.Windows.Forms.Padding(2);
-            this.chbInitialActive.Name = "chbInitialActive";
-            this.chbInitialActive.Size = new System.Drawing.Size(96, 17);
-            this.chbInitialActive.TabIndex = 13;
-            this.chbInitialActive.Text = "Initially Active?";
-            this.chbInitialActive.UseVisualStyleBackColor = true;
-            // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(69, 62);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(172, 53);
+            this.txtDescription.Size = new System.Drawing.Size(295, 53);
             this.txtDescription.TabIndex = 12;
             // 
             // txtTitle
@@ -216,7 +204,7 @@
             this.txtTitle.Location = new System.Drawing.Point(69, 30);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(76, 20);
+            this.txtTitle.Size = new System.Drawing.Size(179, 20);
             this.txtTitle.TabIndex = 11;
             // 
             // BlockGenres
@@ -247,7 +235,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chbInitialActive;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.DataGridView dgvGenres;
