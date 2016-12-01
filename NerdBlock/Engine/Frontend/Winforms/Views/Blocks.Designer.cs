@@ -32,11 +32,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.grpBlockSummary = new System.Windows.Forms.GroupBox();
+            this.txtCustCost = new System.Windows.Forms.TextBox();
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.lblOurCost = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstItems = new System.Windows.Forms.ListBox();
@@ -44,8 +44,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.txtCustCost = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -85,31 +85,38 @@
             // 
             // grpBlockSummary
             // 
+            this.grpBlockSummary.Controls.Add(this.txtDescription);
             this.grpBlockSummary.Controls.Add(this.txtCustCost);
             this.grpBlockSummary.Controls.Add(this.cbSeries);
             this.grpBlockSummary.Controls.Add(this.txtTitle);
             this.grpBlockSummary.Controls.Add(this.label5);
             this.grpBlockSummary.Controls.Add(this.label6);
-            this.grpBlockSummary.Controls.Add(this.txtDescription);
             this.grpBlockSummary.Controls.Add(this.lblOurCost);
             this.grpBlockSummary.Controls.Add(this.label3);
             this.grpBlockSummary.Controls.Add(this.label4);
             this.grpBlockSummary.Controls.Add(this.label1);
             this.grpBlockSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBlockSummary.Location = new System.Drawing.Point(2, 316);
-            this.grpBlockSummary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBlockSummary.Margin = new System.Windows.Forms.Padding(2);
             this.grpBlockSummary.Name = "grpBlockSummary";
-            this.grpBlockSummary.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBlockSummary.Padding = new System.Windows.Forms.Padding(2);
             this.grpBlockSummary.Size = new System.Drawing.Size(540, 138);
             this.grpBlockSummary.TabIndex = 4;
             this.grpBlockSummary.TabStop = false;
             this.grpBlockSummary.Text = "Block Summary";
             // 
+            // txtCustCost
+            // 
+            this.txtCustCost.Location = new System.Drawing.Point(125, 109);
+            this.txtCustCost.Name = "txtCustCost";
+            this.txtCustCost.Size = new System.Drawing.Size(115, 23);
+            this.txtCustCost.TabIndex = 17;
+            // 
             // cbSeries
             // 
             this.cbSeries.FormattingEnabled = true;
             this.cbSeries.Location = new System.Drawing.Point(86, 51);
-            this.cbSeries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSeries.Margin = new System.Windows.Forms.Padding(2);
             this.cbSeries.Name = "cbSeries";
             this.cbSeries.Size = new System.Drawing.Size(155, 25);
             this.cbSeries.TabIndex = 1;
@@ -117,7 +124,7 @@
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(86, 21);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(156, 23);
             this.txtTitle.TabIndex = 16;
@@ -144,15 +151,6 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Description";
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(245, 41);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(290, 84);
-            this.txtDescription.TabIndex = 13;
-            this.txtDescription.Text = "";
-            // 
             // lblOurCost
             // 
             this.lblOurCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -168,9 +166,9 @@
             this.groupBox2.Controls.Add(this.lstItems);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 47);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(534, 264);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
@@ -181,7 +179,7 @@
             this.lstItems.FormattingEnabled = true;
             this.lstItems.ItemHeight = 17;
             this.lstItems.Location = new System.Drawing.Point(4, 21);
-            this.lstItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstItems.Margin = new System.Windows.Forms.Padding(2);
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(525, 225);
             this.lstItems.TabIndex = 0;
@@ -189,7 +187,7 @@
             // btnNew
             // 
             this.btnNew.Location = new System.Drawing.Point(283, 8);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(121, 35);
             this.btnNew.TabIndex = 8;
@@ -199,7 +197,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(283, 458);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 35);
             this.btnSave.TabIndex = 9;
@@ -209,7 +207,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(419, 458);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(118, 35);
             this.btnDelete.TabIndex = 10;
@@ -219,19 +217,12 @@
             // btnAddItem
             // 
             this.btnAddItem.Location = new System.Drawing.Point(416, 8);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(121, 35);
             this.btnAddItem.TabIndex = 11;
             this.btnAddItem.Text = "Add item";
             this.btnAddItem.UseVisualStyleBackColor = true;
-            // 
-            // txtCustCost
-            // 
-            this.txtCustCost.Location = new System.Drawing.Point(125, 109);
-            this.txtCustCost.Name = "txtCustCost";
-            this.txtCustCost.Size = new System.Drawing.Size(115, 23);
-            this.txtCustCost.TabIndex = 17;
             // 
             // label8
             // 
@@ -244,6 +235,14 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Block info";
             // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(249, 43);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(286, 90);
+            this.txtDescription.TabIndex = 18;
+            // 
             // AddEditBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,7 +254,7 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpBlockSummary);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddEditBlock";
             this.Size = new System.Drawing.Size(548, 500);
             this.Load += new System.EventHandler(this.AddEditBlock_Load);
@@ -279,7 +278,6 @@
         private System.Windows.Forms.Label lblOurCost;
         private System.Windows.Forms.ListBox lstItems;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label5;
@@ -287,5 +285,6 @@
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.TextBox txtCustCost;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDescription;
     }
 }

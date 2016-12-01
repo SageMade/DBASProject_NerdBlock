@@ -78,6 +78,7 @@
     <Compile Include="Engine\Backend\Util.cs" />
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxInput.cs" />
