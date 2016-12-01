@@ -27,8 +27,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             InitializeComponent();
 
-            ToolStripMapping.Add<AddEmployee>(tsiEmployeeAdd);
-            ToolStripMapping.Add<EmployeeSearch>(tsiEmployeeAdd);
+            //ToolStripMapping.Add<AddEmployee>(tsiEmployeeAdd);
+            //ToolStripMapping.Add<EmployeeSearch>(tsiEmployeeAdd);
 
             tsiLogin.Visible = true;
             tsiExitProgram.Visible = true;

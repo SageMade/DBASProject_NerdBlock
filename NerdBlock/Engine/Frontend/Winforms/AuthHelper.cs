@@ -1,6 +1,7 @@
 ﻿using System;
 using NerdBlock.Engine.Backend.Models;
 using System.Collections.Generic;
+using NerdBlock.Engine.Backend;
 
 namespace NerdBlock.Engine.Frontend.Winforms
 {
@@ -11,6 +12,10 @@ namespace NerdBlock.Engine.Frontend.Winforms
         static AuthHelper()
         {
             myRoleMapping = new Dictionary<EmployeeRole, List<string>>();
+
+            EmployeeRole[] roles = DataAccess.SelectAll<EmployeeRole>();
+
+            //Type[] authedViews = 
         }
                 
         public static void Allow(EmployeeRole role, string viewName)
