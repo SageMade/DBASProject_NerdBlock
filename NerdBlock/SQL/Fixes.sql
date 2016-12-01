@@ -7,3 +7,4 @@ alter table tbladdress alter city drop default;
 drop table tblemployeejob;
 
 alter table tblemployees add roleid integer not null references tblemployeerole(roleid) default 3;
+alter table tblemployees alter roleid drop default;

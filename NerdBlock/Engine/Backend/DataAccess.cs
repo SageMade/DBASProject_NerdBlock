@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using NerdBlock.Engine.Backend.Models;
 
 namespace NerdBlock.Engine.Backend
 {
@@ -74,6 +75,30 @@ namespace NerdBlock.Engine.Backend
                 myDataAccessors.Add(typeof(T), new ModelDataAccess<T>());
 
             return myDataAccessors[typeof(T)] as ModelDataAccess<T>;
+        }
+
+        public static int Update<T>(T value, bool updateNullValues = true, bool updateChildren = true) where T : new()
+        {
+            return __GetDataAccess<T>().Update(value, updateNullValues, updateChildren);
+        }
+
+        public static int UpdateWeak(Type modelType, object value, bool updateNullValues = true, bool updateChildren = true)
+        {
+            MethodInfo mi = typeof(DataAccess).GetMethod("Update", BindingFlags.Public | BindingFlags.Static);
+            mi = mi.MakeGenericMethod(modelType);
+            return (int)mi.Invoke(null, new object[] { value, updateNullValues, updateChildren });
+        }
+
+        public static int Delete<T>(T model, bool deleteChildren = false) where T : new()
+        {
+            return __GetDataAccess<T>().Delete(model, deleteChildren);
+        }
+
+        public static int DeleteWeak(Type modelType, object model, bool deleteChildren = false)
+        {
+            MethodInfo mi = typeof(DataAccess).GetMethod("Delete", BindingFlags.Public | BindingFlags.Static);
+            mi = mi.MakeGenericMethod(modelType);
+            return (int)mi.Invoke(null, new object[] { model, deleteChildren });
         }
 
         public static T[] Match<T>(T match) where T : new()

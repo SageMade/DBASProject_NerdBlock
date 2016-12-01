@@ -11,6 +11,7 @@ using NerdBlock.Engine.Frontend.Winforms.Views;
 using NerdBlock.Engine.Frontend.Implementation;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.LogicLayer;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {

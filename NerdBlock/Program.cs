@@ -35,6 +35,13 @@ namespace NerdBlock
             LogicManager.LoadActions();
 
             ViewManager.Run("Login");
+
+            Employee test = DataAccess.FromPrimaryKey<Employee>(48);
+            test.LastName = "McMatthews";
+
+            DataAccess.Update(test);
+
+            DataAccess.Delete(test);
         }
     }
 }
