@@ -8,3 +8,12 @@ drop table tblemployeejob;
 
 alter table tblemployees add roleid integer not null references tblemployeerole(roleid) default 3;
 alter table tblemployees alter roleid drop default;
+
+alter table tblgenre drop isactive;
+
+alter table tblblockseries add startdate date not null default now();
+alter table tblblockseries add endeddate date;
+alter table tblblock add shipbydate date not null default now();
+
+alter table tblblockseries alter startdate drop default;
+alter table tblblock alter shipbydate drop default;

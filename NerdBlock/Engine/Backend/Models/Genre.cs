@@ -17,8 +17,5 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("description", QueryParamType.Text)]
         public string Description { get; set; }
-
-        [DataField("isactive", QueryParamType.Boolean)]
-        public bool? IsActive { get; set; }
     }
 }

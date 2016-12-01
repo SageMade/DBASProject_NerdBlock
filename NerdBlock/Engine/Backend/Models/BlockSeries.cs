@@ -23,5 +23,11 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("blockvolume", QueryParamType.Integer)]
         public int? BlockVolume { get; set; }
+        
+        [DataField("startdate", QueryParamType.Date)]
+        public DateTime? StartDate { get; set; }
+
+        [DataField("endeddate", QueryParamType.Date), Nullable]
+        public DateTime? EndedDate { get; set; }
     }
 }

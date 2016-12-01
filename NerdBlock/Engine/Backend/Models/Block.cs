@@ -20,5 +20,8 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("description", QueryParamType.Text)]
         public string Description { get; set; }
+
+        [DataField("shipbydate", QueryParamType.Date)]
+        public DateTime? ShipByDate { get; set; }
     }
 }
