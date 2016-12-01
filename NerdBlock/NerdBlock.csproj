@@ -184,6 +184,7 @@
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Customer.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Employee.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Login.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\EmployeeValidation.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Logger.cs" />
