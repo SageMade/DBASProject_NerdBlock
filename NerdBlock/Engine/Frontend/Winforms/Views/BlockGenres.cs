@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class BlockTheme : ViewBase
+    public partial class BlockGenres : ViewBase
     {
-        public BlockTheme()
+        public BlockGenres()
         {
             InitializeComponent();
         }

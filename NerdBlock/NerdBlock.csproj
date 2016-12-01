@@ -126,11 +126,11 @@
     <Compile Include="Engine\Frontend\Winforms\Views\AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\BlockTheme.cs">
+    <Compile Include="Engine\Frontend\Winforms\Views\BlockGenres.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\BlockTheme.Designer.cs">
-      <DependentUpon>BlockTheme.cs</DependentUpon>
+    <Compile Include="Engine\Frontend\Winforms\Views\BlockGenres.Designer.cs">
+      <DependentUpon>BlockGenres.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\BoxesSoldPerTheme.cs">
       <SubType>UserControl</SubType>
@@ -289,8 +289,8 @@
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockTheme.resx">
-      <DependentUpon>BlockTheme.cs</DependentUpon>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockGenres.resx">
+      <DependentUpon>BlockGenres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BoxesSoldPerTheme.resx">
       <DependentUpon>BoxesSoldPerTheme.cs</DependentUpon>
