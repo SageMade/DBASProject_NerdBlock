@@ -85,6 +85,7 @@
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ControlMoverOrResizer.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\DataGridOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ListViewOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\LabelOutput.cs" />
@@ -270,6 +271,11 @@
     <Compile Include="Engine\Frontend\Winforms\Views\ViewEditOrder.Designer.cs">
       <DependentUpon>ViewEditOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -350,6 +356,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ViewEditOrder.resx">
       <DependentUpon>ViewEditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

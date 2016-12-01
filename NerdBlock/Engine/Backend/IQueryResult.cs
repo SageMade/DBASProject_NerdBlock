@@ -29,6 +29,11 @@ namespace NerdBlock.Engine.Backend
         int CurrentRow { get; }
 
         /// <summary>
+        /// Gets the query result as a dataset
+        /// </summary>
+        DataSet Source { get; }
+
+        /// <summary>
         /// Moves to the next row in the result set
         /// </summary>
         /// <returns>True if we moved to the next element, false if otherwise</returns>

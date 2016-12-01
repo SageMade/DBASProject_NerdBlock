@@ -1,6 +1,7 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
+using NerdBlock.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [BusinessAction("goto_blocks_genres")]
         public void ShowGenres()
         {
-            Context.Values["Series"] = DataAccess.SelectAll<BlockSeries>();
+            Context.Values["Series"] = DataAccess.ExecuteQuery(Resources.SelectGenreTalliesQuery);
             ViewManager.Show("BlockGenres");
         }
 

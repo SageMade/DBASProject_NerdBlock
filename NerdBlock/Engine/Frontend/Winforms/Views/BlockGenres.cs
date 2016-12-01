@@ -15,14 +15,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new CheckBoxInput("Genre.IsActive", chbInitialActive));
 
             //Outputs - 1
-            Outputs.Add(new ListViewOutput("Series", lstSeries));
+            Outputs.Add(new DataGridOutput("Series", dgvGenres));
             //Need to add output for lstSeries.
 
             //Controls - 2 DONE
             btnAdd.Click += (X, Y) => AttemptAction("insert_genre");
             btnViewSeries.Click += (X, Y) =>
             {
-                Context.SetValue("TargetGenre", lstSeries.SelectedItem);
+                Context.SetValue("TargetGenre", dgvGenres.SelectedRows);
                 AttemptAction("goto_blockseries");
             };
 

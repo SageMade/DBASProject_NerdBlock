@@ -56,6 +56,14 @@ namespace NerdBlock.Engine.Backend.PgImplementation
         }
 
         /// <summary>
+        /// Gets this query result as a data set
+        /// </summary>
+        public DataSet Source
+        {
+            get { return myDataSet; }
+        }
+
+        /// <summary>
         /// Creates a new query result from the given data adapter
         /// </summary>
         /// <param name="command">The command to create the result set from</param>
