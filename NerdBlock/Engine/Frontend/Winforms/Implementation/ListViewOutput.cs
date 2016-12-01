@@ -61,9 +61,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
 
                     for (int index = 0; index < collection.Length; index++)
                     {
+                        string line = "";
 
                         for (int pIndex = 0; pIndex < properties.Length; pIndex++)
+                            line += properties[pIndex].GetValue(collection.GetValue(index))?.ToString() + "    ";
 
+                        myView.Items.Add(line);
                     }
                 }
             }

@@ -1,4 +1,5 @@
-﻿using NerdBlock.Engine.LogicLayer;
+﻿using NerdBlock.Engine.Frontend.Winforms.Implementation;
+using NerdBlock.Engine.LogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs = new List<IInput>();
             Outputs = new List<IOutput>();
         }
+        
         private void InitializeComponent()
         {
             this.SuspendLayout();
@@ -35,10 +37,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.Name = "ViewBase";
             this.ResumeLayout(false);
         }
-
+        
         public void ShowView()
         {
-
             ViewManager.Show(this);
         }
 

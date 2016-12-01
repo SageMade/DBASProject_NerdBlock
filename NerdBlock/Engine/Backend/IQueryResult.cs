@@ -17,10 +17,12 @@ namespace NerdBlock.Engine.Backend
         /// Gets the data row at the current pointer
         /// </summary>
         DataRow Row { get; }
+
         /// <summary>
         /// Gets the number of results from this query
         /// </summary>
         int NumRows { get; }
+
         /// <summary>
         /// Gets the index of the current row in the data results
         /// </summary>

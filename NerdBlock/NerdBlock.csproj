@@ -84,6 +84,7 @@
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxOutput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\ControlMoverOrResizer.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ListViewOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\LabelOutput.cs" />
