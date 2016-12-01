@@ -30,7 +30,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             tsiInventorySearch.Click += (X, Y) => TryAction("goto_inventory_search");
             tsiInventoryUpdate.Click += (X, Y) => TryAction("goto_inventory_update");
             tsiInventoryLostDamaged.Click += (X, Y) => TryAction("goto_inventory_lost_damaged");
-            
+            tsiInventoryOverstock.Click += (X, Y) => TryAction("goto_inventory_overstock");
         }
 
         private void TryAction(string name)

@@ -60,6 +60,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
             this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
+            this.tsiInventoryOverstock = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -96,24 +97,24 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiLogin
             // 
             this.tsiLogin.Name = "tsiLogin";
-            this.tsiLogin.Size = new System.Drawing.Size(112, 22);
+            this.tsiLogin.Size = new System.Drawing.Size(152, 22);
             this.tsiLogin.Text = "Login";
             // 
             // tsiLogout
             // 
             this.tsiLogout.Name = "tsiLogout";
-            this.tsiLogout.Size = new System.Drawing.Size(112, 22);
+            this.tsiLogout.Size = new System.Drawing.Size(152, 22);
             this.tsiLogout.Text = "Logout";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(109, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsiExitProgram
             // 
             this.tsiExitProgram.Name = "tsiExitProgram";
-            this.tsiExitProgram.Size = new System.Drawing.Size(112, 22);
+            this.tsiExitProgram.Size = new System.Drawing.Size(152, 22);
             this.tsiExitProgram.Text = "Exit";
             // 
             // tsmTasking
@@ -127,7 +128,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsmInventory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiInventorySearch,
             this.tsiInventoryUpdate,
-            this.tsiInventoryLostDamaged});
+            this.tsiInventoryLostDamaged,
+            this.tsiInventoryOverstock});
             this.tsmInventory.Name = "tsmInventory";
             this.tsmInventory.Size = new System.Drawing.Size(69, 20);
             this.tsmInventory.Text = "Inventory";
@@ -165,30 +167,30 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiEmployeeSearch
             // 
             this.tsiEmployeeSearch.Name = "tsiEmployeeSearch";
-            this.tsiEmployeeSearch.Size = new System.Drawing.Size(127, 22);
+            this.tsiEmployeeSearch.Size = new System.Drawing.Size(152, 22);
             this.tsiEmployeeSearch.Text = "Search";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // tsiEmployeeAdd
             // 
             this.tsiEmployeeAdd.Name = "tsiEmployeeAdd";
-            this.tsiEmployeeAdd.Size = new System.Drawing.Size(127, 22);
+            this.tsiEmployeeAdd.Size = new System.Drawing.Size(152, 22);
             this.tsiEmployeeAdd.Text = "Add";
             // 
             // tsiEmployeeUpdate
             // 
             this.tsiEmployeeUpdate.Name = "tsiEmployeeUpdate";
-            this.tsiEmployeeUpdate.Size = new System.Drawing.Size(127, 22);
+            this.tsiEmployeeUpdate.Size = new System.Drawing.Size(152, 22);
             this.tsiEmployeeUpdate.Text = "Update";
             // 
             // tsiEmployeeTerminate
             // 
             this.tsiEmployeeTerminate.Name = "tsiEmployeeTerminate";
-            this.tsiEmployeeTerminate.Size = new System.Drawing.Size(127, 22);
+            this.tsiEmployeeTerminate.Size = new System.Drawing.Size(152, 22);
             this.tsiEmployeeTerminate.Text = "Terminate";
             // 
             // customerToolStripMenuItem
@@ -202,7 +204,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiCustomerSearch
             // 
             this.tsiCustomerSearch.Name = "tsiCustomerSearch";
-            this.tsiCustomerSearch.Size = new System.Drawing.Size(109, 22);
+            this.tsiCustomerSearch.Size = new System.Drawing.Size(152, 22);
             this.tsiCustomerSearch.Text = "Search";
             // 
             // ordersToolStripMenuItem
@@ -292,6 +294,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.addProduct1.Size = new System.Drawing.Size(431, 223);
             this.addProduct1.TabIndex = 0;
             // 
+            // tsiInventoryOverstock
+            // 
+            this.tsiInventoryOverstock.Name = "tsiInventoryOverstock";
+            this.tsiInventoryOverstock.Size = new System.Drawing.Size(152, 22);
+            this.tsiInventoryOverstock.Text = "Overstock";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,5 +353,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         private System.Windows.Forms.ToolStripMenuItem tsiInventoryLostDamaged;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsiInventoryOverstock;
     }
 }

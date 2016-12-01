@@ -29,5 +29,11 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             ViewManager.Show("LostDamagedItems");
         }
+
+        [BusinessAction("goto_inventory_overstock")]
+        public void ShowOverstock()
+        {
+            ViewManager.Show("ExtraProductShipped");
+        }
     }
 }
