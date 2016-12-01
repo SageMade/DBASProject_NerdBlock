@@ -168,7 +168,7 @@
             this.btnViewSeries.Name = "btnViewSeries";
             this.btnViewSeries.Size = new System.Drawing.Size(106, 19);
             this.btnViewSeries.TabIndex = 14;
-            this.btnViewSeries.Text = "View Series";
+            this.btnViewSeries.Text = "View Series Info";
             this.btnViewSeries.UseVisualStyleBackColor = true;
             // 
             // BlockGenres
