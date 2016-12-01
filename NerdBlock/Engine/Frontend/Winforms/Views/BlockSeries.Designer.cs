@@ -78,7 +78,7 @@
             this.label5.Size = new System.Drawing.Size(86, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Series Info";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+
             // 
             // label3
             // 
@@ -120,7 +120,6 @@
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Genre";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // lbSeries
             // 

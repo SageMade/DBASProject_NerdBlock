@@ -86,6 +86,7 @@
     <Compile Include="Engine\Frontend\Implementation\ComboBoxValueInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\ComboBoxTextInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\ProductInfoFiller.cs" />
+    <Compile Include="Engine\Frontend\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\TextBoxInput.cs" />
     <Compile Include="Engine\Frontend\Implementation\ViewEditEmployeeFiller.cs" />
     <Compile Include="Engine\Frontend\Implementation\ViewEditOrderFiller.cs" />

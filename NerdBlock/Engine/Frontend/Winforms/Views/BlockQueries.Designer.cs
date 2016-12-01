@@ -34,16 +34,16 @@
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpSeries = new System.Windows.Forms.GroupBox();
-            this.lbSeries = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lstSeries = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label222 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbSort = new System.Windows.Forms.ComboBox();
             this.grpSeries.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@
             // grpSeries
             // 
             this.grpSeries.Controls.Add(this.label2);
-            this.grpSeries.Controls.Add(this.lbSeries);
+            this.grpSeries.Controls.Add(this.lstSeries);
             this.grpSeries.Controls.Add(this.label3);
             this.grpSeries.Controls.Add(this.label4);
             this.grpSeries.Controls.Add(this.label222);
@@ -107,18 +107,27 @@
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
             // 
-            // lbSeries
+            // label2
             // 
-            this.lbSeries.FormattingEnabled = true;
-            this.lbSeries.Items.AddRange(new object[] {
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(84, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Genre";
+            // 
+            // lstSeries
+            // 
+            this.lstSeries.FormattingEnabled = true;
+            this.lstSeries.Items.AddRange(new object[] {
             "001\t   Elements\tFire\t01\t2016\t\t",
             "002\t   Elements \tWater\t01\t2016\t",
             "003\t   Elements \tEarth\t01\t2016",
             "004\t   Elements \tFire\t02\t2016\t"});
-            this.lbSeries.Location = new System.Drawing.Point(6, 53);
-            this.lbSeries.Name = "lbSeries";
-            this.lbSeries.Size = new System.Drawing.Size(308, 160);
-            this.lbSeries.TabIndex = 8;
+            this.lstSeries.Location = new System.Drawing.Point(6, 53);
+            this.lstSeries.Name = "lstSeries";
+            this.lstSeries.Size = new System.Drawing.Size(308, 160);
+            this.lstSeries.TabIndex = 8;
             // 
             // label3
             // 
@@ -176,15 +185,6 @@
             this.btnEdit.Text = "Edit Block";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Genre";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -194,20 +194,20 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Sort By";
             // 
-            // comboBox1
+            // cbSort
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(61, 38);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 21);
-            this.comboBox1.TabIndex = 21;
+            this.cbSort.FormattingEnabled = true;
+            this.cbSort.Location = new System.Drawing.Point(61, 38);
+            this.cbSort.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSort.Name = "cbSort";
+            this.cbSort.Size = new System.Drawing.Size(102, 21);
+            this.cbSort.TabIndex = 21;
             // 
             // BlockQueries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbSort);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -236,7 +236,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpSeries;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbSeries;
+        private System.Windows.Forms.ListBox lstSeries;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label222;
@@ -244,6 +244,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbSort;
     }
 }
