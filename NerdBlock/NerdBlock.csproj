@@ -81,6 +81,9 @@
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxOutput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxOutput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\LabelOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxInput.cs" />
     <Compile Include="Engine\Frontend\IOutput.cs" />
     <Compile Include="Engine\Frontend\IView.cs" />
@@ -175,8 +178,8 @@
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\EmployeeValidation.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
-    <Compile Include="Engine\Shared\AutoDictionary.cs" />
-    <Compile Include="Engine\Shared\Session.cs" />
+    <Compile Include="Engine\AutoDictionary.cs" />
+    <Compile Include="Engine\Session.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\Login.cs">
       <SubType>UserControl</SubType>

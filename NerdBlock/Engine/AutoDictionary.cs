@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NerdBlock.Engine.Shared
+namespace NerdBlock.Engine
 {
     /// <summary>
     /// Represents a dictionary that will automagically add a default element if the key does not exist
@@ -60,6 +60,21 @@ namespace NerdBlock.Engine.Shared
         public void Clear()
         {
             myInternalCollection.Clear();
+        }
+
+        public T Get<T>(Key name)
+        {
+            object result = this[name];
+
+            if (result == null)
+                return default(T);
+            else
+            {
+                if (typeof(T).IsAssignableFrom(result.GetType()))
+                    return (T)result;
+                else
+                    return default(T);
+            }
         }
     }
 }

@@ -19,10 +19,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
 
         public object Value
         {
-            set
-            {
-                myControl.Checked = value is bool ? (bool)value : false;
-            }
+            set { myControl.Checked = value is bool ? (bool)value : false; }
         }
 
         public CheckBoxOutput(string contextName, CheckBox label)
