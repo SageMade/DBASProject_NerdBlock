@@ -15,20 +15,37 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             get;
             set;
         }
+        protected virtual List<IOutput> Outputs
+        {
+            get;
+            set;
+        }
 
         public ViewBase()
         {
             Inputs = new List<IInput>();
+            Outputs = new List<IOutput>();
+        }
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // ViewBase
+            // 
+            this.Name = "ViewBase";
+            this.ResumeLayout(false);
         }
 
         public void ShowView()
         {
+            for (int index = 0; index < Outputs.Count; index++)
+                Outputs[index].Value = Context.Values[Outputs[index].Name];
+
             ViewManager.Show(this);
         }
 
         public void AttemptAction(string actionName)
         {
-
             for(int index = 0; index < Inputs.Count; index ++)
             {
                 IInput input = Inputs[index];
@@ -41,17 +58,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             Context.Clear();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // ViewBase
-            // 
-            this.Name = "ViewBase";
-            this.ResumeLayout(false);
-
-        }
+        }        
     }
 }

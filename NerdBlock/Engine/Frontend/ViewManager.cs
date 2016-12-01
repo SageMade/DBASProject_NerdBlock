@@ -14,6 +14,11 @@ namespace NerdBlock.Engine.Frontend
         public static IViewManagerImplementation Implementation
         { get; set; }
 
+        public static IView CurrentView
+        {
+            get { return Implementation.CurrentView; }
+        }
+
         static ViewManager()
         {
 
@@ -42,11 +47,6 @@ namespace NerdBlock.Engine.Frontend
         public static IView GetView(string name)
         {
             return Implementation.GetView(name);
-        }
-
-        public static IView CurrentView()
-        {
-            return Implementation.CurrentView;
         }
 
         public static void ShowFlash(string message, FlashMessageType flashType)

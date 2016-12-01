@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NerdBlock.Engine.Frontend.Implementation
+namespace NerdBlock.Engine.Frontend.Winforms.Implementation
 {
-    public class ComboBoxValueInput : IInput
+    public class TextBoxInput : IInput
     {
-        private ComboBox myControl;
+        private TextBox myControl;
 
         public string Name
         {
@@ -19,13 +19,13 @@ namespace NerdBlock.Engine.Frontend.Implementation
 
         public object Value
         {
-            get { return myControl.SelectedItem; }
+            get { return myControl.Text; }
         }
 
-        public ComboBoxValueInput(string valueName, ComboBox input)
+        public TextBoxInput(string valueName, TextBox textBox)
         {
             Name = valueName;
-            myControl = input;
+            myControl = textBox;
         }
     }
 }

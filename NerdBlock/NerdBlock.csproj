@@ -77,28 +77,15 @@
     <Compile Include="Engine\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Engine\Backend\Util.cs" />
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />
-    <Compile Include="Engine\Frontend\IFillable.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
-    <Compile Include="Engine\Frontend\Implementation\AddEmployeeFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\AddOrderFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\AddProductFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\AddSupplierFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\ComboBoxValueInput.cs" />
-    <Compile Include="Engine\Frontend\Implementation\ComboBoxTextInput.cs" />
-    <Compile Include="Engine\Frontend\Implementation\ProductInfoFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\TextBoxInput.cs" />
-    <Compile Include="Engine\Frontend\Implementation\ViewEditEmployeeFiller.cs" />
-    <Compile Include="Engine\Frontend\Implementation\ViewEditOrderFiller.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxInput.cs" />
+    <Compile Include="Engine\Frontend\IOutput.cs" />
     <Compile Include="Engine\Frontend\IView.cs" />
     <Compile Include="Engine\Frontend\ReflectedInput.cs" />
     <Compile Include="Engine\Frontend\ViewManager.cs" />
-    <Compile Include="Engine\Frontend\Winforms\FillerBase.cs" />
     <Compile Include="Engine\Frontend\Winforms\IViewManagerImplementation.cs" />
-    <Compile Include="Engine\Frontend\Winforms\TextComboBox.cs" />
-    <Compile Include="Engine\Frontend\Winforms\TextBoxFiller.cs" />
-    <Compile Include="Engine\Frontend\Winforms\LabelFiller.cs" />
-    <Compile Include="Engine\Frontend\Winforms\ViewFillerBase.cs" />
-    <Compile Include="Engine\Frontend\IViewFillable.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\BlockQueries.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +174,8 @@
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\EmployeeValidation.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
+    <Compile Include="Engine\Shared\AutoDictionary.cs" />
+    <Compile Include="Engine\Shared\Session.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\Login.cs">
       <SubType>UserControl</SubType>

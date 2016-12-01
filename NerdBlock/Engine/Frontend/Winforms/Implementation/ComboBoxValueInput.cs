@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NerdBlock.Engine.Frontend.Implementation
+namespace NerdBlock.Engine.Frontend.Winforms.Implementation
 {
-    public class ComboBoxTextInput : IInput
+    public class ComboBoxValueInput : IInput
     {
         private ComboBox myControl;
 
@@ -19,10 +19,10 @@ namespace NerdBlock.Engine.Frontend.Implementation
 
         public object Value
         {
-            get { return myControl.Text; }
+            get { return myControl.SelectedItem; }
         }
 
-        public ComboBoxTextInput(string valueName, ComboBox input)
+        public ComboBoxValueInput(string valueName, ComboBox input)
         {
             Name = valueName;
             myControl = input;
