@@ -15,7 +15,19 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [BusinessAction("goto_inventory_search")]
         public void ShowSearch()
         {
-            ViewManager.Show("Inventory")
+            ViewManager.Show("Inventory");
+        }
+
+        [BusinessAction("goto_inventory_update")]
+        public void ShowUpdate()
+        {
+            ViewManager.Show("ProductInfo");
+        }
+
+        [BusinessAction("goto_inventory_lost_damaged")]
+        public void ShowLostDamaged()
+        {
+            ViewManager.Show("LostDamagedItems");
         }
     }
 }
