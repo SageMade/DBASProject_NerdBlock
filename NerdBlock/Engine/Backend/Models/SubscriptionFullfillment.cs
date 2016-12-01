@@ -20,5 +20,8 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("fullfillingemployee", QueryParamType.Integer), ForeignKey("tblemployees", "employeeid")]
         public Employee FullfillingEmployee { get; set; }
+
+        [DataField("shippedondate", QueryParamType.Date)]
+        public DateTime? ShippedOnDate { get; set; }
     }
 }

@@ -17,3 +17,6 @@ alter table tblblock add shipbydate date not null default now();
 
 alter table tblblockseries alter startdate drop default;
 alter table tblblock alter shipbydate drop default;
+
+alter table tblsubscriptionfullfillment add shippedondate date not null default now();
+alter table tblblock alter shipbydate drop default;
