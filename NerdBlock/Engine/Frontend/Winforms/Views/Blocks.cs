@@ -14,9 +14,9 @@ using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class AddEditBlock : ViewBase
+    public partial class Blocks : ViewBase
     {
-        public AddEditBlock()
+        public Blocks()
         {
             InitializeComponent();
             //Input
