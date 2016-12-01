@@ -15,6 +15,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new CheckBoxInput("Genre.IsActive", chbInitialActive));
 
             //Outputs - 1
+            Outputs.Add(new ListViewOutput("Series", lstSeries));
             //Need to add output for lstSeries.
 
             //Controls - 2 DONE

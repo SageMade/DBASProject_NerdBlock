@@ -37,5 +37,11 @@ namespace NerdBlock.Engine.Backend
         /// </summary>
         /// <returns>True if we moved to the previous element, false if otherwise</returns>
         bool MovePrev();
+
+        /// <summary>
+        /// Gets whether another row is available with MoveNext()
+        /// </summary>
+        /// <returns>True if a row is available, false if otherwise</returns>
+        bool HasRow();
     }
 }

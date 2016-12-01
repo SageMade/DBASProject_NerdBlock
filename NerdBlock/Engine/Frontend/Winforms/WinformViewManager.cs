@@ -56,6 +56,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
             if (!myContentPanel.Controls.Contains(control))
                 myContentPanel.Controls.Add(control);
 
+            control.LoadView();
             control.Show();
 
             CurrentView = control;

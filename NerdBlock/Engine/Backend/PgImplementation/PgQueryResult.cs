@@ -128,5 +128,10 @@ namespace NerdBlock.Engine.Backend.PgImplementation
             else
                 return false;
         }
+
+        public bool HasRow()
+        {
+            return myRowIndex < myNumRows;
+        }
     }
 }

@@ -38,10 +38,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         public void ShowView()
         {
-            for (int index = 0; index < Outputs.Count; index++)
-                Outputs[index].Value = Context.Values[Outputs[index].Name];
 
             ViewManager.Show(this);
+        }
+
+        public void LoadView()
+        {
+            for (int index = 0; index < Outputs.Count; index++)
+                Outputs[index].Value = Context.Values[Outputs[index].Name];
         }
 
         public void AttemptAction(string actionName)

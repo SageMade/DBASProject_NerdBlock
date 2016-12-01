@@ -21,6 +21,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [BusinessAction("goto_blocks_genres")]
         public void ShowGenres()
         {
+            Context.Values["Series"] = DataAccess.SelectAll<BlockSeries>();
             ViewManager.Show("BlockGenres");
         }
 

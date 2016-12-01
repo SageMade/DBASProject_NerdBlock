@@ -15,5 +15,10 @@ namespace NerdBlock.Engine.Frontend
         /// Shows this view
         /// </summary>
         void ShowView();
+
+        /// <summary>
+        /// Handles loading the ouptu fields into the view if applicable
+        /// </summary>
+        void LoadView();
     }
 }
