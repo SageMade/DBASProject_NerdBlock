@@ -37,7 +37,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
                 IQueryResult result = value as IQueryResult;
                 myView.Items.Clear();
 
-                while(result.HasRow())
+                while(result.HasRow)
                 {
                     ListViewItem item = new ListViewItem();
 

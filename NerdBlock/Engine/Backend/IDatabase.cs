@@ -1,12 +1,13 @@
-﻿using Npgsql;
-
-namespace NerdBlock.Engine.Backend
+﻿namespace NerdBlock.Engine.Backend
 {
     /// <summary>
     /// Represents a connection to a database
     /// </summary>
     public interface IDatabase
     {
+        /// <summary>
+        /// Gets or sets the last reason that a query has failed for this database
+        /// </summary>
         QueryFail LastFailReason { get; set; }
 
         /// <summary>

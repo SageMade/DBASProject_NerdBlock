@@ -29,18 +29,28 @@ namespace NerdBlock.Engine.Backend
         /// </summary>
         public string Database;
 
+        /// <summary>
+        /// Loads a DbConnectData from an external file
+        /// </summary>
+        /// <param name="filename">The filename to load from</param>
+        /// <returns>The Connection data loaded from the file</returns>
         public static DbConnectData FromFile(string filename)
         {
+            // If the file does not exist, throw an exception
             if (!File.Exists(filename))
                 throw new FileNotFoundException();
 
+            // Open the text reader and make the result
             TextReader reader = File.OpenText(filename);
             DbConnectData result = new DbConnectData();
 
+            // Get the line from the file
             string line = reader.ReadLine();
 
+            // Try to parse a line as long as we have one
             do
             {
+                // Parse out the line
                 if (line.StartsWith("Host: "))
                     result.Host = line.Replace("Host: ", "");
                 else if (line.StartsWith("Database: "))
@@ -52,10 +62,12 @@ namespace NerdBlock.Engine.Backend
                 else if (line.StartsWith("Port: "))
                     result.Port = int.Parse(line.Replace("Port: ", "").Trim());
 
+                // Move to next line
                 line = reader.ReadLine();
             }
             while (line != null);
 
+            // return the result
             return result;
         }
     }

@@ -1,7 +1,7 @@
 ﻿namespace NerdBlock.Engine
 {
     /// <summary>
-    /// Represents a single query that can be executed against a database
+    /// Represents a single query or statement that can be executed against a database
     /// </summary>
     public interface IQuery
     {

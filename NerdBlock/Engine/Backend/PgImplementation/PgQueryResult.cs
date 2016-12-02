@@ -1,10 +1,5 @@
 ﻿using Npgsql;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerdBlock.Engine.Backend.PgImplementation
 {
@@ -54,7 +49,14 @@ namespace NerdBlock.Engine.Backend.PgImplementation
         {
             get { return myNumRows == -1; }
         }
-
+        /// <summary>
+        /// Gets whether this query result still has an available row
+        /// </summary>
+        /// <returns>True if there is another row that we can traverse to</returns>
+        public bool HasRow
+        {
+            get { return myRowIndex < myNumRows; }
+        }
         /// <summary>
         /// Gets this query result as a data set
         /// </summary>
@@ -128,11 +130,6 @@ namespace NerdBlock.Engine.Backend.PgImplementation
             }
             else
                 return false;
-        }
-
-        public bool HasRow()
-        {
-            return myRowIndex < myNumRows;
         }
     }
 }

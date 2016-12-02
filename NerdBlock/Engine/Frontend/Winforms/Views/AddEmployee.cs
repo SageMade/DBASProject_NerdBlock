@@ -37,7 +37,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput("FooBar", txtFooBar));
 
             ViewManager.PopulateList<EmployeeRole, ComboBox>(cbRole);
-            ViewManager.PopulateFromQuery(cbState, DataAccess.ExecuteQuery("select state from tbladdress group by state order by state"));
+            ViewManager.PopulateFromQuery(cbState, DataAccess.Execute("select state from tbladdress group by state order by state"));
 
             btnSubmit.Click += (X, Y) => AttemptAction("insert_employee");
         }

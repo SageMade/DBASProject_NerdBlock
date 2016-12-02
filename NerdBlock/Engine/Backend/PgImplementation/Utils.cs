@@ -1,14 +1,18 @@
 ﻿using NpgsqlTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerdBlock.Engine.Backend.PgImplementation
 {
+    /// <summary>
+    /// A utility class for our postgres implementation
+    /// </summary>
     public static class Utils
     {
+        /// <summary>
+        /// Converts a QueryParamType to an NpgsqlDbTyp
+        /// </summary>
+        /// <param name="value">The value to convert</param>
+        /// <returns>The NpgsqlDbType that matches our internal type</returns>
         public static NpgsqlDbType ToNpgsql(this QueryParamType value)
         {
             switch(value)

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerdBlock.Engine.Backend
 {
@@ -13,22 +11,39 @@ namespace NerdBlock.Engine.Backend
     /// <typeparam name="T">The type of the model to reflect, must implement the DataAccess attributes and all fields should be nullable</typeparam>
     public class ModelDataAccess<T> where T : new()
     {
-        string myTableName;
+        /// <summary>
+        /// Stores the table name
+        /// </summary>
+        private string myTableName;
 
-        PropertyInfo[] myModelProperties;
-        PropertyInfo[] myDependencies;
+        /// <summary>
+        /// Stores the collection of all model properties for the type
+        /// </summary>
+        private PropertyInfo[] myModelProperties;
+        /// <summary>
+        /// Stores the collection of property info's that reference a child model
+        /// </summary>
+        private PropertyInfo[] myDependencies;
 
+        /// <summary>
+        /// Creates a new model data access instance
+        /// </summary>
         public ModelDataAccess()
         {
+            // Get the model attribute from the type
             DataModel modelAttrib = typeof(T).GetCustomAttribute<DataModel>();
 
+            // Make sure we have one before proceeding
             if (modelAttrib == null)
                 throw new MissingMemberException("No attribute defined for data model");
 
+            // Get the table name
             myTableName = modelAttrib.TableName;
 
+            // Get all the properties
             PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.SetProperty | BindingFlags.Instance);
 
+            // Get the model's properties and all the dependencies
             myModelProperties = props.Where(Property => Property.GetCustomAttribute<DataField>() != null).ToArray();
             myDependencies = props.Where(Property => Property.GetCustomAttribute<ForeignKey>() != null && Property.GetCustomAttribute<DataField>() != null).ToArray();
         }
@@ -123,6 +138,10 @@ namespace NerdBlock.Engine.Backend
             return results > 0;
         }
 
+        /// <summary>
+        /// Selects all models from the database
+        /// </summary>
+        /// <returns>The model collection loaded from the database</returns>
         public T[] SelectAll()
         {
             // We need to build two sides of the query, allocate strings
@@ -141,10 +160,12 @@ namespace NerdBlock.Engine.Backend
             string query = string.Format("select {1} from {0}", myTableName, searchTerms.Trim(','));
 
             // Execute the query
-            IQueryResult result = DataAccess.ExecuteQuery(query);
+            IQueryResult result = DataAccess.Execute(query);
 
+            // Make the result array
             T[] results = new T[result.NumRows];
 
+            // Iterate over each item and load it from the result set
             for (int index = 0; index < results.Length; index++)
             {
                 results[index] = __Decode(result);
@@ -200,7 +221,7 @@ namespace NerdBlock.Engine.Backend
             string query = string.Format("select {1} from {0} where {2}", myTableName, resultValues.Trim(','), searchTerms.Remove(searchTerms.Length - 5, 4).Trim());
 
             // Execute the query
-            IQueryResult result = DataAccess.ExecuteQuery(query, queryParams.ToArray(), insertParams.ToArray());
+            IQueryResult result = DataAccess.Execute(query, queryParams.ToArray(), insertParams.ToArray());
 
             // Create an array for the result set
             T[] results = new T[result.NumRows];
@@ -223,12 +244,15 @@ namespace NerdBlock.Engine.Backend
         /// <returns>The instance's primary key (at least the first one)</returns>
         public object GetPrimaryKey(T value) 
         {
+            // Iterate over all the properties
             for (int index = 0; index < myModelProperties.Length; index ++)
             {
+                // If the property is marked as a primary key, return it
                 if (myModelProperties[index].GetCustomAttribute<PrimaryKey>() != null)
                     return myModelProperties[index].GetValue(value);
             }
 
+            // If we have not returned anything, return null
             return null;
         }
 
@@ -249,8 +273,10 @@ namespace NerdBlock.Engine.Backend
                     // Get the value from the property
                     object pValue = myDependencies[index].GetValue(value);
 
+                    // If the value is null and the field is not nullable
                     if (pValue == null && myDependencies[index].GetCustomAttribute<Nullable>() == null)
                     {
+                        // if we are trying to update the nullable fields, throw an exception
                         if (updateNullValues)
                             throw new InvalidOperationException("Cannot insert with a missing dependancy");
                     }
@@ -349,6 +375,12 @@ namespace NerdBlock.Engine.Backend
             return results;
         }
 
+        /// <summary>
+        /// Handles deleting a model from the database
+        /// </summary>
+        /// <param name="value">The model to delete</param>
+        /// <param name="deleteChildren">True if child models should be deleted, false if otherwise</param>
+        /// <returns>The number of rows deleted</returns>
         public int Delete(T value, bool deleteChildren = true)
         {
             // Iterate over dependancies
@@ -359,7 +391,8 @@ namespace NerdBlock.Engine.Backend
                     // Get the value from the property
                     object pValue = myDependencies[index].GetValue(value);
 
-                    if (pValue != null && DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
+                    // If we need to delete the child, and it exists, we delete it
+                    if (deleteChildren && pValue != null && DataAccess.ExistsWeak(myDependencies[index].PropertyType, pValue))
                         DataAccess.DeleteWeak(myDependencies[index].PropertyType, pValue); 
                 }
             }
@@ -488,7 +521,7 @@ namespace NerdBlock.Engine.Backend
             string query = string.Format("select {1} from {0} where {2}", myTableName, resultValues.Trim(','), searchTerms.Remove(searchTerms.Length - 5, 4).Trim());
 
             // Execute the query
-            IQueryResult result = DataAccess.ExecuteQuery(query, queryParams.ToArray(), insertParams.ToArray());
+            IQueryResult result = DataAccess.Execute(query, queryParams.ToArray(), insertParams.ToArray());
 
             T[] results = new T[result.NumRows];
 
@@ -509,45 +542,63 @@ namespace NerdBlock.Engine.Backend
         /// <returns>The item decoded from the query result</returns>
         private T __Decode(IQueryResult queryResult)
         {
+            // Make the result
             T result = new T();
 
+            // Iterate over all properties
             for(int index = 0; index < myModelProperties.Length; index ++)
             {
+                // get a nice shorthand reference
                 PropertyInfo pi = myModelProperties[index];
 
+                // Get the DataField attribute
                 DataField field = pi.GetCustomAttribute<DataField>();
 
+                // Get the value from the query result
                 object value = queryResult.Row[field.FieldName];
 
+                // If the value is DbNull, we need to explicitly cast the value to null
                 if (value.GetType() == typeof(DBNull))
                     value = null;
-
+                // Otherwise, we should have a value, we check to see if it is a nullable field
                 else if (pi.PropertyType.IsGenericType && pi.PropertyType.Name.Remove(pi.PropertyType.Name.IndexOf('`')) == "Nullable")
                 {
+                    // Get the type for the property from the nullable instance's generic types
                     Type paramType = pi.PropertyType.GenericTypeArguments[0];
 
+                    // If the value is a value type, and the given value is the same as the default value for that type,
+                    // we assume that the field should be null
                     if (paramType.IsValueType && Activator.CreateInstance(paramType).Equals(value))
                         value = null;
                     
+                    // If the value is null, simply set it to null
                     if (value == null)
                         pi.SetValue(result, value);
+                    // Otherwise
                     else
                     {
+                        // If it is a foriegn key to another table, use the value as a primary key to get the data from the table
                         if (pi.GetCustomAttribute<ForeignKey>() != null)
                             pi.SetValue(result, DataAccess.FromPrimaryKeyWeak(pi.PropertyType, value));
+                        // Otherwise just cast it to the properties type and set the value
                         else
                             pi.SetValue(result, Convert.ChangeType(value, pi.PropertyType.GenericTypeArguments[0]));
                     }
                 }
+                // Finally, for any other type
                 else
                 {
+
+                    // If it is a foriegn key to another table, use the value as a primary key to get the data from the table
                     if (pi.GetCustomAttribute<ForeignKey>() != null)
                         pi.SetValue(result, DataAccess.FromPrimaryKeyWeak(pi.PropertyType, value));
+                    // Otherwise just cast it to the properties type and set the value
                     else
                         pi.SetValue(result, Convert.ChangeType(value, pi.PropertyType));
                 }
             }
 
+            // return the decoded result
             return result;
         }
     }

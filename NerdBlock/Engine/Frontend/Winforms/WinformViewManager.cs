@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms
 {
+    /// <summary>
+    /// A windows forms implementation of the IViewManager
+    /// </summary>
     public class WinformViewManager : IViewManagerImplementation
     {
         private MainForm myMainForm;

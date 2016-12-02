@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace NerdBlock.Engine.Backend
 {
@@ -29,6 +24,12 @@ namespace NerdBlock.Engine.Backend
         int CurrentRow { get; }
 
         /// <summary>
+        /// Gets whether another row is available with MoveNext()
+        /// </summary>
+        /// <returns>True if a row is available, false if otherwise</returns>
+        bool HasRow { get; }
+
+        /// <summary>
         /// Gets the query result as a dataset
         /// </summary>
         DataSet Source { get; }
@@ -44,11 +45,5 @@ namespace NerdBlock.Engine.Backend
         /// </summary>
         /// <returns>True if we moved to the previous element, false if otherwise</returns>
         bool MovePrev();
-
-        /// <summary>
-        /// Gets whether another row is available with MoveNext()
-        /// </summary>
-        /// <returns>True if a row is available, false if otherwise</returns>
-        bool HasRow();
     }
 }

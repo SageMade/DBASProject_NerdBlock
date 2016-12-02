@@ -22,7 +22,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
             ViewManager.InitAuth(auth.Role);
 
-            Context.Values["Series"] = DataAccess.ExecuteQuery(Resources.SelectGenreTalliesQuery);
+            Context.Values["Series"] = DataAccess.Execute(Resources.SelectGenreTalliesQuery);
             ViewManager.Show("BlockGenres");
         }
 
