@@ -164,40 +164,40 @@ INSERT INTO tblBillingInfo(PaymentType,address,AccountNum,Token)
 	VALUES ('MasterCard',6,4589652154789632,'658');
 
 
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Horror','The scariest block you will ever recieve.',true);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Animals','All things that involve animals.',true);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Food','Tasty treats that leave no mess.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Baby','For your little miricle.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Children','For the little people in your family',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Adventure',' Some poeple love adventure, travel with this block.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('RPG','Those that love the freedom of an open world.',true);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Books','Getting your mind lost in the world of books.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Clothing','For those who love a crazy style.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Games','All things games in general.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Sports','For all the active people out there.',true);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Conventions','If you didnt go to the conventions get your fix here.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Geeks','For all you geeky people out there.',true);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Nerds','Only if you are Nerd at heart.',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Classic','The classic block',false);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Movies','Your favorite movie might be in here.',true);
-INSERT INTO tblGenre(Title,Description,IsActive)
-	VALUES ('Superheros','If superheros are your thing then you will love this.',false);
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Horror','The scariest block you will ever recieve.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Animals','All things that involve animals.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Food','Tasty treats that leave no mess.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Baby','For your little miricle.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Children','For the little people in your family');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Adventure',' Some poeple love adventure, travel with this block.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('RPG','Those that love the freedom of an open world.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Books','Getting your mind lost in the world of books.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Clothing','For those who love a crazy style.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Games','All things games in general.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Sports','For all the active people out there.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Conventions','If you didnt go to the conventions get your fix here.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Geeks','For all you geeky people out there.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Nerds','Only if you are Nerd at heart.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Classic','The classic block');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Movies','Your favorite movie might be in here.');
+INSERT INTO tblGenre(Title,Description)
+	VALUES ('Superheros','If superheros are your thing then you will love this.');
 
 
 INSERT INTO tblBlockSeries(GenreId,Title,SubscriptionPrice,BlockVolume)

@@ -1,6 +1,7 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
+using NerdBlock.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             Session.Set("Auth.Employee", auth);
 
             ViewManager.InitAuth(auth.Role);
+
+            Context.Values["Series"] = DataAccess.ExecuteQuery(Resources.SelectGenreTalliesQuery);
             ViewManager.Show("BlockGenres");
         }
 

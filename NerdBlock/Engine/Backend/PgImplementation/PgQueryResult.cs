@@ -70,40 +70,33 @@ namespace NerdBlock.Engine.Backend.PgImplementation
         /// <param name="isNonQuery">True if the command is not a query, such as a insert, update, or delete</param>
         public PgQueryResult(NpgsqlCommand command, bool isSelect)
         {
-            if (!isSelect)
+            try
             {
-                try
+                // If this is a statement, we execute as a non-query
+                if (!isSelect)
                 {
                     myNumRows = command.ExecuteNonQuery();
                 }
-                catch(PostgresException e)
+                else
                 {
-                    myNumRows = -1;
-                    DataAccess.Database.LastFailReason = new QueryFail()
-                    {
-                        Message = e.Message,
-                        Exception = e,
-                        Reason = (QueryFailReason)e.ErrorCode
-                    };
-                    Logger.Log(LogLevel.Warn, e.MessageText);
-                }
-            }
-            else
-            {
-
-                try
-                {
+                    // If this is a select statement
                     myDataAdapter = new NpgsqlDataAdapter(command);
                     myDataSet = new DataSet();
                     myDataAdapter.Fill(myDataSet);
                     myTable = myDataSet.Tables[0];
                     myNumRows = myTable.Rows.Count;
                 }
-                catch (PostgresException e)
+            }
+            catch (PostgresException e)
+            {
+                myNumRows = -1;
+                DataAccess.Database.LastFailReason = new QueryFail()
                 {
-                    myNumRows = -1;
-                    Logger.Log(LogLevel.Warn, e.MessageText);
-                }
+                    Message = e.Message,
+                    Exception = e,
+                    Reason = (QueryFailReason)e.ErrorCode
+                };
+                Logger.Log(LogLevel.Warn, e.MessageText);
             }
         }
 

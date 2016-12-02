@@ -37,7 +37,7 @@ namespace NerdBlock.Engine.LogicLayer
         
         public static void SetValue(string valueName, object value)
         {
-            myContextObjects[valueName] = valueName;
+            myContextObjects[valueName] = value;
         }
 
         public static void Clear()

@@ -38,5 +38,8 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("roleid", QueryParamType.Integer), ForeignKey("tblemployeerole", "roleid")]
         public EmployeeRole Role { get; set; }
+
+        [DataField("foobar", QueryParamType.VarChar), Nullable]
+        public string FooBar { get; set; }
     }
 }

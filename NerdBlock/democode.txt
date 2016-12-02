@@ -1,0 +1,66 @@
+////////// Add the Database field ////////////////////////
+
+alter table tblemployees add foobar text default 'Hello!';
+
+
+/////////////// Add the model Property ///////////////////
+
+[DataField("foobar", QueryParamType.VarChar), Nullable]
+public string FooBar { get; set; }
+
+
+/////// Declare in input or output somewhere /////////////
+
+Inputs.Add(new TextBoxInput("FooBar", txtFooBar));
+
+
+/////////// Use the value from the input /////////////////
+
+employee.FooBar = Context.GetValue<string>("FooBar");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alter table tblemployees drop foobar;
