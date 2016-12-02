@@ -93,7 +93,7 @@
     <Compile Include="Engine\Frontend\IView.cs" />
     <Compile Include="Engine\Frontend\ReflectedInput.cs" />
     <Compile Include="Engine\Frontend\ViewManager.cs" />
-    <Compile Include="Engine\Frontend\Winforms\IViewManagerImplementation.cs" />
+    <Compile Include="Engine\Frontend\IViewManagerImplementation.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\BlockQueries.cs">
       <SubType>UserControl</SubType>
     </Compile>

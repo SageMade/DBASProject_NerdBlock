@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace NerdBlock.Engine.Frontend
 {
@@ -35,6 +30,12 @@ namespace NerdBlock.Engine.Frontend
             }
         }
 
+        /// <summary>
+        /// Creates a new reflected input with the given name, object and a property name
+        /// </summary>
+        /// <param name="name">The name of the input in the input map</param>
+        /// <param name="container">The containing object to get the input vlaue from</param>
+        /// <param name="propertyName">The name of the property within the object to get</param>
         public ReflectedInput(string name, object container, string propertyName)
         {
             Name = name;

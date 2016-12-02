@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NerdBlock.Engine.Frontend
+﻿namespace NerdBlock.Engine.Frontend
 {
+    /// <summary>
+    /// Represents an output field for a view
+    /// </summary>
     public interface IOutput
     {
         /// <summary>
