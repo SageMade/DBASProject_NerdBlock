@@ -19,12 +19,18 @@ namespace NerdBlock.Engine.Frontend.Winforms
 
         private Dictionary<string, IView> myViews;
 
+        /// <summary>
+        /// Gets the current view being displayed
+        /// </summary>
         public IView CurrentView
         {
             get;
             private set;
         }
 
+        /// <summary>
+        /// Create a new windows forms view manager
+        /// </summary>
         public WinformViewManager()
         {
             myMainForm = new MainForm();
@@ -33,6 +39,10 @@ namespace NerdBlock.Engine.Frontend.Winforms
             myViews = new Dictionary<string, IView>();
         }
 
+        /// <summary>
+        /// Starts the application, displaying the given initial view
+        /// </summary>
+        /// <param name="initialView">The name of the initial view to display</param>
         public void Run(string viewName)
         {
             myContentPanel.Controls.Add((ViewBase)ViewManager.GetView(viewName));
@@ -42,11 +52,19 @@ namespace NerdBlock.Engine.Frontend.Winforms
             myMainForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Displays the view with the given name to the user
+        /// </summary>
+        /// <param name="viewName">The name of the view to display</param>
         public void ShowView(string viewName)
         {
             ShowView((ViewBase)ViewManager.GetView(viewName));
         }
 
+        /// <summary>
+        /// Displays the view to the user
+        /// </summary>
+        /// <param name="control">The view to display</param>
         public void ShowView(ViewBase control)
         {
             for (int index = 0; index < myContentPanel.Controls.Count; index++)
@@ -64,23 +82,41 @@ namespace NerdBlock.Engine.Frontend.Winforms
 
             CurrentView = control;
         }
-        
+
+        /// <summary>
+        /// Gets the view with the given name
+        /// </summary>
+        /// <param name="name">The name of the view to get</param>
+        /// <returns>The view associated with the given name</returns>
         public IView GetView(string name)
         {
             return myViews[name];
         }
 
+        /// <summary>
+        /// Displays the view to the user
+        /// </summary>
+        /// <param name="view">The view to display</param>
         public void ShowView(IView view)
         {
             ViewBase control = view as ViewBase;
             ShowView(control);
         }
 
+        /// <summary>
+        /// Register a view with the view manager
+        /// </summary>
+        /// <param name="name">The name of the view to register</param>
+        /// <param name="view">The view to register</param>
         public void RegisterView(string name, IView view)
         {
             myViews.Add(name, view);
         }
 
+        /// <summary>
+        /// Handles loading and generating the views from runtime reflection
+        /// </summary>
+        /// <param name="assembly">The assemly to search for IView implementations in</param>
         public void ReflectLoadViews(Assembly assembly = null)
         {
             if (assembly == null)
@@ -96,6 +132,11 @@ namespace NerdBlock.Engine.Frontend.Winforms
             }
         }
 
+        /// <summary>
+        /// Shows a flash message or dialog with the given content
+        /// </summary>
+        /// <param name="message">The text to display in the flash message</param>
+        /// <param name="flashType">The type of flash message to display</param>
         public void ShowFlash(string message, FlashMessageType flashType)
         {
             switch (flashType)
@@ -115,6 +156,12 @@ namespace NerdBlock.Engine.Frontend.Winforms
             }
         }
 
+        /// <summary>
+        /// Populates an object from all instances of a given model type
+        /// </summary>
+        /// <typeparam name="ValueType">The type of model to fill with</typeparam>
+        /// <typeparam name="TargetType">The type of the target object to fill</typeparam>
+        /// <param name="targetObject">The target object to populate</param>
         public void PopulateList<ValueType, TargetType>(TargetType targetObject) where ValueType : new()
         {
             if (typeof(TargetType) == typeof(ComboBox))
@@ -133,6 +180,13 @@ namespace NerdBlock.Engine.Frontend.Winforms
             }
         }
 
+        /// <summary>
+        /// Populates an object from a query result
+        /// </summary>
+        /// <typeparam name="TargetType">The type of the target object to fill</typeparam>
+        /// <param name="targetObject">The target object to populate</param>
+        /// <param name="queryResult">The query to populate from</param>
+        /// <param name="nameIndex">The index of the name within the query</param>
         public void PopulateFromQuery<TargetType>(TargetType targetObject, IQueryResult query, int nameIndex = 0)
         {
             if (typeof(TargetType) == typeof(ComboBox))
@@ -147,6 +201,11 @@ namespace NerdBlock.Engine.Frontend.Winforms
             }
         }
 
+        /// <summary>
+        /// Sets up the view manager's authentication system with the given authentication
+        /// object
+        /// </summary>
+        /// <param name="authObject">The object to use for authentication</param>
         public void InitAuth(object authObject)
         {
             EmployeeRole role = authObject as EmployeeRole;
@@ -160,6 +219,9 @@ namespace NerdBlock.Engine.Frontend.Winforms
             }
         }
 
+        /// <summary>
+        /// Close the program
+        /// </summary>
         public void CloseProgram()
         {
             myMainForm.Close();
