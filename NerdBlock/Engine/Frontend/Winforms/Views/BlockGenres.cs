@@ -1,5 +1,6 @@
 ﻿using NerdBlock.Engine.LogicLayer;
 using NerdBlock.Engine.Frontend.Winforms.Implementation;
+using NerdBlock.Properties;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -24,7 +25,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 Context.SetValue("TargetGenre", dgvGenres.SelectedRows);
                 AttemptAction("goto_blockseries");
             };
-
         }
     }
 }

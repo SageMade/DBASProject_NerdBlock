@@ -2,17 +2,19 @@
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
 using NerdBlock.Properties;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
+    /// <summary>
+    /// Stores actions related to authentication
+    /// </summary>
     [BusinessActionContainer]
     public class LoginActions
     {
+        /// <summary>
+        /// Handles logging into the application
+        /// </summary>
         [BusinessAction("login")]
         public void Login()
         {
@@ -26,6 +28,9 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             ViewManager.Show("BlockGenres");
         }
 
+        /// <summary>
+        /// Handles going to the login view
+        /// </summary>
         [BusinessAction("goto_login")]
         public void ShowLogin()
         {

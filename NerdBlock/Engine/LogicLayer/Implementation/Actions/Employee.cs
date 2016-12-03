@@ -2,16 +2,18 @@
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
+    /// <summary>
+    /// Stores actions related to employees
+    /// </summary>
     [BusinessActionContainer]
     public class EmployeeActions
     {
+        /// <summary>
+        /// Handles inserting a new employee into the database, assumes that there is valid employee information in the context
+        /// </summary>
         [BusinessAction("insert_employee")]
         public void Insert()
         {
@@ -53,18 +55,27 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             }
         }
 
+        /// <summary>
+        /// Handles showing the employee add view
+        /// </summary>
         [BusinessAction("goto_employee_add")]
         public void ShowAdd()
         {
             ViewManager.Show("AddEmployee");
         }
 
+        /// <summary>
+        /// Handles showing the employee search view
+        /// </summary>
         [BusinessAction("goto_employee_search")]
         public void ShowSearch()
         {
             ViewManager.Show("EmployeeSearch");
         }
 
+        /// <summary>
+        /// Handles showing the employee update view
+        /// </summary>
         [BusinessAction("goto_employee_update")]
         public void ShowUpdate()
         {

@@ -1,15 +1,16 @@
 ﻿using NerdBlock.Engine.Frontend;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
+    /// <summary>
+    /// Represents the actions relating to the main Application logic
+    /// </summary>
     [BusinessActionContainer]
     public class Application
     {
+        /// <summary>
+        /// Handles exiting the application
+        /// </summary>
         [BusinessAction("exit_program")]
         public void Exit()
         {

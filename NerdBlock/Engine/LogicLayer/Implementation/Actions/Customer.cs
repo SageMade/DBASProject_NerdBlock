@@ -1,17 +1,16 @@
-﻿using NerdBlock.Engine.Backend;
-using NerdBlock.Engine.Backend.Models;
-using NerdBlock.Engine.Frontend;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NerdBlock.Engine.Frontend;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
+    /// <summary>
+    /// Stores actions related to customers
+    /// </summary>
     [BusinessActionContainer]
     public class Customer
     {
+        /// <summary>
+        /// Show the customer search page
+        /// </summary>
         [BusinessAction("goto_customer_search")]
         public void ShowSearch()
         {

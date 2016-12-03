@@ -1,10 +1,5 @@
-﻿using NerdBlock.Engine.Frontend.Winforms.Implementation;
-using NerdBlock.Engine.LogicLayer;
-using System;
+﻿using NerdBlock.Engine.LogicLayer;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
@@ -43,10 +38,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             ViewManager.Show(this);
         }
 
-        public void LoadView()
+        protected virtual void LoadMyViewContext() { }
+
+        public virtual void LoadView()
         {
             for (int index = 0; index < Outputs.Count; index++)
                 Outputs[index].Value = Context.Values[Outputs[index].Name];
+
+            LoadMyViewContext();
         }
 
         public void AttemptAction(string actionName)
