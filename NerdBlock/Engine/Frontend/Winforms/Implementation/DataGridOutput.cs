@@ -77,11 +77,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
                     // Iterate over all items in the array
                     for (int iIndex = 0; iIndex < collection.Length; iIndex++)
                     {
+                        // Generate a row for the results
+                        DataGridViewRow row = myView.Rows[myView.Rows.Add()];
+                        
                         // Iterate over all the columns in the view
                         for (int index = 0; index < myView.Columns.Count; index++)
                         {
-                            // Generate a row for the results
-                            DataGridViewRow row = myView.Rows[myView.Rows.Add()];
 
                             // Try to see if we have a property that matches the data property name
                             PropertyInfo pInfo = properties.Where(X => X.Name.ToLower().Equals(myView.Columns[index].DataPropertyName.ToLower())).FirstOrDefault();

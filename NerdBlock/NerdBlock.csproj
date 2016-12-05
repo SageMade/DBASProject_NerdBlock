@@ -84,6 +84,9 @@
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ControlMoverOrResizer.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\DataGridDiplayView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Implementation\DataGridOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ListViewOutput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\TextBoxOutput.cs" />
@@ -233,12 +236,6 @@
     <Compile Include="Engine\Backend\QueryParamType.cs" />
     <Compile Include="Engine\Backend\IQuery.cs" />
     <Compile Include="Engine\Backend\IQueryResult.cs" />
-    <Compile Include="Engine\Frontend\Winforms\Views\Sample.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\Sample.Designer.cs">
-      <DependentUpon>Sample.cs</DependentUpon>
-    </Compile>
     <Compile Include="Engine\Backend\IDatabase.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\SearchCustomer.cs">
       <SubType>UserControl</SubType>
@@ -334,9 +331,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Sample.resx">
-      <DependentUpon>Sample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>

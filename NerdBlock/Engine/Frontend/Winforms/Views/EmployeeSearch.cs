@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NerdBlock.Engine.Frontend;
 using NerdBlock.Engine.Backend.Models;
+using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -17,6 +18,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         public EmployeeSearch()
         {
             InitializeComponent();
+
+            // Add inputs
+            Inputs.Add(new TextBoxInput("ID", txtEmployeeID));
+
+            // Add outputs
+            Outputs.Add(new DataGridOutput("AllEmployees", dgvEmployeeList));
         }
     }
 }

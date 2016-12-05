@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class CustomerSearchList : UserControl
+    public partial class CustomerSearchList : ViewBase
     {
         public CustomerSearchList()
         {

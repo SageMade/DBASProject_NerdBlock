@@ -32,7 +32,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// <summary>
         /// Handles going to the block queries page
         /// </summary>
-        [BusinessAction("goto_block_queries")]
+        [BusinessAction("goto_blocks_queries")]
         public void ShowQueries()
         {
             ViewManager.Show("BlockQueries");
@@ -41,7 +41,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// <summary>
         /// Handles going to the block series page
         /// </summary>
-        [BusinessAction("goto_block_series")]
+        [BusinessAction("goto_blocks_series")]
         public void ShowSeries()
         {
             ViewManager.Show("BlockSeries");

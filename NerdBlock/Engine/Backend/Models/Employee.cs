@@ -27,6 +27,8 @@ namespace NerdBlock.Engine.Backend.Models
         [DataField("lastname", QueryParamType.VarChar)]
         public string LastName { get; set; }
 
+        public string FullName { get { return FirstName + " " + LastName; } }
+
         [DataField("email", QueryParamType.VarChar), Nullable]
         public string Email { get; set; }
 

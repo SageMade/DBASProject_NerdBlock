@@ -14,7 +14,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [BusinessAction("goto_customer_search")]
         public void ShowSearch()
         {
-            ViewManager.Show("CustomerSearch");
+            ViewManager.Show("CustomerSearchList");
         }
     }
 }

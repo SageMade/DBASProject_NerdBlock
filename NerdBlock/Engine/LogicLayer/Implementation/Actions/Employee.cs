@@ -70,6 +70,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [BusinessAction("goto_employee_search")]
         public void ShowSearch()
         {
+            Context.Values["AllEmployees"] = DataAccess.SelectAll<Employee>();
             ViewManager.Show("EmployeeSearch");
         }
 

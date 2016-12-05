@@ -35,17 +35,24 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             tsiEmployeeAdd.Click += (X, Y) => TryAction("goto_employee_add");
             tsiEmployeeSearch.Click += (X, Y) => TryAction("goto_employee_search");
+
             tsiLogin.Click += (X, Y) => TryAction("goto_login");
             tsiLogout.Click += (X, Y) => TryAction("logout");
             tsiExitProgram.Click += (X, Y) => TryAction("exit_program");
+
             tsiCustomerSearch.Click += (X, Y) => TryAction("goto_customer_search");
+
             tsiInventorySearch.Click += (X, Y) => TryAction("goto_inventory_search");
             tsiInventoryLostDamaged.Click += (X, Y) => TryAction("goto_inventory_lost_damaged");
             tsiInventoryOverstock.Click += (X, Y) => TryAction("goto_inventory_overstock");
+
             tsiBlocksAdd.Click += (X, Y) => TryAction("goto_blocks_add");
             tsiBlocksGenres.Click += (X, Y) => TryAction("goto_blocks_genres");
             tsiBlocksQueries.Click += (X, Y) => TryAction("goto_blocks_queries");
             tsiBlocksSeries.Click += (X, Y) => TryAction("goto_blocks_series");
+
+            tmrWatch.Tick += (X, Y) => { tslTime.Text = DateTime.Now.ToLongTimeString(); };
+            tmrWatch.Start();
         }
 
         private void TryAction(string name)
