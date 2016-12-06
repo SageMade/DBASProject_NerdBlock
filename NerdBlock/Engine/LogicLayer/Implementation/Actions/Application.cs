@@ -29,18 +29,31 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib(true, "*")]
         public void Login()
         {
-            Employee auth = new Employee();
-            auth.EmployeeId = Context.GetValue<int>("Emnployee.Id");
+            int emplId = -1;
 
-            Employee[] match = DataAccess.Match(auth);
-
-            if (match.Length > 0 && PasswordSecurity.PasswordStorage.VerifyPassword(Context.GetValue<string>("Employee.Password"), match[0].HashedPassword))
+            if (int.TryParse(Context.GetValue<string>("Employee.Id"), out emplId))
             {
-                Auth.User = match[0];
-                LogicManager.TryPerformAction("goto_blocks_genres");
+                Employee auth = new Employee();
+                auth.EmployeeId = int.Parse(Context.GetValue<string>("Employee.Id"));
+
+                Employee match = DataAccess.FromPrimaryKey<Employee>(emplId);
+
+                if (match != null && PasswordSecurity.PasswordStorage.VerifyPassword(Context.GetValue<string>("Employee.Password"), match.HashedPassword))
+                {
+                    Auth.User = match;
+                    LogicManager.TryPerformAction("goto_blocks_genres");
+                }
+                else
+                {
+                    Context.SetValue("Employee.Id", emplId.ToString());
+                    ViewManager.ShowFlash("Invalid credentials", FlashMessageType.Bad);
+                }
             }
             else
-                ViewManager.ShowFlash("Invalid credentials", FlashMessageType.Bad);
+            {
+                Context.SetValue("Employee.Id", "");
+                ViewManager.ShowFlash("Please enter your employee ID", FlashMessageType.Bad);
+            }
         }
 
         /// <summary>

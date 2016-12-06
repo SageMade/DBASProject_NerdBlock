@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblPassword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -46,13 +46,14 @@
             this.lblPassword.Text = "Password";
             this.lblPassword.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtPassword.Location = new System.Drawing.Point(75, 80);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblID
             // 
@@ -69,7 +70,7 @@
             this.txtID.Location = new System.Drawing.Point(75, 54);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 4;
+            this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnSubmit
@@ -77,7 +78,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(75, 106);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
@@ -98,7 +99,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblID);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblPassword);
             this.Name = "Login";
@@ -111,7 +112,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btnSubmit;

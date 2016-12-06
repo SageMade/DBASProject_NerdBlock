@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -15,6 +16,11 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         public Login()
         {
             InitializeComponent();
+
+            Inputs.Add(new TextBoxInput("Employee.Id", txtID));
+            Inputs.Add(new TextBoxInput("Employee.Password", txtPassword));
+
+            Outputs.Add(new TextBoxOutput("Employee.Id", txtID));
 
             btnSubmit.Click += (X, Y) => AttemptAction("login");
         }
