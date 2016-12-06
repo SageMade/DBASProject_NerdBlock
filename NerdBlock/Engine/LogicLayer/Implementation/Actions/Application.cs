@@ -46,13 +46,17 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                 else
                 {
                     Context.SetValue("Employee.Id", emplId.ToString());
+                    Context.SetValue("Employee.Password", "");
                     ViewManager.ShowFlash("Invalid credentials", FlashMessageType.Bad);
+                    ViewManager.Show("Login");
                 }
             }
             else
             {
                 Context.SetValue("Employee.Id", "");
+                Context.SetValue("Employee.Password", "");
                 ViewManager.ShowFlash("Please enter your employee ID", FlashMessageType.Bad);
+                ViewManager.Show("Login");
             }
         }
 

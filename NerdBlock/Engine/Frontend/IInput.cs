@@ -11,8 +11,8 @@
         string Name { get; }
 
         /// <summary>
-        /// Gets the value from the input
+        /// Gets or sets the value from the input
         /// </summary>
-        object Value { get; }
+        object Value { get; set; }
     }
 }

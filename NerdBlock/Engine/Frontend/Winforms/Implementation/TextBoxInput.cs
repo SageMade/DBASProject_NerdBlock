@@ -23,6 +23,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         public object Value
         {
             get { return myControl.Text; }
+            set { myControl.Text = value == null ? "" : value.ToString(); }
         }
 
         /// <summary>

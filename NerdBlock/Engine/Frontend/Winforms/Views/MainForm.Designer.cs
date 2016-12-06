@@ -55,6 +55,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiCustomerSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOrders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiAddOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiSearchOrders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReports = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiEmployeeBreakdown = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSeriesBreakdown = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,9 +63,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.tmrWatch = new System.Windows.Forms.Timer(this.components);
-            this.tsiSearchOrders = new System.Windows.Forms.ToolStripMenuItem();
             this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
+            this.tmrWatch = new System.Windows.Forms.Timer(this.components);
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -244,8 +244,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiAddOrder
             // 
             this.tsiAddOrder.Name = "tsiAddOrder";
-            this.tsiAddOrder.Size = new System.Drawing.Size(152, 22);
+            this.tsiAddOrder.Size = new System.Drawing.Size(109, 22);
             this.tsiAddOrder.Text = "Add ";
+            // 
+            // tsiSearchOrders
+            // 
+            this.tsiSearchOrders.Name = "tsiSearchOrders";
+            this.tsiSearchOrders.Size = new System.Drawing.Size(109, 22);
+            this.tsiSearchOrders.Text = "Search";
             // 
             // tsmReports
             // 
@@ -305,12 +311,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.pnlMainContent.Size = new System.Drawing.Size(996, 536);
             this.pnlMainContent.TabIndex = 3;
             // 
-            // tsiSearchOrders
-            // 
-            this.tsiSearchOrders.Name = "tsiSearchOrders";
-            this.tsiSearchOrders.Size = new System.Drawing.Size(152, 22);
-            this.tsiSearchOrders.Text = "Search";
-            // 
             // addProduct1
             // 
             this.addProduct1.Location = new System.Drawing.Point(274, 148);
@@ -329,7 +329,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.Controls.Add(this.mnuMainBar);
             this.MainMenuStrip = this.mnuMainBar;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "NerdBlock";
             this.mnuMainBar.ResumeLayout(false);
             this.mnuMainBar.PerformLayout();
             this.tsApplicationInfo.ResumeLayout(false);

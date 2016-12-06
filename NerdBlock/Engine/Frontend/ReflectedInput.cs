@@ -28,6 +28,11 @@ namespace NerdBlock.Engine.Frontend
                     myReflectedProperty == null ? null :
                         myReflectedProperty.GetValue(myContainer);
             }
+            set
+            {
+                if (myContainer!= null && myReflectedProperty != null)
+                    myReflectedProperty.SetValue(myContainer, value);
+            }
         }
 
         /// <summary>

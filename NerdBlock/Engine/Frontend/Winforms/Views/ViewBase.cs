@@ -42,6 +42,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         public virtual void LoadView()
         {
+            for (int index = 0; index < Inputs.Count; index++)
+                Inputs[index].Value = null;
+
             for (int index = 0; index < Outputs.Count; index++)
                 Outputs[index].Value = Context.Values[Outputs[index].Name];
 

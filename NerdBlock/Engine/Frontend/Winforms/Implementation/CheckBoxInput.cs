@@ -23,6 +23,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         public object Value
         {
             get { return myControl.Checked; }
+            set { myControl.Checked = value is bool ? (bool)value : false; }
         }
 
         /// <summary>

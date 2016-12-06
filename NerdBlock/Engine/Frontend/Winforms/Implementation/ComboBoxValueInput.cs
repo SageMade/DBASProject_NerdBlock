@@ -23,6 +23,11 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         public object Value
         {
             get { return myControl.SelectedItem; }
+            set
+            {
+                if (value != null && myControl.Items.Contains(value))
+                    myControl.SelectedItem = value;
+            }
         }
         /// <summary>
         /// Creates a new combo box value input
