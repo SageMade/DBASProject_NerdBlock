@@ -197,7 +197,6 @@
     <Compile Include="Engine\LogicLayer\Auth.cs" />
     <Compile Include="Engine\LogicLayer\BusinessAction.cs" />
     <Compile Include="Engine\LogicLayer\BusinessRule.cs" />
-    <Compile Include="Engine\LogicLayer\Context.cs" />
     <Compile Include="Engine\LogicLayer\IAuthImplementation.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Application.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Blocks.cs" />
