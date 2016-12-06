@@ -54,7 +54,6 @@
             this.txtSIN = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.txtFooBar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -275,18 +274,10 @@
             this.lblCity.TabIndex = 26;
             this.lblCity.Text = "City";
             // 
-            // txtFooBar
-            // 
-            this.txtFooBar.Location = new System.Drawing.Point(48, 264);
-            this.txtFooBar.Name = "txtFooBar";
-            this.txtFooBar.Size = new System.Drawing.Size(100, 20);
-            this.txtFooBar.TabIndex = 27;
-            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtFooBar);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtSIN);
@@ -314,7 +305,7 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Name = "AddEmployee";
-            this.Size = new System.Drawing.Size(392, 322);
+            this.Size = new System.Drawing.Size(392, 260);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,6 +338,5 @@
         private System.Windows.Forms.TextBox txtSIN;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.TextBox txtFooBar;
     }
 }

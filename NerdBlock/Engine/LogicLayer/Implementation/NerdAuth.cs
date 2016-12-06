@@ -9,7 +9,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
 {
     public class NerdAuth : IAuthImplementation
     {
-        private AutoDictionary<EmployeeRole, List<string>> myAuths;
+        private AutoDictionary<EmployeeRole, List<AuthEntry>> myAuths;
         private List<string> myNullAuths;
         
         public object User
@@ -19,12 +19,12 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
 
         public NerdAuth()
         {
-            myAuths = new AutoDictionary<EmployeeRole, List<string>>();
+            myAuths = new AutoDictionary<EmployeeRole, List<AuthEntry>>();
             myNullAuths = new List<string>();
 
             EmployeeRole[] roles = DataAccess.SelectAll<EmployeeRole>();
             for (int index = 0; index < roles.Length; index++)
-                myAuths[roles[index]] = new List<string>();
+                myAuths[roles[index]] = new List<AuthEntry>();
 
             // Get the assembly
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -87,7 +87,9 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             if (User is Employee)
             {
                 EmployeeRole role = ((Employee)User).Role;
-                return myAuths[role].Contains(actionName);                
+                List<AuthEntry> entries = myAuths[role];
+                bool result = entries.Contains(actionName);
+                return result;        
             }
             else
                 return myNullAuths.Contains(actionName);
@@ -103,6 +105,54 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             {
                 message = "Authorization failed";
                 return false;
+            }
+        }
+
+        private class AuthEntry
+        {
+            public string ActionName;
+            public bool IsAllowed;
+
+            public AuthEntry(string name)
+            {
+                ActionName = name;
+                IsAllowed = true;
+            }
+
+            public AuthEntry(string name, bool allowed)
+            {
+                ActionName = name;
+                IsAllowed = allowed;
+            }
+
+            public override int GetHashCode()
+            {
+                return ActionName.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                return obj is AuthEntry && (obj as AuthEntry).ActionName.Equals(ActionName);
+            }
+
+            public override string ToString()
+            {
+                return ActionName;
+            }
+
+            public static bool operator ==(AuthEntry left, AuthEntry right)
+            {
+                return left.Equals(right);
+            }
+
+            public static bool operator !=(AuthEntry left, AuthEntry right)
+            {
+                return !left.Equals(right);
+            }
+
+            public static implicit operator AuthEntry(string name)
+            {
+                return new AuthEntry(name);
             }
         }
     }

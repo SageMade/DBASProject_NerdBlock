@@ -25,7 +25,6 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             employee.Email = Context.GetValue<string>("Email");
             employee.Phone = long.Parse(Context.GetValue<string>("Phone").Replace(" ", "").Replace("-",""));
             employee.DateJoined = DateTime.Now;
-            employee.FooBar = Context.GetValue<string>("FooBar");
 
             Address address = new Address();
             address.StreetAddress = Context.GetValue<string>("Address.StreetAddress");

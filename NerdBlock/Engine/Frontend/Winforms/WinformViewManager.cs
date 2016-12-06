@@ -218,7 +218,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
                 bool show = false;
 
                 foreach (ToolStripItem tsi in tsm.DropDownItems)
-                    if (tsi.Visible)
+                    if (tsi.Available && myMainForm.ToolStripMapping.HasEntry(tsi))
                     {
                         show = true;
                         break;

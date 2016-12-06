@@ -90,6 +90,20 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 item.Visible = false;
             }
 
+            public void VerifyAuth()
+            {
+                foreach (KeyValuePair<string, ToolStripMapItem> kvp in Mapping)
+                {
+                    bool isAuthed = Auth.HasAccess(kvp.Value.ActionName);
+                    kvp.Value.Control.Available = isAuthed;
+                }
+            }
+
+            public bool HasEntry(ToolStripItem tsi)
+            {
+                return Mapping.Values.Count((X) => X.Control == tsi) > 0;
+            }
+
             public class ToolStripMapItem
             {
                 public ToolStripItem Control;
@@ -104,14 +118,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 public static implicit operator ToolStripItem(ToolStripMapItem item)
                 {
                     return item.Control;
-                }
-            }
-
-            public void VerifyAuth()
-            {
-                foreach(KeyValuePair<string, ToolStripMapItem> kvp in Mapping)
-                {
-                    kvp.Value.Control.Visible = Auth.HasAccess(kvp.Value.ActionName);
                 }
             }
         }

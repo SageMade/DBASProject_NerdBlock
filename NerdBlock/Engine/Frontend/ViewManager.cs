@@ -9,12 +9,14 @@ namespace NerdBlock.Engine.Frontend
     /// </summary>
     public static class ViewManager
     {
+        private static IView myInitialView;
+
         /// <summary>
         /// Gets or set's the ViewManager's implementation
         /// </summary>
         public static IViewManagerImplementation Implementation
         { get; set; }
-        
+                
         /// <summary>
         /// Gets the current view being displayed
         /// </summary>
@@ -59,7 +61,7 @@ namespace NerdBlock.Engine.Frontend
 
         internal static void ShowInitial()
         {
-            throw new NotImplementedException();
+            Implementation.ShowView(myInitialView);
         }
 
         /// <summary>
@@ -68,6 +70,8 @@ namespace NerdBlock.Engine.Frontend
         /// <param name="initialView">The name of the view to start at</param>
         public static void Run(string initialView)
         {
+            myInitialView = Implementation.GetView(initialView);
+
             // Call the implementation's method
             Implementation.Run(initialView);
         }
