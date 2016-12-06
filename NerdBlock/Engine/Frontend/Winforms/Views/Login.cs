@@ -21,6 +21,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput("Employee.Password", txtPassword));
 
             btnSubmit.Click += (X, Y) => AttemptAction("login");
-        }
+        }        
     }
 }

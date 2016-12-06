@@ -37,6 +37,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
             myControl = control;
         }
 
+        /// <summary>
+        /// Fills this IOutput from a given IO map
+        /// </summary>
+        /// <param name="map">The map to fill from</param>
         public void Fill(IoMap map)
         {
             if (map.HasOutput(Name))

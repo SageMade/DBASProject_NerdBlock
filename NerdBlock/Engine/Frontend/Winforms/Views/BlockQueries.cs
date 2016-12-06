@@ -25,7 +25,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             btnEdit.Click += (X, Y) =>
             {
-                Context.SetValue("TargetBlock", lstSeries.SelectedItem);
+                ViewManager.CurrentMap.SetInput("TargetBlock", lstSeries.SelectedItem);
                 AttemptAction("goto_block");
             };
 

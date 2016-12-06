@@ -1,0 +1,1859 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.4.4
+-- Dumped by pg_dump version 9.4.4
+-- Started on 2016-12-06 00:21:43
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+DROP DATABASE testing;
+--
+-- TOC entry 2239 (class 1262 OID 41034)
+-- Name: testing; Type: DATABASE; Schema: -; Owner: -
+--
+
+CREATE DATABASE testing WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'English_Canada.1252' LC_CTYPE = 'English_Canada.1252';
+
+
+\connect testing
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 6 (class 2615 OID 2200)
+-- Name: public; Type: SCHEMA; Schema: -; Owner: -
+--
+
+CREATE SCHEMA public;
+
+
+--
+-- TOC entry 2240 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+
+--
+-- TOC entry 208 (class 3079 OID 11855)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2242 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 173 (class 1259 OID 41085)
+-- Name: tbladdress; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tbladdress (
+    addressid integer NOT NULL,
+    streetaddress character varying(100) NOT NULL,
+    state character varying(30) NOT NULL,
+    country character varying(40) NOT NULL,
+    apartmentnumber integer,
+    specialrequests text,
+    postalcode character varying(10) NOT NULL,
+    city character varying(64) NOT NULL
+);
+
+
+--
+-- TOC entry 172 (class 1259 OID 41083)
+-- Name: tbladdress_addressid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tbladdress_addressid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2243 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: tbladdress_addressid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tbladdress_addressid_seq OWNED BY tbladdress.addressid;
+
+
+--
+-- TOC entry 182 (class 1259 OID 41153)
+-- Name: tblbillinginfo; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblbillinginfo (
+    billinginfoid integer NOT NULL,
+    paymenttype character varying(10) NOT NULL,
+    address integer,
+    accountnum bigint,
+    token character varying(255)
+);
+
+
+--
+-- TOC entry 181 (class 1259 OID 41151)
+-- Name: tblbillinginfo_billinginfoid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblbillinginfo_billinginfoid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2244 (class 0 OID 0)
+-- Dependencies: 181
+-- Name: tblbillinginfo_billinginfoid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblbillinginfo_billinginfoid_seq OWNED BY tblbillinginfo.billinginfoid;
+
+
+--
+-- TOC entry 193 (class 1259 OID 41241)
+-- Name: tblblock; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblblock (
+    blockid integer NOT NULL,
+    seriesid integer NOT NULL,
+    title character varying(255) NOT NULL,
+    description text NOT NULL,
+    shipbydate date NOT NULL
+);
+
+
+--
+-- TOC entry 192 (class 1259 OID 41239)
+-- Name: tblblock_blockid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblblock_blockid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2245 (class 0 OID 0)
+-- Dependencies: 192
+-- Name: tblblock_blockid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblblock_blockid_seq OWNED BY tblblock.blockid;
+
+
+--
+-- TOC entry 194 (class 1259 OID 41255)
+-- Name: tblblockitem; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblblockitem (
+    blockid integer NOT NULL,
+    productid integer NOT NULL,
+    quantity integer DEFAULT 1 NOT NULL
+);
+
+
+--
+-- TOC entry 186 (class 1259 OID 41178)
+-- Name: tblblockseries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblblockseries (
+    seriesid integer NOT NULL,
+    genreid integer NOT NULL,
+    title character varying(32) NOT NULL,
+    subscriptionprice money NOT NULL,
+    blockvolume integer NOT NULL,
+    startdate date NOT NULL,
+    endeddate date
+);
+
+
+--
+-- TOC entry 185 (class 1259 OID 41176)
+-- Name: tblblockseries_seriesid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblblockseries_seriesid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2246 (class 0 OID 0)
+-- Dependencies: 185
+-- Name: tblblockseries_seriesid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblblockseries_seriesid_seq OWNED BY tblblockseries.seriesid;
+
+
+--
+-- TOC entry 175 (class 1259 OID 41096)
+-- Name: tblcustomers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblcustomers (
+    customerid integer NOT NULL,
+    email character varying(255) NOT NULL,
+    datejoined date NOT NULL,
+    username character varying(30) NOT NULL,
+    hashedpass character varying(32) NOT NULL,
+    logintoken character varying(255),
+    passwordresettoken character varying(255),
+    firstname character varying(30) NOT NULL,
+    lastname character varying(50) NOT NULL,
+    homeaddress integer NOT NULL,
+    billingaddress integer
+);
+
+
+--
+-- TOC entry 174 (class 1259 OID 41094)
+-- Name: tblcustomers_customerid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblcustomers_customerid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2247 (class 0 OID 0)
+-- Dependencies: 174
+-- Name: tblcustomers_customerid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblcustomers_customerid_seq OWNED BY tblcustomers.customerid;
+
+
+--
+-- TOC entry 180 (class 1259 OID 41136)
+-- Name: tblemployeejob; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblemployeejob (
+    employeeid integer NOT NULL,
+    roleid integer NOT NULL
+);
+
+
+--
+-- TOC entry 179 (class 1259 OID 41130)
+-- Name: tblemployeerole; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblemployeerole (
+    roleid integer NOT NULL,
+    name character varying(50) NOT NULL,
+    description character varying(100) NOT NULL
+);
+
+
+--
+-- TOC entry 178 (class 1259 OID 41128)
+-- Name: tblemployeerole_roleid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblemployeerole_roleid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2248 (class 0 OID 0)
+-- Dependencies: 178
+-- Name: tblemployeerole_roleid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblemployeerole_roleid_seq OWNED BY tblemployeerole.roleid;
+
+
+--
+-- TOC entry 177 (class 1259 OID 41117)
+-- Name: tblemployees; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblemployees (
+    employeeid integer NOT NULL,
+    datejoined date NOT NULL,
+    sin character varying(9) NOT NULL,
+    firstname character varying(30) NOT NULL,
+    lastname character varying(50) NOT NULL,
+    phone bigint,
+    email character varying(100),
+    homeaddress integer NOT NULL,
+    terminationdate date,
+    roleid integer NOT NULL,
+    password character varying(255) NOT NULL
+);
+
+
+--
+-- TOC entry 176 (class 1259 OID 41115)
+-- Name: tblemployees_employeeid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblemployees_employeeid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2249 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: tblemployees_employeeid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblemployees_employeeid_seq OWNED BY tblemployees.employeeid;
+
+
+--
+-- TOC entry 184 (class 1259 OID 41166)
+-- Name: tblgenre; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblgenre (
+    genreid integer NOT NULL,
+    title character varying(32) NOT NULL,
+    description text NOT NULL
+);
+
+
+--
+-- TOC entry 183 (class 1259 OID 41164)
+-- Name: tblgenre_genreid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblgenre_genreid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2250 (class 0 OID 0)
+-- Dependencies: 183
+-- Name: tblgenre_genreid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblgenre_genreid_seq OWNED BY tblgenre.genreid;
+
+
+--
+-- TOC entry 204 (class 1259 OID 41356)
+-- Name: tblmortarstore; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblmortarstore (
+    storeid integer NOT NULL,
+    address integer NOT NULL,
+    phonenumber bigint NOT NULL,
+    generalmanager integer NOT NULL
+);
+
+
+--
+-- TOC entry 203 (class 1259 OID 41354)
+-- Name: tblmortarstore_storeid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblmortarstore_storeid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2251 (class 0 OID 0)
+-- Dependencies: 203
+-- Name: tblmortarstore_storeid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblmortarstore_storeid_seq OWNED BY tblmortarstore.storeid;
+
+
+--
+-- TOC entry 201 (class 1259 OID 41322)
+-- Name: tblorder; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblorder (
+    orderid integer NOT NULL,
+    dateordered date NOT NULL,
+    orderedby integer NOT NULL,
+    supplierid integer NOT NULL
+);
+
+
+--
+-- TOC entry 200 (class 1259 OID 41320)
+-- Name: tblorder_orderid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblorder_orderid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2252 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: tblorder_orderid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblorder_orderid_seq OWNED BY tblorder.orderid;
+
+
+--
+-- TOC entry 202 (class 1259 OID 41338)
+-- Name: tblorderlineitem; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblorderlineitem (
+    orderid integer NOT NULL,
+    productid integer NOT NULL,
+    quantity integer DEFAULT 1 NOT NULL,
+    batchcost money NOT NULL
+);
+
+
+--
+-- TOC entry 189 (class 1259 OID 41212)
+-- Name: tblpaymentinstance; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblpaymentinstance (
+    subscriptionid integer NOT NULL,
+    paymentdate date NOT NULL,
+    billinginfoid integer NOT NULL,
+    ispayed boolean DEFAULT false NOT NULL
+);
+
+
+--
+-- TOC entry 191 (class 1259 OID 41230)
+-- Name: tblproduct; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblproduct (
+    productid integer NOT NULL,
+    name character varying(255) NOT NULL,
+    description text NOT NULL,
+    width numeric NOT NULL,
+    height numeric NOT NULL,
+    depth numeric NOT NULL,
+    numdamaged integer
+);
+
+
+--
+-- TOC entry 190 (class 1259 OID 41228)
+-- Name: tblproduct_productid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblproduct_productid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2253 (class 0 OID 0)
+-- Dependencies: 190
+-- Name: tblproduct_productid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblproduct_productid_seq OWNED BY tblproduct.productid;
+
+
+--
+-- TOC entry 188 (class 1259 OID 41191)
+-- Name: tblsubscription; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblsubscription (
+    subscriptionid integer NOT NULL,
+    customerid integer NOT NULL,
+    seriesid integer NOT NULL,
+    startedon date NOT NULL,
+    endedon date,
+    billingtype character varying(2) NOT NULL,
+    shippingaddress integer NOT NULL
+);
+
+
+--
+-- TOC entry 187 (class 1259 OID 41189)
+-- Name: tblsubscription_subscriptionid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblsubscription_subscriptionid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2254 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: tblsubscription_subscriptionid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblsubscription_subscriptionid_seq OWNED BY tblsubscription.subscriptionid;
+
+
+--
+-- TOC entry 195 (class 1259 OID 41271)
+-- Name: tblsubscriptionfullfillment; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblsubscriptionfullfillment (
+    subscriptionid integer NOT NULL,
+    blockid integer NOT NULL,
+    trackingnumber character varying(255) NOT NULL,
+    fullfillingemployee integer NOT NULL,
+    shippedondate date DEFAULT now() NOT NULL
+);
+
+
+--
+-- TOC entry 197 (class 1259 OID 41293)
+-- Name: tblsupplier; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblsupplier (
+    supplierid integer NOT NULL,
+    company character varying(255) NOT NULL,
+    address integer NOT NULL,
+    phone bigint NOT NULL
+);
+
+
+--
+-- TOC entry 196 (class 1259 OID 41291)
+-- Name: tblsupplier_supplierid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblsupplier_supplierid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2255 (class 0 OID 0)
+-- Dependencies: 196
+-- Name: tblsupplier_supplierid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblsupplier_supplierid_seq OWNED BY tblsupplier.supplierid;
+
+
+--
+-- TOC entry 199 (class 1259 OID 41306)
+-- Name: tblsuppliercontact; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tblsuppliercontact (
+    contactid integer NOT NULL,
+    company integer NOT NULL,
+    firstname character varying(255) NOT NULL,
+    lastname character varying(255) NOT NULL,
+    phonenumber bigint NOT NULL,
+    email character varying(255) NOT NULL
+);
+
+
+--
+-- TOC entry 198 (class 1259 OID 41304)
+-- Name: tblsuppliercontact_contactid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tblsuppliercontact_contactid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2256 (class 0 OID 0)
+-- Dependencies: 198
+-- Name: tblsuppliercontact_contactid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tblsuppliercontact_contactid_seq OWNED BY tblsuppliercontact.contactid;
+
+
+--
+-- TOC entry 206 (class 1259 OID 41374)
+-- Name: tbltransfer; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tbltransfer (
+    transferid integer NOT NULL,
+    storeid integer NOT NULL,
+    transferdate date NOT NULL
+);
+
+
+--
+-- TOC entry 205 (class 1259 OID 41372)
+-- Name: tbltransfer_transferid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE tbltransfer_transferid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2257 (class 0 OID 0)
+-- Dependencies: 205
+-- Name: tbltransfer_transferid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE tbltransfer_transferid_seq OWNED BY tbltransfer.transferid;
+
+
+--
+-- TOC entry 207 (class 1259 OID 41385)
+-- Name: tbltransferlineitem; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE tbltransferlineitem (
+    transferid integer NOT NULL,
+    productid integer NOT NULL,
+    quantity integer DEFAULT 1 NOT NULL
+);
+
+
+--
+-- TOC entry 1995 (class 2604 OID 41088)
+-- Name: addressid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tbladdress ALTER COLUMN addressid SET DEFAULT nextval('tbladdress_addressid_seq'::regclass);
+
+
+--
+-- TOC entry 1999 (class 2604 OID 41156)
+-- Name: billinginfoid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblbillinginfo ALTER COLUMN billinginfoid SET DEFAULT nextval('tblbillinginfo_billinginfoid_seq'::regclass);
+
+
+--
+-- TOC entry 2005 (class 2604 OID 41244)
+-- Name: blockid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblblock ALTER COLUMN blockid SET DEFAULT nextval('tblblock_blockid_seq'::regclass);
+
+
+--
+-- TOC entry 2001 (class 2604 OID 41181)
+-- Name: seriesid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblblockseries ALTER COLUMN seriesid SET DEFAULT nextval('tblblockseries_seriesid_seq'::regclass);
+
+
+--
+-- TOC entry 1996 (class 2604 OID 41099)
+-- Name: customerid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblcustomers ALTER COLUMN customerid SET DEFAULT nextval('tblcustomers_customerid_seq'::regclass);
+
+
+--
+-- TOC entry 1998 (class 2604 OID 41133)
+-- Name: roleid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblemployeerole ALTER COLUMN roleid SET DEFAULT nextval('tblemployeerole_roleid_seq'::regclass);
+
+
+--
+-- TOC entry 1997 (class 2604 OID 41120)
+-- Name: employeeid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblemployees ALTER COLUMN employeeid SET DEFAULT nextval('tblemployees_employeeid_seq'::regclass);
+
+
+--
+-- TOC entry 2000 (class 2604 OID 41169)
+-- Name: genreid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblgenre ALTER COLUMN genreid SET DEFAULT nextval('tblgenre_genreid_seq'::regclass);
+
+
+--
+-- TOC entry 2012 (class 2604 OID 41359)
+-- Name: storeid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblmortarstore ALTER COLUMN storeid SET DEFAULT nextval('tblmortarstore_storeid_seq'::regclass);
+
+
+--
+-- TOC entry 2010 (class 2604 OID 41325)
+-- Name: orderid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblorder ALTER COLUMN orderid SET DEFAULT nextval('tblorder_orderid_seq'::regclass);
+
+
+--
+-- TOC entry 2004 (class 2604 OID 41233)
+-- Name: productid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblproduct ALTER COLUMN productid SET DEFAULT nextval('tblproduct_productid_seq'::regclass);
+
+
+--
+-- TOC entry 2002 (class 2604 OID 41194)
+-- Name: subscriptionid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscription ALTER COLUMN subscriptionid SET DEFAULT nextval('tblsubscription_subscriptionid_seq'::regclass);
+
+
+--
+-- TOC entry 2008 (class 2604 OID 41296)
+-- Name: supplierid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsupplier ALTER COLUMN supplierid SET DEFAULT nextval('tblsupplier_supplierid_seq'::regclass);
+
+
+--
+-- TOC entry 2009 (class 2604 OID 41309)
+-- Name: contactid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsuppliercontact ALTER COLUMN contactid SET DEFAULT nextval('tblsuppliercontact_contactid_seq'::regclass);
+
+
+--
+-- TOC entry 2013 (class 2604 OID 41377)
+-- Name: transferid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tbltransfer ALTER COLUMN transferid SET DEFAULT nextval('tbltransfer_transferid_seq'::regclass);
+
+
+--
+-- TOC entry 2200 (class 0 OID 41085)
+-- Dependencies: 173
+-- Data for Name: tbladdress; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tbladdress VALUES (1, '001 Address Street', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (2, '002 Address Road', 'Pennsylvania', 'USA', 111, 'This is an apartment address, Dont be disruptive', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (3, '003 Address Avenue', 'Ohio', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (4, '004 Address Boulevard', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (5, '005 Address Lane', 'Pennsylvania', 'USA', 435, 'This is an apartment address, Dont be disruptive', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (6, '006 Address Street', 'Ohio', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (7, '007 Address Road', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (8, '008 Address Avenue', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (9, '009 Address Boulevard', 'Ohio', 'USA', 975, 'This is an apartment address, Dont be disruptive', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (10, '010 Address Lane', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (11, '011 Address Street', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (12, '012 Address Road', 'Ohio', 'USA', 345, 'This is an apartment address, Dont be disruptive', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (13, '013 Address Avenue', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (14, '014 Address Boulevard', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (15, '015 Address Lane', 'Ohio', 'USA', 917, 'This is an apartment address, Dont be disruptive', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (16, '016 Address Road', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (17, '017 Address Avenue', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (18, '018 Address Boulevard', 'New York', 'USA', 856, 'This is an apartment address, Dont be disruptive', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (19, '019 Address Lane', 'Ohio', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (20, '020 Address Street', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (21, '021 Address Boulevard', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (22, '022 Address Avenue', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (23, '023 Address Lane', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (24, '024 Address Lane', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (25, '025 Address Lane', 'Pennsylvania', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (26, '026 Address Lane', 'Ohio', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (28, '028 Address Lane', 'New York', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (44, '12 Bluenose Lane', 'Ontario', 'Canada', NULL, NULL, 'L1B1P5', 'unknown');
+INSERT INTO tbladdress VALUES (51, '12 Bluenose Lane', 'Ontario', 'Canda', NULL, NULL, 'L1B1P5', 'Newcastle');
+INSERT INTO tbladdress VALUES (54, '12 Blooasd', 'ajsldka', 'klsjdalk', NULL, NULL, 'hyju8', 'sdjhals');
+INSERT INTO tbladdress VALUES (62, '12 Bluenose Lane', 'Ontario', 'Canada', NULL, NULL, 'L1B1P5', 'Newcastle');
+INSERT INTO tbladdress VALUES (27, '027 Address Lane', 'Ohio', 'USA', NULL, 'This is a house address, No night deliveries', 'A0A0A0', 'unknown');
+INSERT INTO tbladdress VALUES (63, 'asdjlk', 'Ontario', 'Canada', NULL, NULL, 'L0L0L0', 'asjlkd');
+
+
+--
+-- TOC entry 2258 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: tbladdress_addressid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tbladdress_addressid_seq', 63, true);
+
+
+--
+-- TOC entry 2209 (class 0 OID 41153)
+-- Dependencies: 182
+-- Data for Name: tblbillinginfo; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblbillinginfo VALUES (1, 'VISA', 1, 6548765124597854, '658');
+INSERT INTO tblbillinginfo VALUES (2, 'MasterCard', 2, 6548751349562584, '154');
+INSERT INTO tblbillinginfo VALUES (3, 'Paypal', 3, NULL, NULL);
+INSERT INTO tblbillinginfo VALUES (4, 'Cash', 4, NULL, NULL);
+INSERT INTO tblbillinginfo VALUES (5, 'VISA', 5, 1568459632541587, '658');
+INSERT INTO tblbillinginfo VALUES (6, 'MasterCard', 6, 4589652154789632, '658');
+
+
+--
+-- TOC entry 2259 (class 0 OID 0)
+-- Dependencies: 181
+-- Name: tblbillinginfo_billinginfoid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblbillinginfo_billinginfoid_seq', 6, true);
+
+
+--
+-- TOC entry 2220 (class 0 OID 41241)
+-- Dependencies: 193
+-- Data for Name: tblblock; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblblock VALUES (1, 1, 'Spooky Block 1', 'This is Spooky block 1', '2016-11-30');
+INSERT INTO tblblock VALUES (2, 2, 'Fluffy Buddy Block 1', 'This is Fluffy Buddy block 1', '2016-11-30');
+INSERT INTO tblblock VALUES (3, 3, 'Freedom Block 1', 'This is Freedom block 1', '2016-11-30');
+INSERT INTO tblblock VALUES (4, 4, 'Homerun Block 1', 'This is Homerun block 1', '2016-11-30');
+INSERT INTO tblblock VALUES (5, 5, 'Geeky Block 1', 'This is Geeky block 1', '2016-11-30');
+INSERT INTO tblblock VALUES (6, 6, 'Movie Block 1', 'This is Movie block 1', '2016-11-30');
+
+
+--
+-- TOC entry 2260 (class 0 OID 0)
+-- Dependencies: 192
+-- Name: tblblock_blockid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblblock_blockid_seq', 6, true);
+
+
+--
+-- TOC entry 2221 (class 0 OID 41255)
+-- Dependencies: 194
+-- Data for Name: tblblockitem; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblblockitem VALUES (1, 1, 5);
+INSERT INTO tblblockitem VALUES (1, 2, 3);
+INSERT INTO tblblockitem VALUES (1, 3, 7);
+INSERT INTO tblblockitem VALUES (2, 4, 2);
+INSERT INTO tblblockitem VALUES (2, 5, 5);
+INSERT INTO tblblockitem VALUES (2, 6, 2);
+INSERT INTO tblblockitem VALUES (3, 7, 1);
+INSERT INTO tblblockitem VALUES (3, 8, 7);
+INSERT INTO tblblockitem VALUES (3, 9, 8);
+INSERT INTO tblblockitem VALUES (4, 10, 1);
+INSERT INTO tblblockitem VALUES (4, 11, 6);
+INSERT INTO tblblockitem VALUES (4, 12, 3);
+INSERT INTO tblblockitem VALUES (5, 13, 7);
+INSERT INTO tblblockitem VALUES (5, 14, 8);
+INSERT INTO tblblockitem VALUES (5, 15, 1);
+INSERT INTO tblblockitem VALUES (6, 16, 3);
+INSERT INTO tblblockitem VALUES (6, 17, 6);
+INSERT INTO tblblockitem VALUES (6, 18, 7);
+
+
+--
+-- TOC entry 2213 (class 0 OID 41178)
+-- Dependencies: 186
+-- Data for Name: tblblockseries; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblblockseries VALUES (1, 1, 'The Spooky Series', '$36.00', 7000, '2016-11-30', NULL);
+INSERT INTO tblblockseries VALUES (2, 2, 'The Fluffy Buddy Series', '$15.00', 6000, '2016-11-30', NULL);
+INSERT INTO tblblockseries VALUES (3, 7, 'The Freedom Series', '$20.00', 4000, '2016-11-30', NULL);
+INSERT INTO tblblockseries VALUES (4, 11, 'The Homerun Series', '$30.00', 1000, '2016-11-30', NULL);
+INSERT INTO tblblockseries VALUES (5, 13, 'The Geeky Series', '$19.99', 10000, '2016-11-30', NULL);
+INSERT INTO tblblockseries VALUES (6, 16, 'The Movie Series', '$34.00', 9000, '2016-11-30', NULL);
+INSERT INTO tblblockseries VALUES (7, 1, 'The Murder Bundle', '$40.00', 12000, '2016-12-01', NULL);
+
+
+--
+-- TOC entry 2261 (class 0 OID 0)
+-- Dependencies: 185
+-- Name: tblblockseries_seriesid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblblockseries_seriesid_seq', 7, true);
+
+
+--
+-- TOC entry 2202 (class 0 OID 41096)
+-- Dependencies: 175
+-- Data for Name: tblcustomers; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblcustomers VALUES (1, 'Jerry_S@live.com', '2016-08-08', 'ComicKing', '3VaBDcGCUBk9B5ctVLE2jjEJEKDDqKdS', 'PassToken', 'LoginToken', 'Jerry', 'Seinfeld', 1, 1);
+INSERT INTO tblcustomers VALUES (2, 'Ryan_AS@live.com', '2016-04-04', 'Biocraze', '6Fwpc2pqnuBd6XDgXc957YSddUKLd67K', 'PassToken', 'LoginToken', 'Ryan', 'Schuette', 2, 2);
+INSERT INTO tblcustomers VALUES (3, 'Shawn_M@live.com', '2016-02-07', 'Dr.Krieger', 'GLkjWtvF5ZuVnWNHHkTpB5dJTybdhKf8', 'PassToken', 'LoginToken', 'Shawn', 'Matthews', 3, 3);
+INSERT INTO tblcustomers VALUES (4, 'Dan_M@live.com', '2016-07-04', 'TheLellow', 'RDzdkQSnASVH3SjUXCq4sdKSE6ja5pkV', 'PassToken', 'LoginToken', 'Daniel', 'Munusami', 4, 4);
+INSERT INTO tblcustomers VALUES (5, 'Alex_D@live.com', '2016-09-10', 'AlexDDDD', 'RDzdkQSnASVH3SjUXCq4sdKSE6ja5pkV', 'PassToken', 'LoginToken', 'Alexander', 'Donnelly', 5, 5);
+INSERT INTO tblcustomers VALUES (6, 'Ryan_D@live.com', '2016-06-04', 'DiplockUnlock', 'hwYTSdTPG9jZKxpQsFyBPVkq8fW7WbCM', 'PassToken', 'LoginToken', 'Ryan', 'Diplock', 6, 6);
+
+
+--
+-- TOC entry 2262 (class 0 OID 0)
+-- Dependencies: 174
+-- Name: tblcustomers_customerid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblcustomers_customerid_seq', 6, true);
+
+
+--
+-- TOC entry 2207 (class 0 OID 41136)
+-- Dependencies: 180
+-- Data for Name: tblemployeejob; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblemployeejob VALUES (1, 3);
+INSERT INTO tblemployeejob VALUES (2, 3);
+INSERT INTO tblemployeejob VALUES (3, 3);
+INSERT INTO tblemployeejob VALUES (4, 3);
+INSERT INTO tblemployeejob VALUES (7, 3);
+INSERT INTO tblemployeejob VALUES (8, 1);
+INSERT INTO tblemployeejob VALUES (9, 1);
+INSERT INTO tblemployeejob VALUES (10, 1);
+INSERT INTO tblemployeejob VALUES (11, 1);
+INSERT INTO tblemployeejob VALUES (12, 1);
+
+
+--
+-- TOC entry 2206 (class 0 OID 41130)
+-- Dependencies: 179
+-- Data for Name: tblemployeerole; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblemployeerole VALUES (1, 'General Manager', 'Is in charge of all other managers.');
+INSERT INTO tblemployeerole VALUES (4, 'Vice President', 'They are the VIP, in charge of the company in a whole.');
+INSERT INTO tblemployeerole VALUES (5, 'President', 'They are the big man.');
+INSERT INTO tblemployeerole VALUES (6, 'Department Manager', 'Is in charge of their assigned department.');
+INSERT INTO tblemployeerole VALUES (7, 'Supervisor', 'Makes sure that the employees stay on track.');
+INSERT INTO tblemployeerole VALUES (8, 'Public Relations', 'In charge of getting the companys name out there.');
+INSERT INTO tblemployeerole VALUES (9, 'Packager', 'Specific employee to pack Blocks.');
+INSERT INTO tblemployeerole VALUES (10, 'Warehouse', 'Moving and stacking product, keeping inventory.');
+INSERT INTO tblemployeerole VALUES (11, 'Floor Worker', 'Working the floor of our stores, offering help wherever needed.');
+INSERT INTO tblemployeerole VALUES (12, 'Shipper', 'In charge of sending shipments out and on time.');
+INSERT INTO tblemployeerole VALUES (13, 'Ordering and Block Planning', 'Ordering new products and planning new blocks.');
+INSERT INTO tblemployeerole VALUES (3, 'Employee', 'Does whatever is assigned to them.');
+INSERT INTO tblemployeerole VALUES (2, 'Human resources', 'Are the people who do the hiring and firing of employees.');
+
+
+--
+-- TOC entry 2263 (class 0 OID 0)
+-- Dependencies: 178
+-- Name: tblemployeerole_roleid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblemployeerole_roleid_seq', 13, true);
+
+
+--
+-- TOC entry 2204 (class 0 OID 41117)
+-- Dependencies: 177
+-- Data for Name: tblemployees; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblemployees VALUES (1, '2015-12-08', '123456789', 'Rob', 'Baker', 4567862458, 'Rob_B@live.com', 7, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (2, '2015-06-22', '654831548', 'Adam', 'Jensen', 4865548654, 'Adam_J@live.com', 8, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (3, '2014-03-27', '348954658', 'John', 'Hill', 5489985648, 'John_H@live.com', 9, '2016-11-02', 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (4, '2014-09-04', '789541578', 'Robby', 'Anderson', 4896651235, 'Robby_A@live.com', 10, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (7, '2011-02-14', '354895456', 'Joey', 'Garcia', 3489515648, 'Joey_G@live.com', 13, '2016-11-19', 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (8, '2012-06-04', '124589562', 'Tony', 'Smith', 4879845654, 'Tony_S@live.com', 24, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (9, '2013-02-07', '321547885', 'Alan', 'Peterson', 1548975621, 'Alan_P@live.com', 25, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (10, '2010-01-26', '125469853', 'Charlie', 'Sheen', 2489652145, 'Charlie_S@live.com', 26, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (11, '2015-06-29', '123457884', 'Mitchel', 'Michaels', 3214569874, 'Mitchel_M@live.com', 27, NULL, 2, 'sha1:64000:18:pmurUsanYH00Qm0Z3pNB4W9qNE+IDCzo:6LvFru+tGPhNVpkBWDoLRcuo');
+INSERT INTO tblemployees VALUES (12, '2012-09-20', '321548956', 'Duke', 'Paterson', 9568562358, 'Duke_P@live.com', 28, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (38, '2016-11-26', '696969699', 'Shawn', 'Matthews', NULL, NULL, 44, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (46, '2016-11-29', '012345678', 'Be', 'Good', 2748976489, 'me@me.com', 54, NULL, 3, 'sha1:64000:18:lhaRiijzOJYc0VxJDjXlFaihdCQ1/smC:N0EuheLmzzJ57NPl6M/CBNxP');
+INSERT INTO tblemployees VALUES (49, '2016-12-05', '999999000', 'Test', 'User', 9999999999, 'me@me.com', 63, NULL, 1, 'sha1:64000:18:5JG8YlTVuQvlex1OH/1gx63Dshg+Uqg7:Q/BIlyRaVcBvyTxrgbXrGIg5');
+
+
+--
+-- TOC entry 2264 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: tblemployees_employeeid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblemployees_employeeid_seq', 49, true);
+
+
+--
+-- TOC entry 2211 (class 0 OID 41166)
+-- Dependencies: 184
+-- Data for Name: tblgenre; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblgenre VALUES (1, 'Horror', 'The scariest block you will ever recieve.');
+INSERT INTO tblgenre VALUES (2, 'Animals', 'All things that involve animals.');
+INSERT INTO tblgenre VALUES (3, 'Food', 'Tasty treats that leave no mess.');
+INSERT INTO tblgenre VALUES (4, 'Baby', 'For your little miricle.');
+INSERT INTO tblgenre VALUES (5, 'Children', 'For the little people in your family');
+INSERT INTO tblgenre VALUES (6, 'Adventure', ' Some poeple love adventure, travel with this block.');
+INSERT INTO tblgenre VALUES (7, 'RPG', 'Those that love the freedom of an open world.');
+INSERT INTO tblgenre VALUES (8, 'Books', 'Getting your mind lost in the world of books.');
+INSERT INTO tblgenre VALUES (9, 'Clothing', 'For those who love a crazy style.');
+INSERT INTO tblgenre VALUES (10, 'Games', 'All things games in general.');
+INSERT INTO tblgenre VALUES (11, 'Sports', 'For all the active people out there.');
+INSERT INTO tblgenre VALUES (12, 'Conventions', 'If you didnt go to the conventions get your fix here.');
+INSERT INTO tblgenre VALUES (13, 'Geeks', 'For all you geeky people out there.');
+INSERT INTO tblgenre VALUES (14, 'Nerds', 'Only if you are Nerd at heart.');
+INSERT INTO tblgenre VALUES (15, 'Classic', 'The classic block');
+INSERT INTO tblgenre VALUES (16, 'Movies', 'Your favorite movie might be in here.');
+INSERT INTO tblgenre VALUES (17, 'Superheros', 'If superheros are your thing then you will love this.');
+INSERT INTO tblgenre VALUES (18, 'Cats', 'Cats cats cats!');
+INSERT INTO tblgenre VALUES (19, 'Kitties', 'Kittens!');
+INSERT INTO tblgenre VALUES (20, 'Space', 'Spppppppppppaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccccccccceeeeeeeeee! space! space space space space!');
+INSERT INTO tblgenre VALUES (21, 'Test', 'This is a test!');
+
+
+--
+-- TOC entry 2265 (class 0 OID 0)
+-- Dependencies: 183
+-- Name: tblgenre_genreid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblgenre_genreid_seq', 21, true);
+
+
+--
+-- TOC entry 2231 (class 0 OID 41356)
+-- Dependencies: 204
+-- Data for Name: tblmortarstore; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblmortarstore VALUES (1, 19, 7894561320, 8);
+INSERT INTO tblmortarstore VALUES (2, 20, 3548954651, 9);
+INSERT INTO tblmortarstore VALUES (3, 21, 3254875269, 10);
+INSERT INTO tblmortarstore VALUES (4, 22, 1485962358, 11);
+INSERT INTO tblmortarstore VALUES (5, 23, 9875632541, 12);
+
+
+--
+-- TOC entry 2266 (class 0 OID 0)
+-- Dependencies: 203
+-- Name: tblmortarstore_storeid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblmortarstore_storeid_seq', 5, true);
+
+
+--
+-- TOC entry 2228 (class 0 OID 41322)
+-- Dependencies: 201
+-- Data for Name: tblorder; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblorder VALUES (1, '2014-05-14', 1, 1);
+INSERT INTO tblorder VALUES (2, '2015-12-07', 2, 2);
+INSERT INTO tblorder VALUES (3, '2013-02-22', 3, 3);
+INSERT INTO tblorder VALUES (4, '2015-02-24', 2, 4);
+INSERT INTO tblorder VALUES (5, '2015-09-30', 1, 5);
+
+
+--
+-- TOC entry 2267 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: tblorder_orderid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblorder_orderid_seq', 5, true);
+
+
+--
+-- TOC entry 2229 (class 0 OID 41338)
+-- Dependencies: 202
+-- Data for Name: tblorderlineitem; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblorderlineitem VALUES (1, 1, 30, '$500.00');
+INSERT INTO tblorderlineitem VALUES (1, 2, 20, '$400.00');
+INSERT INTO tblorderlineitem VALUES (1, 3, 40, '$600.00');
+INSERT INTO tblorderlineitem VALUES (2, 4, 100, '$1,000.00');
+INSERT INTO tblorderlineitem VALUES (2, 5, 70, '$800.00');
+INSERT INTO tblorderlineitem VALUES (2, 6, 80, '$900.00');
+INSERT INTO tblorderlineitem VALUES (3, 7, 10, '$100.00');
+INSERT INTO tblorderlineitem VALUES (3, 8, 40, '$300.00');
+INSERT INTO tblorderlineitem VALUES (3, 9, 55, '$550.00');
+INSERT INTO tblorderlineitem VALUES (4, 10, 65, '$750.00');
+INSERT INTO tblorderlineitem VALUES (4, 11, 95, '$950.00');
+INSERT INTO tblorderlineitem VALUES (4, 12, 15, '$250.00');
+INSERT INTO tblorderlineitem VALUES (5, 13, 75, '$600.00');
+INSERT INTO tblorderlineitem VALUES (5, 14, 30, '$400.00');
+INSERT INTO tblorderlineitem VALUES (5, 15, 25, '$100.00');
+
+
+--
+-- TOC entry 2216 (class 0 OID 41212)
+-- Dependencies: 189
+-- Data for Name: tblpaymentinstance; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblpaymentinstance VALUES (1, '2016-12-07', 1, true);
+INSERT INTO tblpaymentinstance VALUES (2, '2016-12-08', 2, true);
+INSERT INTO tblpaymentinstance VALUES (3, '2016-12-15', 3, true);
+INSERT INTO tblpaymentinstance VALUES (4, '2016-12-02', 4, true);
+INSERT INTO tblpaymentinstance VALUES (5, '2016-12-25', 5, true);
+INSERT INTO tblpaymentinstance VALUES (6, '2016-12-22', 6, true);
+
+
+--
+-- TOC entry 2218 (class 0 OID 41230)
+-- Dependencies: 191
+-- Data for Name: tblproduct; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblproduct VALUES (1, 'Toy1', 'This is an example product.', 10, 10, 10, 0);
+INSERT INTO tblproduct VALUES (2, 'Toy2', 'This is an example product.', 15, 15, 15, 1);
+INSERT INTO tblproduct VALUES (3, 'Toy3', 'This is an example product.', 10, 20, 10, 5);
+INSERT INTO tblproduct VALUES (4, 'Toy4', 'This is an example product.', 13, 10, 9, 1);
+INSERT INTO tblproduct VALUES (5, 'Toy5', 'This is an example product.', 10, 30, 10, 0);
+INSERT INTO tblproduct VALUES (6, 'Toy6', 'This is an example product.', 10, 10, 10, 0);
+INSERT INTO tblproduct VALUES (7, 'Toy7', 'This is an example product.', 8, 10, 7, 0);
+INSERT INTO tblproduct VALUES (8, 'Toy8', 'This is an example product.', 20, 20, 20, 7);
+INSERT INTO tblproduct VALUES (9, 'Toy9', 'This is an example product.', 10, 45, 35, 0);
+INSERT INTO tblproduct VALUES (10, 'Toy10', 'This is an example product.', 10, 12, 10, 0);
+INSERT INTO tblproduct VALUES (11, 'Toy11', 'This is an example product.', 10, 10, 10, 0);
+INSERT INTO tblproduct VALUES (12, 'Toy12', 'This is an example product.', 16, 10, 10, 2);
+INSERT INTO tblproduct VALUES (13, 'Toy13', 'This is an example product.', 10, 18, 10, 0);
+INSERT INTO tblproduct VALUES (14, 'Toy14', 'This is an example product.', 14, 10, 10, 0);
+INSERT INTO tblproduct VALUES (15, 'Toy15', 'This is an example product.', 10, 17, 13, 0);
+INSERT INTO tblproduct VALUES (16, 'Toy16', 'This is an example product.', 16, 10, 18, 7);
+INSERT INTO tblproduct VALUES (17, 'Toy17', 'This is an example product.', 10, 15, 10, 0);
+INSERT INTO tblproduct VALUES (18, 'Toy18', 'This is an example product.', 3, 13, 10, 0);
+INSERT INTO tblproduct VALUES (19, 'Toy19', 'This is an example product.', 10, 10, 16, 0);
+INSERT INTO tblproduct VALUES (20, 'Toy20', 'This is an example product.', 10, 16, 10, 0);
+INSERT INTO tblproduct VALUES (21, 'Toy21', 'This is an example product.', 17, 10, 9, 0);
+INSERT INTO tblproduct VALUES (22, 'Toy22', 'This is an example product.', 10, 18, 4, 1);
+INSERT INTO tblproduct VALUES (23, 'Toy23', 'This is an example product.', 10, 6, 10, 0);
+INSERT INTO tblproduct VALUES (24, 'Toy24', 'This is an example product.', 10, 10, 10, 0);
+INSERT INTO tblproduct VALUES (25, 'Toy25', 'This is an example product.', 6, 10, 10, 5);
+INSERT INTO tblproduct VALUES (26, 'Toy26', 'This is an example product.', 6, 10, 10, 5);
+INSERT INTO tblproduct VALUES (27, 'Toy27', 'This is an example product.', 6, 10, 10, 5);
+INSERT INTO tblproduct VALUES (28, 'Toy28', 'This is an example product.', 6, 10, 10, 5);
+INSERT INTO tblproduct VALUES (29, 'Toy29', 'This is an example product.', 6, 10, 10, 5);
+INSERT INTO tblproduct VALUES (30, 'Toy30', 'This is an example product.', 6, 10, 10, 5);
+
+
+--
+-- TOC entry 2268 (class 0 OID 0)
+-- Dependencies: 190
+-- Name: tblproduct_productid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblproduct_productid_seq', 30, true);
+
+
+--
+-- TOC entry 2215 (class 0 OID 41191)
+-- Dependencies: 188
+-- Data for Name: tblsubscription; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblsubscription VALUES (1, 1, 1, '2017-01-01', NULL, 'M', 1);
+INSERT INTO tblsubscription VALUES (2, 2, 2, '2017-01-01', NULL, 'M', 2);
+INSERT INTO tblsubscription VALUES (3, 3, 3, '2017-01-01', NULL, 'A', 3);
+INSERT INTO tblsubscription VALUES (4, 4, 4, '2017-01-01', NULL, 'SA', 4);
+INSERT INTO tblsubscription VALUES (5, 5, 5, '2017-01-01', NULL, 'W', 5);
+INSERT INTO tblsubscription VALUES (6, 6, 6, '2017-01-01', NULL, 'BM', 6);
+
+
+--
+-- TOC entry 2269 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: tblsubscription_subscriptionid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblsubscription_subscriptionid_seq', 6, true);
+
+
+--
+-- TOC entry 2222 (class 0 OID 41271)
+-- Dependencies: 195
+-- Data for Name: tblsubscriptionfullfillment; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblsubscriptionfullfillment VALUES (1, 1, 'a5w4f6a8g4684ga68wg4aw6ad', 1, '2016-11-30');
+INSERT INTO tblsubscriptionfullfillment VALUES (2, 2, '3dj4z3we4hs8ej434se4usese', 2, '2016-11-30');
+INSERT INTO tblsubscriptionfullfillment VALUES (3, 3, '4j6sy8r4kyj4dr6hs4e8fseh8', 3, '2016-11-30');
+INSERT INTO tblsubscriptionfullfillment VALUES (4, 4, 'ah56a2e3j4r4s6j48f6j4drtj', 4, '2016-11-30');
+
+
+--
+-- TOC entry 2224 (class 0 OID 41293)
+-- Dependencies: 197
+-- Data for Name: tblsupplier; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblsupplier VALUES (1, 'Company1', 14, 4854478689);
+INSERT INTO tblsupplier VALUES (2, 'Company2', 15, 1547898542);
+INSERT INTO tblsupplier VALUES (3, 'Company3', 16, 4897845154);
+INSERT INTO tblsupplier VALUES (4, 'Company4', 17, 1547899856);
+INSERT INTO tblsupplier VALUES (5, 'Company5', 18, 1478963254);
+
+
+--
+-- TOC entry 2270 (class 0 OID 0)
+-- Dependencies: 196
+-- Name: tblsupplier_supplierid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblsupplier_supplierid_seq', 5, true);
+
+
+--
+-- TOC entry 2226 (class 0 OID 41306)
+-- Dependencies: 199
+-- Data for Name: tblsuppliercontact; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tblsuppliercontact VALUES (1, 1, 'Jeffery', 'Bugle', 4512458965, 'Jeffery_B@live.com');
+INSERT INTO tblsuppliercontact VALUES (2, 2, 'Allan', 'Harper', 6325489562, 'Allan_H@live.com');
+INSERT INTO tblsuppliercontact VALUES (3, 3, 'Ken', 'Armstrong', 4589652158, 'Ken_A@live.com');
+INSERT INTO tblsuppliercontact VALUES (4, 4, 'Scott', 'Cranmer', 6485965748, 'Scott_C@live.com');
+INSERT INTO tblsuppliercontact VALUES (5, 5, 'Jessie', 'Hill', 3215478541, 'Jessie_H@live.com');
+
+
+--
+-- TOC entry 2271 (class 0 OID 0)
+-- Dependencies: 198
+-- Name: tblsuppliercontact_contactid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tblsuppliercontact_contactid_seq', 5, true);
+
+
+--
+-- TOC entry 2233 (class 0 OID 41374)
+-- Dependencies: 206
+-- Data for Name: tbltransfer; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tbltransfer VALUES (1, 1, '2015-09-17');
+INSERT INTO tbltransfer VALUES (2, 2, '2014-08-03');
+INSERT INTO tbltransfer VALUES (3, 3, '2013-10-09');
+INSERT INTO tbltransfer VALUES (4, 4, '2011-03-15');
+INSERT INTO tbltransfer VALUES (5, 5, '2016-12-22');
+
+
+--
+-- TOC entry 2272 (class 0 OID 0)
+-- Dependencies: 205
+-- Name: tbltransfer_transferid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('tbltransfer_transferid_seq', 5, true);
+
+
+--
+-- TOC entry 2234 (class 0 OID 41385)
+-- Dependencies: 207
+-- Data for Name: tbltransferlineitem; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO tbltransferlineitem VALUES (1, 15, 30);
+INSERT INTO tbltransferlineitem VALUES (1, 14, 25);
+INSERT INTO tbltransferlineitem VALUES (1, 13, 40);
+INSERT INTO tbltransferlineitem VALUES (2, 12, 50);
+INSERT INTO tbltransferlineitem VALUES (2, 11, 75);
+INSERT INTO tbltransferlineitem VALUES (2, 10, 60);
+INSERT INTO tbltransferlineitem VALUES (3, 9, 10);
+INSERT INTO tbltransferlineitem VALUES (3, 8, 15);
+INSERT INTO tbltransferlineitem VALUES (3, 7, 80);
+INSERT INTO tbltransferlineitem VALUES (4, 6, 100);
+INSERT INTO tbltransferlineitem VALUES (4, 5, 30);
+INSERT INTO tbltransferlineitem VALUES (4, 4, 35);
+INSERT INTO tbltransferlineitem VALUES (5, 3, 80);
+INSERT INTO tbltransferlineitem VALUES (5, 2, 50);
+INSERT INTO tbltransferlineitem VALUES (5, 1, 40);
+
+
+--
+-- TOC entry 2018 (class 2606 OID 41093)
+-- Name: tbladdress_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tbladdress
+    ADD CONSTRAINT tbladdress_pkey PRIMARY KEY (addressid);
+
+
+--
+-- TOC entry 2029 (class 2606 OID 41158)
+-- Name: tblbillinginfo_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblbillinginfo
+    ADD CONSTRAINT tblbillinginfo_pkey PRIMARY KEY (billinginfoid);
+
+
+--
+-- TOC entry 2041 (class 2606 OID 41249)
+-- Name: tblblock_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblblock
+    ADD CONSTRAINT tblblock_pkey PRIMARY KEY (blockid);
+
+
+--
+-- TOC entry 2043 (class 2606 OID 41260)
+-- Name: tblblockitem_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblblockitem
+    ADD CONSTRAINT tblblockitem_pkey PRIMARY KEY (blockid, productid);
+
+
+--
+-- TOC entry 2033 (class 2606 OID 41183)
+-- Name: tblblockseries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblblockseries
+    ADD CONSTRAINT tblblockseries_pkey PRIMARY KEY (seriesid);
+
+
+--
+-- TOC entry 2020 (class 2606 OID 41104)
+-- Name: tblcustomers_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblcustomers
+    ADD CONSTRAINT tblcustomers_pkey PRIMARY KEY (customerid);
+
+
+--
+-- TOC entry 2027 (class 2606 OID 41140)
+-- Name: tblemployeejob_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblemployeejob
+    ADD CONSTRAINT tblemployeejob_pkey PRIMARY KEY (employeeid, roleid);
+
+
+--
+-- TOC entry 2025 (class 2606 OID 41135)
+-- Name: tblemployeerole_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblemployeerole
+    ADD CONSTRAINT tblemployeerole_pkey PRIMARY KEY (roleid);
+
+
+--
+-- TOC entry 2023 (class 2606 OID 41122)
+-- Name: tblemployees_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblemployees
+    ADD CONSTRAINT tblemployees_pkey PRIMARY KEY (employeeid);
+
+
+--
+-- TOC entry 2031 (class 2606 OID 41175)
+-- Name: tblgenre_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblgenre
+    ADD CONSTRAINT tblgenre_pkey PRIMARY KEY (genreid);
+
+
+--
+-- TOC entry 2055 (class 2606 OID 41361)
+-- Name: tblmortarstore_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblmortarstore
+    ADD CONSTRAINT tblmortarstore_pkey PRIMARY KEY (storeid);
+
+
+--
+-- TOC entry 2051 (class 2606 OID 41327)
+-- Name: tblorder_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblorder
+    ADD CONSTRAINT tblorder_pkey PRIMARY KEY (orderid);
+
+
+--
+-- TOC entry 2053 (class 2606 OID 41343)
+-- Name: tblorderlineitem_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblorderlineitem
+    ADD CONSTRAINT tblorderlineitem_pkey PRIMARY KEY (orderid, productid);
+
+
+--
+-- TOC entry 2037 (class 2606 OID 41217)
+-- Name: tblpaymentinstance_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblpaymentinstance
+    ADD CONSTRAINT tblpaymentinstance_pkey PRIMARY KEY (subscriptionid, paymentdate);
+
+
+--
+-- TOC entry 2039 (class 2606 OID 41238)
+-- Name: tblproduct_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblproduct
+    ADD CONSTRAINT tblproduct_pkey PRIMARY KEY (productid);
+
+
+--
+-- TOC entry 2035 (class 2606 OID 41196)
+-- Name: tblsubscription_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblsubscription
+    ADD CONSTRAINT tblsubscription_pkey PRIMARY KEY (subscriptionid);
+
+
+--
+-- TOC entry 2045 (class 2606 OID 41275)
+-- Name: tblsubscriptionfullfillment_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblsubscriptionfullfillment
+    ADD CONSTRAINT tblsubscriptionfullfillment_pkey PRIMARY KEY (subscriptionid, blockid);
+
+
+--
+-- TOC entry 2047 (class 2606 OID 41298)
+-- Name: tblsupplier_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblsupplier
+    ADD CONSTRAINT tblsupplier_pkey PRIMARY KEY (supplierid);
+
+
+--
+-- TOC entry 2049 (class 2606 OID 41314)
+-- Name: tblsuppliercontact_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tblsuppliercontact
+    ADD CONSTRAINT tblsuppliercontact_pkey PRIMARY KEY (contactid);
+
+
+--
+-- TOC entry 2057 (class 2606 OID 41379)
+-- Name: tbltransfer_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tbltransfer
+    ADD CONSTRAINT tbltransfer_pkey PRIMARY KEY (transferid);
+
+
+--
+-- TOC entry 2059 (class 2606 OID 41390)
+-- Name: tbltransferlineitem_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY tbltransferlineitem
+    ADD CONSTRAINT tbltransferlineitem_pkey PRIMARY KEY (transferid, productid);
+
+
+--
+-- TOC entry 2015 (class 1259 OID 41430)
+-- Name: addr_5col_uni; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX addr_5col_uni ON tbladdress USING btree (streetaddress, state, country, city, postalcode) WHERE (apartmentnumber IS NULL);
+
+
+--
+-- TOC entry 2016 (class 1259 OID 41432)
+-- Name: addr_6col_uni; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX addr_6col_uni ON tbladdress USING btree (streetaddress, state, country, city, postalcode, apartmentnumber) WHERE (apartmentnumber IS NOT NULL);
+
+
+--
+-- TOC entry 2021 (class 1259 OID 41407)
+-- Name: empl_uni_sin; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX empl_uni_sin ON tblemployees USING btree (sin);
+
+
+--
+-- TOC entry 2066 (class 2606 OID 41159)
+-- Name: tblbillinginfo_address_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblbillinginfo
+    ADD CONSTRAINT tblbillinginfo_address_fkey FOREIGN KEY (address) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2073 (class 2606 OID 41250)
+-- Name: tblblock_seriesid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblblock
+    ADD CONSTRAINT tblblock_seriesid_fkey FOREIGN KEY (seriesid) REFERENCES tblblockseries(seriesid);
+
+
+--
+-- TOC entry 2074 (class 2606 OID 41261)
+-- Name: tblblockitem_blockid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblblockitem
+    ADD CONSTRAINT tblblockitem_blockid_fkey FOREIGN KEY (blockid) REFERENCES tblblock(blockid);
+
+
+--
+-- TOC entry 2075 (class 2606 OID 41266)
+-- Name: tblblockitem_productid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblblockitem
+    ADD CONSTRAINT tblblockitem_productid_fkey FOREIGN KEY (productid) REFERENCES tblproduct(productid);
+
+
+--
+-- TOC entry 2067 (class 2606 OID 41184)
+-- Name: tblblockseries_genreid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblblockseries
+    ADD CONSTRAINT tblblockseries_genreid_fkey FOREIGN KEY (genreid) REFERENCES tblgenre(genreid);
+
+
+--
+-- TOC entry 2061 (class 2606 OID 41110)
+-- Name: tblcustomers_billingaddress_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblcustomers
+    ADD CONSTRAINT tblcustomers_billingaddress_fkey FOREIGN KEY (billingaddress) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2060 (class 2606 OID 41105)
+-- Name: tblcustomers_homeaddress_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblcustomers
+    ADD CONSTRAINT tblcustomers_homeaddress_fkey FOREIGN KEY (homeaddress) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2064 (class 2606 OID 41141)
+-- Name: tblemployeejob_employeeid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblemployeejob
+    ADD CONSTRAINT tblemployeejob_employeeid_fkey FOREIGN KEY (employeeid) REFERENCES tblemployees(employeeid);
+
+
+--
+-- TOC entry 2065 (class 2606 OID 41146)
+-- Name: tblemployeejob_roleid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblemployeejob
+    ADD CONSTRAINT tblemployeejob_roleid_fkey FOREIGN KEY (roleid) REFERENCES tblemployeerole(roleid);
+
+
+--
+-- TOC entry 2062 (class 2606 OID 41123)
+-- Name: tblemployees_homeaddress_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblemployees
+    ADD CONSTRAINT tblemployees_homeaddress_fkey FOREIGN KEY (homeaddress) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2063 (class 2606 OID 41434)
+-- Name: tblemployees_roleid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblemployees
+    ADD CONSTRAINT tblemployees_roleid_fkey FOREIGN KEY (roleid) REFERENCES tblemployeerole(roleid);
+
+
+--
+-- TOC entry 2085 (class 2606 OID 41362)
+-- Name: tblmortarstore_address_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblmortarstore
+    ADD CONSTRAINT tblmortarstore_address_fkey FOREIGN KEY (address) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2086 (class 2606 OID 41367)
+-- Name: tblmortarstore_generalmanager_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblmortarstore
+    ADD CONSTRAINT tblmortarstore_generalmanager_fkey FOREIGN KEY (generalmanager) REFERENCES tblemployees(employeeid);
+
+
+--
+-- TOC entry 2081 (class 2606 OID 41328)
+-- Name: tblorder_orderedby_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblorder
+    ADD CONSTRAINT tblorder_orderedby_fkey FOREIGN KEY (orderedby) REFERENCES tblemployees(employeeid);
+
+
+--
+-- TOC entry 2082 (class 2606 OID 41333)
+-- Name: tblorder_supplierid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblorder
+    ADD CONSTRAINT tblorder_supplierid_fkey FOREIGN KEY (supplierid) REFERENCES tblsuppliercontact(contactid);
+
+
+--
+-- TOC entry 2083 (class 2606 OID 41344)
+-- Name: tblorderlineitem_orderid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblorderlineitem
+    ADD CONSTRAINT tblorderlineitem_orderid_fkey FOREIGN KEY (orderid) REFERENCES tblorder(orderid);
+
+
+--
+-- TOC entry 2084 (class 2606 OID 41349)
+-- Name: tblorderlineitem_productid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblorderlineitem
+    ADD CONSTRAINT tblorderlineitem_productid_fkey FOREIGN KEY (productid) REFERENCES tblproduct(productid);
+
+
+--
+-- TOC entry 2072 (class 2606 OID 41223)
+-- Name: tblpaymentinstance_billinginfoid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblpaymentinstance
+    ADD CONSTRAINT tblpaymentinstance_billinginfoid_fkey FOREIGN KEY (billinginfoid) REFERENCES tblbillinginfo(billinginfoid);
+
+
+--
+-- TOC entry 2071 (class 2606 OID 41218)
+-- Name: tblpaymentinstance_subscriptionid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblpaymentinstance
+    ADD CONSTRAINT tblpaymentinstance_subscriptionid_fkey FOREIGN KEY (subscriptionid) REFERENCES tblsubscription(subscriptionid);
+
+
+--
+-- TOC entry 2068 (class 2606 OID 41197)
+-- Name: tblsubscription_customerid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscription
+    ADD CONSTRAINT tblsubscription_customerid_fkey FOREIGN KEY (customerid) REFERENCES tblcustomers(customerid);
+
+
+--
+-- TOC entry 2069 (class 2606 OID 41202)
+-- Name: tblsubscription_seriesid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscription
+    ADD CONSTRAINT tblsubscription_seriesid_fkey FOREIGN KEY (seriesid) REFERENCES tblblockseries(seriesid);
+
+
+--
+-- TOC entry 2070 (class 2606 OID 41207)
+-- Name: tblsubscription_shippingaddress_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscription
+    ADD CONSTRAINT tblsubscription_shippingaddress_fkey FOREIGN KEY (shippingaddress) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2077 (class 2606 OID 41281)
+-- Name: tblsubscriptionfullfillment_blockid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscriptionfullfillment
+    ADD CONSTRAINT tblsubscriptionfullfillment_blockid_fkey FOREIGN KEY (blockid) REFERENCES tblblock(blockid);
+
+
+--
+-- TOC entry 2078 (class 2606 OID 41286)
+-- Name: tblsubscriptionfullfillment_fullfillingemployee_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscriptionfullfillment
+    ADD CONSTRAINT tblsubscriptionfullfillment_fullfillingemployee_fkey FOREIGN KEY (fullfillingemployee) REFERENCES tblemployees(employeeid);
+
+
+--
+-- TOC entry 2076 (class 2606 OID 41276)
+-- Name: tblsubscriptionfullfillment_subscriptionid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsubscriptionfullfillment
+    ADD CONSTRAINT tblsubscriptionfullfillment_subscriptionid_fkey FOREIGN KEY (subscriptionid) REFERENCES tblsubscription(subscriptionid);
+
+
+--
+-- TOC entry 2079 (class 2606 OID 41299)
+-- Name: tblsupplier_address_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsupplier
+    ADD CONSTRAINT tblsupplier_address_fkey FOREIGN KEY (address) REFERENCES tbladdress(addressid);
+
+
+--
+-- TOC entry 2080 (class 2606 OID 41315)
+-- Name: tblsuppliercontact_company_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tblsuppliercontact
+    ADD CONSTRAINT tblsuppliercontact_company_fkey FOREIGN KEY (company) REFERENCES tblsupplier(supplierid);
+
+
+--
+-- TOC entry 2087 (class 2606 OID 41380)
+-- Name: tbltransfer_storeid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tbltransfer
+    ADD CONSTRAINT tbltransfer_storeid_fkey FOREIGN KEY (storeid) REFERENCES tblmortarstore(storeid);
+
+
+--
+-- TOC entry 2089 (class 2606 OID 41396)
+-- Name: tbltransferlineitem_productid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tbltransferlineitem
+    ADD CONSTRAINT tbltransferlineitem_productid_fkey FOREIGN KEY (productid) REFERENCES tblproduct(productid);
+
+
+--
+-- TOC entry 2088 (class 2606 OID 41391)
+-- Name: tbltransferlineitem_transferid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY tbltransferlineitem
+    ADD CONSTRAINT tbltransferlineitem_transferid_fkey FOREIGN KEY (transferid) REFERENCES tbltransfer(transferid);
+
+
+--
+-- TOC entry 2241 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: public; Type: ACL; Schema: -; Owner: -
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM nerdblockstaff;
+GRANT ALL ON SCHEMA public TO nerdblockstaff;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2016-12-06 00:21:43
+
+--
+-- PostgreSQL database dump complete
+--
+

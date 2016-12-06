@@ -28,14 +28,16 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput("SIN", txtSIN));
             Inputs.Add(new ComboBoxValueInput("Role", cbRole));
             Inputs.Add(new TextBoxInput("Address.StreetAddress", txtStreet));
-            Inputs.Add(new TextBoxInput("Address.Country", txtCountry));
+            Inputs.Add(new ComboBoxTextInput("Address.Country", cbCountry));
             Inputs.Add(new ComboBoxTextInput("Address.State", cbState));
-            Inputs.Add(new TextBoxInput("Address.City", txtCity));
+            Inputs.Add(new ComboBoxTextInput("Address.City", cbCity));
             Inputs.Add(new TextBoxInput("Address.PostalCode", txtPostalCode));
             Inputs.Add(new TextBoxInput("Address.AptNum", txtAptNum));
 
             ViewManager.PopulateList<EmployeeRole, ComboBox>(cbRole);
             ViewManager.PopulateFromQuery(cbState, DataAccess.Execute("select state from tbladdress group by state order by state"));
+            ViewManager.PopulateFromQuery(cbCountry, DataAccess.Execute("select country from tbladdress group by country order by country"));
+            ViewManager.PopulateFromQuery(cbCity, DataAccess.Execute("select city from tbladdress group by city order by city"));
 
             btnSubmit.Click += (X, Y) => AttemptAction("insert_employee");
         }

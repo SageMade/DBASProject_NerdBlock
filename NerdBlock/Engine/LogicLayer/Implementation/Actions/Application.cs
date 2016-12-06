@@ -1,6 +1,7 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
+using NerdBlock.Engine.LogicLayer.Implementation.Validator;
 using NerdBlock.Properties;
 using System.Linq;
 
@@ -100,14 +101,23 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                         {
                             if (newPass.Equals(confirmPass))
                             {
-                                Employee auth = (Auth.User as Employee);
-                                auth.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(newPass);
-                                DataAccess.Update(auth);
+                                if (PasswordValidation.Validate(newPass))
+                                {
+                                    Employee auth = (Auth.User as Employee);
+                                    auth.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(newPass);
+                                    DataAccess.Update(auth);
 
-                                Auth.User = auth;
-                                ViewManager.ShowFlash("Password has been updated!", FlashMessageType.Good);
-                                ViewManager.GotoPrevious();
-                                return;
+                                    Auth.User = auth;
+                                    ViewManager.ShowFlash("Password has been updated!", FlashMessageType.Good);
+                                    ViewManager.GotoPrevious();
+                                    return;
+                                }
+                                else
+                                {
+                                    ViewManager.ShowFlash("Password does not meet strength requirements", FlashMessageType.Bad);
+                                    ViewManager.Show("UpdatePassword");
+                                    return;
+                                }
                             }
                             else
                             {

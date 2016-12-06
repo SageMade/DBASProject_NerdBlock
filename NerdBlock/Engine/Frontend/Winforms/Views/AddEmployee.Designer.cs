@@ -49,105 +49,114 @@
             this.cbState = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbRole = new System.Windows.Forms.ComboBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSIN = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.cbCity = new System.Windows.Forms.ComboBox();
+            this.cbCountry = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(4, 45);
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(-1, 44);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(67, 15);
             this.lblFirstName.TabIndex = 1;
             this.lblFirstName.Text = "First Name";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(3, 73);
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(-2, 72);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.Size = new System.Drawing.Size(67, 15);
             this.lblLastName.TabIndex = 2;
             this.lblLastName.Text = "Last Name";
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(15, 98);
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(10, 97);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(48, 13);
+            this.lblPhone.Size = new System.Drawing.Size(53, 15);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Phone #";
             // 
             // lblAddress1
             // 
             this.lblAddress1.AutoSize = true;
-            this.lblAddress1.Location = new System.Drawing.Point(190, 45);
+            this.lblAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress1.Location = new System.Drawing.Point(180, 45);
             this.lblAddress1.Name = "lblAddress1";
-            this.lblAddress1.Size = new System.Drawing.Size(76, 13);
+            this.lblAddress1.Size = new System.Drawing.Size(86, 15);
             this.lblAddress1.TabIndex = 7;
             this.lblAddress1.Text = "Street Address";
             // 
             // lblPartFullTime
             // 
             this.lblPartFullTime.AutoSize = true;
-            this.lblPartFullTime.Location = new System.Drawing.Point(29, 123);
+            this.lblPartFullTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartFullTime.Location = new System.Drawing.Point(22, 121);
             this.lblPartFullTime.Name = "lblPartFullTime";
-            this.lblPartFullTime.Size = new System.Drawing.Size(32, 13);
+            this.lblPartFullTime.Size = new System.Drawing.Size(39, 15);
             this.lblPartFullTime.TabIndex = 4;
             this.lblPartFullTime.Text = "Email";
             // 
             // txtFirstName
             // 
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(67, 45);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(100, 21);
             this.txtFirstName.TabIndex = 0;
             // 
             // txtLastName
             // 
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(67, 71);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.Size = new System.Drawing.Size(100, 21);
             this.txtLastName.TabIndex = 1;
             // 
             // txtPhone
             // 
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(67, 95);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.Size = new System.Drawing.Size(100, 21);
             this.txtPhone.TabIndex = 2;
             // 
             // txtStreet
             // 
+            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreet.Location = new System.Drawing.Point(272, 45);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(110, 20);
+            this.txtStreet.Size = new System.Drawing.Size(110, 21);
             this.txtStreet.TabIndex = 6;
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(67, 120);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(100, 21);
             this.txtEmail.TabIndex = 3;
             // 
             // txtPostalCode
             // 
+            this.txtPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPostalCode.Location = new System.Drawing.Point(272, 147);
             this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(110, 20);
+            this.txtPostalCode.Size = new System.Drawing.Size(110, 21);
             this.txtPostalCode.TabIndex = 10;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(147, 237);
+            this.btnSubmit.Location = new System.Drawing.Point(147, 198);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 32);
             this.btnSubmit.TabIndex = 12;
@@ -168,142 +177,145 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 100);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(182, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 8;
             this.label1.Text = "State/Province";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(224, 125);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(214, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Country";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(204, 150);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(194, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(73, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Postal Code";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(203, 174);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(193, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.Size = new System.Drawing.Size(73, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Apartment #";
             // 
             // txtAptNum
             // 
+            this.txtAptNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAptNum.Location = new System.Drawing.Point(272, 172);
             this.txtAptNum.Name = "txtAptNum";
-            this.txtAptNum.Size = new System.Drawing.Size(110, 20);
+            this.txtAptNum.Size = new System.Drawing.Size(110, 21);
             this.txtAptNum.TabIndex = 11;
             // 
             // cbState
             // 
+            this.cbState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbState.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
             this.cbState.Location = new System.Drawing.Point(272, 98);
             this.cbState.Margin = new System.Windows.Forms.Padding(2);
             this.cbState.Name = "cbState";
-            this.cbState.Size = new System.Drawing.Size(110, 21);
+            this.cbState.Size = new System.Drawing.Size(110, 23);
             this.cbState.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 150);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(27, 149);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.Size = new System.Drawing.Size(33, 15);
             this.label6.TabIndex = 5;
             this.label6.Text = "Role";
             // 
             // cbRole
             // 
             this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(66, 147);
             this.cbRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(101, 21);
+            this.cbRole.Size = new System.Drawing.Size(101, 23);
             this.cbRole.TabIndex = 4;
-            // 
-            // txtCountry
-            // 
-            this.txtCountry.Location = new System.Drawing.Point(273, 122);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(109, 20);
-            this.txtCountry.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 175);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(33, 174);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.Size = new System.Drawing.Size(27, 15);
             this.label7.TabIndex = 6;
             this.label7.Text = "SIN";
             // 
             // txtSIN
             // 
+            this.txtSIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSIN.Location = new System.Drawing.Point(66, 172);
             this.txtSIN.Name = "txtSIN";
-            this.txtSIN.Size = new System.Drawing.Size(101, 20);
+            this.txtSIN.Size = new System.Drawing.Size(101, 21);
             this.txtSIN.TabIndex = 5;
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(272, 70);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(110, 20);
-            this.txtCity.TabIndex = 7;
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(242, 73);
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(232, 73);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(24, 13);
+            this.lblCity.Size = new System.Drawing.Size(26, 15);
             this.lblCity.TabIndex = 26;
             this.lblCity.Text = "City";
             // 
-            // txtPassword
+            // cbCity
             // 
-            this.txtPassword.Location = new System.Drawing.Point(66, 198);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(101, 20);
-            this.txtPassword.TabIndex = 27;
+            this.cbCity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCity.FormattingEnabled = true;
+            this.cbCity.Location = new System.Drawing.Point(272, 70);
+            this.cbCity.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCity.Name = "cbCity";
+            this.cbCity.Size = new System.Drawing.Size(110, 23);
+            this.cbCity.TabIndex = 27;
             // 
-            // label8
+            // cbCountry
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 201);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Password";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.cbCountry.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCountry.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCountry.FormattingEnabled = true;
+            this.cbCountry.Location = new System.Drawing.Point(272, 122);
+            this.cbCountry.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCountry.Name = "cbCountry";
+            this.cbCountry.Size = new System.Drawing.Size(110, 23);
+            this.cbCountry.TabIndex = 28;
             // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbCountry);
+            this.Controls.Add(this.cbCity);
             this.Controls.Add(this.lblCity);
-            this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtSIN);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbState);
@@ -326,7 +338,7 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Name = "AddEmployee";
-            this.Size = new System.Drawing.Size(392, 282);
+            this.Size = new System.Drawing.Size(392, 243);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,12 +366,10 @@
         private System.Windows.Forms.ComboBox cbState;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbRole;
-        private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSIN;
-        private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbCity;
+        private System.Windows.Forms.ComboBox cbCountry;
     }
 }

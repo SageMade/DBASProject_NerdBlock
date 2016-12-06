@@ -20,8 +20,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 1 DONE
             btnBlocks.Click += (X, Y) =>
             {
-                Context.SetValue("TargetSeries", lstSeries.SelectedItem);
-                Context.SetValue("TargetGenre", cbGenre.SelectedItem);
+                ViewManager.CurrentMap.SetInput("TargetSeries", lstSeries.SelectedItem);
+                ViewManager.CurrentMap.SetInput("TargetGenre", cbGenre.SelectedItem);
                 AttemptAction("goto_blockseries");
             };
         }

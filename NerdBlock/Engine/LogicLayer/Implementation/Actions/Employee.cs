@@ -1,6 +1,7 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
+using NerdBlock.Engine.LogicLayer.Implementation.Validator;
 using System;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
@@ -18,41 +19,53 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib("Human Resources")]
         public void Insert()
         {
-            Employee employee = new Employee();
-            employee.FirstName = Context.GetValue<string>("FirstName");
-            employee.LastName = Context.GetValue<string>("LastName");
-            employee.SIN = Context.GetValue<string>("SIN");
-            employee.Email = Context.GetValue<string>("Email");
-            employee.Phone = long.Parse(Context.GetValue<string>("Phone").Replace(" ", "").Replace("-",""));
-            employee.DateJoined = DateTime.Now;
-            employee.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(employee.SIN);
+            IoMap map = ViewManager.CurrentMap;
 
-            Address address = new Address();
-            address.StreetAddress = Context.GetValue<string>("Address.StreetAddress");
-            address.Country = Context.GetValue<string>("Address.Country");
-            address.State = Context.GetValue<string>("Address.State");
-            address.PostalCode= Context.GetValue<string>("Address.PostalCode");
-            address.City = Context.GetValue<string>("Address.City");
-
-            int aptNum = -1;
-            if (int.TryParse(Context.GetValue<string>("Address.AptNum"), out aptNum))
-                address.ApartmentNumber = aptNum;
-            else
-                address.ApartmentNumber = null;
-            employee.HomeAddress = address;
-
-
-            employee.Role = Context.GetValue<EmployeeRole>("Role");
-
-            if (DataAccess.Insert(employee))
+            string msg = "";
+            if (!Validate(ref msg))
             {
-                ViewManager.ShowFlash("Employee added", FlashMessageType.Good);
-
-                ViewManager.Show("AddEmployee");
+                ViewManager.ShowFlash(string.Format("Error Adding Employee:\n{0}", msg), FlashMessageType.Bad);
+                ViewManager.Show("AddEmployee", map);
             }
             else
             {
-                ViewManager.ShowFlash("Failed to add employee:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                Employee employee = new Employee();
+                employee.FirstName = map.GetInput<string>("FirstName");
+                employee.LastName = map.GetInput<string>("LastName");
+                employee.SIN = map.GetInput<string>("SIN");
+                employee.Email = map.GetInput<string>("Email");
+                employee.Phone = long.Parse(map.GetInput<string>("Phone").Replace(" ", "").Replace("-", ""));
+                employee.DateJoined = DateTime.Now;
+                employee.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(employee.SIN);
+
+                Address address = new Address();
+                address.StreetAddress = map.GetInput<string>("Address.StreetAddress");
+                address.Country = map.GetInput<string>("Address.Country");
+                address.State = map.GetInput<string>("Address.State");
+                address.PostalCode = map.GetInput<string>("Address.PostalCode");
+                address.City = map.GetInput<string>("Address.City");
+
+                int aptNum = -1;
+                if (int.TryParse(map.GetInput<string>("Address.AptNum"), out aptNum))
+                    address.ApartmentNumber = aptNum;
+                else
+                    address.ApartmentNumber = null;
+                employee.HomeAddress = address;
+                
+                employee.Role = map.GetInput<EmployeeRole>("Role");
+
+                if (DataAccess.Insert(employee))
+                {
+                    employee = DataAccess.Match(employee)[0];
+                    ViewManager.ShowFlash(string.Format("Employee added with ID: {0}\nTheir password will be their SIN until they change it.", employee.EmployeeId), FlashMessageType.Good);
+                    Logger.Log(LogLevel.Info, "Added employee with ID {0}", employee.EmployeeId);
+                    ViewManager.Show("AddEmployee");
+                }
+                else
+                {
+                    ViewManager.ShowFlash("Failed to add employee:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                    Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
+                }
             }
         }
 
@@ -85,6 +98,64 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         public void ShowUpdate()
         {
             ViewManager.Show("ViewEditEmployee");
+        }
+
+
+        /// <summary>
+        /// Handles checking to see if the employee data entry on the input map is valid
+        /// </summary>
+        /// <param name="employee">The employee instance to validate</param>
+        /// <param name="reason">The reference to the reason for failure</param>
+        /// <returns>True if validation was successful, false if otherwise</returns>
+        public static bool Validate(ref string reason)
+        {
+            bool result = true;
+
+            IoMap map = ViewManager.CurrentMap;
+
+            string fName = map.GetInput<string>("FirstName");
+            string lName = map.GetInput<string>("LastName");
+            string sin = map.GetInput<string>("SIN");
+            string phone = map.GetInput<string>("Phone");
+            string email = map.GetInput<string>("Email");
+
+            long tempVal = -1;
+
+            if (string.IsNullOrWhiteSpace(fName) || fName.Length < 2)
+            {
+                result = false;
+                reason += "First name must be at least 2 characters" + Environment.NewLine;
+            }
+
+            if (string.IsNullOrWhiteSpace(lName) || lName.Length < 2)
+            {
+                result = false;
+                reason += "Last name must be at least 2 characters" + Environment.NewLine;
+            }
+
+            if (string.IsNullOrWhiteSpace(sin) || sin.Length != 9)
+            {
+                result = false;
+                reason += "SIN must be exactly 9 characters" + Environment.NewLine;
+            }
+            else if (!long.TryParse(sin, out tempVal))
+            {
+                result = false;
+                reason += "SIN must be numeric" + Environment.NewLine;
+            }
+
+            if (string.IsNullOrWhiteSpace(phone) || phone.Replace(" ", "").Length < 10)
+            {
+                result = false;
+                reason += "Phone # must be at least 10 characters" + Environment.NewLine;
+            }
+            else if (!long.TryParse(phone.Replace(" ", "").Replace("-", ""), out tempVal))
+            {
+                result = false;
+                reason += "Phone # must be numeric" + Environment.NewLine;
+            }
+
+            return result;
         }
     }
 }

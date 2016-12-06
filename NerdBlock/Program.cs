@@ -4,6 +4,7 @@ using NerdBlock.Engine.Frontend.Winforms;
 using NerdBlock.Engine.Backend.PgImplementation;
 using NerdBlock.Engine.LogicLayer;
 using NerdBlock.Engine.LogicLayer.Implementation;
+using System;
 
 namespace NerdBlock
 {
@@ -13,6 +14,7 @@ namespace NerdBlock
         /// Main program entry point
         /// </summary>
         /// <param name="args"></param>
+        [STAThread]
         static void Main(string[] args)
         {
             // Get our database connect data, will eventually be hard coded or accessed via a web API

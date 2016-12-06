@@ -34,6 +34,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.mnuMainBar = new System.Windows.Forms.MenuStrip();
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiLogin = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsiExitProgram = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,9 +64,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.tmrWatch = new System.Windows.Forms.Timer(this.components);
-            this.tsiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -105,6 +105,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiLogin.Name = "tsiLogin";
             this.tsiLogin.Size = new System.Drawing.Size(168, 22);
             this.tsiLogin.Text = "Login";
+            // 
+            // tsiChangePassword
+            // 
+            this.tsiChangePassword.Name = "tsiChangePassword";
+            this.tsiChangePassword.Size = new System.Drawing.Size(168, 22);
+            this.tsiChangePassword.Text = "Change Password";
             // 
             // tsiLogout
             // 
@@ -320,12 +326,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.addProduct1.Name = "addProduct1";
             this.addProduct1.Size = new System.Drawing.Size(431, 223);
             this.addProduct1.TabIndex = 0;
-            // 
-            // tsiChangePassword
-            // 
-            this.tsiChangePassword.Name = "tsiChangePassword";
-            this.tsiChangePassword.Size = new System.Drawing.Size(168, 22);
-            this.tsiChangePassword.Text = "Change Password";
             // 
             // MainForm
             // 

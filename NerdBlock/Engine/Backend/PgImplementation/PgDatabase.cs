@@ -1,6 +1,7 @@
 ﻿using System;
 using Npgsql;
 using System.Threading;
+using System.Net;
 
 namespace NerdBlock.Engine.Backend.PgImplementation
 {
@@ -111,7 +112,7 @@ namespace NerdBlock.Engine.Backend.PgImplementation
             builder.Username = connectData.Username;
             builder.Password = connectData.Password;
             builder.Port = connectData.Port == -1 ? builder.Port : connectData.Port;
-            builder.Host = connectData.Host;
+            builder.Host = Dns.GetHostEntry(connectData.Host).AddressList[0].ToString();
             builder.Database = connectData.Database;
 
             // Create and open our connection

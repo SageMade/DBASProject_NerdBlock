@@ -22,7 +22,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             btnAdd.Click += (X, Y) => AttemptAction("insert_genre");
             btnViewSeries.Click += (X, Y) =>
             {
-                Context.SetValue("TargetGenre", dgvGenres.SelectedRows);
+                ViewManager.CurrentMap.SetInput("TargetGenre", dgvGenres.SelectedRows[0]);
                 AttemptAction("goto_blockseries");
             };
         }

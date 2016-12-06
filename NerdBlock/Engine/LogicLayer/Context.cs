@@ -3,6 +3,7 @@
     /// <summary>
     /// Represents the current state of the application. This can be thought of as a short-term session
     /// </summary>
+    /*
     public static class Context
     {
         /// <summary>
@@ -75,4 +76,5 @@
             myContextObjects.Clear();
         }
     }
+    */
 }

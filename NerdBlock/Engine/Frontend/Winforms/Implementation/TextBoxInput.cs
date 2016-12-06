@@ -38,6 +38,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
             myControl = textBox;
         }
 
+        /// <summary>
+        /// Fills this IInput from a given IO map
+        /// </summary>
+        /// <param name="map">The map to fill from</param>
         public void Fill(IoMap map)
         {
             if (map.HasOutput(Name))
@@ -46,6 +50,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
                 myControl.Text = "";
         }
 
+        /// <summary>
+        /// Populates an IOMap from this input
+        /// </summary>
+        /// <param name="map">The map to populate</param>
         public void PopulateMap(IoMap currentMap)
         {
             currentMap.SetInput(Name, myControl.Text);
