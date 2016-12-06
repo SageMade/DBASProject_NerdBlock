@@ -58,7 +58,7 @@
             // 
             // btnSingleSearch
             // 
-            this.btnSingleSearch.Location = new System.Drawing.Point(223, 46);
+            this.btnSingleSearch.Location = new System.Drawing.Point(129, 180);
             this.btnSingleSearch.Name = "btnSingleSearch";
             this.btnSingleSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSingleSearch.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             // btnMultiSearch
             // 
-            this.btnMultiSearch.Location = new System.Drawing.Point(133, 281);
+            this.btnMultiSearch.Location = new System.Drawing.Point(129, 295);
             this.btnMultiSearch.Name = "btnMultiSearch";
             this.btnMultiSearch.Size = new System.Drawing.Size(75, 23);
             this.btnMultiSearch.TabIndex = 4;
@@ -86,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 89);
+            this.label3.Location = new System.Drawing.Point(114, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 13);
             this.label3.TabIndex = 5;
@@ -95,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 108);
+            this.label4.Location = new System.Drawing.Point(74, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 6;
@@ -108,7 +108,7 @@
             "Active",
             "Inactive",
             "All"});
-            this.comboBox1.Location = new System.Drawing.Point(117, 105);
+            this.comboBox1.Location = new System.Drawing.Point(117, 241);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 21);
             this.comboBox1.TabIndex = 7;
@@ -116,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(71, 151);
+            this.label5.Location = new System.Drawing.Point(71, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 8;
@@ -125,7 +125,7 @@
             // cbTheme
             // 
             this.cbTheme.FormattingEnabled = true;
-            this.cbTheme.Location = new System.Drawing.Point(117, 151);
+            this.cbTheme.Location = new System.Drawing.Point(117, 268);
             this.cbTheme.Name = "cbTheme";
             this.cbTheme.Size = new System.Drawing.Size(100, 21);
             this.cbTheme.TabIndex = 9;

@@ -15,6 +15,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
             AllowUserToAddRows = false;
             AllowUserToDeleteRows = false;
             ReadOnly = true;
+            AutoGenerateColumns = false;
             SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }

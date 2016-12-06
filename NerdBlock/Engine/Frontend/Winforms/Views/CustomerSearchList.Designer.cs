@@ -28,22 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstCustomerSearchList = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.dgvResults = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
-            // lstCustomerSearchList
+            // contextMenuStrip1
             // 
-            this.lstCustomerSearchList.FormattingEnabled = true;
-            this.lstCustomerSearchList.Location = new System.Drawing.Point(13, 115);
-            this.lstCustomerSearchList.Name = "lstCustomerSearchList";
-            this.lstCustomerSearchList.Size = new System.Drawing.Size(621, 225);
-            this.lstCustomerSearchList.TabIndex = 0;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 67);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(102, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -55,77 +62,67 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Results of Customer Search";
             // 
-            // label2
+            // dgvResults
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Customer ID";
+            this.dgvResults.AllowUserToAddRows = false;
+            this.dgvResults.AllowUserToDeleteRows = false;
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmFirstName,
+            this.clmLastName});
+            this.dgvResults.Location = new System.Drawing.Point(3, 93);
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.ReadOnly = true;
+            this.dgvResults.RowHeadersVisible = false;
+            this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResults.Size = new System.Drawing.Size(650, 258);
+            this.dgvResults.TabIndex = 2;
             // 
-            // label3
+            // clmFirstName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(139, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "First Name";
+            this.clmFirstName.DataPropertyName = "FirstName";
+            this.clmFirstName.HeaderText = "First Name";
+            this.clmFirstName.Name = "clmFirstName";
+            this.clmFirstName.ReadOnly = true;
             // 
-            // label4
+            // clmLastName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(261, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Last Name";
+            this.clmLastName.DataPropertyName = "LastName";
+            this.clmLastName.HeaderText = "Last Name";
+            this.clmLastName.Name = "clmLastName";
+            this.clmLastName.ReadOnly = true;
             // 
-            // label5
+            // txtLastName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Active";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(501, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Themes";
+            this.txtLastName.Location = new System.Drawing.Point(111, 67);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(102, 20);
+            this.txtLastName.TabIndex = 4;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // CustomerSearchList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstCustomerSearchList);
             this.Name = "CustomerSearchList";
             this.Size = new System.Drawing.Size(656, 354);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstCustomerSearchList;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private Implementation.DataGridDisplayView dgvResults;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmLastName;
+        private System.Windows.Forms.TextBox txtLastName;
     }
 }

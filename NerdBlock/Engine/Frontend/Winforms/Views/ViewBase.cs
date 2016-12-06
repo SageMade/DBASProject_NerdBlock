@@ -39,7 +39,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         }
 
         /// <summary>
-        /// Called in LoadView after Inputs and Outputs are filled
+        /// Called in LoadView before Inputs and Outputs are filled
         /// </summary>
         /// <param name="map">The IoMap to load the view with</param>
         protected virtual void LoadMyViewContext(IoMap map) { }
@@ -50,6 +50,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         /// <param name="map">The IoMap to load the view with</param>
         public void LoadView(IoMap map)
         {
+            // Let child classes hook into our loadview
+            LoadMyViewContext(map);
+
             // Iterate over inputs and fill them from the map
             for (int index = 0; index < Inputs.Count; index++)
                 Inputs[index].Fill(map);
@@ -57,9 +60,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // Iterate over outputs and fill them from the map
             for (int index = 0; index < Outputs.Count; index++)
                 Outputs[index].Fill(map);
-
-            // Let child classes hook into our loadview
-            LoadMyViewContext(map);
         }
 
         /// <summary>
