@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NerdBlock.Engine.Frontend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -33,7 +34,7 @@ namespace NerdBlock.Engine.LogicLayer
             myRules = new List<BusinessRule>();
             myViewActions = new Dictionary<string, Action>();
         }
-
+        
         /// <summary>
         /// Loads a business rule into the logic layer
         /// </summary>
@@ -127,31 +128,46 @@ namespace NerdBlock.Engine.LogicLayer
                 msg = "Action not found";
                 return false;
             }
-
-            // Make a temp variable for the reason and our success
-            string reason = "";
-            bool success = true;
-
-            // Iterate over all rules
-            for (int index = 0; index < myRules.Count; index++)
+            else if (Auth.HasAccess(actionName))
             {
-                // Check if we can perform the action. If not, mark it as failed
-                if (!myRules[index].CanPerform(actionName, ref reason))
-                    success = false;
-            }
+                // Make a temp variable for the reason and our success
+                string reason = "";
+                bool success = true;
 
-            // If we are OK, invoke the action
-            if (success)
-            {
-                myViewActions[actionName].Invoke();
-                msg = null;
+                // Iterate over all rules
+                for (int index = 0; index < myRules.Count; index++)
+                {
+                    // Check if we can perform the action. If not, mark it as failed
+                    if (!myRules[index].CanPerform(actionName, ref reason))
+                        success = false;
+                }
+
+                // If we are OK, invoke the action
+                if (success)
+                {
+                    myViewActions[actionName].Invoke();
+                    msg = null;
+                }
+                // Otherwise update the message
+                else
+                    msg = reason;
+
+                // Return whether we were sucsessfull or not
+                return success;
             }
-            // Otherwise update the message
             else
-                msg = reason;
+            {
+                msg = "Authorization failed";
+                return false;
+            }
+        }
 
-            // Return whether we were sucsessfull or not
-            return success;
+        public static void TryPerformAction(string actionName)
+        {
+            string msg = "";
+
+            if (!TryPerformAction(actionName, out msg))
+                ViewManager.ShowFlash(msg, FlashMessageType.Bad);
         }
     }
 }

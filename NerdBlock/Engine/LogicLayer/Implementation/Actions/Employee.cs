@@ -15,6 +15,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles inserting a new employee into the database, assumes that there is valid employee information in the context
         /// </summary>
         [BusinessAction("insert_employee")]
+        [AuthAttrib("Human Resources")]
         public void Insert()
         {
             Employee employee = new Employee();
@@ -59,6 +60,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles showing the employee add view
         /// </summary>
         [BusinessAction("goto_employee_add")]
+        [AuthAttrib("Human Resources")]
         public void ShowAdd()
         {
             ViewManager.Show("AddEmployee");
@@ -68,6 +70,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles showing the employee search view
         /// </summary>
         [BusinessAction("goto_employee_search")]
+        [AuthAttrib("Human Resources", "General Manager")]
         public void ShowSearch()
         {
             Context.Values["AllEmployees"] = DataAccess.SelectAll<Employee>();
@@ -78,6 +81,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles showing the employee update view
         /// </summary>
         [BusinessAction("goto_employee_update")]
+        [AuthAttrib("Human Resources")]
         public void ShowUpdate()
         {
             ViewManager.Show("ViewEditEmployee");

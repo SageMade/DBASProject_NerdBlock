@@ -15,7 +15,6 @@ using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    [AuthAttrib("*", "Human Resources")]
     public partial class AddEmployee : ViewBase
     {
         public AddEmployee()

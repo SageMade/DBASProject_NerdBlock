@@ -26,33 +26,41 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             ToolStripMapping = new ToolStripMap();
 
             InitializeComponent();
-
-            //ToolStripMapping.Add<AddEmployee>(tsiEmployeeAdd);
-            //ToolStripMapping.Add<EmployeeSearch>(tsiEmployeeAdd);
-
+            
             tsiLogin.Visible = true;
             tsiExitProgram.Visible = true;
 
-            tsiEmployeeAdd.Click += (X, Y) => TryAction("goto_employee_add");
-            tsiEmployeeSearch.Click += (X, Y) => TryAction("goto_employee_search");
+            __Tie(tsiEmployeeAdd, "goto_employee_add");
+            __Tie(tsiEmployeeSearch, "goto_employee_search");
 
-            tsiLogin.Click += (X, Y) => TryAction("goto_login");
-            tsiLogout.Click += (X, Y) => TryAction("logout");
-            tsiExitProgram.Click += (X, Y) => TryAction("exit_program");
+            __Tie(tsiLogin, "goto_login");
+            __Tie(tsiLogout, "logout");
+            __Tie(tsiExitProgram, "exit_program");
 
-            tsiCustomerSearch.Click += (X, Y) => TryAction("goto_customer_search");
+            __Tie(tsiCustomerSearch, "goto_customer_search");
 
-            tsiInventorySearch.Click += (X, Y) => TryAction("goto_inventory_search");
-            tsiInventoryLostDamaged.Click += (X, Y) => TryAction("goto_inventory_lost_damaged");
-            tsiInventoryOverstock.Click += (X, Y) => TryAction("goto_inventory_overstock");
+            __Tie(tsiInventorySearch, "goto_inventory_search");
+            __Tie(tsiInventoryLostDamaged, "goto_inventory_lost_damaged");
+            __Tie(tsiInventoryOverstock, "goto_inventory_overstock");
+            __Tie(tsiInventoryAdd, "goto_inventory_add");
+            
+            __Tie(tsiBlocksAdd, "goto_blocks_add");
+            __Tie(tsiBlocksGenres, "goto_blocks_genres");
+            __Tie(tsiBlocksQueries, "goto_blocks_queries");
+            __Tie(tsiBlocksSeries, "goto_blocks_series");
 
-            tsiBlocksAdd.Click += (X, Y) => TryAction("goto_blocks_add");
-            tsiBlocksGenres.Click += (X, Y) => TryAction("goto_blocks_genres");
-            tsiBlocksQueries.Click += (X, Y) => TryAction("goto_blocks_queries");
-            tsiBlocksSeries.Click += (X, Y) => TryAction("goto_blocks_series");
+            __Tie(tsiAddOrder, "goto_order_add");
+            __Tie(tsiSearchOrders, "goto_order_search");
 
             tmrWatch.Tick += (X, Y) => { tslTime.Text = DateTime.Now.ToLongTimeString(); };
             tmrWatch.Start();
+        }
+
+        private void __Tie(ToolStripItem tsi, string actionName)
+        {
+            tsi.Click += (X, Y) => TryAction(actionName);
+
+            ToolStripMapping.Add(tsi, actionName);
         }
 
         private void TryAction(string name)
@@ -65,7 +73,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         
         public class ToolStripMap
         {
-            public Dictionary<string, ToolStripItem> Mapping
+            public Dictionary<string, ToolStripMapItem> Mapping
             {
                 get;
                 private set;
@@ -73,19 +81,38 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             public ToolStripMap()
             {
-                Mapping = new Dictionary<string, ToolStripItem>();
+                Mapping = new Dictionary<string, ToolStripMapItem>();
             }
-
-            public void Add<T>(ToolStripItem item)
+            
+            public void Add(ToolStripItem item, string actionName)
             {
-                Mapping.Add(typeof(T).Name, item);
+                Mapping.Add(actionName, new ToolStripMapItem(item, actionName));
                 item.Visible = false;
             }
 
-            public void Add(string viewName, ToolStripItem item)
+            public class ToolStripMapItem
             {
-                Mapping.Add(viewName, item);
-                item.Visible = false;
+                public ToolStripItem Control;
+                public string ActionName;
+                
+                public ToolStripMapItem(ToolStripItem control, string actionName)
+                {
+                    Control = control;
+                    ActionName = actionName;
+                }
+
+                public static implicit operator ToolStripItem(ToolStripMapItem item)
+                {
+                    return item.Control;
+                }
+            }
+
+            public void VerifyAuth()
+            {
+                foreach(KeyValuePair<string, ToolStripMapItem> kvp in Mapping)
+                {
+                    kvp.Value.Control.Visible = Auth.HasAccess(kvp.Value.ActionName);
+                }
             }
         }
     }

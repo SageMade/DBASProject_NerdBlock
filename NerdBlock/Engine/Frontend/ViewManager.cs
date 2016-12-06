@@ -1,4 +1,6 @@
-﻿using NerdBlock.Engine.Backend;
+﻿using System;
+using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.LogicLayer;
 
 namespace NerdBlock.Engine.Frontend
 {
@@ -21,6 +23,11 @@ namespace NerdBlock.Engine.Frontend
             get { return Implementation.CurrentView; }
         }
         
+        static ViewManager()
+        {
+            Auth.OnAuthChanged += (X, Y) => HandleAuthChanged();
+        }
+
         /// <summary>
         /// Close the program
         /// </summary>
@@ -42,14 +49,17 @@ namespace NerdBlock.Engine.Frontend
         }
 
         /// <summary>
-        /// Sets up the view manager's authentication system with the given authentication
-        /// object
+        /// Handles when the auth engine's authorization has changed
         /// </summary>
-        /// <param name="authObject">The object to use for authentication</param>
-        public static void InitAuth(object authObject)
+        public static void HandleAuthChanged()
         {
             // Call the implementation's method
-            Implementation.InitAuth(authObject);
+            Implementation.HandleAuthChanged();
+        }
+
+        internal static void ShowInitial()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

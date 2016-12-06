@@ -14,6 +14,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles moving to the blocks add view
         /// </summary>
         [BusinessAction("goto_blocks_add")]
+        [AuthAttrib("*")]
         public void ShowAdd()
         {
             ViewManager.Show("Blocks");
@@ -23,6 +24,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block series page
         /// </summary>
         [BusinessAction("goto_blocks_genres")]
+        [AuthAttrib("*")]
         public void ShowGenres()
         {
             Context.Values["Series"] = DataAccess.Execute(Resources.SelectGenreTalliesQuery);
@@ -33,6 +35,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block queries page
         /// </summary>
         [BusinessAction("goto_blocks_queries")]
+        [AuthAttrib("*")]
         public void ShowQueries()
         {
             ViewManager.Show("BlockQueries");
@@ -42,6 +45,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block series page
         /// </summary>
         [BusinessAction("goto_blocks_series")]
+        [AuthAttrib("*")]
         public void ShowSeries()
         {
             ViewManager.Show("BlockSeries");

@@ -81,10 +81,8 @@ namespace NerdBlock.Engine.Frontend
         void CloseProgram();
 
         /// <summary>
-        /// Sets up the view manager's authentication system with the given authentication
-        /// object
+        /// Handles when the auth engine's authorization has changed
         /// </summary>
-        /// <param name="authObject">The object to use for authentication</param>
-        void InitAuth(object authObject);
+        void HandleAuthChanged();
     }
 }

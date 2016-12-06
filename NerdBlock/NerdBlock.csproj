@@ -77,8 +77,9 @@
     <Compile Include="Engine\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
-    <Compile Include="Engine\Frontend\Winforms\AuthAttrib.cs" />
-    <Compile Include="Engine\Frontend\Winforms\AuthHelper.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Util.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\AuthAttrib.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\AuthHelper.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxTextInput.cs" />
@@ -175,18 +176,22 @@
     <Compile Include="Engine\Frontend\Winforms\Views\Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Engine\LogicLayer\Auth.cs" />
     <Compile Include="Engine\LogicLayer\BusinessAction.cs" />
     <Compile Include="Engine\LogicLayer\BusinessRule.cs" />
     <Compile Include="Engine\LogicLayer\Context.cs" />
+    <Compile Include="Engine\LogicLayer\IAuthImplementation.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Application.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Blocks.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Customer.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Employee.cs" />
-    <Compile Include="Engine\LogicLayer\Implementation\Actions\Login.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\Order.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\EmployeeValidation.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\NerdAuth.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Engine\AutoDictionary.cs" />
+    <Compile Include="Engine\LogicLayer\Util.cs" />
     <Compile Include="Engine\Session.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\Login.cs">

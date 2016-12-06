@@ -22,5 +22,25 @@ namespace NerdBlock.Engine.Backend.Models
         {
             return Name;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is EmployeeRole && (obj as EmployeeRole).Name.Equals(Name);
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
+
+        public static bool operator  ==(EmployeeRole left, EmployeeRole right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator  !=(EmployeeRole left, EmployeeRole right)
+        {
+            return !left.Equals(right);
+        }
     }
 }

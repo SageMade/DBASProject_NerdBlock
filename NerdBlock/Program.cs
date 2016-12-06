@@ -3,6 +3,7 @@ using NerdBlock.Engine.Frontend;
 using NerdBlock.Engine.Frontend.Winforms;
 using NerdBlock.Engine.Backend.PgImplementation;
 using NerdBlock.Engine.LogicLayer;
+using NerdBlock.Engine.LogicLayer.Implementation;
 
 namespace NerdBlock
 {
@@ -28,6 +29,10 @@ namespace NerdBlock
             ViewManager.Implementation = new WinformViewManager();
             // Reflection load all our views
             ViewManager.Implementation.ReflectLoadViews();
+
+            // Create our auth handler
+            Auth.Implementation = new NerdAuth();
+            Auth.User = null;
 
             // Reflection load our rules and actions
             LogicManager.LoadRules();

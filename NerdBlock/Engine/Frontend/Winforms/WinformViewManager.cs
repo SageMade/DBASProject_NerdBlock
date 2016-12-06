@@ -1,6 +1,7 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend.Winforms.Views;
+using NerdBlock.Engine.LogicLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -202,21 +203,34 @@ namespace NerdBlock.Engine.Frontend.Winforms
         }
 
         /// <summary>
-        /// Sets up the view manager's authentication system with the given authentication
-        /// object
+        /// Handles when the auth engine's authorization has changed
         /// </summary>
-        /// <param name="authObject">The object to use for authentication</param>
-        public void InitAuth(object authObject)
+        public void HandleAuthChanged()
         {
-            EmployeeRole role = authObject as EmployeeRole;
+            Employee auth = Auth.User as Employee;
 
-            if (role != null)
+            myMainForm.ToolStripMapping.VerifyAuth();
+            
+            ToolStrip toolStrip = (ToolStrip)myMainForm.Controls["mnuMainBar"];
+
+            foreach (ToolStripMenuItem tsm in toolStrip.Items)
             {
-                foreach (KeyValuePair<string, ToolStripItem> kvp in myMainForm.ToolStripMapping.Mapping)
-                {
-                    kvp.Value.Visible = role.HasAccess(kvp.Key);
-                }
+                bool show = false;
+
+                foreach (ToolStripItem tsi in tsm.DropDownItems)
+                    if (tsi.Visible)
+                    {
+                        show = true;
+                        break;
+                    }
+
+                tsm.Visible = show;
             }
+        }
+
+        private bool __IsMenuItem(Control control)
+        {
+            return control.GetType() == typeof(ToolStripMenuItem);
         }
 
         /// <summary>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using NerdBlock.Engine.Backend;
 
-namespace NerdBlock.Engine.Frontend.Winforms
+namespace NerdBlock.Engine.LogicLayer.Implementation
 {
     /// <summary>
     /// A helper class for authorization
