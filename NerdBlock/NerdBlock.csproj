@@ -78,6 +78,18 @@
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Util.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.Designer.cs">
+      <DependentUpon>FloorWorkerContentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.Designer.cs">
+      <DependentUpon>FloorWorkerGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\LogicLayer\Implementation\AuthAttrib.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\AuthHelper.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
@@ -318,6 +330,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ExtraProductShipped.resx">
       <DependentUpon>ExtraProductShipped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.resx">
+      <DependentUpon>FloorWorkerContentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.resx">
+      <DependentUpon>FloorWorkerGenres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
