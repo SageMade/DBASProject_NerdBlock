@@ -59,12 +59,13 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                     employee = DataAccess.Match(employee)[0];
                     ViewManager.ShowFlash(string.Format("Employee added with ID: {0}\nTheir password will be their SIN until they change it.", employee.EmployeeId), FlashMessageType.Good);
                     Logger.Log(LogLevel.Info, "Added employee with ID {0}", employee.EmployeeId);
-                    ViewManager.Show("AddEmployee");
+                    ViewManager.Show("AddEmployee", map);
                 }
                 else
                 {
                     ViewManager.ShowFlash("Failed to add employee:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
                     Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
+                    ViewManager.Show("AddEmployee", map);
                 }
             }
         }
