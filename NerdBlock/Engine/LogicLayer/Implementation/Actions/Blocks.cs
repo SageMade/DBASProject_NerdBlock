@@ -55,6 +55,16 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         }
 
         /// <summary>
+        /// Handles going to the block series page
+        /// </summary>
+        [BusinessAction("goto_block_packing")]
+        [AuthAttrib("*")]
+        public void ShowPacking()
+        {
+            ViewManager.Show("FloorWorkerContentView");
+        }
+
+        /// <summary>
         /// Handles going to the block queries page
         /// </summary>
         [BusinessAction("goto_blocks_queries")]

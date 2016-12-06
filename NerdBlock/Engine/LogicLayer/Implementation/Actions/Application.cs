@@ -153,6 +153,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         public void Logout()
         {
             Auth.User = null;
+            ViewManager.ShowFlash("You have been successfully logged out", FlashMessageType.Bad);
             ViewManager.CurrentMap.Reset();
             ViewManager.Show("Login");
         }

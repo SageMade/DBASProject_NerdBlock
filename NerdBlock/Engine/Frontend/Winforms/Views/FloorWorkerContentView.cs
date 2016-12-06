@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class FloorWorkerContentView : UserControl
+    public partial class FloorWorkerContentView : ViewBase
     {
         public FloorWorkerContentView()
         {

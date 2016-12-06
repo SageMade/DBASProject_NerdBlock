@@ -44,7 +44,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             __Tie(tsiInventoryLostDamaged, "goto_inventory_lost_damaged");
             __Tie(tsiInventoryOverstock, "goto_inventory_overstock");
             __Tie(tsiInventoryAdd, "goto_inventory_add");
-            
+            __Tie(tsiBlockPacking, "goto_block_packing");
+
             __Tie(tsiBlocksAdd, "goto_blocks_add");
             __Tie(tsiBlocksGenres, "goto_blocks_genres");
             __Tie(tsiBlocksQueries, "goto_blocks_queries");

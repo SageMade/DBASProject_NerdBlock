@@ -64,8 +64,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.tmrWatch = new System.Windows.Forms.Timer(this.components);
             this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
+            this.tmrWatch = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsiBlockPacking = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -135,7 +137,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiBlocksAdd,
             this.tsiBlocksGenres,
             this.tsiBlocksQueries,
-            this.tsiBlocksSeries});
+            this.tsiBlocksSeries,
+            this.toolStripMenuItem3,
+            this.tsiBlockPacking});
             this.tsiBlocks.Name = "tsiBlocks";
             this.tsiBlocks.Size = new System.Drawing.Size(53, 20);
             this.tsiBlocks.Text = "Blocks";
@@ -143,25 +147,25 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiBlocksAdd
             // 
             this.tsiBlocksAdd.Name = "tsiBlocksAdd";
-            this.tsiBlocksAdd.Size = new System.Drawing.Size(114, 22);
+            this.tsiBlocksAdd.Size = new System.Drawing.Size(152, 22);
             this.tsiBlocksAdd.Text = "Add";
             // 
             // tsiBlocksGenres
             // 
             this.tsiBlocksGenres.Name = "tsiBlocksGenres";
-            this.tsiBlocksGenres.Size = new System.Drawing.Size(114, 22);
+            this.tsiBlocksGenres.Size = new System.Drawing.Size(152, 22);
             this.tsiBlocksGenres.Text = "Genres";
             // 
             // tsiBlocksQueries
             // 
             this.tsiBlocksQueries.Name = "tsiBlocksQueries";
-            this.tsiBlocksQueries.Size = new System.Drawing.Size(114, 22);
+            this.tsiBlocksQueries.Size = new System.Drawing.Size(152, 22);
             this.tsiBlocksQueries.Text = "Queries";
             // 
             // tsiBlocksSeries
             // 
             this.tsiBlocksSeries.Name = "tsiBlocksSeries";
-            this.tsiBlocksSeries.Size = new System.Drawing.Size(114, 22);
+            this.tsiBlocksSeries.Size = new System.Drawing.Size(152, 22);
             this.tsiBlocksSeries.Text = "Series";
             // 
             // tsmInventory
@@ -327,6 +331,17 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.addProduct1.Size = new System.Drawing.Size(431, 223);
             this.addProduct1.TabIndex = 0;
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
+            // 
+            // tsiBlockPacking
+            // 
+            this.tsiBlockPacking.Name = "tsiBlockPacking";
+            this.tsiBlockPacking.Size = new System.Drawing.Size(152, 22);
+            this.tsiBlockPacking.Text = "Packing";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,5 +400,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         private System.Windows.Forms.Timer tmrWatch;
         private System.Windows.Forms.ToolStripMenuItem tsiSearchOrders;
         private System.Windows.Forms.ToolStripMenuItem tsiChangePassword;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsiBlockPacking;
     }
 }
