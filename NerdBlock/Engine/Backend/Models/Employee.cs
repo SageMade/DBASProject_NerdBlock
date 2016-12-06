@@ -32,6 +32,8 @@ namespace NerdBlock.Engine.Backend.Models
         [DataField("email", QueryParamType.VarChar), Nullable]
         public string Email { get; set; }
 
+        public string HashedPassword { get; set; }
+
         [DataField("phone", QueryParamType.Long), Nullable]
         public long? Phone { get; set; }
 

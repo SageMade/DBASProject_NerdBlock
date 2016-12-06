@@ -29,10 +29,18 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib(true, "*")]
         public void Login()
         {
-            Employee auth = DataAccess.SelectAll<Employee>().First();
-            Auth.User = auth;
+            Employee auth = new Employee();
+            auth.EmployeeId = Context.GetValue<int>("Emnployee.Id");
 
-            LogicManager.TryPerformAction("goto_blocks_genres");
+            Employee[] match = DataAccess.Match(auth);
+
+            if (match.Length > 0 && PasswordSecurity.PasswordStorage.VerifyPassword(Context.GetValue<string>("Employee.Password"), match[0].HashedPassword))
+            {
+                Auth.User = match[0];
+                LogicManager.TryPerformAction("goto_blocks_genres");
+            }
+            else
+                ViewManager.ShowFlash("Invalid credentials", FlashMessageType.Bad);
         }
 
         /// <summary>

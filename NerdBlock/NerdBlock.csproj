@@ -204,6 +204,7 @@
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Engine\AutoDictionary.cs" />
     <Compile Include="Engine\LogicLayer\Util.cs" />
+    <Compile Include="Engine\PasswordHash.cs" />
     <Compile Include="Engine\Session.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\Login.cs">
