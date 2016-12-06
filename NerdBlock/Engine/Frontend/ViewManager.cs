@@ -1,6 +1,7 @@
 ﻿using System;
 using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.LogicLayer;
+using System.Collections.Generic;
 
 namespace NerdBlock.Engine.Frontend
 {
@@ -10,12 +11,21 @@ namespace NerdBlock.Engine.Frontend
     public static class ViewManager
     {
         private static IView myInitialView;
+        private static Stack<IView> myViewStack;
 
         /// <summary>
         /// Gets or set's the ViewManager's implementation
         /// </summary>
         public static IViewManagerImplementation Implementation
         { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current IO map
+        /// </summary>
+        public static IoMap CurrentMap
+        {
+            get;set;
+        }
                 
         /// <summary>
         /// Gets the current view being displayed
@@ -28,6 +38,8 @@ namespace NerdBlock.Engine.Frontend
         static ViewManager()
         {
             Auth.OnAuthChanged += (X, Y) => HandleAuthChanged();
+            CurrentMap = new IoMap();
+            myViewStack = new Stack<IView>();
         }
 
         /// <summary>
@@ -38,7 +50,7 @@ namespace NerdBlock.Engine.Frontend
             // Call the implementation's method
             Implementation.CloseProgram();
         }
-
+        
         /// <summary>
         /// Register a view with the view manager
         /// </summary>
@@ -59,9 +71,9 @@ namespace NerdBlock.Engine.Frontend
             Implementation.HandleAuthChanged();
         }
 
-        internal static void ShowInitial()
+        public static void ShowInitial()
         {
-            Implementation.ShowView(myInitialView);
+            Implementation.ShowView(myInitialView, new IoMap());
         }
 
         /// <summary>
@@ -77,13 +89,61 @@ namespace NerdBlock.Engine.Frontend
         }
         
         /// <summary>
+        /// Gets the previous view that was shown
+        /// </summary>
+        /// <returns></returns>
+        public static IView GetPreviousView()
+        {
+            if (myViewStack.Count > 0)
+                return myViewStack.Peek();
+            else
+                return myInitialView;
+        }
+
+        /// <summary>
+        /// Shows the previous view that was shown
+        /// </summary>
+        /// <returns></returns>
+        public static void GotoPrevious()
+        {
+            if (myViewStack.Count > 0)
+                Show(myViewStack.Pop());
+            else
+                Show(myInitialView);
+        }
+
+        /// <summary>
+        /// Shows a view with the given name to the user
+        /// </summary>
+        /// <param name="name">The name of the view to display</param>
+        public static void Show(string name, IoMap map)
+        {
+            IView view = Implementation.GetView(name);
+            Show(view, map);
+        }
+
+        /// <summary>
+        /// Shows a view to the user
+        /// </summary>
+        /// <param name="view">The view to display</param>
+        public static void Show(IView view, IoMap map)
+        {
+            CurrentMap = map;
+            // Call the implementation's method
+            Implementation.ShowView(view, map);
+
+            if (myViewStack.Count == 0 || view != myViewStack.Peek())
+                myViewStack.Push(view);
+        }
+
+        /// <summary>
         /// Shows a view with the given name to the user
         /// </summary>
         /// <param name="name">The name of the view to display</param>
         public static void Show(string name)
         {
             // Call the implementation's method
-            Implementation.ShowView(name);
+            Show(name, CurrentMap);
         }
 
         /// <summary>
@@ -93,7 +153,7 @@ namespace NerdBlock.Engine.Frontend
         public static void Show(IView view)
         {
             // Call the implementation's method
-            Implementation.ShowView(view);
+            Show(view, CurrentMap);
         }
 
         /// <summary>

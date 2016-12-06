@@ -34,6 +34,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             __Tie(tsiEmployeeSearch, "goto_employee_search");
 
             __Tie(tsiLogin, "goto_login");
+            __Tie(tsiChangePassword, "goto_password_change");
             __Tie(tsiLogout, "logout");
             __Tie(tsiExitProgram, "exit_program");
 

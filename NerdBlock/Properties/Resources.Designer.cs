@@ -65,7 +65,7 @@ namespace NerdBlock.Properties {
         ///	COUNT(distinct series.seriesid) &gt; 0 as IsActive,
         ///	COUNT(distinct series.seriesid) as SeriesCount
         ///	from tblgenre as genre
-        ///	inner join tblblockseries as series on series.genreid = genre.genreid
+        ///	left outer join tblblockseries as series on series.genreid=genre.genreid
         ///		group by genre.genreid;.
         /// </summary>
         internal static string SelectGenreTalliesQuery {

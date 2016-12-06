@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvGenres = new System.Windows.Forms.DataGridView();
+            this.dgvGenres = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmlActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmSeriesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +99,7 @@
             this.dgvGenres.Name = "dgvGenres";
             this.dgvGenres.ReadOnly = true;
             this.dgvGenres.RowHeadersVisible = false;
+            this.dgvGenres.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGenres.Size = new System.Drawing.Size(364, 213);
             this.dgvGenres.TabIndex = 0;
             // 
@@ -237,7 +238,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.DataGridView dgvGenres;
+        private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvGenres;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn cmlActive;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSeriesCount;

@@ -14,5 +14,7 @@
         /// Sets the value for the output
         /// </summary>
         object Value { set; }
+
+        void Fill(IoMap map);
     }
 }

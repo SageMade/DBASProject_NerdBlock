@@ -103,5 +103,11 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
                 }
             }
         }
+
+        public void Fill(IoMap map)
+        {
+            if (map.HasOutput(Name))
+                Value = map.GetOutput<object>(Name);
+        }
     }
 }

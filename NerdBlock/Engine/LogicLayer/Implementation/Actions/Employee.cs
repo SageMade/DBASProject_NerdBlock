@@ -25,6 +25,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             employee.Email = Context.GetValue<string>("Email");
             employee.Phone = long.Parse(Context.GetValue<string>("Phone").Replace(" ", "").Replace("-",""));
             employee.DateJoined = DateTime.Now;
+            employee.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(employee.SIN);
 
             Address address = new Address();
             address.StreetAddress = Context.GetValue<string>("Address.StreetAddress");
@@ -72,7 +73,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib("Human Resources", "General Manager")]
         public void ShowSearch()
         {
-            Context.Values["AllEmployees"] = DataAccess.SelectAll<Employee>();
+            ViewManager.CurrentMap.SetOutput("AllEmployees", DataAccess.SelectAll<Employee>());
             ViewManager.Show("EmployeeSearch");
         }
 

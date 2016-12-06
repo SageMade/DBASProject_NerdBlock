@@ -44,7 +44,6 @@
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
-            this.lblPassword.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtPassword
             // 
@@ -53,7 +52,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblID
             // 
@@ -63,7 +61,6 @@
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 3;
             this.lblID.Text = "ID";
-            this.lblID.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtID
             // 
@@ -71,7 +68,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 0;
-            this.txtID.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnSubmit
             // 

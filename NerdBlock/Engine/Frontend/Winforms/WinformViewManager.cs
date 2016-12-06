@@ -48,7 +48,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
         {
             myContentPanel.Controls.Add((ViewBase)ViewManager.GetView(viewName));
 
-            ShowView(viewName);
+            ShowView(viewName, new IoMap());
 
             myMainForm.ShowDialog();
         }
@@ -57,16 +57,16 @@ namespace NerdBlock.Engine.Frontend.Winforms
         /// Displays the view with the given name to the user
         /// </summary>
         /// <param name="viewName">The name of the view to display</param>
-        public void ShowView(string viewName)
+        public void ShowView(string viewName, IoMap map)
         {
-            ShowView((ViewBase)ViewManager.GetView(viewName));
+            ShowView((ViewBase)ViewManager.GetView(viewName), map);
         }
 
         /// <summary>
         /// Displays the view to the user
         /// </summary>
         /// <param name="control">The view to display</param>
-        public void ShowView(ViewBase control)
+        public void ShowView(ViewBase control, IoMap map)
         {
             for (int index = 0; index < myContentPanel.Controls.Count; index++)
                 myContentPanel.Controls[index].Hide();
@@ -78,7 +78,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
             if (!myContentPanel.Controls.Contains(control))
                 myContentPanel.Controls.Add(control);
 
-            control.LoadView();
+            control.LoadView(map);
             control.Show();
 
             CurrentView = control;
@@ -98,10 +98,10 @@ namespace NerdBlock.Engine.Frontend.Winforms
         /// Displays the view to the user
         /// </summary>
         /// <param name="view">The view to display</param>
-        public void ShowView(IView view)
+        public void ShowView(IView view, IoMap map)
         {
             ViewBase control = view as ViewBase;
-            ShowView(control);
+            ShowView(control, map);
         }
 
         /// <summary>

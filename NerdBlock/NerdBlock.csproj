@@ -77,6 +77,7 @@
     <Compile Include="Engine\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
+    <Compile Include="Engine\Frontend\IoMap.cs" />
     <Compile Include="Engine\Frontend\Winforms\Util.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.cs">
       <SubType>UserControl</SubType>
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.Designer.cs">
       <DependentUpon>FloorWorkerGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\ModelPopulatedComboBox.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Views\UpdatePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\LogicLayer\Implementation\AuthAttrib.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\AuthHelper.cs" />
@@ -364,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\SubscriptionPage.resx">
       <DependentUpon>SubscriptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ViewBase.resx">
       <DependentUpon>ViewBase.cs</DependentUpon>

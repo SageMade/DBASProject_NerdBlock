@@ -54,6 +54,8 @@
             this.txtSIN = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -145,7 +147,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(147, 202);
+            this.btnSubmit.Location = new System.Drawing.Point(147, 237);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 32);
             this.btnSubmit.TabIndex = 12;
@@ -274,10 +276,29 @@
             this.lblCity.TabIndex = 26;
             this.lblCity.Text = "City";
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(66, 198);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(101, 20);
+            this.txtPassword.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 201);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Password";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtSIN);
@@ -305,7 +326,7 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Name = "AddEmployee";
-            this.Size = new System.Drawing.Size(392, 260);
+            this.Size = new System.Drawing.Size(392, 282);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +359,7 @@
         private System.Windows.Forms.TextBox txtSIN;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label8;
     }
 }

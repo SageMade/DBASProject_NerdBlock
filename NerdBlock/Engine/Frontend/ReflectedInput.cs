@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 
 namespace NerdBlock.Engine.Frontend
 {
@@ -46,6 +47,17 @@ namespace NerdBlock.Engine.Frontend
             Name = name;
             myContainer = container;
             myReflectedProperty = container.GetType().GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        public void Fill(IoMap map)
+        {
+            if (map.HasOutput(Name))
+                Value = map.GetOutput<object>(Name);
+        }
+
+        public void PopulateMap(IoMap currentMap)
+        {
+            currentMap.SetInput(Name, Value);
         }
     }
 }

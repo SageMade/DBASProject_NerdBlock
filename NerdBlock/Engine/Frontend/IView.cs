@@ -6,13 +6,8 @@
     public interface IView
     {
         /// <summary>
-        /// Shows this view
+        /// Handles loading the ouptut fields into the view if applicable
         /// </summary>
-        void ShowView();
-
-        /// <summary>
-        /// Handles loading the ouptu fields into the view if applicable
-        /// </summary>
-        void LoadView();
+        void LoadView(IoMap map);
     }
 }

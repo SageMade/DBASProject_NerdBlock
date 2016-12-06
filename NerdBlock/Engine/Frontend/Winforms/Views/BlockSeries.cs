@@ -12,9 +12,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             InitializeComponent();
             //Input - DONE
             Inputs.Add(new ComboBoxValueInput("Block.Genre", cbGenre));
-           
+
             //Output - 2
-            ViewManager.PopulateList<Genre, ComboBox>(cbGenre);
+            Outputs.Add(new ModelPopulatedComboBox<Genre>(cbGenre));
             //Add lstSeries
 
             //Controls - 1 DONE
@@ -25,6 +25,5 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 AttemptAction("goto_blockseries");
             };
         }
-
     }
 }

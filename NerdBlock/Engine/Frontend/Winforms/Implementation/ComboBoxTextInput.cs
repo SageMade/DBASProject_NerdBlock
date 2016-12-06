@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Implementation
 {
@@ -35,6 +36,19 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         {
             Name = valueName;
             myControl = input;
+        }
+
+        public void Fill(IoMap map)
+        {
+            if (map.HasOutput(Name))
+                Value = map.GetOutput<object>(Name);
+            else
+                myControl.Text = "";
+        }
+
+        public void PopulateMap(IoMap currentMap)
+        {
+            currentMap.SetInput(Name, myControl.Text);
         }
     }
 }

@@ -23,13 +23,15 @@ namespace NerdBlock.Engine.Frontend
         /// Displays the view with the given name to the user
         /// </summary>
         /// <param name="viewName">The name of the view to display</param>
-        void ShowView(string viewName);
+        /// <param name="map">The IO map to use</param>
+        void ShowView(string viewName, IoMap map);
 
         /// <summary>
         /// Displays the view to the user
         /// </summary>
         /// <param name="view">The view to display</param>
-        void ShowView(IView view);
+        /// <param name="map">The IO map to use</param>
+        void ShowView(IView view, IoMap map);
 
         /// <summary>
         /// Gets the view with the given name

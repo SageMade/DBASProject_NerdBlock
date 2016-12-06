@@ -97,7 +97,7 @@ namespace NerdBlock.Engine
         public T Get<T>(Key key)
         {
             // If we can even assign T from Value
-            if (typeof(T).IsAssignableFrom(typeof(Value)))
+            if (typeof(T).IsAssignableFrom(typeof(Value)) || typeof(Value) == typeof(object))
             {
                 // If we have a value in the collection, cast it
                 if (myInternalCollection.ContainsKey(key))
