@@ -61,6 +61,23 @@ namespace NerdBlock.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select block.blockid as BlockId,
+        ///    date_part(&apos;month&apos;, block.shipbydate) as Month,
+        ///    date_part(&apos;year&apos;, block.shipbydate) as Year,
+        ///    count(distinct subs.customerid) as Subscribed,
+        ///    count(distinct ships.blockid) as Shipped
+        ///    from tblblock as block
+        ///        left outer join tblsubscription as subs on subs.seriesid=block.seriesid
+        ///        left outer join tblsubscriptionfullfillment as ships on ships.blockid=block.blockid
+        ///        inner join tblblockseries as series on block.seriesid=series.seriesi [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SelectBlockInfoQuery {
+            get {
+                return ResourceManager.GetString("SelectBlockInfoQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to select genre.title as name, genre.genreid as GenreId,
         ///	COUNT(distinct series.seriesid) &gt; 0 as IsActive,
         ///	COUNT(distinct series.seriesid) as SeriesCount

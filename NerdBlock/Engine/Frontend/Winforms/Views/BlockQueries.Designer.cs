@@ -34,9 +34,9 @@
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpSeries = new System.Windows.Forms.GroupBox();
+            this.dgvData = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.dgvData = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmBlockId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,26 +103,6 @@
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 8);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Query Blocks";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(339, 299);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(110, 23);
-            this.btnEdit.TabIndex = 19;
-            this.btnEdit.Text = "Edit Block";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
             // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
@@ -142,6 +122,26 @@
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(428, 208);
             this.dgvData.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 8);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Query Blocks";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(339, 299);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(110, 23);
+            this.btnEdit.TabIndex = 19;
+            this.btnEdit.Text = "Edit Block";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // clmBlockId
             // 
@@ -171,7 +171,7 @@
             // clmPurchased
             // 
             this.clmPurchased.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmPurchased.DataPropertyName = "Purchased";
+            this.clmPurchased.DataPropertyName = "Subscribed";
             this.clmPurchased.FillWeight = 25F;
             this.clmPurchased.HeaderText = "Purchased";
             this.clmPurchased.Name = "clmPurchased";
