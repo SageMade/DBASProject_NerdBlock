@@ -88,29 +88,29 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 138);
+            this.label9.Location = new System.Drawing.Point(30, 140);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.Size = new System.Drawing.Size(59, 13);
             this.label9.TabIndex = 46;
-            this.label9.Text = "Depth";
+            this.label9.Text = "Depth (cm)";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(50, 114);
+            this.label7.Location = new System.Drawing.Point(26, 117);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 45;
-            this.label7.Text = "Height";
+            this.label7.Text = "Height (cm)";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 90);
+            this.label5.Location = new System.Drawing.Point(29, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Width";
+            this.label5.Text = "Width (cm)";
             // 
             // txtProductName
             // 

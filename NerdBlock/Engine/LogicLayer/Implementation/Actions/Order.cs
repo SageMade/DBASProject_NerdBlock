@@ -27,5 +27,15 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             ViewManager.Show("OrderPage");
         }
+
+        /// <summary>
+        /// Show the order search page
+        /// </summary>
+        [BusinessAction("insert_order")]
+        [AuthAttrib("Shipper", "General Manager")]
+        public void InsertOrder()
+        {
+            ViewManager.Show("OrderPage");
+        }
     }
 }
