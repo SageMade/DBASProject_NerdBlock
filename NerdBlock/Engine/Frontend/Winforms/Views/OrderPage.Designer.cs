@@ -39,8 +39,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lstOrderPage = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.dataGridDisplayView1 = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.dgvOrders = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // btnView
@@ -139,14 +142,6 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Order Location";
             // 
-            // lstOrderPage
-            // 
-            this.lstOrderPage.FormattingEnabled = true;
-            this.lstOrderPage.Location = new System.Drawing.Point(31, 145);
-            this.lstOrderPage.Name = "lstOrderPage";
-            this.lstOrderPage.Size = new System.Drawing.Size(614, 199);
-            this.lstOrderPage.TabIndex = 16;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -157,12 +152,39 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Order Page";
             // 
+            // dataGridDisplayView1
+            // 
+            this.dataGridDisplayView1.AllowUserToAddRows = false;
+            this.dataGridDisplayView1.AllowUserToDeleteRows = false;
+            this.dataGridDisplayView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDisplayView1.Location = new System.Drawing.Point(172, 245);
+            this.dataGridDisplayView1.Name = "dataGridDisplayView1";
+            this.dataGridDisplayView1.ReadOnly = true;
+            this.dataGridDisplayView1.RowHeadersVisible = false;
+            this.dataGridDisplayView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridDisplayView1.Size = new System.Drawing.Size(8, 8);
+            this.dataGridDisplayView1.TabIndex = 18;
+            // 
+            // dgvOrders
+            // 
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(53, 146);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.ReadOnly = true;
+            this.dgvOrders.RowHeadersVisible = false;
+            this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrders.Size = new System.Drawing.Size(548, 196);
+            this.dgvOrders.TabIndex = 19;
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvOrders);
+            this.Controls.Add(this.dataGridDisplayView1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.lstOrderPage);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -177,6 +199,8 @@
             this.Name = "OrderPage";
             this.Size = new System.Drawing.Size(672, 366);
             this.Load += new System.EventHandler(this.OrderPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +219,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox lstOrderPage;
         private System.Windows.Forms.Label label9;
+        private Implementation.DataGridDisplayView dataGridDisplayView1;
+        private Implementation.DataGridDisplayView dgvOrders;
     }
 }

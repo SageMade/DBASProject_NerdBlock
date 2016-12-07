@@ -258,12 +258,6 @@
     <Compile Include="Engine\Backend\IQuery.cs" />
     <Compile Include="Engine\Backend\IQueryResult.cs" />
     <Compile Include="Engine\Backend\IDatabase.cs" />
-    <Compile Include="Engine\Frontend\Winforms\Views\SearchCustomer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\SearchCustomer.Designer.cs">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\Shipping.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -355,9 +349,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\SearchCustomer.resx">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Shipping.resx">
       <DependentUpon>Shipping.cs</DependentUpon>
