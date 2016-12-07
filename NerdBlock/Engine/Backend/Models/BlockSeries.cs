@@ -34,5 +34,15 @@ namespace NerdBlock.Engine.Backend.Models
         {
             return Title;
         }
+
+        public override int GetHashCode()
+        {
+            return SeriesId == null ? 0 : SeriesId.Value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is BlockSeries && (obj as BlockSeries).SeriesId == SeriesId;
+        }
     }
 }

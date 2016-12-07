@@ -25,12 +25,12 @@ namespace NerdBlock.Engine.Backend.Models
 
         public override int GetHashCode()
         {
-            return Title == null ? 0 : Title.GetHashCode();
+            return GenreId == null ? 0 : GenreId.Value;
         }
 
         public override bool Equals(object obj)
         {
-            return obj is Genre && (obj as Genre).Title == Title;
+            return obj is Genre && (obj as Genre).GenreId == GenreId;
         }
     }
 }
