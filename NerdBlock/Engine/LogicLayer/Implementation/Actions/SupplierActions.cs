@@ -34,6 +34,8 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             if (companyPhone == null || string.IsNullOrWhiteSpace(companyPhone))
                 error += "You must enter a company phone number\n";
 
+            Validations.ValidateAddressFromMap(map, "Address", ref error);
+
             /*
             if (productWidth == null || string.IsNullOrWhiteSpace(productWidth))
                 error += "You must enter a product width\n";
