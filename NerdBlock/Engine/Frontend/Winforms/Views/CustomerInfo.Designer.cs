@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.grpInfo = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblJoined = new System.Windows.Forms.Label();
+            this.lblShipAdd = new System.Windows.Forms.Label();
+            this.lblHomeAddr = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,21 +46,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grpSubscriptions = new System.Windows.Forms.GroupBox();
-            this.dataGridDisplayView1 = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.dgvActiveSubs = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.grpInfo.SuspendLayout();
             this.grpSubscriptions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActiveSubs)).BeginInit();
             this.SuspendLayout();
             // 
             // grpInfo
             // 
-            this.grpInfo.Controls.Add(this.label17);
-            this.grpInfo.Controls.Add(this.label11);
-            this.grpInfo.Controls.Add(this.label16);
-            this.grpInfo.Controls.Add(this.label15);
-            this.grpInfo.Controls.Add(this.label14);
-            this.grpInfo.Controls.Add(this.label13);
-            this.grpInfo.Controls.Add(this.label12);
+            this.grpInfo.Controls.Add(this.lblJoined);
+            this.grpInfo.Controls.Add(this.lblShipAdd);
+            this.grpInfo.Controls.Add(this.lblHomeAddr);
+            this.grpInfo.Controls.Add(this.lblLastName);
+            this.grpInfo.Controls.Add(this.lblFirstName);
+            this.grpInfo.Controls.Add(this.lblUserName);
+            this.grpInfo.Controls.Add(this.lblEmail);
             this.grpInfo.Controls.Add(this.lblID);
             this.grpInfo.Controls.Add(this.label9);
             this.grpInfo.Controls.Add(this.label7);
@@ -72,84 +72,84 @@
             this.grpInfo.Controls.Add(this.label2);
             this.grpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInfo.Location = new System.Drawing.Point(2, 2);
-            this.grpInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpInfo.Margin = new System.Windows.Forms.Padding(2);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpInfo.Padding = new System.Windows.Forms.Padding(2);
             this.grpInfo.Size = new System.Drawing.Size(546, 158);
             this.grpInfo.TabIndex = 0;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Customer Information";
             this.grpInfo.Enter += new System.EventHandler(this.grpInfo_Enter);
             // 
-            // label17
+            // lblJoined
             // 
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(361, 64);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(177, 16);
-            this.label17.TabIndex = 16;
+            this.lblJoined.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblJoined.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJoined.Location = new System.Drawing.Point(361, 64);
+            this.lblJoined.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJoined.Name = "lblJoined";
+            this.lblJoined.Size = new System.Drawing.Size(177, 16);
+            this.lblJoined.TabIndex = 16;
             // 
-            // label11
+            // lblShipAdd
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(361, 120);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(177, 16);
-            this.label11.TabIndex = 15;
+            this.lblShipAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblShipAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShipAdd.Location = new System.Drawing.Point(361, 120);
+            this.lblShipAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblShipAdd.Name = "lblShipAdd";
+            this.lblShipAdd.Size = new System.Drawing.Size(177, 16);
+            this.lblShipAdd.TabIndex = 15;
             // 
-            // label16
+            // lblHomeAddr
             // 
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(361, 91);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(177, 16);
-            this.label16.TabIndex = 14;
+            this.lblHomeAddr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHomeAddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeAddr.Location = new System.Drawing.Point(361, 91);
+            this.lblHomeAddr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHomeAddr.Name = "lblHomeAddr";
+            this.lblHomeAddr.Size = new System.Drawing.Size(177, 16);
+            this.lblHomeAddr.TabIndex = 14;
             // 
-            // label15
+            // lblLastName
             // 
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(361, 36);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(177, 16);
-            this.label15.TabIndex = 12;
+            this.lblLastName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(361, 36);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(177, 16);
+            this.lblLastName.TabIndex = 12;
             // 
-            // label14
+            // lblFirstName
             // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(86, 37);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(153, 16);
-            this.label14.TabIndex = 11;
+            this.lblFirstName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(86, 37);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(153, 16);
+            this.lblFirstName.TabIndex = 11;
             // 
-            // label13
+            // lblUserName
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(86, 121);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(153, 16);
-            this.label13.TabIndex = 10;
+            this.lblUserName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(86, 121);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(153, 16);
+            this.lblUserName.TabIndex = 10;
             // 
-            // label12
+            // lblEmail
             // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(86, 92);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 16);
-            this.label12.TabIndex = 9;
+            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(86, 92);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(153, 16);
+            this.lblEmail.TabIndex = 9;
             // 
             // lblID
             // 
@@ -251,29 +251,29 @@
             // 
             // grpSubscriptions
             // 
-            this.grpSubscriptions.Controls.Add(this.dataGridDisplayView1);
+            this.grpSubscriptions.Controls.Add(this.dgvActiveSubs);
             this.grpSubscriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSubscriptions.Location = new System.Drawing.Point(2, 162);
-            this.grpSubscriptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSubscriptions.Margin = new System.Windows.Forms.Padding(2);
             this.grpSubscriptions.Name = "grpSubscriptions";
-            this.grpSubscriptions.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSubscriptions.Padding = new System.Windows.Forms.Padding(2);
             this.grpSubscriptions.Size = new System.Drawing.Size(546, 210);
             this.grpSubscriptions.TabIndex = 1;
             this.grpSubscriptions.TabStop = false;
             this.grpSubscriptions.Text = "Active Subscriptions";
             // 
-            // dataGridDisplayView1
+            // dgvActiveSubs
             // 
-            this.dataGridDisplayView1.AllowUserToAddRows = false;
-            this.dataGridDisplayView1.AllowUserToDeleteRows = false;
-            this.dataGridDisplayView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDisplayView1.Location = new System.Drawing.Point(14, 25);
-            this.dataGridDisplayView1.Name = "dataGridDisplayView1";
-            this.dataGridDisplayView1.ReadOnly = true;
-            this.dataGridDisplayView1.RowHeadersVisible = false;
-            this.dataGridDisplayView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridDisplayView1.Size = new System.Drawing.Size(524, 180);
-            this.dataGridDisplayView1.TabIndex = 0;
+            this.dgvActiveSubs.AllowUserToAddRows = false;
+            this.dgvActiveSubs.AllowUserToDeleteRows = false;
+            this.dgvActiveSubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActiveSubs.Location = new System.Drawing.Point(14, 25);
+            this.dgvActiveSubs.Name = "dgvActiveSubs";
+            this.dgvActiveSubs.ReadOnly = true;
+            this.dgvActiveSubs.RowHeadersVisible = false;
+            this.dgvActiveSubs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvActiveSubs.Size = new System.Drawing.Size(524, 180);
+            this.dgvActiveSubs.TabIndex = 0;
             // 
             // CustomerInfo
             // 
@@ -281,13 +281,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpSubscriptions);
             this.Controls.Add(this.grpInfo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerInfo";
             this.Size = new System.Drawing.Size(554, 385);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
             this.grpSubscriptions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActiveSubs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,14 +304,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grpSubscriptions;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblJoined;
+        private System.Windows.Forms.Label lblShipAdd;
+        private System.Windows.Forms.Label lblHomeAddr;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblID;
-        private Implementation.DataGridDisplayView dataGridDisplayView1;
+        private Implementation.DataGridDisplayView dgvActiveSubs;
     }
 }
