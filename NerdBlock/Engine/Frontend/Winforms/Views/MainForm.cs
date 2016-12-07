@@ -177,5 +177,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 }
             }
         }
+
+        private void tsbGoBack_Click(object sender, EventArgs e)
+        {
+            ViewManager.GotoPrevious();
+        }
     }
 }

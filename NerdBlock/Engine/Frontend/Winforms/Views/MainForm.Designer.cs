@@ -31,6 +31,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mnuMainBar = new System.Windows.Forms.MenuStrip();
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiLogin = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +68,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
             this.tmrWatch = new System.Windows.Forms.Timer(this.components);
+            this.tsbGoBack = new System.Windows.Forms.ToolStripButton();
             this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
@@ -309,18 +311,19 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsApplicationInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tsApplicationInfo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsApplicationInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslTime});
-            this.tsApplicationInfo.Location = new System.Drawing.Point(0, 560);
+            this.tslTime,
+            this.tsbGoBack});
+            this.tsApplicationInfo.Location = new System.Drawing.Point(0, 558);
             this.tsApplicationInfo.Name = "tsApplicationInfo";
-            this.tsApplicationInfo.Size = new System.Drawing.Size(996, 25);
+            this.tsApplicationInfo.Size = new System.Drawing.Size(996, 27);
             this.tsApplicationInfo.TabIndex = 2;
-            this.tsApplicationInfo.Text = "toolStrip1";
+            this.tsApplicationInfo.Text = "Return to last view";
             // 
             // tslTime
             // 
             this.tslTime.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tslTime.Name = "tslTime";
-            this.tslTime.Size = new System.Drawing.Size(28, 22);
+            this.tslTime.Size = new System.Drawing.Size(28, 24);
             this.tslTime.Text = "0:00";
             // 
             // pnlMainContent
@@ -331,11 +334,22 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
             this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(996, 536);
+            this.pnlMainContent.Size = new System.Drawing.Size(996, 534);
             this.pnlMainContent.TabIndex = 3;
+            // 
+            // tsbGoBack
+            // 
+            this.tsbGoBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbGoBack.Image = ((System.Drawing.Image)(resources.GetObject("tsbGoBack.Image")));
+            this.tsbGoBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbGoBack.Name = "tsbGoBack";
+            this.tsbGoBack.Size = new System.Drawing.Size(24, 24);
+            this.tsbGoBack.Text = "Go to previous view";
+            this.tsbGoBack.Click += new System.EventHandler(this.tsbGoBack_Click);
             // 
             // addProduct1
             // 
+            this.addProduct1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addProduct1.Location = new System.Drawing.Point(274, 148);
             this.addProduct1.Margin = new System.Windows.Forms.Padding(4);
             this.addProduct1.Name = "addProduct1";
@@ -402,5 +416,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         private System.Windows.Forms.ToolStripMenuItem tsiChangePassword;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem tsiBlockPacking;
+        private System.Windows.Forms.ToolStripButton tsbGoBack;
     }
 }

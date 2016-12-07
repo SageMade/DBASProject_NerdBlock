@@ -106,10 +106,12 @@ namespace NerdBlock.Engine.Frontend
         /// <returns></returns>
         public static void GotoPrevious()
         {
+            CurrentMap.Reset();
+
             if (myViewStack.Count > 0)
-                Show(myViewStack.Pop());
+                Implementation.ShowView(myViewStack.Pop(), CurrentMap);
             else
-                Show(myInitialView);
+                Implementation.ShowView(myInitialView, CurrentMap);
         }
 
         /// <summary>
