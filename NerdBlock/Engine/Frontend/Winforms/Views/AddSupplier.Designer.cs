@@ -42,7 +42,6 @@
             this.txtLast = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAddSupplier
@@ -119,7 +118,7 @@
             // txtContact
             // 
             this.txtContact.Location = new System.Drawing.Point(102, 52);
-            this.txtContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(2);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(92, 20);
             this.txtContact.TabIndex = 7;
@@ -128,7 +127,7 @@
             // txtCompany
             // 
             this.txtCompany.Location = new System.Drawing.Point(102, 81);
-            this.txtCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(92, 20);
             this.txtCompany.TabIndex = 8;
@@ -136,7 +135,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(102, 108);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(92, 20);
             this.txtPhone.TabIndex = 9;
@@ -144,7 +143,7 @@
             // txtFirst
             // 
             this.txtFirst.Location = new System.Drawing.Point(265, 50);
-            this.txtFirst.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFirst.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(92, 20);
             this.txtFirst.TabIndex = 10;
@@ -152,7 +151,7 @@
             // txtLast
             // 
             this.txtLast.Location = new System.Drawing.Point(266, 81);
-            this.txtLast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLast.Margin = new System.Windows.Forms.Padding(2);
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(92, 20);
             this.txtLast.TabIndex = 11;
@@ -160,7 +159,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(266, 108);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(92, 20);
             this.txtEmail.TabIndex = 12;
@@ -168,28 +167,17 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(102, 139);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 28);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(266, 139);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(90, 28);
-            this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
             // AddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLast);
@@ -204,7 +192,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAddSupplier);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSupplier";
             this.Size = new System.Drawing.Size(375, 176);
             this.ResumeLayout(false);
@@ -228,6 +216,5 @@
         private System.Windows.Forms.TextBox txtLast;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnClose;
     }
 }
