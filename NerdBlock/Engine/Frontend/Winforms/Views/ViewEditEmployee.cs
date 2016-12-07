@@ -21,35 +21,25 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            Inputs.Add(new TextBoxInput("FirstName", txtFirstName));
-            Inputs.Add(new TextBoxInput("LastName", txtLastName));
-            Inputs.Add(new TextBoxInput("Phone", txtPhone));
-            Inputs.Add(new TextBoxInput("Email", txtEmail));
-            Inputs.Add(new TextBoxInput("SIN", txtSIN));
-            Inputs.Add(new ComboBoxValueInput("Role", cbRole));
-            Inputs.Add(new TextBoxInput("Address.StreetAddress", txtStreet));
+            Inputs.Add(new TextBoxInput(      "Employee.FirstName", txtFirstName));
+            Inputs.Add(new TextBoxInput(      "Employee.LastName", txtLastName));
+            Inputs.Add(new TextBoxInput(      "Employee.Phone", txtPhone));
+            Inputs.Add(new TextBoxInput(      "Employee.Email", txtEmail));
+            Inputs.Add(new TextBoxInput(      "Employee.SIN", txtSIN));
+            Inputs.Add(new ComboBoxValueInput("Employee.Role", cbRole));
+
+            Inputs.Add(new TextBoxInput(     "Address.StreetAddress", txtStreet));
             Inputs.Add(new ComboBoxTextInput("Address.Country", cbCountry));
             Inputs.Add(new ComboBoxTextInput("Address.State", cbState));
             Inputs.Add(new ComboBoxTextInput("Address.City", cbCity));
-            Inputs.Add(new TextBoxInput("Address.PostalCode", txtPostalCode));
-            Inputs.Add(new TextBoxInput("Address.AptNum", txtAptNum));
+            Inputs.Add(new TextBoxInput(     "Address.PostalCode", txtPostalCode));
+            Inputs.Add(new TextBoxInput(     "Address.AptNum", txtAptNum));
 
             ViewManager.PopulateList<EmployeeRole, ComboBox>(cbRole);
             ViewManager.PopulateFromQuery(cbState, DataAccess.Execute("select state from tbladdress group by state order by state"));
             ViewManager.PopulateFromQuery(cbCountry, DataAccess.Execute("select country from tbladdress group by country order by country"));
             ViewManager.PopulateFromQuery(cbCity, DataAccess.Execute("select city from tbladdress group by city order by city"));
-
-            Outputs.Add(new TextBoxOutput("Employee.First", txtFirstName));
-            Outputs.Add(new TextBoxOutput("Employee.Last", txtLastName));
-            Outputs.Add(new TextBoxOutput("Employee.Email", txtEmail));
-            Outputs.Add(new TextBoxOutput("Employee.Apt", txtAptNum));
-            Outputs.Add(new TextBoxOutput("Employee.Phone", txtPhone));
-            Outputs.Add(new TextBoxOutput("Employee.Postal", txtPostalCode));
-            Outputs.Add(new TextBoxOutput("Employee.SIN", txtSIN));
-            Outputs.Add(new TextBoxOutput("Employee.Street", txtStreet));
-
-
-
+            
             btnEdit.Click += (X, Y) => AttemptAction("update_employee");
             btnTerminate.Click += (X, Y) => AttemptAction("terminate_employee");
         }
@@ -60,6 +50,21 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         }
         protected override void LoadMyViewContext(IoMap map)
         {
+            Employee instance = map.GetInput<Employee>("Employee.Info");
+
+            map.SetInput("Employee.FirstName", instance.FirstName);
+            map.SetInput("Employee.LastName", instance.LastName);
+            map.SetInput("Employee.Email", instance.Email);
+            map.SetInput("Employee.Phone", instance.Phone);
+            map.SetInput("Employee.SIN", instance.SIN);
+            map.SetInput("Employee.Role", instance.Role);
+
+            map.SetInput("Address.StreetAddress", instance.HomeAddress.StreetAddress);
+            map.SetInput("Address.Country", instance.HomeAddress.Country);
+            map.SetInput("Address.State", instance.HomeAddress.State);
+            map.SetInput("Address.City", instance.HomeAddress.City);
+            map.SetInput("Address.PostalCode", instance.HomeAddress.PostalCode);
+            map.SetInput("Address.AptNum", instance.HomeAddress.ApartmentNumber);
 
         }
     }
