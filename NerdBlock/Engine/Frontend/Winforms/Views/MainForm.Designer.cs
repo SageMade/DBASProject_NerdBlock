@@ -69,6 +69,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.pnlMainContent = new System.Windows.Forms.Panel();
             this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.tmrWatch = new System.Windows.Forms.Timer(this.components);
+            this.tsiOrderEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -253,7 +254,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // 
             this.tsmOrders.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiAddOrder,
-            this.tsiSearchOrders});
+            this.tsiSearchOrders,
+            this.tsiOrderEdit});
             this.tsmOrders.Name = "tsmOrders";
             this.tsmOrders.Size = new System.Drawing.Size(54, 20);
             this.tsmOrders.Text = "Orders";
@@ -261,13 +263,13 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiAddOrder
             // 
             this.tsiAddOrder.Name = "tsiAddOrder";
-            this.tsiAddOrder.Size = new System.Drawing.Size(109, 22);
+            this.tsiAddOrder.Size = new System.Drawing.Size(152, 22);
             this.tsiAddOrder.Text = "Add ";
             // 
             // tsiSearchOrders
             // 
             this.tsiSearchOrders.Name = "tsiSearchOrders";
-            this.tsiSearchOrders.Size = new System.Drawing.Size(109, 22);
+            this.tsiSearchOrders.Size = new System.Drawing.Size(152, 22);
             this.tsiSearchOrders.Text = "Search";
             // 
             // tsmReports
@@ -348,6 +350,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.addProduct1.Size = new System.Drawing.Size(431, 223);
             this.addProduct1.TabIndex = 0;
             // 
+            // tsiOrderEdit
+            // 
+            this.tsiOrderEdit.Name = "tsiOrderEdit";
+            this.tsiOrderEdit.Size = new System.Drawing.Size(152, 22);
+            this.tsiOrderEdit.Text = "Edit";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +416,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem tsiBlockPacking;
         private System.Windows.Forms.ToolStripButton tsbGoBack;
+        private System.Windows.Forms.ToolStripMenuItem tsiOrderEdit;
     }
 }

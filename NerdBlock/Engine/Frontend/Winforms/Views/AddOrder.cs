@@ -25,15 +25,21 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            Outputs.Add(new ModelPopulatedComboBox<Product>("ProductId", cbProductID));
+            
             Outputs.Add(new ModelPopulatedComboBox<Supplier>("SupplierId", cbSupplierID));
             Inputs.Add(new TextBoxInput("QuantityOrdered", txtQuantityOrdered));
+            Inputs.Add(new TextBoxInput("ProductName", txtProductName));
+            Inputs.Add(new TextBoxInput("Width", txtWidth));
+            Inputs.Add(new TextBoxInput("Height", txtHeight));
+            Inputs.Add(new TextBoxInput("Depth", txtDepth));
+            Inputs.Add(new TextBoxInput("Description", txtDescription));
+            Outputs.Add(new DataGridOutput("Order", dgvOrder));
 
             //ViewManager.PopulateFromQuery(cbProductID, DataAccess.Execute("select productid from tblproduct group by productid order by productid"));
             //ViewManager.PopulateFromQuery(cbSupplierID, DataAccess.Execute("select supplierid from tblsupplier group by supplierid order by supplierid"));
 
             btnAddOrder.Click += (X, Y) => AttemptAction("insert_order");
-            btnAddProduct.Click += (X, Y) => AttemptAction("goto_inventory_add");
+            btnAdd.Click += (X, Y) => AttemptAction("insert_product");
             btnAddSupplier.Click += (X, Y) => AttemptAction("goto_supplier_add");
         }
 

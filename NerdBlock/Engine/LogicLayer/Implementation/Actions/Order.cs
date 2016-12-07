@@ -37,5 +37,16 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             ViewManager.Show("OrderPage");
         }
+
+        /// <summary>
+        /// Show the order edit page
+        /// </summary>
+        [BusinessAction("goto_order_edit")]
+        [AuthAttrib("Shipper", "General Manager")]
+        public void ShowEdit()
+        {
+            ViewManager.Show("ViewEditOrder");
+        }
+
     }
 }

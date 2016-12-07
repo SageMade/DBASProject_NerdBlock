@@ -21,15 +21,18 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            Inputs.Add(new TextBoxInput("ProductName", txtProductName));
+            Outputs.Add(new ModelPopulatedComboBox<Supplier>("SupplierId", cbSupplierID));
             Inputs.Add(new TextBoxInput("QuantityOrdered", txtQuantityOrdered));
-            Inputs.Add(new TextBoxInput("TotalOrderPrice", txtTotalOrderPrice));
-            Inputs.Add(new TextBoxInput("Address", txtAddress));
-            Inputs.Add(new TextBoxInput("Phone", txtPhone));
-            Inputs.Add(new TextBoxInput("DateOrdered", txtDateOrdered));
-            Inputs.Add(new TextBoxInput("DateArrived", txtDateArrived));
+            Inputs.Add(new TextBoxInput("ProductName", txtProductName));
+            Inputs.Add(new TextBoxInput("Width", txtWidth));
+            Inputs.Add(new TextBoxInput("Height", txtHeight));
+            Inputs.Add(new TextBoxInput("Depth", txtDepth));
+            Inputs.Add(new TextBoxInput("Description", txtDescription));
+            Outputs.Add(new DataGridOutput("Order", dgvOrder));
 
             btnEditOrder.Click += (X, Y) => AttemptAction("update_order");
+            btnAdd.Click += (X, Y) => AttemptAction("insert_product");
+            btnAddSupplier.Click += (X, Y) => AttemptAction("goto_supplier_add");
         }
     }
 }
