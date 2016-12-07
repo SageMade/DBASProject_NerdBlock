@@ -264,12 +264,6 @@
     <Compile Include="Engine\Frontend\Winforms\Views\Shipping.Designer.cs">
       <DependentUpon>Shipping.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\SubscriptionPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\SubscriptionPage.Designer.cs">
-      <DependentUpon>SubscriptionPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\ViewEditEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -352,9 +346,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Shipping.resx">
       <DependentUpon>Shipping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\SubscriptionPage.resx">
-      <DependentUpon>SubscriptionPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
