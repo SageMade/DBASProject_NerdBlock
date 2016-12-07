@@ -15,15 +15,20 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             //Output - 2
             Outputs.Add(new ModelPopulatedComboBox<Genre>(cbGenre));
+            cbGenre.SelectedIndexChanged += CbGenre_SelectedIndexChanged;
             //Add lstSeries
 
             //Controls - 1 DONE
             btnBlocks.Click += (X, Y) =>
             {
-                ViewManager.CurrentMap.SetInput("TargetSeries", lstSeries.SelectedItem);
                 ViewManager.CurrentMap.SetInput("TargetGenre", cbGenre.SelectedItem);
                 AttemptAction("goto_blockseries");
             };
+        }
+
+        private void CbGenre_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

@@ -28,45 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.grpSeries = new System.Windows.Forms.GroupBox();
-            this.lstSeries = new System.Windows.Forms.ListBox();
             this.cbGenre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBlocks = new System.Windows.Forms.Button();
+            this.dataGridDisplayView1 = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubsribers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpSeries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Series Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Sub Price";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(191, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "# of Current Subscribers";
             // 
             // label5
             // 
@@ -79,36 +53,15 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Series Info";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(143, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Volume";
-            // 
             // grpSeries
             // 
-            this.grpSeries.Controls.Add(this.lstSeries);
-            this.grpSeries.Controls.Add(this.label3);
-            this.grpSeries.Controls.Add(this.label1);
-            this.grpSeries.Controls.Add(this.label2);
-            this.grpSeries.Controls.Add(this.label4);
+            this.grpSeries.Controls.Add(this.dataGridDisplayView1);
             this.grpSeries.Location = new System.Drawing.Point(21, 53);
             this.grpSeries.Name = "grpSeries";
             this.grpSeries.Size = new System.Drawing.Size(332, 256);
             this.grpSeries.TabIndex = 8;
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
-            // 
-            // lstSeries
-            // 
-            this.lstSeries.FormattingEnabled = true;
-            this.lstSeries.Location = new System.Drawing.Point(14, 54);
-            this.lstSeries.Name = "lstSeries";
-            this.lstSeries.Size = new System.Drawing.Size(298, 186);
-            this.lstSeries.TabIndex = 8;
             // 
             // cbGenre
             // 
@@ -137,6 +90,60 @@
             this.btnBlocks.Text = "View Blocks";
             this.btnBlocks.UseVisualStyleBackColor = true;
             // 
+            // dataGridDisplayView1
+            // 
+            this.dataGridDisplayView1.AllowUserToAddRows = false;
+            this.dataGridDisplayView1.AllowUserToDeleteRows = false;
+            this.dataGridDisplayView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDisplayView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmName,
+            this.clmPrice,
+            this.clmSize,
+            this.clmSubsribers});
+            this.dataGridDisplayView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridDisplayView1.Name = "dataGridDisplayView1";
+            this.dataGridDisplayView1.ReadOnly = true;
+            this.dataGridDisplayView1.RowHeadersVisible = false;
+            this.dataGridDisplayView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridDisplayView1.Size = new System.Drawing.Size(320, 231);
+            this.dataGridDisplayView1.TabIndex = 8;
+            // 
+            // clmName
+            // 
+            this.clmName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmName.DataPropertyName = "Name";
+            this.clmName.FillWeight = 40F;
+            this.clmName.HeaderText = "Series Name";
+            this.clmName.Name = "clmName";
+            this.clmName.ReadOnly = true;
+            // 
+            // clmPrice
+            // 
+            this.clmPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPrice.DataPropertyName = "Price";
+            this.clmPrice.FillWeight = 20F;
+            this.clmPrice.HeaderText = "Price";
+            this.clmPrice.Name = "clmPrice";
+            this.clmPrice.ReadOnly = true;
+            // 
+            // clmSize
+            // 
+            this.clmSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmSize.DataPropertyName = "Volume";
+            this.clmSize.FillWeight = 20F;
+            this.clmSize.HeaderText = "Size cm³";
+            this.clmSize.Name = "clmSize";
+            this.clmSize.ReadOnly = true;
+            // 
+            // clmSubsribers
+            // 
+            this.clmSubsribers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmSubsribers.DataPropertyName = "Subsribers";
+            this.clmSubsribers.FillWeight = 20F;
+            this.clmSubsribers.HeaderText = "Subscribers";
+            this.clmSubsribers.Name = "clmSubsribers";
+            this.clmSubsribers.ReadOnly = true;
+            // 
             // BlockSeries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,22 +156,22 @@
             this.Name = "BlockSeries";
             this.Size = new System.Drawing.Size(368, 345);
             this.grpSeries.ResumeLayout(false);
-            this.grpSeries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpSeries;
-        private System.Windows.Forms.ListBox lstSeries;
         private System.Windows.Forms.ComboBox cbGenre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBlocks;
+        private Implementation.DataGridDisplayView dataGridDisplayView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubsribers;
     }
 }

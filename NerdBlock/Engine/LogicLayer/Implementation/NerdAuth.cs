@@ -217,8 +217,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             {
                 return (object)left == null ? ((object)right == null ? false : true) : !left.Equals(right);
             }
-
-
+            
             /// <summary>
             /// Handles implicitly casting a string to a permission entry, this
             /// will create an entry with IsAllowed set to true

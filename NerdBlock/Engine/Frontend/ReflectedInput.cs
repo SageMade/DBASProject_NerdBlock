@@ -51,8 +51,8 @@ namespace NerdBlock.Engine.Frontend
 
         public void Fill(IoMap map)
         {
-            if (map.HasOutput(Name))
-                Value = map.GetOutput<object>(Name);
+            if (map.HasInput(Name))
+                Value = map.GetInput<object>(Name);
         }
 
         public void PopulateMap(IoMap currentMap)

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -10,6 +12,13 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
     /// </summary>
     public class ViewBase : UserControl, IView
     {
+        [Browsable(true)]
+        public override Color BackColor
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets the list of Input elements for this view. These are items that
         /// provide an input to the IoMap
@@ -36,6 +45,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             Inputs = new List<IInput>();
             Outputs = new List<IOutput>();
+
+            BackColor = SystemColors.ControlLight;
+            BorderStyle = BorderStyle.FixedSingle;
         }
 
         /// <summary>
@@ -62,6 +74,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 Outputs[index].Fill(map);
         }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            using (Brush brush = new SolidBrush(BackColor))
+                e.Graphics.FillRectangle(brush, 0, 0, Width, Height);
+            
+            base.OnPaint(e);
+        }
+
         /// <summary>
         /// Attempts an action from this view, handles loading inputs into IoMap
         /// </summary>
@@ -74,6 +94,18 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             // Let the logic manager do the heavy lifting
             LogicManager.TryPerformAction(actionName);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // ViewBase
+            // 
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Name = "ViewBase";
+            this.ResumeLayout(false);
+
         }
     }
 }

@@ -32,15 +32,22 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             genre.Title = ViewManager.CurrentMap.GetInput<string>("Genre.Title");
             genre.Description = ViewManager.CurrentMap.GetInput<string>("Genre.Description");
 
-            if (DataAccess.Insert(genre))
+            if (string.IsNullOrWhiteSpace(genre.Title))
             {
-                ViewManager.ShowFlash("Genre Added", FlashMessageType.Good);
-                LogicManager.TryPerformAction("goto_blocks_genres");
+                ViewManager.ShowFlash("Cannot insert genre, you must enter a title", FlashMessageType.Bad);
             }
             else
             {
-                ViewManager.ShowFlash("Failed to add genre", FlashMessageType.Bad);
-            }        
+                if (DataAccess.Insert(genre))
+                {
+                    ViewManager.ShowFlash("Genre Added", FlashMessageType.Good);
+                    LogicManager.TryPerformAction("goto_blocks_genres");
+                }
+                else
+                {
+                    ViewManager.ShowFlash("Failed to add genre", FlashMessageType.Bad);
+                }
+            } 
         }
 
         /// <summary>

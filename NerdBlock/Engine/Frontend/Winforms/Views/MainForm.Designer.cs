@@ -43,6 +43,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiBlocksGenres = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiBlocksQueries = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiBlocksSeries = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsiBlockPacking = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmInventory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiInventorySearch = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiInventoryAdd = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,10 +66,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.tmrWatch = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsiBlockPacking = new System.Windows.Forms.ToolStripMenuItem();
+            this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -147,26 +147,37 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiBlocksAdd
             // 
             this.tsiBlocksAdd.Name = "tsiBlocksAdd";
-            this.tsiBlocksAdd.Size = new System.Drawing.Size(152, 22);
+            this.tsiBlocksAdd.Size = new System.Drawing.Size(116, 22);
             this.tsiBlocksAdd.Text = "Add";
             // 
             // tsiBlocksGenres
             // 
             this.tsiBlocksGenres.Name = "tsiBlocksGenres";
-            this.tsiBlocksGenres.Size = new System.Drawing.Size(152, 22);
+            this.tsiBlocksGenres.Size = new System.Drawing.Size(116, 22);
             this.tsiBlocksGenres.Text = "Genres";
             // 
             // tsiBlocksQueries
             // 
             this.tsiBlocksQueries.Name = "tsiBlocksQueries";
-            this.tsiBlocksQueries.Size = new System.Drawing.Size(152, 22);
+            this.tsiBlocksQueries.Size = new System.Drawing.Size(116, 22);
             this.tsiBlocksQueries.Text = "Queries";
             // 
             // tsiBlocksSeries
             // 
             this.tsiBlocksSeries.Name = "tsiBlocksSeries";
-            this.tsiBlocksSeries.Size = new System.Drawing.Size(152, 22);
+            this.tsiBlocksSeries.Size = new System.Drawing.Size(116, 22);
             this.tsiBlocksSeries.Text = "Series";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(113, 6);
+            // 
+            // tsiBlockPacking
+            // 
+            this.tsiBlockPacking.Name = "tsiBlockPacking";
+            this.tsiBlockPacking.Size = new System.Drawing.Size(116, 22);
+            this.tsiBlockPacking.Text = "Packing";
             // 
             // tsmInventory
             // 
@@ -315,7 +326,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // pnlMainContent
             // 
             this.pnlMainContent.AutoScroll = true;
-            this.pnlMainContent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMainContent.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnlMainContent.Controls.Add(this.addProduct1);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainContent.Location = new System.Drawing.Point(0, 24);
@@ -330,17 +341,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.addProduct1.Name = "addProduct1";
             this.addProduct1.Size = new System.Drawing.Size(431, 223);
             this.addProduct1.TabIndex = 0;
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
-            // 
-            // tsiBlockPacking
-            // 
-            this.tsiBlockPacking.Name = "tsiBlockPacking";
-            this.tsiBlockPacking.Size = new System.Drawing.Size(152, 22);
-            this.tsiBlockPacking.Text = "Packing";
             // 
             // MainForm
             // 

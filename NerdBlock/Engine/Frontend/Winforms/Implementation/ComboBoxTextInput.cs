@@ -44,8 +44,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         /// <param name="map">The map to fill from</param>
         public void Fill(IoMap map)
         {
-            if (map.HasOutput(Name))
-                Value = map.GetOutput<object>(Name);
+            if (map.HasInput(Name))
+                Value = map.GetInput<object>(Name);
             else
                 myControl.Text = "";
         }
