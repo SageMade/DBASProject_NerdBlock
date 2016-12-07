@@ -35,13 +35,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtContact = new System.Windows.Forms.TextBox();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtFirst = new System.Windows.Forms.TextBox();
             this.txtLast = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cbContact = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAddSupplier
@@ -115,15 +115,6 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Email";
             // 
-            // txtContact
-            // 
-            this.txtContact.Location = new System.Drawing.Point(102, 52);
-            this.txtContact.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(92, 20);
-            this.txtContact.TabIndex = 7;
-            this.txtContact.TextChanged += new System.EventHandler(this.txtContact_TextChanged);
-            // 
             // txtCompany
             // 
             this.txtCompany.Location = new System.Drawing.Point(102, 81);
@@ -174,17 +165,25 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
+            // cbContact
+            // 
+            this.cbContact.FormattingEnabled = true;
+            this.cbContact.Location = new System.Drawing.Point(102, 52);
+            this.cbContact.Name = "cbContact";
+            this.cbContact.Size = new System.Drawing.Size(92, 21);
+            this.cbContact.TabIndex = 14;
+            // 
             // AddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbContact);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLast);
             this.Controls.Add(this.txtFirst);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtCompany);
-            this.Controls.Add(this.txtContact);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -209,12 +208,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.TextBox txtCompany;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtFirst;
         private System.Windows.Forms.TextBox txtLast;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ComboBox cbContact;
     }
 }

@@ -38,10 +38,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtProductID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.cbProductId = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label3
@@ -57,7 +57,7 @@
             // txtDepth
             // 
             this.txtDepth.Location = new System.Drawing.Point(92, 144);
-            this.txtDepth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDepth.Margin = new System.Windows.Forms.Padding(2);
             this.txtDepth.Name = "txtDepth";
             this.txtDepth.Size = new System.Drawing.Size(84, 20);
             this.txtDepth.TabIndex = 50;
@@ -65,7 +65,7 @@
             // txtHeight
             // 
             this.txtHeight.Location = new System.Drawing.Point(92, 121);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(2);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(84, 20);
             this.txtHeight.TabIndex = 49;
@@ -73,7 +73,7 @@
             // txtWidth
             // 
             this.txtWidth.Location = new System.Drawing.Point(92, 97);
-            this.txtWidth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(2);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(84, 20);
             this.txtWidth.TabIndex = 48;
@@ -117,7 +117,7 @@
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(92, 72);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(84, 20);
             this.txtProductName.TabIndex = 43;
@@ -131,14 +131,6 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Product Name";
             // 
-            // txtProductID
-            // 
-            this.txtProductID.Location = new System.Drawing.Point(92, 49);
-            this.txtProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(84, 20);
-            this.txtProductID.TabIndex = 41;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -151,7 +143,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(188, 167);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 28);
             this.btnAdd.TabIndex = 52;
@@ -166,10 +158,19 @@
             this.txtDescription.Size = new System.Drawing.Size(183, 97);
             this.txtDescription.TabIndex = 54;
             // 
+            // cbProductId
+            // 
+            this.cbProductId.FormattingEnabled = true;
+            this.cbProductId.Location = new System.Drawing.Point(92, 46);
+            this.cbProductId.Name = "cbProductId";
+            this.cbProductId.Size = new System.Drawing.Size(84, 21);
+            this.cbProductId.TabIndex = 55;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbProductId);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDepth);
@@ -181,7 +182,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Name = "AddProduct";
@@ -203,9 +203,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.ComboBox cbProductId;
     }
 }

@@ -21,12 +21,14 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            Inputs.Add(new TextBoxInput("ContactId", txtContact));
+            Outputs.Add(new ModelPopulatedComboBox<Supplier>("ContactId", cbContact));
             Inputs.Add(new TextBoxInput("Company", txtCompany));
             Inputs.Add(new TextBoxInput("Phone", txtPhone));
             Inputs.Add(new TextBoxInput("FirstName", txtFirst));
             Inputs.Add(new TextBoxInput("LastName", txtLast));
             Inputs.Add(new TextBoxInput("Email", txtEmail));
+
+
 
             btnAdd.Click += (X, Y) => AttemptAction("insert_supplier");
         }
