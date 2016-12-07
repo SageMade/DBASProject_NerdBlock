@@ -50,8 +50,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         }
         protected override void LoadMyViewContext(IoMap map)
         {
+            //Pulling from the session
             Employee instance = map.GetInput<Employee>("Employee.Info");
 
+            //Setting the inputs on load
             map.SetInput("Employee.FirstName", instance.FirstName);
             map.SetInput("Employee.LastName", instance.LastName);
             map.SetInput("Employee.Email", instance.Email);
