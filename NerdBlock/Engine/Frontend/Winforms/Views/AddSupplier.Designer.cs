@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblAddSupplier = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.txtLast = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cbContact = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAddSupplier
@@ -55,20 +53,10 @@
             this.lblAddSupplier.TabIndex = 0;
             this.lblAddSupplier.Text = "Add Supplier";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Contact ID";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 84);
+            this.label2.Location = new System.Drawing.Point(37, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
@@ -98,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 110);
+            this.label5.Location = new System.Drawing.Point(10, 79);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
@@ -108,7 +96,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(229, 110);
+            this.label6.Location = new System.Drawing.Point(60, 103);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
@@ -117,7 +105,7 @@
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(102, 81);
+            this.txtCompany.Location = new System.Drawing.Point(97, 50);
             this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(92, 20);
@@ -125,7 +113,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(102, 108);
+            this.txtPhone.Location = new System.Drawing.Point(97, 77);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(92, 20);
@@ -149,7 +137,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(266, 108);
+            this.txtEmail.Location = new System.Drawing.Point(97, 101);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(92, 20);
@@ -157,7 +145,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(102, 139);
+            this.btnAdd.Location = new System.Drawing.Point(266, 141);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 28);
@@ -165,19 +153,10 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // cbContact
-            // 
-            this.cbContact.FormattingEnabled = true;
-            this.cbContact.Location = new System.Drawing.Point(102, 52);
-            this.cbContact.Name = "cbContact";
-            this.cbContact.Size = new System.Drawing.Size(92, 21);
-            this.cbContact.TabIndex = 14;
-            // 
             // AddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cbContact);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLast);
@@ -189,7 +168,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAddSupplier);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSupplier";
@@ -202,7 +180,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblAddSupplier;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -214,6 +191,5 @@
         private System.Windows.Forms.TextBox txtLast;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox cbContact;
     }
 }

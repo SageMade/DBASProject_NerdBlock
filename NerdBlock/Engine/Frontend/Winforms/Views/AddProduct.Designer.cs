@@ -38,10 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.cbProductId = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label3
@@ -56,7 +54,7 @@
             // 
             // txtDepth
             // 
-            this.txtDepth.Location = new System.Drawing.Point(92, 144);
+            this.txtDepth.Location = new System.Drawing.Point(92, 137);
             this.txtDepth.Margin = new System.Windows.Forms.Padding(2);
             this.txtDepth.Name = "txtDepth";
             this.txtDepth.Size = new System.Drawing.Size(84, 20);
@@ -64,7 +62,7 @@
             // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(92, 121);
+            this.txtHeight.Location = new System.Drawing.Point(92, 114);
             this.txtHeight.Margin = new System.Windows.Forms.Padding(2);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(84, 20);
@@ -72,7 +70,7 @@
             // 
             // txtWidth
             // 
-            this.txtWidth.Location = new System.Drawing.Point(92, 97);
+            this.txtWidth.Location = new System.Drawing.Point(92, 90);
             this.txtWidth.Margin = new System.Windows.Forms.Padding(2);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(84, 20);
@@ -90,7 +88,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 145);
+            this.label9.Location = new System.Drawing.Point(52, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 13);
             this.label9.TabIndex = 46;
@@ -99,7 +97,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(50, 121);
+            this.label7.Location = new System.Drawing.Point(50, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 45;
@@ -108,7 +106,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 97);
+            this.label5.Location = new System.Drawing.Point(54, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 44;
@@ -116,7 +114,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(92, 72);
+            this.txtProductName.Location = new System.Drawing.Point(92, 65);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(84, 20);
@@ -125,20 +123,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 73);
+            this.label4.Location = new System.Drawing.Point(14, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 42;
             this.label4.Text = "Product Name";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Product ID";
             // 
             // btnAdd
             // 
@@ -158,19 +147,10 @@
             this.txtDescription.Size = new System.Drawing.Size(183, 97);
             this.txtDescription.TabIndex = 54;
             // 
-            // cbProductId
-            // 
-            this.cbProductId.FormattingEnabled = true;
-            this.cbProductId.Location = new System.Drawing.Point(92, 46);
-            this.cbProductId.Name = "cbProductId";
-            this.cbProductId.Size = new System.Drawing.Size(84, 21);
-            this.cbProductId.TabIndex = 55;
-            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cbProductId);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDepth);
@@ -182,7 +162,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Name = "AddProduct";
             this.Size = new System.Drawing.Size(386, 202);
@@ -203,9 +182,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.ComboBox cbProductId;
     }
 }

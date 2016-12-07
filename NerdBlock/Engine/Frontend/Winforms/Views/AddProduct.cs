@@ -20,8 +20,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         public AddProduct()
         {
             InitializeComponent();
-
-            Outputs.Add(new ModelPopulatedComboBox<Product>("ProductId", cbProductId));
+            
             Inputs.Add(new TextBoxInput("ProductName", txtProductName));
             Inputs.Add(new TextBoxInput("Width", txtWidth));
             Inputs.Add(new TextBoxInput("Height", txtHeight));
