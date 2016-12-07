@@ -6,6 +6,8 @@ using NerdBlock.Engine.Backend;
 using NerdBlock.Properties;
 using System.Linq;
 
+using Model = NerdBlock.Engine.Backend.Models;
+
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
     public partial class BlockSeries : ViewBase
@@ -25,8 +27,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 1 DONE
             btnBlocks.Click += (X, Y) =>
             {
-                ViewManager.CurrentMap.SetInput("Block.Series", dgvData.SelectedRows[0].Cells["clmSeriesId"]);
-                AttemptAction("goto_block_series");
+                ViewManager.CurrentMap.SetInput("Block.Series", DataAccess.FromPrimaryKey<Model.BlockSeries>(dgvData.SelectedRows[0].Cells["clmSeriesId"].Value));
+                AttemptAction("goto_blocks_queries");
             };
         }
 

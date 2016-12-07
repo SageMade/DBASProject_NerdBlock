@@ -11,8 +11,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
             //Input - 3 DONE
-            Inputs.Add(new ComboBoxValueInput("Block.genre", cbGenre));
-            Inputs.Add(new ComboBoxValueInput("Block.series", cbSeries));
+            Inputs.Add(new ComboBoxValueInput("Block.Genre", cbGenre));
+            Inputs.Add(new ComboBoxValueInput("Block.Series", cbSeries));
 
             //Output - 3
             ViewManager.PopulateList<Backend.Models.Genre, ComboBox>(cbGenre);

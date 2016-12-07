@@ -61,7 +61,7 @@ namespace NerdBlock.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select genre.title as name,
+        ///   Looks up a localized string similar to select genre.title as name, genre.genreid as GenreId,
         ///	COUNT(distinct series.seriesid) &gt; 0 as IsActive,
         ///	COUNT(distinct series.seriesid) as SeriesCount
         ///	from tblgenre as genre

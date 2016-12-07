@@ -32,9 +32,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvGenres = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
-            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmlActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clmSeriesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewSeries = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -42,6 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmlActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmSeriesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGenres)).BeginInit();
             this.panel1.SuspendLayout();
@@ -91,6 +92,7 @@
             this.dgvGenres.AllowUserToDeleteRows = false;
             this.dgvGenres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGenres.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmId,
             this.clmName,
             this.cmlActive,
             this.clmSeriesCount});
@@ -102,35 +104,6 @@
             this.dgvGenres.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGenres.Size = new System.Drawing.Size(364, 213);
             this.dgvGenres.TabIndex = 0;
-            // 
-            // clmName
-            // 
-            this.clmName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmName.DataPropertyName = "Name";
-            this.clmName.FillWeight = 65F;
-            this.clmName.HeaderText = "Name";
-            this.clmName.Name = "clmName";
-            this.clmName.ReadOnly = true;
-            // 
-            // cmlActive
-            // 
-            this.cmlActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmlActive.DataPropertyName = "IsActive";
-            this.cmlActive.FillWeight = 15F;
-            this.cmlActive.HeaderText = "Active";
-            this.cmlActive.Name = "cmlActive";
-            this.cmlActive.ReadOnly = true;
-            this.cmlActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cmlActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // clmSeriesCount
-            // 
-            this.clmSeriesCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmSeriesCount.DataPropertyName = "SeriesCount";
-            this.clmSeriesCount.FillWeight = 20F;
-            this.clmSeriesCount.HeaderText = "# of Series";
-            this.clmSeriesCount.Name = "clmSeriesCount";
-            this.clmSeriesCount.ReadOnly = true;
             // 
             // panel1
             // 
@@ -208,6 +181,43 @@
             this.txtTitle.Size = new System.Drawing.Size(179, 20);
             this.txtTitle.TabIndex = 11;
             // 
+            // clmId
+            // 
+            this.clmId.DataPropertyName = "GenreId";
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            this.clmId.ReadOnly = true;
+            this.clmId.Visible = false;
+            // 
+            // clmName
+            // 
+            this.clmName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmName.DataPropertyName = "Name";
+            this.clmName.FillWeight = 65F;
+            this.clmName.HeaderText = "Name";
+            this.clmName.Name = "clmName";
+            this.clmName.ReadOnly = true;
+            // 
+            // cmlActive
+            // 
+            this.cmlActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cmlActive.DataPropertyName = "IsActive";
+            this.cmlActive.FillWeight = 15F;
+            this.cmlActive.HeaderText = "Active";
+            this.cmlActive.Name = "cmlActive";
+            this.cmlActive.ReadOnly = true;
+            this.cmlActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cmlActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // clmSeriesCount
+            // 
+            this.clmSeriesCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmSeriesCount.DataPropertyName = "SeriesCount";
+            this.clmSeriesCount.FillWeight = 20F;
+            this.clmSeriesCount.HeaderText = "# of Series";
+            this.clmSeriesCount.Name = "clmSeriesCount";
+            this.clmSeriesCount.ReadOnly = true;
+            // 
             // BlockGenres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,10 +249,11 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtTitle;
         private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvGenres;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnViewSeries;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn cmlActive;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSeriesCount;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnViewSeries;
     }
 }

@@ -65,13 +65,13 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // Let child classes hook into our loadview
             LoadMyViewContext(map);
 
-            // Iterate over inputs and fill them from the map
-            for (int index = 0; index < Inputs.Count; index++)
-                Inputs[index].Fill(map);
-
             // Iterate over outputs and fill them from the map
             for (int index = 0; index < Outputs.Count; index++)
                 Outputs[index].Fill(map);
+
+            // Iterate over inputs and fill them from the map
+            for (int index = 0; index < Inputs.Count; index++)
+                Inputs[index].Fill(map);
         }
 
         protected override void OnPaint(PaintEventArgs e)
