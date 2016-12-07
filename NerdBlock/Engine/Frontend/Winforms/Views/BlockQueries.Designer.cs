@@ -34,21 +34,22 @@
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpSeries = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lstSeries = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label222 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.dgvData = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.clmBlockId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPurchased = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmShipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpSeries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 43);
+            this.label6.Location = new System.Drawing.Point(112, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 10;
@@ -58,16 +59,16 @@
             // 
             this.cbGenre.DropDownWidth = 200;
             this.cbGenre.FormattingEnabled = true;
-            this.cbGenre.Location = new System.Drawing.Point(61, 40);
+            this.cbGenre.Location = new System.Drawing.Point(153, 40);
             this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
             this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(113, 21);
+            this.cbGenre.Size = new System.Drawing.Size(126, 21);
             this.cbGenre.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 43);
+            this.label1.Location = new System.Drawing.Point(284, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 12;
@@ -77,7 +78,7 @@
             // 
             this.cbSeries.DropDownWidth = 200;
             this.cbSeries.FormattingEnabled = true;
-            this.cbSeries.Location = new System.Drawing.Point(220, 40);
+            this.cbSeries.Location = new System.Drawing.Point(325, 40);
             this.cbSeries.Margin = new System.Windows.Forms.Padding(2);
             this.cbSeries.Name = "cbSeries";
             this.cbSeries.Size = new System.Drawing.Size(124, 21);
@@ -85,7 +86,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(24, 299);
+            this.btnAdd.Location = new System.Drawing.Point(223, 299);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(110, 23);
             this.btnAdd.TabIndex = 18;
@@ -94,76 +95,13 @@
             // 
             // grpSeries
             // 
-            this.grpSeries.Controls.Add(this.label2);
-            this.grpSeries.Controls.Add(this.lstSeries);
-            this.grpSeries.Controls.Add(this.label3);
-            this.grpSeries.Controls.Add(this.label4);
-            this.grpSeries.Controls.Add(this.label222);
-            this.grpSeries.Controls.Add(this.label7);
+            this.grpSeries.Controls.Add(this.dgvData);
             this.grpSeries.Location = new System.Drawing.Point(18, 66);
             this.grpSeries.Name = "grpSeries";
-            this.grpSeries.Size = new System.Drawing.Size(338, 227);
+            this.grpSeries.Size = new System.Drawing.Size(434, 227);
             this.grpSeries.TabIndex = 16;
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Genre";
-            // 
-            // lstSeries
-            // 
-            this.lstSeries.FormattingEnabled = true;
-            this.lstSeries.Items.AddRange(new object[] {
-            "001\t   Elements\tFire\t01\t2016\t\t",
-            "002\t   Elements \tWater\t01\t2016\t",
-            "003\t   Elements \tEarth\t01\t2016",
-            "004\t   Elements \tFire\t02\t2016\t"});
-            this.lstSeries.Location = new System.Drawing.Point(6, 53);
-            this.lstSeries.Name = "lstSeries";
-            this.lstSeries.Size = new System.Drawing.Size(308, 160);
-            this.lstSeries.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Month";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "BlockID";
-            // 
-            // label222
-            // 
-            this.label222.AutoSize = true;
-            this.label222.Location = new System.Drawing.Point(149, 26);
-            this.label222.Name = "label222";
-            this.label222.Size = new System.Drawing.Size(36, 13);
-            this.label222.TabIndex = 2;
-            this.label222.Text = "Series";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Year";
             // 
             // label8
             // 
@@ -178,12 +116,75 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(222, 299);
+            this.btnEdit.Location = new System.Drawing.Point(339, 299);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(110, 23);
             this.btnEdit.TabIndex = 19;
             this.btnEdit.Text = "Edit Block";
             this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // dgvData
+            // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmBlockId,
+            this.clmMonth,
+            this.clmYear,
+            this.clmPurchased,
+            this.clmShipped});
+            this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvData.Location = new System.Drawing.Point(3, 16);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersVisible = false;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvData.Size = new System.Drawing.Size(428, 208);
+            this.dgvData.TabIndex = 0;
+            // 
+            // clmBlockId
+            // 
+            this.clmBlockId.HeaderText = "BlockId";
+            this.clmBlockId.Name = "clmBlockId";
+            this.clmBlockId.ReadOnly = true;
+            this.clmBlockId.Visible = false;
+            // 
+            // clmMonth
+            // 
+            this.clmMonth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmMonth.DataPropertyName = "Month";
+            this.clmMonth.FillWeight = 15F;
+            this.clmMonth.HeaderText = "Month";
+            this.clmMonth.Name = "clmMonth";
+            this.clmMonth.ReadOnly = true;
+            // 
+            // clmYear
+            // 
+            this.clmYear.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmYear.DataPropertyName = "Year";
+            this.clmYear.FillWeight = 15F;
+            this.clmYear.HeaderText = "Year";
+            this.clmYear.Name = "clmYear";
+            this.clmYear.ReadOnly = true;
+            // 
+            // clmPurchased
+            // 
+            this.clmPurchased.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPurchased.DataPropertyName = "Purchased";
+            this.clmPurchased.FillWeight = 25F;
+            this.clmPurchased.HeaderText = "Purchased";
+            this.clmPurchased.Name = "clmPurchased";
+            this.clmPurchased.ReadOnly = true;
+            // 
+            // clmShipped
+            // 
+            this.clmShipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmShipped.DataPropertyName = "Shipped";
+            this.clmShipped.FillWeight = 25F;
+            this.clmShipped.HeaderText = "Shipped";
+            this.clmShipped.Name = "clmShipped";
+            this.clmShipped.ReadOnly = true;
             // 
             // BlockQueries
             // 
@@ -198,9 +199,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbGenre);
             this.Name = "BlockQueries";
-            this.Size = new System.Drawing.Size(362, 329);
+            this.Size = new System.Drawing.Size(455, 329);
             this.grpSeries.ResumeLayout(false);
-            this.grpSeries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,13 +215,13 @@
         private System.Windows.Forms.ComboBox cbSeries;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpSeries;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lstSeries;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label222;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEdit;
+        private Implementation.DataGridDisplayView dgvData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmBlockId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMonth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPurchased;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmShipped;
     }
 }
