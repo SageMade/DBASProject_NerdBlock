@@ -33,14 +33,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lstInventory = new System.Windows.Forms.ListView();
             this.label7 = new System.Windows.Forms.Label();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 59);
+            this.label1.Location = new System.Drawing.Point(32, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
@@ -82,14 +83,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Price";
             // 
-            // lstInventory
-            // 
-            this.lstInventory.Location = new System.Drawing.Point(14, 94);
-            this.lstInventory.Name = "lstInventory";
-            this.lstInventory.Size = new System.Drawing.Size(500, 218);
-            this.lstInventory.TabIndex = 6;
-            this.lstInventory.UseCompatibleStateImageBehavior = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -100,19 +93,28 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Inventory";
             // 
+            // dgvInventory
+            // 
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Location = new System.Drawing.Point(35, 93);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.Size = new System.Drawing.Size(448, 214);
+            this.dgvInventory.TabIndex = 8;
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.lstInventory);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Inventory";
-            this.Size = new System.Drawing.Size(525, 327);
+            this.Size = new System.Drawing.Size(525, 343);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +127,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListView lstInventory;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgvInventory;
     }
 }

@@ -87,12 +87,6 @@
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.Designer.cs">
       <DependentUpon>FloorWorkerContentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.Designer.cs">
-      <DependentUpon>FloorWorkerGenres.cs</DependentUpon>
-    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Implementation\ModelPopulatedComboBox.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\UpdatePassword.cs">
       <SubType>UserControl</SubType>
@@ -343,9 +337,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.resx">
       <DependentUpon>FloorWorkerContentView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\FloorWorkerGenres.resx">
-      <DependentUpon>FloorWorkerGenres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>

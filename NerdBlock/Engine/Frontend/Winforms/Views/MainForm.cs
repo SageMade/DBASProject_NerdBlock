@@ -41,7 +41,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             __Tie(tsiCustomerSearch, "goto_customer_search");
 
             __Tie(tsiInventorySearch, "goto_inventory_search");
-            __Tie(tsiInventoryLostDamaged, "goto_inventory_lost_damaged");
             __Tie(tsiInventoryOverstock, "goto_inventory_overstock");
             __Tie(tsiInventoryAdd, "goto_inventory_add");
             __Tie(tsiBlockPacking, "goto_block_packing");

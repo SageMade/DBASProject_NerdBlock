@@ -28,22 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstInventory = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnViewProduct = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstInventory
-            // 
-            this.lstInventory.Location = new System.Drawing.Point(26, 115);
-            this.lstInventory.Name = "lstInventory";
-            this.lstInventory.Size = new System.Drawing.Size(500, 218);
-            this.lstInventory.TabIndex = 12;
-            this.lstInventory.UseCompatibleStateImageBehavior = false;
             // 
             // label5
             // 
@@ -100,32 +93,40 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Worker Box Content View";
             // 
+            // dgvInventory
+            // 
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Location = new System.Drawing.Point(31, 113);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.Size = new System.Drawing.Size(495, 220);
+            this.dgvInventory.TabIndex = 15;
+            // 
             // FloorWorkerContentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnViewProduct);
-            this.Controls.Add(this.lstInventory);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FloorWorkerContentView";
             this.Size = new System.Drawing.Size(557, 393);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lstInventory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnViewProduct;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvInventory;
     }
 }

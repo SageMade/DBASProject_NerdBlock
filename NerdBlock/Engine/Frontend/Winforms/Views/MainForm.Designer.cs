@@ -49,7 +49,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsmInventory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiInventorySearch = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiInventoryAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiInventoryLostDamaged = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiInventoryOverstock = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiEmployeeSearch = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,10 +65,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiInventoryBreakdown = new System.Windows.Forms.ToolStripMenuItem();
             this.tsApplicationInfo = new System.Windows.Forms.ToolStrip();
             this.tslTime = new System.Windows.Forms.ToolStripLabel();
-            this.pnlMainContent = new System.Windows.Forms.Panel();
-            this.tmrWatch = new System.Windows.Forms.Timer(this.components);
             this.tsbGoBack = new System.Windows.Forms.ToolStripButton();
+            this.pnlMainContent = new System.Windows.Forms.Panel();
             this.addProduct1 = new NerdBlock.Engine.Frontend.Winforms.Views.AddProduct();
+            this.tmrWatch = new System.Windows.Forms.Timer(this.components);
             this.mnuMainBar.SuspendLayout();
             this.tsApplicationInfo.SuspendLayout();
             this.pnlMainContent.SuspendLayout();
@@ -186,7 +185,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsmInventory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiInventorySearch,
             this.tsiInventoryAdd,
-            this.tsiInventoryLostDamaged,
             this.tsiInventoryOverstock});
             this.tsmInventory.Name = "tsmInventory";
             this.tsmInventory.Size = new System.Drawing.Size(69, 20);
@@ -203,12 +201,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tsiInventoryAdd.Name = "tsiInventoryAdd";
             this.tsiInventoryAdd.Size = new System.Drawing.Size(152, 22);
             this.tsiInventoryAdd.Text = "Add";
-            // 
-            // tsiInventoryLostDamaged
-            // 
-            this.tsiInventoryLostDamaged.Name = "tsiInventoryLostDamaged";
-            this.tsiInventoryLostDamaged.Size = new System.Drawing.Size(152, 22);
-            this.tsiInventoryLostDamaged.Text = "Lost/Damaged";
             // 
             // tsiInventoryOverstock
             // 
@@ -326,6 +318,16 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.tslTime.Size = new System.Drawing.Size(28, 24);
             this.tslTime.Text = "0:00";
             // 
+            // tsbGoBack
+            // 
+            this.tsbGoBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbGoBack.Image = ((System.Drawing.Image)(resources.GetObject("tsbGoBack.Image")));
+            this.tsbGoBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbGoBack.Name = "tsbGoBack";
+            this.tsbGoBack.Size = new System.Drawing.Size(24, 24);
+            this.tsbGoBack.Text = "Go to previous view";
+            this.tsbGoBack.Click += new System.EventHandler(this.tsbGoBack_Click);
+            // 
             // pnlMainContent
             // 
             this.pnlMainContent.AutoScroll = true;
@@ -336,16 +338,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Size = new System.Drawing.Size(996, 534);
             this.pnlMainContent.TabIndex = 3;
-            // 
-            // tsbGoBack
-            // 
-            this.tsbGoBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbGoBack.Image = ((System.Drawing.Image)(resources.GetObject("tsbGoBack.Image")));
-            this.tsbGoBack.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbGoBack.Name = "tsbGoBack";
-            this.tsbGoBack.Size = new System.Drawing.Size(24, 24);
-            this.tsbGoBack.Text = "Go to previous view";
-            this.tsbGoBack.Click += new System.EventHandler(this.tsbGoBack_Click);
             // 
             // addProduct1
             // 
@@ -404,7 +396,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         private System.Windows.Forms.ToolStripMenuItem tsiEmployeeBreakdown;
         private System.Windows.Forms.ToolStripMenuItem tsiSeriesBreakdown;
         private System.Windows.Forms.ToolStripMenuItem tsiInventoryBreakdown;
-        private System.Windows.Forms.ToolStripMenuItem tsiInventoryLostDamaged;
         private System.Windows.Forms.ToolStripMenuItem tsiAddOrder;
         private System.Windows.Forms.ToolStripMenuItem tsiInventoryOverstock;
         private System.Windows.Forms.ToolStripMenuItem tsiBlocksGenres;

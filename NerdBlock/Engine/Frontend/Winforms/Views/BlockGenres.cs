@@ -16,7 +16,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             //Outputs - 1
             Outputs.Add(new DataGridOutput("Series", dgvGenres));
-            //Need to add output for lstSeries.
 
             //Controls - 2 DONE
             btnAdd.Click += (X, Y) => AttemptAction("insert_genre");

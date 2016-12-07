@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -15,6 +16,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         public Inventory()
         {
             InitializeComponent();
+
+            //Output - 1
+            Outputs.Add(new DataGridOutput("Inventory", dgvInventory));
+
         }
     }
 }
