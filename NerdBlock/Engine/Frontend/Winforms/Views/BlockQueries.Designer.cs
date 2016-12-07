@@ -56,17 +56,18 @@
             // 
             // cbGenre
             // 
+            this.cbGenre.DropDownWidth = 200;
             this.cbGenre.FormattingEnabled = true;
             this.cbGenre.Location = new System.Drawing.Point(61, 40);
             this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
             this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(102, 21);
+            this.cbGenre.Size = new System.Drawing.Size(113, 21);
             this.cbGenre.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(201, 43);
+            this.label1.Location = new System.Drawing.Point(179, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 12;
@@ -74,11 +75,12 @@
             // 
             // cbSeries
             // 
+            this.cbSeries.DropDownWidth = 200;
             this.cbSeries.FormattingEnabled = true;
-            this.cbSeries.Location = new System.Drawing.Point(242, 40);
+            this.cbSeries.Location = new System.Drawing.Point(220, 40);
             this.cbSeries.Margin = new System.Windows.Forms.Padding(2);
             this.cbSeries.Name = "cbSeries";
-            this.cbSeries.Size = new System.Drawing.Size(102, 21);
+            this.cbSeries.Size = new System.Drawing.Size(124, 21);
             this.cbSeries.TabIndex = 13;
             // 
             // btnAdd

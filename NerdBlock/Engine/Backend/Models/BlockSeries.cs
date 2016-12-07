@@ -29,5 +29,10 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("endeddate", QueryParamType.Date), Nullable]
         public DateTime? EndedDate { get; set; }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

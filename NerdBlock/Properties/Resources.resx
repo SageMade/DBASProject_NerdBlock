@@ -127,6 +127,7 @@
   </data>
   <data name="SelectSeriesInfoQuery" xml:space="preserve">
     <value>select series.title as Name,
+    series.seriesid as SeriesId,
     series.subscriptionprice as Price,
     series.blockvolume as Volume,
     COUNT(distinct subs.seriesid) as Subscriptions

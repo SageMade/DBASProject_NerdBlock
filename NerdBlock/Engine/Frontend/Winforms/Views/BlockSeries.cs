@@ -17,7 +17,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new ComboBoxValueInput("Block.Genre", cbGenre));
 
             //Output - 2
-            Outputs.Add(new ModelPopulatedComboBox<Genre>(cbGenre));
+            Outputs.Add(new ModelPopulatedComboBox<Genre>("Block.Genre", cbGenre));
             Outputs.Add(new DataGridOutput("Data", dgvData));
 
             cbGenre.SelectedIndexChanged += CbGenre_SelectedIndexChanged;
@@ -25,14 +25,15 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 1 DONE
             btnBlocks.Click += (X, Y) =>
             {
-                ViewManager.CurrentMap.SetInput("TargetGenre", cbGenre.SelectedItem);
-                AttemptAction("goto_blockseries");
+                ViewManager.CurrentMap.SetInput("Block.Series", dgvData.SelectedRows[0].Cells["clmSeriesId"]);
+                AttemptAction("goto_block_series");
             };
         }
 
         protected override void LoadMyViewContext(IoMap map)
         {
-            Inputs.First(X => X.Name=="Block.Genre").Fill(map);
+            Outputs.First(X => X.Name == "Block.Genre").Fill(map);
+            cbGenre.SelectedIndex = cbGenre.Items.Count > 0 ? 0 : -1;
 
             Genre genre = cbGenre.Items.Count == 0 ? DataAccess.SelectAll<Genre>().FirstOrDefault() : cbGenre.SelectedItem as Genre;
 

@@ -76,6 +76,7 @@ namespace NerdBlock.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to select series.title as Name,
+        ///    series.seriesid as SeriesId,
         ///    series.subscriptionprice as Price,
         ///    series.blockvolume as Volume,
         ///    COUNT(distinct subs.seriesid) as Subscriptions

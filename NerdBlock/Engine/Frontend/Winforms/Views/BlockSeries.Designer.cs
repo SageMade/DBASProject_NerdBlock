@@ -31,6 +31,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.grpSeries = new System.Windows.Forms.GroupBox();
             this.dgvData = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.clmSeriesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +70,7 @@
             this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmSeriesId,
             this.clmName,
             this.clmPrice,
             this.clmSize,
@@ -80,6 +82,14 @@
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(320, 231);
             this.dgvData.TabIndex = 8;
+            // 
+            // clmSeriesId
+            // 
+            this.clmSeriesId.DataPropertyName = "SeriesId";
+            this.clmSeriesId.HeaderText = "SeriesId";
+            this.clmSeriesId.Name = "clmSeriesId";
+            this.clmSeriesId.ReadOnly = true;
+            this.clmSeriesId.Visible = false;
             // 
             // clmName
             // 
@@ -120,16 +130,16 @@
             // cbGenre
             // 
             this.cbGenre.FormattingEnabled = true;
-            this.cbGenre.Location = new System.Drawing.Point(251, 27);
+            this.cbGenre.Location = new System.Drawing.Point(212, 27);
             this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
             this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(102, 21);
+            this.cbGenre.Size = new System.Drawing.Size(141, 21);
             this.cbGenre.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(206, 30);
+            this.label6.Location = new System.Drawing.Point(171, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 8;
@@ -169,6 +179,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBlocks;
         private Implementation.DataGridDisplayView dgvData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSeriesId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;

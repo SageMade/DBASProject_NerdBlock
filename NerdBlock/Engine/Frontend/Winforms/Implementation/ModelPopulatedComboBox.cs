@@ -10,7 +10,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
     internal class ModelPopulatedComboBox<T> : IOutput where T : new()
     {
         private ComboBox myControl;
-        
+
         /// <summary>
         /// Gets or sets this items name in the IO map, this is mostly ignored
         /// </summary>
@@ -33,6 +33,17 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         /// <param name="control">The combo box to wrap around</param>
         public ModelPopulatedComboBox(ComboBox control)
         {
+            myControl = control;
+        }
+
+        /// <summary>
+        /// Creates a new populated combo box
+        /// </summary>
+        /// <param name="name">The name to assign to the output</param>
+        /// <param name="control">The combo box to wrap around</param>
+        public ModelPopulatedComboBox(string name, ComboBox control)
+        {
+            Name = name;
             myControl = control;
         }
 
