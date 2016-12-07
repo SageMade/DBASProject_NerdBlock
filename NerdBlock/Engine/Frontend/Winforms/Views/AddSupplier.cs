@@ -21,18 +21,25 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
             
-            Inputs.Add(new TextBoxInput("Company", txtCompany));
-            Inputs.Add(new TextBoxInput("Phone", txtPhone));
-            Inputs.Add(new TextBoxInput("FirstName", txtFirst));
-            Inputs.Add(new TextBoxInput("LastName", txtLast));
-            Inputs.Add(new TextBoxInput("Email", txtEmail));
-            
+            Inputs.Add(new TextBoxInput("Company.Name", txtCompany));
+            Inputs.Add(new TextBoxInput("Company.Phone", txtPhone));
+
+            Inputs.Add(new TextBoxInput("Contact.FirstName", txtFirst));
+            Inputs.Add(new TextBoxInput("Contact.LastName", txtLast));
+            Inputs.Add(new TextBoxInput("Contact.Email", txtEmail));
+            Inputs.Add(new TextBoxInput("Contact.Phone", txtContactPhone));
+
             btnAdd.Click += (X, Y) => AttemptAction("insert_supplier");
         }
 
-        private void txtContact_TextChanged(object sender, EventArgs e)
+        protected override void LoadMyViewContext(IoMap map)
         {
+            adrInCompany.Fill(map);
+        }
 
+        protected override void BeforeSubmit(IoMap map)
+        {
+            adrInCompany.Populate(map);
         }
     }
 }

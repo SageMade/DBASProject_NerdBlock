@@ -1,7 +1,6 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
-using NerdBlock.Engine.LogicLayer.Implementation.Validator;
 using NerdBlock.Properties;
 using System.Linq;
 
@@ -101,7 +100,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                         {
                             if (newPass.Equals(confirmPass))
                             {
-                                if (PasswordValidation.Validate(newPass))
+                                if (Validations.ValidatePassword(newPass))
                                 {
                                     Employee auth = (Auth.User as Employee);
                                     auth.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(newPass);

@@ -81,6 +81,12 @@
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />
     <Compile Include="Engine\Frontend\IInput.cs" />
     <Compile Include="Engine\Frontend\IoMap.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Implementation\AddressEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Implementation\AddressEntry.Designer.cs">
+      <DependentUpon>AddressEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,7 @@
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Reports.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\SupplierActions.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\AuthAttrib.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
@@ -203,7 +210,7 @@
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Order.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\NerdAuth.cs" />
-    <Compile Include="Engine\LogicLayer\Implementation\Validator\PasswordValidation.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Validations.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Engine\AutoDictionary.cs" />
     <Compile Include="Engine\LogicLayer\Util.cs" />
@@ -287,6 +294,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Implementation\AddressEntry.resx">
+      <DependentUpon>AddressEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockQueries.resx">
       <DependentUpon>BlockQueries.cs</DependentUpon>
     </EmbeddedResource>
