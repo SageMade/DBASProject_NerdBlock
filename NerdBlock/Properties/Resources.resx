@@ -125,4 +125,14 @@
 	left outer join tblblockseries as series on series.genreid=genre.genreid
 		group by genre.genreid;</value>
   </data>
+  <data name="SelectSeriesInfoQuery" xml:space="preserve">
+    <value>select series.title as Name,
+    series.subscriptionprice as Price,
+    series.blockvolume as Volume,
+    COUNT(distinct subs.seriesid) as Subscriptions
+    from tblblockseries as series 
+        left outer join tblsubscription as subs on subs.seriesid = series.seriesid
+    where series.genreid=@genreId
+group by series.seriesid;</value>
+  </data>
 </root>

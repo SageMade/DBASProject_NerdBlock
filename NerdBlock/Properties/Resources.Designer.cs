@@ -73,5 +73,21 @@ namespace NerdBlock.Properties {
                 return ResourceManager.GetString("SelectGenreTalliesQuery", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to select series.title as Name,
+        ///    series.subscriptionprice as Price,
+        ///    series.blockvolume as Volume,
+        ///    COUNT(distinct subs.seriesid) as Subscriptions
+        ///    from tblblockseries as series 
+        ///        left outer join tblsubscription as subs on subs.seriesid = series.seriesid
+        ///    where series.genreid=@genreId
+        ///group by series.seriesid;.
+        /// </summary>
+        internal static string SelectSeriesInfoQuery {
+            get {
+                return ResourceManager.GetString("SelectSeriesInfoQuery", resourceCulture);
+            }
+        }
     }
 }

@@ -30,16 +30,16 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.grpSeries = new System.Windows.Forms.GroupBox();
-            this.cbGenre = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnBlocks = new System.Windows.Forms.Button();
-            this.dataGridDisplayView1 = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.dgvData = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubsribers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbGenre = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnBlocks = new System.Windows.Forms.Button();
             this.grpSeries.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -55,7 +55,7 @@
             // 
             // grpSeries
             // 
-            this.grpSeries.Controls.Add(this.dataGridDisplayView1);
+            this.grpSeries.Controls.Add(this.dgvData);
             this.grpSeries.Location = new System.Drawing.Point(21, 53);
             this.grpSeries.Name = "grpSeries";
             this.grpSeries.Size = new System.Drawing.Size(332, 256);
@@ -63,50 +63,23 @@
             this.grpSeries.TabStop = false;
             this.grpSeries.Text = "Series";
             // 
-            // cbGenre
+            // dgvData
             // 
-            this.cbGenre.FormattingEnabled = true;
-            this.cbGenre.Location = new System.Drawing.Point(251, 27);
-            this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
-            this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(102, 21);
-            this.cbGenre.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(206, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Genre";
-            // 
-            // btnBlocks
-            // 
-            this.btnBlocks.Location = new System.Drawing.Point(243, 315);
-            this.btnBlocks.Name = "btnBlocks";
-            this.btnBlocks.Size = new System.Drawing.Size(110, 23);
-            this.btnBlocks.TabIndex = 10;
-            this.btnBlocks.Text = "View Blocks";
-            this.btnBlocks.UseVisualStyleBackColor = true;
-            // 
-            // dataGridDisplayView1
-            // 
-            this.dataGridDisplayView1.AllowUserToAddRows = false;
-            this.dataGridDisplayView1.AllowUserToDeleteRows = false;
-            this.dataGridDisplayView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDisplayView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmName,
             this.clmPrice,
             this.clmSize,
             this.clmSubsribers});
-            this.dataGridDisplayView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridDisplayView1.Name = "dataGridDisplayView1";
-            this.dataGridDisplayView1.ReadOnly = true;
-            this.dataGridDisplayView1.RowHeadersVisible = false;
-            this.dataGridDisplayView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridDisplayView1.Size = new System.Drawing.Size(320, 231);
-            this.dataGridDisplayView1.TabIndex = 8;
+            this.dgvData.Location = new System.Drawing.Point(6, 19);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersVisible = false;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvData.Size = new System.Drawing.Size(320, 231);
+            this.dgvData.TabIndex = 8;
             // 
             // clmName
             // 
@@ -144,6 +117,33 @@
             this.clmSubsribers.Name = "clmSubsribers";
             this.clmSubsribers.ReadOnly = true;
             // 
+            // cbGenre
+            // 
+            this.cbGenre.FormattingEnabled = true;
+            this.cbGenre.Location = new System.Drawing.Point(251, 27);
+            this.cbGenre.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGenre.Name = "cbGenre";
+            this.cbGenre.Size = new System.Drawing.Size(102, 21);
+            this.cbGenre.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(206, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Genre";
+            // 
+            // btnBlocks
+            // 
+            this.btnBlocks.Location = new System.Drawing.Point(243, 315);
+            this.btnBlocks.Name = "btnBlocks";
+            this.btnBlocks.Size = new System.Drawing.Size(110, 23);
+            this.btnBlocks.TabIndex = 10;
+            this.btnBlocks.Text = "View Blocks";
+            this.btnBlocks.UseVisualStyleBackColor = true;
+            // 
             // BlockSeries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,7 +156,7 @@
             this.Name = "BlockSeries";
             this.Size = new System.Drawing.Size(368, 345);
             this.grpSeries.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +168,7 @@
         private System.Windows.Forms.ComboBox cbGenre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBlocks;
-        private Implementation.DataGridDisplayView dataGridDisplayView1;
+        private Implementation.DataGridDisplayView dgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;
