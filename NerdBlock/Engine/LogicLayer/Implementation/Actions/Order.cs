@@ -12,7 +12,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the order add view
         /// </summary>
         [BusinessAction("goto_order_add")]
-        [AuthAttrib("*")]
+        [AuthAttrib("Shipper", "General Manager")]
         public void ShowSearch()
         {
             ViewManager.Show("AddOrder");
@@ -22,7 +22,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the order search page
         /// </summary>
         [BusinessAction("goto_order_search")]
-        [AuthAttrib("*")]
+        [AuthAttrib("Shipper", "General Manager", "Floor Worker", "Public Relations")]
         public void ShowUpdate()
         {
             ViewManager.Show("OrderPage");

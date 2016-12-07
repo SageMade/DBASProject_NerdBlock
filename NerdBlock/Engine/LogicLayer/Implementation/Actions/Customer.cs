@@ -12,7 +12,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the customer search page
         /// </summary>
         [BusinessAction("goto_customer_search")]
-        [AuthAttrib("*")]
+        [AuthAttrib("Customer Relations", "General Manager")]
         public void ShowSearch()
         {
             ViewManager.Show("CustomerSearchList");

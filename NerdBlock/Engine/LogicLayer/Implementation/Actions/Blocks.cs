@@ -15,7 +15,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles moving to the blocks add view
         /// </summary>
         [BusinessAction("goto_blocks_add")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Planning")]
         public void ShowAdd()
         {
             ViewManager.Show("Blocks");
@@ -25,7 +25,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles moving to the blocks add view
         /// </summary>
         [BusinessAction("insert_genre")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Planning")]
         public void InsertGenre()
         {
             Genre genre = new Genre();
@@ -47,7 +47,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block series page
         /// </summary>
         [BusinessAction("goto_blocks_genres")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Planning", "Public Relations")]
         public void ShowGenres()
         {
             ViewManager.CurrentMap.SetOutput("Series", DataAccess.Execute(Resources.SelectGenreTalliesQuery));
@@ -58,7 +58,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block series page
         /// </summary>
         [BusinessAction("goto_block_packing")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Floor Worker")]
         public void ShowPacking()
         {
             ViewManager.Show("FloorWorkerContentView");
@@ -68,7 +68,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block queries page
         /// </summary>
         [BusinessAction("goto_blocks_queries")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Planning", "Public Relations")]
         public void ShowQueries()
         {
             ViewManager.Show("BlockQueries");
@@ -78,7 +78,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles going to the block series page
         /// </summary>
         [BusinessAction("goto_blocks_series")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Planning", "Public Relations")]
         public void ShowSeries()
         {
             ViewManager.Show("BlockSeries");

@@ -12,7 +12,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the inventory search view
         /// </summary>
         [BusinessAction("goto_inventory_search")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Shipper", "Floor Worker", "Public Relations")]
         public void ShowSearch()
         {
             ViewManager.Show("Inventory");
@@ -22,7 +22,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the inventory update view
         /// </summary>
         [BusinessAction("goto_inventory_update")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Shipper", "Floor Worker")]
         public void ShowUpdate()
         {
             ViewManager.Show("ProductInfo");
@@ -32,7 +32,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the inventory update view
         /// </summary>
         [BusinessAction("goto_inventory_add")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Shipper")]
         public void ShowAdd()
         {
             ViewManager.Show("AddProduct");
@@ -42,7 +42,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the inventory lost and damaged view
         /// </summary>
         [BusinessAction("goto_inventory_lost_damaged")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Shipper")]
         public void ShowLostDamaged()
         {
             ViewManager.Show("LostDamagedItems");
@@ -52,7 +52,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Show the inventory overstock view
         /// </summary>
         [BusinessAction("goto_inventory_overstock")]
-        [AuthAttrib("*")]
+        [AuthAttrib("General Manager", "Shipper")]
         public void ShowOverstock()
         {
             ViewManager.Show("ExtraProductShipped");

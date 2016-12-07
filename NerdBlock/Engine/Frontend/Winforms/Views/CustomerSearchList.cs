@@ -31,16 +31,11 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             map.SetOutput("Customers", result);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void FilterTextChanged(object sender, EventArgs e)
         {
-            myFilter.FirstNameFilter = textBox1.Text;
-
-            (dgvResults.DataSource as BindingSource).Filter = myFilter.Filter;
-        }
-
-        private void txtLastName_TextChanged(object sender, EventArgs e)
-        {
-            myFilter.LastNameFilter = txtLastName.Text;
+            TextBox control = sender as TextBox;
+            string filterName = control?.Tag as string;
+            myFilter.Set(filterName, control.Text);
 
             (dgvResults.DataSource as BindingSource).Filter = myFilter.Filter;
         }
@@ -50,6 +45,22 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             public string FirstNameFilter;
             public string LastNameFilter;
             public string EmailFilter;
+
+            public void Set(string filterName, string filter)
+            {
+                switch (filterName.ToLower())
+                {
+                    case "firstname":
+                        FirstNameFilter = filter;
+                        break;
+                    case "lastname":
+                        LastNameFilter = filter;
+                        break;
+                    case "email":
+                        EmailFilter = filter;
+                        break;
+                }
+            }
 
             public string Filter
             {

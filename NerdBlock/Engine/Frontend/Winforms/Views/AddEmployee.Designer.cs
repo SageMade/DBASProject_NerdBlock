@@ -246,9 +246,12 @@
             // 
             // cbRole
             // 
+            this.cbRole.DropDownHeight = 110;
             this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.DropDownWidth = 160;
             this.cbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRole.FormattingEnabled = true;
+            this.cbRole.IntegralHeight = false;
             this.cbRole.Location = new System.Drawing.Point(66, 147);
             this.cbRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbRole.Name = "cbRole";

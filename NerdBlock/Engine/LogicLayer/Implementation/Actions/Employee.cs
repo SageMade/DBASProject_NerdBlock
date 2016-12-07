@@ -16,7 +16,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles inserting a new employee into the database, assumes that there is valid employee information in the context
         /// </summary>
         [BusinessAction("insert_employee")]
-        [AuthAttrib("Human Resources")]
+        [AuthAttrib("Human Resources", "General Manager")]
         public void Insert()
         {
             IoMap map = ViewManager.CurrentMap;
@@ -74,7 +74,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles showing the employee add view
         /// </summary>
         [BusinessAction("goto_employee_add")]
-        [AuthAttrib("Human Resources")]
+        [AuthAttrib("Human Resources", "General Manager")]
         public void ShowAdd()
         {
             ViewManager.Show("AddEmployee");
@@ -95,7 +95,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles showing the employee update view
         /// </summary>
         [BusinessAction("goto_employee_update")]
-        [AuthAttrib("Human Resources")]
+        [AuthAttrib("Human Resources", "General Manager")]
         public void ShowUpdate()
         {
             ViewManager.Show("ViewEditEmployee");

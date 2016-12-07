@@ -100,6 +100,7 @@
     <Compile Include="Engine\Frontend\Winforms\Views\UpdatePassword.Designer.cs">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\Reports.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\AuthAttrib.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />

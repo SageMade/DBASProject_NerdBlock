@@ -50,7 +50,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Implementation
         {
             if (map.HasInput(Name))
                 Value = map.GetInput<object>(Name);
-            else
+            else if (myControl.Items.Count > 0)
                 myControl.SelectedIndex = 0;
         }
 

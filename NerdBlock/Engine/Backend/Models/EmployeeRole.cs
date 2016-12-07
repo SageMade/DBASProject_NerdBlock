@@ -18,6 +18,9 @@ namespace NerdBlock.Engine.Backend.Models
         [DataField("description", QueryParamType.VarChar)]
         public string Description { get; set; }
 
+        [DataField("default_view", QueryParamType.VarChar)]
+        public string DefaultView { get; set; }
+
         public override string ToString()
         {
             return Name;
@@ -35,12 +38,14 @@ namespace NerdBlock.Engine.Backend.Models
 
         public static bool operator  ==(EmployeeRole left, EmployeeRole right)
         {
-            return left.Equals(right);
+            // Handles nulls easily
+            return (object)left == null ? ((object)right == null ? true : false) : left.Equals(right);
         }
 
         public static bool operator  !=(EmployeeRole left, EmployeeRole right)
         {
-            return !left.Equals(right);
+            // Handles nulls easily
+            return (object)left == null ? ((object)right == null ? false : true) : !left.Equals(right);
         }
     }
 }

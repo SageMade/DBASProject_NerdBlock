@@ -27,7 +27,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles logging into the application
         /// </summary>
         [BusinessAction("login")]
-        [AuthAttrib(true, "*")]
+        [AuthAttrib(true)]
         public void Login()
         {
             int emplId = -1;
@@ -43,7 +43,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                 if (match != null && PasswordSecurity.PasswordStorage.VerifyPassword(map.GetInput<string>("Employee.Password"), match.HashedPassword))
                 {
                     Auth.User = match;
-                    LogicManager.TryPerformAction("goto_blocks_genres");
+                    LogicManager.TryPerformAction(match.Role.DefaultView);
                 }
                 else
                 {
@@ -149,7 +149,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// Handles logging into the application
         /// </summary>
         [BusinessAction("logout")]
-        [AuthAttrib(true, "*")]
+        [AuthAttrib("*")]
         public void Logout()
         {
             Auth.User = null;

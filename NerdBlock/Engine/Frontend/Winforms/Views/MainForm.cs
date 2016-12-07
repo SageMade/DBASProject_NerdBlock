@@ -54,6 +54,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             __Tie(tsiAddOrder, "goto_order_add");
             __Tie(tsiSearchOrders, "goto_order_search");
 
+            __Tie(tsiEmployeeBreakdown, "goto_employee_breakdown");
+            __Tie(tsiSeriesBreakdown, "goto_series_breakdown");
+            __Tie(tsiInventoryBreakdown, "goto_inventory_breakdown");
+
             tmrWatch.Tick += (X, Y) => { tslTime.Text = DateTime.Now.ToLongTimeString(); };
             tmrWatch.Start();
         }

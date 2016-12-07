@@ -110,7 +110,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             }
             // If the auth object is null or another type, search the NullAuths collection
             else
-                return myNullAuths.Contains(actionName);
+                return User == null && myNullAuths.Contains(actionName);
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             /// <returns>True if left equals right, false if not</returns>
             public static bool operator ==(AuthEntry left, AuthEntry right)
             {
-                return left.Equals(right);
+                return (object) left == null ? ((object)right == null ? true : false) : left.Equals(right);
             }
 
             /// <summary>
@@ -215,7 +215,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
             /// <returns>True if left is not equal to right, false if it is</returns>
             public static bool operator !=(AuthEntry left, AuthEntry right)
             {
-                return !left.Equals(right);
+                return (object)left == null ? ((object)right == null ? false : true) : !left.Equals(right);
             }
 
 
