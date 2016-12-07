@@ -43,7 +43,12 @@
             this.grpContact = new System.Windows.Forms.GroupBox();
             this.txtContactPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.grpCompany = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.adrInCompany = new NerdBlock.Engine.Frontend.Winforms.Implementation.AddressEntry();
             this.grpContact.SuspendLayout();
+            this.grpCompany.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAddSupplier
@@ -60,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 55);
+            this.label2.Location = new System.Drawing.Point(53, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
@@ -70,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 21);
+            this.label3.Location = new System.Drawing.Point(38, 22);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
@@ -80,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 45);
+            this.label4.Location = new System.Drawing.Point(35, 46);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
@@ -90,7 +95,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 55);
+            this.label5.Location = new System.Drawing.Point(26, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
@@ -100,7 +105,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(219, 21);
+            this.label6.Location = new System.Drawing.Point(56, 71);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
@@ -109,23 +114,23 @@
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(77, 52);
+            this.txtCompany.Location = new System.Drawing.Point(111, 18);
             this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(92, 20);
+            this.txtCompany.Size = new System.Drawing.Size(150, 20);
             this.txtCompany.TabIndex = 8;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(266, 53);
+            this.txtPhone.Location = new System.Drawing.Point(111, 42);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(92, 20);
+            this.txtPhone.Size = new System.Drawing.Size(150, 20);
             this.txtPhone.TabIndex = 9;
             // 
             // txtFirst
             // 
-            this.txtFirst.Location = new System.Drawing.Point(71, 18);
+            this.txtFirst.Location = new System.Drawing.Point(97, 19);
             this.txtFirst.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(92, 20);
@@ -133,7 +138,7 @@
             // 
             // txtLast
             // 
-            this.txtLast.Location = new System.Drawing.Point(71, 42);
+            this.txtLast.Location = new System.Drawing.Point(97, 43);
             this.txtLast.Margin = new System.Windows.Forms.Padding(2);
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(92, 20);
@@ -141,7 +146,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(260, 18);
+            this.txtEmail.Location = new System.Drawing.Point(97, 68);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(92, 20);
@@ -149,7 +154,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(266, 176);
+            this.btnAdd.Location = new System.Drawing.Point(412, 232);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 28);
@@ -167,16 +172,16 @@
             this.grpContact.Controls.Add(this.txtLast);
             this.grpContact.Controls.Add(this.label6);
             this.grpContact.Controls.Add(this.txtFirst);
-            this.grpContact.Location = new System.Drawing.Point(6, 87);
+            this.grpContact.Location = new System.Drawing.Point(292, 33);
             this.grpContact.Name = "grpContact";
-            this.grpContact.Size = new System.Drawing.Size(366, 84);
+            this.grpContact.Size = new System.Drawing.Size(212, 128);
             this.grpContact.TabIndex = 14;
             this.grpContact.TabStop = false;
             this.grpContact.Text = "Contact";
             // 
             // txtContactPhone
             // 
-            this.txtContactPhone.Location = new System.Drawing.Point(260, 42);
+            this.txtContactPhone.Location = new System.Drawing.Point(97, 92);
             this.txtContactPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtContactPhone.Name = "txtContactPhone";
             this.txtContactPhone.Size = new System.Drawing.Size(92, 20);
@@ -185,29 +190,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 44);
+            this.label1.Location = new System.Drawing.Point(10, 94);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Phone Number";
             // 
+            // grpCompany
+            // 
+            this.grpCompany.Controls.Add(this.adrInCompany);
+            this.grpCompany.Controls.Add(this.txtCompany);
+            this.grpCompany.Controls.Add(this.label2);
+            this.grpCompany.Controls.Add(this.txtPhone);
+            this.grpCompany.Controls.Add(this.label5);
+            this.grpCompany.Location = new System.Drawing.Point(6, 33);
+            this.grpCompany.Name = "grpCompany";
+            this.grpCompany.Size = new System.Drawing.Size(280, 233);
+            this.grpCompany.TabIndex = 15;
+            this.grpCompany.TabStop = false;
+            this.grpCompany.Text = "Company";
+            // 
+            // adrInCompany
+            // 
+            this.adrInCompany.Location = new System.Drawing.Point(5, 67);
+            this.adrInCompany.Name = "adrInCompany";
+            this.adrInCompany.Prefix = null;
+            this.adrInCompany.Size = new System.Drawing.Size(259, 160);
+            this.adrInCompany.TabIndex = 10;
+            // 
             // AddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.grpCompany);
             this.Controls.Add(this.grpContact);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtCompany);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAddSupplier);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSupplier";
-            this.Size = new System.Drawing.Size(375, 219);
+            this.Size = new System.Drawing.Size(520, 272);
             this.grpContact.ResumeLayout(false);
             this.grpContact.PerformLayout();
+            this.grpCompany.ResumeLayout(false);
+            this.grpCompany.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +256,9 @@
         private System.Windows.Forms.GroupBox grpContact;
         private System.Windows.Forms.TextBox txtContactPhone;
         private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox grpCompany;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private Implementation.AddressEntry adrInCompany;
     }
 }

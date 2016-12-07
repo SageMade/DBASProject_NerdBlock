@@ -31,5 +31,15 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             btnAdd.Click += (X, Y) => AttemptAction("insert_supplier");
         }
+
+        protected override void LoadMyViewContext(IoMap map)
+        {
+            adrInCompany.Fill(map);
+        }
+
+        protected override void BeforeSubmit(IoMap map)
+        {
+            adrInCompany.Populate(map);
+        }
     }
 }

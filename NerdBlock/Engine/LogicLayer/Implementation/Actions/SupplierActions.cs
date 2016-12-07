@@ -26,16 +26,15 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             string contactLastName = map.GetInput<string>("Contact.LastName");
             string contactPhone = map.GetInput<string>("Contact.Phone");
             string contactEmail = map.GetInput<string>("Contact.Email");
-
-            decimal width, height, depth;
-            width = height = depth = 0;
-
-            /*
+                        
             string error = "";
 
-            if (productName == null || string.IsNullOrWhiteSpace(productName))
-                error += "You must enter a product name\n";
+            if (companyName == null || string.IsNullOrWhiteSpace(companyName))
+                error += "You must enter a company name\n";
+            if (companyPhone == null || string.IsNullOrWhiteSpace(companyPhone))
+                error += "You must enter a company phone number\n";
 
+            /*
             if (productWidth == null || string.IsNullOrWhiteSpace(productWidth))
                 error += "You must enter a product width\n";
             if (productHeight == null || string.IsNullOrWhiteSpace(productHeight))

@@ -82,6 +82,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             base.OnPaint(e);
         }
 
+        protected virtual void BeforeSubmit(IoMap map) { }
+
         /// <summary>
         /// Attempts an action from this view, handles loading inputs into IoMap
         /// </summary>
@@ -91,6 +93,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // Iterate over our inputs and populate the IO map from them
             for(int index = 0; index < Inputs.Count; index ++)
                 Inputs[index].PopulateMap(ViewManager.CurrentMap);
+
+            // Call our child's method
+            BeforeSubmit(ViewManager.CurrentMap);
 
             // Let the logic manager do the heavy lifting
             LogicManager.TryPerformAction(actionName);
