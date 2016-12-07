@@ -29,7 +29,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls
             btnView.Click += (X, Y) =>
             {
-                ViewManager.CurrentMap.SetInput("Employee.Info", DataAccess.FromPrimaryKey<Genre>(dgvEmployeeList.SelectedRows[0].Cells["clmId"].Value));
+                ViewManager.CurrentMap.SetInput("Employee.Info", DataAccess.FromPrimaryKey<Genre>(dgvEmployeeList.SelectedRows[0].Cells["clmEmployeeId"].Value));
                 AttemptAction("goto_employee_update");
             };
         }

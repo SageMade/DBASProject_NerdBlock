@@ -39,11 +39,26 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             ViewManager.PopulateFromQuery(cbCountry, DataAccess.Execute("select country from tbladdress group by country order by country"));
             ViewManager.PopulateFromQuery(cbCity, DataAccess.Execute("select city from tbladdress group by city order by city"));
 
+            Outputs.Add(new TextBoxOutput("Employee.First", txtFirstName));
+            Outputs.Add(new TextBoxOutput("Employee.Last", txtLastName));
+            Outputs.Add(new TextBoxOutput("Employee.Email", txtEmail));
+            Outputs.Add(new TextBoxOutput("Employee.Apt", txtAptNum));
+            Outputs.Add(new TextBoxOutput("Employee.Phone", txtPhone));
+            Outputs.Add(new TextBoxOutput("Employee.Postal", txtPostalCode));
+            Outputs.Add(new TextBoxOutput("Employee.SIN", txtSIN));
+            Outputs.Add(new TextBoxOutput("Employee.Street", txtStreet));
+
+
+
             btnEdit.Click += (X, Y) => AttemptAction("update_employee");
             btnTerminate.Click += (X, Y) => AttemptAction("terminate_employee");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected override void LoadMyViewContext(IoMap map)
         {
 
         }
