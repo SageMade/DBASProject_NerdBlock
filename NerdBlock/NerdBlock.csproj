@@ -95,6 +95,7 @@
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Reports.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\SupplierActions.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\AuthAttrib.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\CheckBoxInput.cs" />
     <Compile Include="Engine\Frontend\Winforms\Implementation\ComboBoxValueInput.cs" />
@@ -203,7 +204,7 @@
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Order.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\NerdAuth.cs" />
-    <Compile Include="Engine\LogicLayer\Implementation\Validator\PasswordValidation.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Validations.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />
     <Compile Include="Engine\AutoDictionary.cs" />
     <Compile Include="Engine\LogicLayer\Util.cs" />
