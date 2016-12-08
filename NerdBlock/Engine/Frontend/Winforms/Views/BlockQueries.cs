@@ -52,8 +52,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             if (genre != null && series != null)
                 map.SetOutput("Data", DataAccess.Execute(
                     Resources.SelectBlockInfoQuery, 
-                    new[] { new QueryParam("seriesId", QueryParamType.Integer), new QueryParam("genreId", QueryParamType.Integer)}, 
-                    new object[] { genre.GenreId, series.SeriesId }));
+                    new[] { new QueryParam("seriesId", QueryParamType.Integer)}, 
+                    new object[] { series.SeriesId }));
         }
 
         private void GenreFieldChanged(object sender, EventArgs e)
@@ -83,8 +83,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                     // Get the input as a queryresult
                     IQueryResult result = DataAccess.Execute(
                         Resources.SelectBlockInfoQuery,
-                        new[] { new QueryParam("seriesId", QueryParamType.Integer), new QueryParam("genreId", QueryParamType.Integer) },
-                        new object[] { genre.GenreId, series.SeriesId });
+                        new[] { new QueryParam("seriesId", QueryParamType.Integer) },
+                        new object[] { series.SeriesId });
                     // Generate a binding source for the query
                     BindingSource bs = new BindingSource();
                     bs.DataSource = result.Source.Tables[0];

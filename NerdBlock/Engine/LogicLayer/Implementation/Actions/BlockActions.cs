@@ -134,27 +134,28 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
         }
 
-        [BusinessAction("insert_product")]
+        [BusinessAction("insert_block_item")]
         [AuthAttrib("General Manager", "Planner")]
         public void InsertProduct()
         {
             IoMap map = ViewManager.CurrentMap;
 
-            if (Session.Get<List<Product>>("AddingProduct") == null)
+            if (Session.Get<List<Product>>("AddingProducts") == null)
             { 
-                Session.Set("AddingProduct", new List<Product>());
-
-                List<Product> items = Session.Get<List<Product>>("AddingProduct");
+                Session.Set("AddingProducts", new List<Product>());
             }
 
-            else
+            List<Product> items = Session.Get<List<Product>>("AddingProducts");
+
+            if (map.HasInput<Product>("ProductToAdd"))
             {
-                ViewManager.ShowFlash("Could not add product", FlashMessageType.Bad);
+                items.Add(map.GetInput<Product>("ProductToAdd"));
+                map.SetInput<Product>("ProductToAdd", null);
+
                 ViewManager.Show("Blocks", map);
             }
-            
-
-
+            else
+                ViewManager.ShowFlash("Please select a product to add", FlashMessageType.Neutral);
         }
 
         public static bool Validate(ref string reason)

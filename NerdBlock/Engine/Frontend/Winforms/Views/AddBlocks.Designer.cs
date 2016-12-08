@@ -32,11 +32,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvItems = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
-            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDepth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBlockSummary = new System.Windows.Forms.GroupBox();
             this.dtpShipDate = new System.Windows.Forms.DateTimePicker();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -49,6 +44,7 @@
             this.grpAddItem = new System.Windows.Forms.GroupBox();
             this.btnAddProductToBlock = new System.Windows.Forms.Button();
             this.dgvAddItem = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +52,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
+            this.pId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pDepth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.grpBlockSummary.SuspendLayout();
@@ -104,11 +106,12 @@
             this.dgvItems.AllowUserToDeleteRows = false;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmProductName,
-            this.clmWidth,
-            this.clmHeight,
-            this.clmDepth,
-            this.clmDescription});
+            this.pId,
+            this.pName,
+            this.pWidth,
+            this.pHeight,
+            this.pDepth,
+            this.pDescription});
             this.dgvItems.Location = new System.Drawing.Point(5, 21);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
@@ -116,36 +119,6 @@
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(715, 238);
             this.dgvItems.TabIndex = 0;
-            // 
-            // clmProductName
-            // 
-            this.clmProductName.HeaderText = "Product Name";
-            this.clmProductName.Name = "clmProductName";
-            this.clmProductName.ReadOnly = true;
-            // 
-            // clmWidth
-            // 
-            this.clmWidth.HeaderText = "Width";
-            this.clmWidth.Name = "clmWidth";
-            this.clmWidth.ReadOnly = true;
-            // 
-            // clmHeight
-            // 
-            this.clmHeight.HeaderText = "Height";
-            this.clmHeight.Name = "clmHeight";
-            this.clmHeight.ReadOnly = true;
-            // 
-            // clmDepth
-            // 
-            this.clmDepth.HeaderText = "Depth";
-            this.clmDepth.Name = "clmDepth";
-            this.clmDepth.ReadOnly = true;
-            // 
-            // clmDescription
-            // 
-            this.clmDescription.HeaderText = "Description";
-            this.clmDescription.Name = "clmDescription";
-            this.clmDescription.ReadOnly = true;
             // 
             // grpBlockSummary
             // 
@@ -270,6 +243,7 @@
             this.dgvAddItem.AllowUserToDeleteRows = false;
             this.dgvAddItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductId,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -283,10 +257,18 @@
             this.dgvAddItem.Size = new System.Drawing.Size(503, 128);
             this.dgvAddItem.TabIndex = 1;
             // 
+            // ProductId
+            // 
+            this.ProductId.DataPropertyName = "productid";
+            this.ProductId.HeaderText = "Id";
+            this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
+            this.ProductId.Visible = false;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
             this.dataGridViewTextBoxColumn1.FillWeight = 30F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -295,7 +277,7 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Width";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "width";
             this.dataGridViewTextBoxColumn2.FillWeight = 10F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Width";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -304,7 +286,7 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Height";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "height";
             this.dataGridViewTextBoxColumn3.FillWeight = 10F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Height";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -313,7 +295,7 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Depth";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "depth";
             this.dataGridViewTextBoxColumn4.FillWeight = 10F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Depth";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -322,7 +304,7 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "description";
             this.dataGridViewTextBoxColumn5.FillWeight = 30F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Description";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -345,6 +327,53 @@
             this.txtProductName.Size = new System.Drawing.Size(177, 20);
             this.txtProductName.TabIndex = 3;
             this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
+            // 
+            // pId
+            // 
+            this.pId.HeaderText = "Id";
+            this.pId.Name = "pId";
+            this.pId.ReadOnly = true;
+            this.pId.Visible = false;
+            // 
+            // pName
+            // 
+            this.pName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pName.FillWeight = 30F;
+            this.pName.HeaderText = "Product Name";
+            this.pName.Name = "pName";
+            this.pName.ReadOnly = true;
+            // 
+            // pWidth
+            // 
+            this.pWidth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pWidth.FillWeight = 10F;
+            this.pWidth.HeaderText = "Width";
+            this.pWidth.Name = "pWidth";
+            this.pWidth.ReadOnly = true;
+            // 
+            // pHeight
+            // 
+            this.pHeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pHeight.FillWeight = 10F;
+            this.pHeight.HeaderText = "Height";
+            this.pHeight.Name = "pHeight";
+            this.pHeight.ReadOnly = true;
+            // 
+            // pDepth
+            // 
+            this.pDepth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pDepth.FillWeight = 10F;
+            this.pDepth.HeaderText = "Depth";
+            this.pDepth.Name = "pDepth";
+            this.pDepth.ReadOnly = true;
+            // 
+            // pDescription
+            // 
+            this.pDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pDescription.FillWeight = 30F;
+            this.pDescription.HeaderText = "Description";
+            this.pDescription.Name = "pDescription";
+            this.pDescription.ReadOnly = true;
             // 
             // Blocks
             // 
@@ -388,19 +417,21 @@
         private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvItems;
         private System.Windows.Forms.DateTimePicker dtpShipDate;
         private System.Windows.Forms.GroupBox grpAddItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmWidth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHeight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescription;
         private Implementation.DataGridDisplayView dgvAddItem;
         private System.Windows.Forms.Button btnAddProductToBlock;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pWidth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pHeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDepth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDescription;
     }
 }

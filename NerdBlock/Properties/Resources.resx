@@ -127,7 +127,7 @@
         left outer join tblsubscription as subs on subs.seriesid=block.seriesid
         left outer join tblsubscriptionfullfillment as ships on ships.blockid=block.blockid
         inner join tblblockseries as series on block.seriesid=series.seriesid
-    where block.seriesid=@seriesId and series.genreid=@genreId
+    where block.seriesid=@seriesId
     group by block.blockid;</value>
   </data>
   <data name="SelectGenreTalliesQuery" xml:space="preserve">
