@@ -116,7 +116,7 @@
             this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(150, 20);
-            this.txtCompany.TabIndex = 8;
+            this.txtCompany.TabIndex = 0;
             // 
             // txtPhone
             // 
@@ -124,7 +124,7 @@
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(150, 20);
-            this.txtPhone.TabIndex = 9;
+            this.txtPhone.TabIndex = 1;
             // 
             // txtFirst
             // 
@@ -132,7 +132,7 @@
             this.txtFirst.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(150, 20);
-            this.txtFirst.TabIndex = 10;
+            this.txtFirst.TabIndex = 0;
             // 
             // txtLast
             // 
@@ -140,7 +140,7 @@
             this.txtLast.Margin = new System.Windows.Forms.Padding(2);
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(150, 20);
-            this.txtLast.TabIndex = 11;
+            this.txtLast.TabIndex = 1;
             // 
             // txtEmail
             // 
@@ -148,7 +148,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 20);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 2;
             // 
             // btnAdd
             // 
@@ -156,7 +156,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 28);
-            this.btnAdd.TabIndex = 13;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
@@ -171,7 +171,7 @@
             this.grpContact.Location = new System.Drawing.Point(6, 272);
             this.grpContact.Name = "grpContact";
             this.grpContact.Size = new System.Drawing.Size(280, 99);
-            this.grpContact.TabIndex = 14;
+            this.grpContact.TabIndex = 1;
             this.grpContact.TabStop = false;
             this.grpContact.Text = "Contact";
             // 
@@ -185,7 +185,7 @@
             this.grpCompany.Location = new System.Drawing.Point(6, 33);
             this.grpCompany.Name = "grpCompany";
             this.grpCompany.Size = new System.Drawing.Size(280, 233);
-            this.grpCompany.TabIndex = 15;
+            this.grpCompany.TabIndex = 0;
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "Company";
             // 
@@ -195,7 +195,7 @@
             this.adrInCompany.Name = "adrInCompany";
             this.adrInCompany.Prefix = "Address";
             this.adrInCompany.Size = new System.Drawing.Size(259, 160);
-            this.adrInCompany.TabIndex = 10;
+            this.adrInCompany.TabIndex = 2;
             // 
             // AddSupplier
             // 

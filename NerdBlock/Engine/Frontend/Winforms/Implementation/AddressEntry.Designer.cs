@@ -52,7 +52,7 @@
             this.cbCountry.Margin = new System.Windows.Forms.Padding(2);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(150, 23);
-            this.cbCountry.TabIndex = 40;
+            this.cbCountry.TabIndex = 3;
             // 
             // cbCity
             // 
@@ -64,7 +64,7 @@
             this.cbCity.Margin = new System.Windows.Forms.Padding(2);
             this.cbCity.Name = "cbCity";
             this.cbCity.Size = new System.Drawing.Size(150, 23);
-            this.cbCity.TabIndex = 39;
+            this.cbCity.TabIndex = 1;
             // 
             // lblCity
             // 
@@ -86,7 +86,7 @@
             this.cbState.Margin = new System.Windows.Forms.Padding(2);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(150, 23);
-            this.cbState.TabIndex = 31;
+            this.cbState.TabIndex = 2;
             // 
             // txtAptNum
             // 
@@ -94,7 +94,7 @@
             this.txtAptNum.Location = new System.Drawing.Point(106, 130);
             this.txtAptNum.Name = "txtAptNum";
             this.txtAptNum.Size = new System.Drawing.Size(150, 21);
-            this.txtAptNum.TabIndex = 36;
+            this.txtAptNum.TabIndex = 5;
             // 
             // label5
             // 
@@ -142,7 +142,7 @@
             this.txtPostalCode.Location = new System.Drawing.Point(106, 105);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(150, 21);
-            this.txtPostalCode.TabIndex = 35;
+            this.txtPostalCode.TabIndex = 4;
             // 
             // txtStreet
             // 
@@ -150,7 +150,7 @@
             this.txtStreet.Location = new System.Drawing.Point(106, 3);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(150, 21);
-            this.txtStreet.TabIndex = 29;
+            this.txtStreet.TabIndex = 0;
             // 
             // lblAddress1
             // 
