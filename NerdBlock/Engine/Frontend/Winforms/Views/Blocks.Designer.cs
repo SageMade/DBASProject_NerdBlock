@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvBlocks = new System.Windows.Forms.DataGridView();
+            this.dgvBlocks = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -265,7 +265,7 @@
         private System.Windows.Forms.TextBox txtCustCost;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.DataGridView dgvBlocks;
+        private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvBlocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSeries;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShipDate;
