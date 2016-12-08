@@ -47,7 +47,12 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.grpAdd = new System.Windows.Forms.GroupBox();
-            this.dgvOrder = new System.Windows.Forms.DataGridView();
+            this.lblBatchCost = new System.Windows.Forms.Label();
+            this.txtBatchCost = new System.Windows.Forms.TextBox();
+            this.dgvOrder = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.ProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +60,7 @@
             // lblQuantityOrdered
             // 
             this.lblQuantityOrdered.AutoSize = true;
-            this.lblQuantityOrdered.Location = new System.Drawing.Point(10, 141);
+            this.lblQuantityOrdered.Location = new System.Drawing.Point(221, 29);
             this.lblQuantityOrdered.Name = "lblQuantityOrdered";
             this.lblQuantityOrdered.Size = new System.Drawing.Size(87, 13);
             this.lblQuantityOrdered.TabIndex = 2;
@@ -63,10 +68,10 @@
             // 
             // txtQuantityOrdered
             // 
-            this.txtQuantityOrdered.Location = new System.Drawing.Point(99, 138);
+            this.txtQuantityOrdered.Location = new System.Drawing.Point(310, 26);
             this.txtQuantityOrdered.Name = "txtQuantityOrdered";
             this.txtQuantityOrdered.Size = new System.Drawing.Size(84, 20);
-            this.txtQuantityOrdered.TabIndex = 12;
+            this.txtQuantityOrdered.TabIndex = 5;
             // 
             // btnAddOrder
             // 
@@ -91,15 +96,15 @@
             // cbSupplierID
             // 
             this.cbSupplierID.FormattingEnabled = true;
-            this.cbSupplierID.Location = new System.Drawing.Point(221, 57);
+            this.cbSupplierID.Location = new System.Drawing.Point(157, 38);
             this.cbSupplierID.Margin = new System.Windows.Forms.Padding(2);
             this.cbSupplierID.Name = "cbSupplierID";
-            this.cbSupplierID.Size = new System.Drawing.Size(92, 21);
+            this.cbSupplierID.Size = new System.Drawing.Size(156, 21);
             this.cbSupplierID.TabIndex = 31;
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(329, 55);
+            this.btnAddSupplier.Location = new System.Drawing.Point(329, 36);
             this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(91, 22);
@@ -110,7 +115,7 @@
             // lblSupplier
             // 
             this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(171, 60);
+            this.lblSupplier.Location = new System.Drawing.Point(107, 41);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(45, 13);
             this.lblSupplier.TabIndex = 28;
@@ -118,50 +123,50 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(207, 51);
+            this.txtDescription.Location = new System.Drawing.Point(99, 123);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(183, 77);
-            this.txtDescription.TabIndex = 65;
+            this.txtDescription.Size = new System.Drawing.Size(183, 49);
+            this.txtDescription.TabIndex = 4;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(298, 133);
+            this.btnAdd.Location = new System.Drawing.Point(310, 123);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 28);
-            this.btnAdd.TabIndex = 64;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // txtDepth
             // 
-            this.txtDepth.Location = new System.Drawing.Point(110, 336);
+            this.txtDepth.Location = new System.Drawing.Point(99, 98);
             this.txtDepth.Margin = new System.Windows.Forms.Padding(2);
             this.txtDepth.Name = "txtDepth";
             this.txtDepth.Size = new System.Drawing.Size(84, 20);
-            this.txtDepth.TabIndex = 63;
+            this.txtDepth.TabIndex = 3;
             // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(110, 313);
+            this.txtHeight.Location = new System.Drawing.Point(99, 75);
             this.txtHeight.Margin = new System.Windows.Forms.Padding(2);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(84, 20);
-            this.txtHeight.TabIndex = 62;
+            this.txtHeight.TabIndex = 2;
             // 
             // txtWidth
             // 
-            this.txtWidth.Location = new System.Drawing.Point(110, 289);
+            this.txtWidth.Location = new System.Drawing.Point(99, 51);
             this.txtWidth.Margin = new System.Windows.Forms.Padding(2);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(84, 20);
-            this.txtWidth.TabIndex = 61;
+            this.txtWidth.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(207, 29);
+            this.label10.Location = new System.Drawing.Point(33, 126);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 13);
             this.label10.TabIndex = 60;
@@ -196,11 +201,11 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(110, 264);
+            this.txtProductName.Location = new System.Drawing.Point(99, 26);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(84, 20);
-            this.txtProductName.TabIndex = 56;
+            this.txtProductName.TabIndex = 0;
             // 
             // label4
             // 
@@ -213,6 +218,12 @@
             // 
             // grpAdd
             // 
+            this.grpAdd.Controls.Add(this.txtDepth);
+            this.grpAdd.Controls.Add(this.txtHeight);
+            this.grpAdd.Controls.Add(this.lblBatchCost);
+            this.grpAdd.Controls.Add(this.txtWidth);
+            this.grpAdd.Controls.Add(this.txtBatchCost);
+            this.grpAdd.Controls.Add(this.txtProductName);
             this.grpAdd.Controls.Add(this.lblQuantityOrdered);
             this.grpAdd.Controls.Add(this.txtQuantityOrdered);
             this.grpAdd.Controls.Add(this.txtDescription);
@@ -228,13 +239,65 @@
             this.grpAdd.TabStop = false;
             this.grpAdd.Text = "Add Product";
             // 
+            // lblBatchCost
+            // 
+            this.lblBatchCost.AutoSize = true;
+            this.lblBatchCost.Location = new System.Drawing.Point(245, 54);
+            this.lblBatchCost.Name = "lblBatchCost";
+            this.lblBatchCost.Size = new System.Drawing.Size(59, 13);
+            this.lblBatchCost.TabIndex = 66;
+            this.lblBatchCost.Text = "Batch Cost";
+            // 
+            // txtBatchCost
+            // 
+            this.txtBatchCost.Location = new System.Drawing.Point(310, 51);
+            this.txtBatchCost.Name = "txtBatchCost";
+            this.txtBatchCost.Size = new System.Drawing.Size(84, 20);
+            this.txtBatchCost.TabIndex = 6;
+            // 
             // dgvOrder
             // 
+            this.dgvOrder.AllowUserToAddRows = false;
+            this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrder.Location = new System.Drawing.Point(11, 82);
+            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProdName,
+            this.Quantity,
+            this.Price});
+            this.dgvOrder.Location = new System.Drawing.Point(11, 64);
             this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.Size = new System.Drawing.Size(409, 150);
+            this.dgvOrder.ReadOnly = true;
+            this.dgvOrder.RowHeadersVisible = false;
+            this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrder.Size = new System.Drawing.Size(409, 168);
             this.dgvOrder.TabIndex = 67;
+            // 
+            // ProdName
+            // 
+            this.ProdName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProdName.DataPropertyName = "Name";
+            this.ProdName.FillWeight = 40F;
+            this.ProdName.HeaderText = "Name";
+            this.ProdName.Name = "ProdName";
+            this.ProdName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.FillWeight = 30F;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.DataPropertyName = "Price";
+            this.Price.FillWeight = 30F;
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // AddOrder
             // 
@@ -244,10 +307,6 @@
             this.Controls.Add(this.cbSupplierID);
             this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.lblSupplier);
-            this.Controls.Add(this.txtDepth);
-            this.Controls.Add(this.txtHeight);
-            this.Controls.Add(this.txtWidth);
-            this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddOrder);
@@ -282,6 +341,11 @@
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox grpAdd;
-        private System.Windows.Forms.DataGridView dgvOrder;
+        private System.Windows.Forms.Label lblBatchCost;
+        private System.Windows.Forms.TextBox txtBatchCost;
+        private Implementation.DataGridDisplayView dgvOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

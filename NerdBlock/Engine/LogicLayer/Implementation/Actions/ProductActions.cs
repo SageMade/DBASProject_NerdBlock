@@ -8,7 +8,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
     /// Handles actions related to products
     /// </summary>
     [BusinessActionContainer]
-    public class Product
+    public class ProductActions
     {
         /// <summary>
         /// Show the inventory search view

@@ -11,7 +11,18 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
     public class SupplierActions
     {
         /// <summary>
-        /// Show the inventory overstock view
+        /// Show the add supplier view
+        /// </summary>
+        [BusinessAction("goto_add_supplier")]
+        [AuthAttrib("General Manager", "Planner")]
+        public void ShowAddSupplier()
+        {
+            ViewManager.CurrentMap.Reset();
+            ViewManager.Show("AddSupplier");
+        }
+
+        /// <summary>
+        /// Handles inserting a supplier
         /// </summary>
         [BusinessAction("insert_supplier")]
         [AuthAttrib("General Manager", "Planner")]

@@ -209,8 +209,8 @@
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Blocks.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Customer.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Employee.cs" />
-    <Compile Include="Engine\LogicLayer\Implementation\Actions\Order.cs" />
-    <Compile Include="Engine\LogicLayer\Implementation\Actions\Product.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\OrderActions.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\ProductActions.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\NerdAuth.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Validations.cs" />
     <Compile Include="Engine\LogicLayer\LogicManager.cs" />

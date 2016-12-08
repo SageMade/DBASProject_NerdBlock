@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace NerdBlock.Engine.Backend.Models
 {
     [DataModel("tblsupplier")]
@@ -20,5 +15,10 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("phone", QueryParamType.Long)]
         public long? Phone { get; set; }
+        
+        public override string ToString()
+        {
+            return Company;
+        }
     }
 }
