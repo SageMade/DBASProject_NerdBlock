@@ -25,7 +25,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             cbGenre.SelectedIndexChanged += CbGenre_SelectedIndexChanged;
 
             //Controls - 1 DONE
-            btnBlocks.Click += (X, Y) =>
+            btnSeries.Click += (X, Y) =>
             {
                 if (dgvData.SelectedRows.Count > 0)
                 {
@@ -33,6 +33,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                     AttemptAction("goto_blocks_queries");
                 }
             };
+            btnAddSeries.Click += (X, Y) => AttemptAction("goto_add_series");
         }
 
         protected override void LoadMyViewContext(IoMap map)

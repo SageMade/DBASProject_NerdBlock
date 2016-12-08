@@ -37,7 +37,7 @@
             this.cmlActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmSeriesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewSeries = new System.Windows.Forms.Button();
+            this.btnViewGenre = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -146,7 +146,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Controls.Add(this.btnViewSeries);
+            this.panel1.Controls.Add(this.btnViewGenre);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(2, 228);
             this.panel1.Name = "panel1";
@@ -154,15 +154,15 @@
             this.panel1.Size = new System.Drawing.Size(364, 34);
             this.panel1.TabIndex = 2;
             // 
-            // btnViewSeries
+            // btnViewGenre
             // 
-            this.btnViewSeries.Location = new System.Drawing.Point(255, 5);
-            this.btnViewSeries.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViewSeries.Name = "btnViewSeries";
-            this.btnViewSeries.Size = new System.Drawing.Size(103, 23);
-            this.btnViewSeries.TabIndex = 14;
-            this.btnViewSeries.Text = "View Series Info";
-            this.btnViewSeries.UseVisualStyleBackColor = true;
+            this.btnViewGenre.Location = new System.Drawing.Point(255, 5);
+            this.btnViewGenre.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewGenre.Name = "btnViewGenre";
+            this.btnViewGenre.Size = new System.Drawing.Size(103, 23);
+            this.btnViewGenre.TabIndex = 14;
+            this.btnViewGenre.Text = "View Genre Info";
+            this.btnViewGenre.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -250,7 +250,7 @@
         private System.Windows.Forms.TextBox txtTitle;
         private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvGenres;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnViewSeries;
+        private System.Windows.Forms.Button btnViewGenre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn cmlActive;

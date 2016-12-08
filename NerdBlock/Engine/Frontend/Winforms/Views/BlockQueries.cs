@@ -31,7 +31,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             {
                 AttemptAction("goto_blocks_add");
             };
-
+            
             btnEdit.Click += (X, Y) =>
             {
                 if (dgvData.SelectedRows.Count > 0)

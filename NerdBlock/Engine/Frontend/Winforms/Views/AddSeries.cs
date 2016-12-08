@@ -24,6 +24,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput("Name", txtSeriesName));
             Inputs.Add(new TextBoxInput("Price", txtPrice));
             Inputs.Add(new TextBoxInput("Volume", txtVolume));
+            Inputs.Add(new ComboBoxValueInput("Block.Genre", cbGenre));
+
+            Outputs.Add(new ModelPopulatedComboBox<Genre>("Block.Genre", cbGenre));
 
             btnAdd.Click += (X, Y) => AttemptAction("insert_series");
         }

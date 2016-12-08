@@ -87,6 +87,12 @@
       <DependentUpon>AddressEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Implementation\DateTimeInput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Views\AddSeries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\AddSeries.Designer.cs">
+      <DependentUpon>AddSeries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\ViewEditBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +310,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Implementation\AddressEntry.resx">
       <DependentUpon>AddressEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddSeries.resx">
+      <DependentUpon>AddSeries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ViewEditBlock.resx">
       <DependentUpon>ViewEditBlock.cs</DependentUpon>

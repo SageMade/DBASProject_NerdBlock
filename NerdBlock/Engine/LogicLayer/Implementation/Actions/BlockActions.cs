@@ -34,6 +34,16 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         }
 
         /// <summary>
+        /// Handles showing the block series add view
+        /// </summary>
+        [BusinessAction("goto_add_series")]
+        [AuthAttrib("General Manager", "Planning")]
+        public void ShowAddSeries()
+        {
+            ViewManager.Show("AddSeries");
+        }
+
+        /// <summary>
         /// Handles moving to the blocks add view
         /// </summary>
         [BusinessAction("insert_genre")]
@@ -164,6 +174,68 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Handles inserting a new block series into the database
+        /// </summary>
+        [BusinessAction("insert_series")]
+        [AuthAttrib("General Manager", "Planner")]
+        public void InsertSeries()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            string name = map.GetInput<string>("Name");
+            string priceText = map.GetInput<string>("Price");
+            string volumeText = map.GetInput<string>("Volume");
+            Genre genre = map.GetInput<Genre>("Block.Genre");
+
+            string error = "";
+
+            if (string.IsNullOrWhiteSpace(name))
+                error += "You must enter a series name\n";
+            if (string.IsNullOrWhiteSpace(priceText))
+                error += "You must enter a price\n";
+            if (string.IsNullOrWhiteSpace(volumeText))
+                error += "You must enter a block volume\n";
+            if (genre == null)
+                error += "You must select a genre\n";
+
+            decimal price = -1;
+            int volume = -1;
+
+            if (error == "")
+            {
+                if (!decimal.TryParse(priceText, out price) || price <= 0)
+                    error += "Price must be numeric and greater than 0\n";
+                if (!int.TryParse(volumeText, out volume) || volume <= 0)
+                    error += "Volume must be an integer greater than 0\n";
+            }
+            
+            if (error == "")
+            {
+                BlockSeries series = new BlockSeries();
+                series.StartDate = DateTime.Now;
+                series.GenreId = genre;
+                series.BlockVolume = volume;
+                series.SubscriptionPrice = price;
+                series.Title = name;
+
+
+                if (DataAccess.Insert(series))
+                {
+                    map.Reset();
+                    map.SetInput("Block.Genre", genre);
+                    ViewManager.Show("BlockSeries");
+                    ViewManager.ShowFlash("Successfully added the series", FlashMessageType.Good);
+                }
+                else
+                {
+                    ViewManager.ShowFlash("Cannot add series:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                }
+            }
+            else
+                ViewManager.ShowFlash("Cannot add series:\n" + error, FlashMessageType.Bad);
         }
 
         /// <summary>

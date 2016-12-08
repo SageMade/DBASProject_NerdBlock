@@ -38,7 +38,8 @@
             this.clmSubsribers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbGenre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnBlocks = new System.Windows.Forms.Button();
+            this.btnSeries = new System.Windows.Forms.Button();
+            this.btnAddSeries = new System.Windows.Forms.Button();
             this.grpSeries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -145,20 +146,30 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Genre";
             // 
-            // btnBlocks
+            // btnSeries
             // 
-            this.btnBlocks.Location = new System.Drawing.Point(243, 315);
-            this.btnBlocks.Name = "btnBlocks";
-            this.btnBlocks.Size = new System.Drawing.Size(110, 23);
-            this.btnBlocks.TabIndex = 10;
-            this.btnBlocks.Text = "View Blocks";
-            this.btnBlocks.UseVisualStyleBackColor = true;
+            this.btnSeries.Location = new System.Drawing.Point(243, 315);
+            this.btnSeries.Name = "btnSeries";
+            this.btnSeries.Size = new System.Drawing.Size(110, 23);
+            this.btnSeries.TabIndex = 10;
+            this.btnSeries.Text = "View Series";
+            this.btnSeries.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSeries
+            // 
+            this.btnAddSeries.Location = new System.Drawing.Point(127, 315);
+            this.btnAddSeries.Name = "btnAddSeries";
+            this.btnAddSeries.Size = new System.Drawing.Size(110, 23);
+            this.btnAddSeries.TabIndex = 11;
+            this.btnAddSeries.Text = "Add Series";
+            this.btnAddSeries.UseVisualStyleBackColor = true;
             // 
             // BlockSeries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnBlocks);
+            this.Controls.Add(this.btnAddSeries);
+            this.Controls.Add(this.btnSeries);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbGenre);
             this.Controls.Add(this.grpSeries);
@@ -177,12 +188,13 @@
         private System.Windows.Forms.GroupBox grpSeries;
         private System.Windows.Forms.ComboBox cbGenre;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnBlocks;
+        private System.Windows.Forms.Button btnSeries;
         private Implementation.DataGridDisplayView dgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSeriesId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubsribers;
+        private System.Windows.Forms.Button btnAddSeries;
     }
 }

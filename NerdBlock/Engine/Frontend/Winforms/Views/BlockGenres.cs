@@ -21,7 +21,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             //Controls - 2 DONE
             btnAdd.Click += (X, Y) => AttemptAction("insert_genre");
-            btnViewSeries.Click += (X, Y) =>
+            btnViewGenre.Click += (X, Y) =>
             {
                 ViewManager.CurrentMap.SetInput("Block.Genre", DataAccess.FromPrimaryKey<Genre>(dgvGenres.SelectedRows[0].Cells["clmId"].Value));
                 AttemptAction("goto_blocks_series");
