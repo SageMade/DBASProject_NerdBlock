@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class Blocks : ViewBase
+    public partial class AddBlocks : ViewBase
     {
-        public Blocks()
+        public AddBlocks()
         {
             InitializeComponent();
             //Input - 4 DONE

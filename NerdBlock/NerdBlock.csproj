@@ -87,6 +87,12 @@
       <DependentUpon>AddressEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Implementation\DateTimeInput.cs" />
+    <Compile Include="Engine\Frontend\Winforms\Views\ViewEditBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Views\ViewEditBlock.Designer.cs">
+      <DependentUpon>ViewEditBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\INamed.cs" />
     <Compile Include="Engine\NamedCollection.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.cs">
@@ -129,11 +135,11 @@
     <Compile Include="Engine\Frontend\Winforms\Views\BlockQueries.Designer.cs">
       <DependentUpon>BlockQueries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\Blocks.cs">
+    <Compile Include="Engine\Frontend\Winforms\Views\AddBlocks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Engine\Frontend\Winforms\Views\Blocks.Designer.cs">
-      <DependentUpon>Blocks.cs</DependentUpon>
+    <Compile Include="Engine\Frontend\Winforms\Views\AddBlocks.Designer.cs">
+      <DependentUpon>AddBlocks.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Frontend\Winforms\Views\AddEmployee.cs">
       <SubType>UserControl</SubType>
@@ -299,11 +305,14 @@
     <EmbeddedResource Include="Engine\Frontend\Winforms\Implementation\AddressEntry.resx">
       <DependentUpon>AddressEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\ViewEditBlock.resx">
+      <DependentUpon>ViewEditBlock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\BlockQueries.resx">
       <DependentUpon>BlockQueries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\Blocks.resx">
-      <DependentUpon>Blocks.cs</DependentUpon>
+    <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddBlocks.resx">
+      <DependentUpon>AddBlocks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Frontend\Winforms\Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>

@@ -47,6 +47,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             {
                 Model.Block block = map.GetInput<Model.Block>("Block.Input");
                 map.SetInput<Model.Block>("Block.Input", null);
+
+                Model.Product toMatch = new Model.Product();
+                
             }
 
             List<Model.Product> items = Session.Get<List<Model.Product>>("AddingProducts");
