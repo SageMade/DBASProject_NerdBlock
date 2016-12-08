@@ -30,7 +30,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             btnView.Click += (X, Y) =>
             {
                 ViewManager.CurrentMap.SetInput("TargetItem", dgvOrders.SelectedRows[0]);
-                AttemptAction("goto_view_edit_orders");
+                AttemptAction("goto_order_edit");
             };
 
 

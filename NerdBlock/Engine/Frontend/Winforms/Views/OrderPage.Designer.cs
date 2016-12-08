@@ -45,7 +45,7 @@
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(498, 47);
+            this.btnView.Location = new System.Drawing.Point(457, 23);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(75, 23);
             this.btnView.TabIndex = 9;
@@ -54,7 +54,7 @@
             // 
             // txtOrderID
             // 
-            this.txtOrderID.Location = new System.Drawing.Point(392, 49);
+            this.txtOrderID.Location = new System.Drawing.Point(432, 52);
             this.txtOrderID.Name = "txtOrderID";
             this.txtOrderID.Size = new System.Drawing.Size(100, 20);
             this.txtOrderID.TabIndex = 8;
@@ -62,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(339, 52);
+            this.label2.Location = new System.Drawing.Point(379, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 7;
@@ -71,7 +71,7 @@
             // lblNumberOfOrders
             // 
             this.lblNumberOfOrders.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNumberOfOrders.Location = new System.Drawing.Point(217, 51);
+            this.lblNumberOfOrders.Location = new System.Drawing.Point(117, 52);
             this.lblNumberOfOrders.Name = "lblNumberOfOrders";
             this.lblNumberOfOrders.Size = new System.Drawing.Size(57, 13);
             this.lblNumberOfOrders.TabIndex = 6;
@@ -79,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 51);
+            this.label1.Location = new System.Drawing.Point(21, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 5;
@@ -89,7 +89,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(276, 13);
+            this.label9.Location = new System.Drawing.Point(210, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 16);
             this.label9.TabIndex = 17;
@@ -106,12 +106,12 @@
             this.clmOrderedBy,
             this.clmTotalCost,
             this.clmSupplier});
-            this.dgvOrders.Location = new System.Drawing.Point(33, 76);
+            this.dgvOrders.Location = new System.Drawing.Point(22, 76);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowHeadersVisible = false;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(607, 269);
+            this.dgvOrders.Size = new System.Drawing.Size(510, 269);
             this.dgvOrders.TabIndex = 19;
             // 
             // clmOrderID
@@ -161,7 +161,7 @@
             this.Controls.Add(this.lblNumberOfOrders);
             this.Controls.Add(this.label1);
             this.Name = "OrderPage";
-            this.Size = new System.Drawing.Size(680, 366);
+            this.Size = new System.Drawing.Size(556, 366);
             this.Load += new System.EventHandler(this.OrderPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
