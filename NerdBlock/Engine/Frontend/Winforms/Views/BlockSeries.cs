@@ -27,8 +27,11 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 1 DONE
             btnBlocks.Click += (X, Y) =>
             {
-                ViewManager.CurrentMap.SetInput("Block.Series", DataAccess.FromPrimaryKey<Model.BlockSeries>(dgvData.SelectedRows[0].Cells["clmSeriesId"].Value));
-                AttemptAction("goto_blocks_queries");
+                if (dgvData.SelectedRows.Count > 0)
+                {
+                    ViewManager.CurrentMap.SetInput("Block.Series", DataAccess.FromPrimaryKey<Model.BlockSeries>(dgvData.SelectedRows[0].Cells["clmSeriesId"].Value));
+                    AttemptAction("goto_blocks_queries");
+                }
             };
         }
 

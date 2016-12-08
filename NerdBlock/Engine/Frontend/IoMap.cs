@@ -34,7 +34,7 @@ namespace NerdBlock.Engine.Frontend
 
         public bool HasInput<T>(string name)
         {
-            return myInputDictionary.ContainsKey(name) && myInputDictionary[name].GetType() == typeof(T);
+            return myInputDictionary.ContainsKey(name) && myInputDictionary[name] != null && myInputDictionary[name].GetType() == typeof(T);
         }
 
         public T GetOutput<T>(string name)
@@ -54,7 +54,7 @@ namespace NerdBlock.Engine.Frontend
 
         public bool HasOutput<T>(string name)
         {
-            return myOutputDictionary.ContainsKey(name) && myOutputDictionary[name].GetType() == typeof(T);
+            return myOutputDictionary.ContainsKey(name) && myOutputDictionary[name] != null && myOutputDictionary[name].GetType() == typeof(T);
         }
 
         public void Reset()

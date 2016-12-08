@@ -27,11 +27,18 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Outputs.Add(new DataGridOutput("Data", dgvData));
 
             //Controls - 2 DONE
-            btnAdd.Click += (X, Y) => AttemptAction("goto_block");
+            btnAdd.Click += (X, Y) =>
+            {
+                AttemptAction("goto_blocks_add");
+            };
 
             btnEdit.Click += (X, Y) =>
             {
-                AttemptAction("goto_block");
+                if (dgvData.SelectedRows.Count > 0)
+                {
+                    ViewManager.CurrentMap.SetInput("Block.Input", DataAccess.FromPrimaryKey<Block>(dgvData.SelectedRows[0].Cells["BlockId"].Value));
+                    AttemptAction("goto_edit_block");
+                }
             };
 
             cbSeries.SelectedIndexChanged += SeriesFieldChanged;
@@ -96,6 +103,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         
         private void SeriesFieldChanged(object sender, EventArgs e)
         {
+
+            Model.BlockSeries series = cbSeries.Items.Count == 0 ? DataAccess.SelectAll<Model.BlockSeries>().FirstOrDefault() : cbSeries.SelectedItem as Model.BlockSeries;
+
+            if (series != null)
+                cbGenre.SelectedItem = series.GenreId;
+
             __HandleSearchChanged();
         }
     }

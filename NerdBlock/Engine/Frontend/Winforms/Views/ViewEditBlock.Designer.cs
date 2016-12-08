@@ -1,6 +1,6 @@
 ﻿namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    partial class Blocks
+    partial class ViewEditBlock
     {
         /// <summary> 
         /// Required designer variable.

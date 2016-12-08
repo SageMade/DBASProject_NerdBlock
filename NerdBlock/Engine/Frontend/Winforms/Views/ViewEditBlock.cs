@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
-    public partial class Blocks : ViewBase
+    public partial class ViewEditBlock : ViewBase
     {
-        public Blocks()
+        public ViewEditBlock()
         {
             InitializeComponent();
             //Input - 4 DONE
@@ -31,7 +31,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 if (dgvAddItem.SelectedRows.Count > 0)
                 {
                     ViewManager.CurrentMap.SetInput("ProductToAdd", DataAccess.FromPrimaryKey<Model.Product>(dgvAddItem.SelectedRows[0].Cells["ProductId"].Value));
-                    AttemptAction("insert_block_item");
+                    AttemptAction("insert_block_item_edit");
                 }
                 else
                     ViewManager.ShowFlash("Please select a product", FlashMessageType.Neutral);
@@ -43,16 +43,36 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             dgvItems.Rows.Clear();
 
+            List<Model.Product> items = Session.Get<List<Model.Product>>("AddingProducts");
+
             if (map.HasInput<Model.Block>("Block.Input"))
             {
+                if (items == null)
+                {
+                    Session.Set("AddingProducts", new List<Model.Product>());
+                    items = Session.Get<List<Model.Product>>("AddingProducts");
+                }
+
                 Model.Block block = map.GetInput<Model.Block>("Block.Input");
                 map.SetInput<Model.Block>("Block.Input", null);
+                map.SetInput("Block", block);
 
-                Model.Product toMatch = new Model.Product();
-                
+                Model.BlockItem toMatch = new Model.BlockItem();
+                toMatch.BlockId = block;
+
+                Model.BlockItem[] matches = DataAccess.Match(toMatch);
+
+                for(int index = 0; index < matches.Length; index ++)
+                {
+                    items.Add(DataAccess.FromPrimaryKey<Model.Product>(matches[index].ProducId.ProductId));
+                }
+
+                map.SetInput("Block.Title", block.Title);
+                map.SetInput("Block.Description", block.Description);
+                map.SetInput("Block.Series", block.SeriesId);
+                map.SetInput("Block.ShipByDate", block.ShipByDate);
             }
 
-            List<Model.Product> items = Session.Get<List<Model.Product>>("AddingProducts");
             
             if (items != null)
             {

@@ -119,7 +119,7 @@
   </resheader>
   <data name="SelectBlockInfoQuery" xml:space="preserve">
     <value>select block.blockid as BlockId,
-    date_part('month', block.shipbydate) as Month,
+    block.title as Title, date_part('month', block.shipbydate) as Month,
     date_part('year', block.shipbydate) as Year,
     count(distinct subs.customerid) as Subscribed,
     count(distinct ships.blockid) as Shipped

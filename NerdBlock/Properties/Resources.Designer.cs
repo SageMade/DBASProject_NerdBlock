@@ -62,14 +62,14 @@ namespace NerdBlock.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to select block.blockid as BlockId,
-        ///    date_part(&apos;month&apos;, block.shipbydate) as Month,
+        ///    block.title as Title, date_part(&apos;month&apos;, block.shipbydate) as Month,
         ///    date_part(&apos;year&apos;, block.shipbydate) as Year,
         ///    count(distinct subs.customerid) as Subscribed,
         ///    count(distinct ships.blockid) as Shipped
         ///    from tblblock as block
         ///        left outer join tblsubscription as subs on subs.seriesid=block.seriesid
         ///        left outer join tblsubscriptionfullfillment as ships on ships.blockid=block.blockid
-        ///        inner join tblblockseries as series on block.seriesid=series.seriesi [rest of string was truncated]&quot;;.
+        ///        inner join tblblockseries as series on block.s [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SelectBlockInfoQuery {
             get {

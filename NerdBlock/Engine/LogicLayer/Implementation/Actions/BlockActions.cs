@@ -20,7 +20,17 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib("General Manager", "Planning")]
         public void ShowAdd()
         {
-            ViewManager.Show("Blocks");
+            ViewManager.Show("AddBlocks");
+        }
+
+        /// <summary>
+        /// Handles showing the block edit view
+        /// </summary>
+        [BusinessAction("goto_edit_block")]
+        [AuthAttrib("General Manager", "Planning")]
+        public void ShowEdit()
+        {
+            ViewManager.Show("ViewEditBlock");
         }
 
         /// <summary>
@@ -106,7 +116,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             if (!Validate(ref msg))
             {
                 ViewManager.ShowFlash(string.Format("Error Adding Block:\n{0}", msg), FlashMessageType.Bad);
-                ViewManager.Show("Blocks", map);
+                ViewManager.Show("AddBlocks", map);
             }
             else
             {
@@ -118,13 +128,6 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                 }
                 else
                 {
-                    List<Product> products = Session.Get<List<Product>>("AddingProducts");
-
-                    for(int index = 0; index < products.Count; index ++)
-                    {
-
-                    }
-
                     Block block = new Block();
                     block.Title = map.GetInput<string>("Block.Title");
                     block.SeriesId = map.GetInput<BlockSeries>("Block.Series");
@@ -135,19 +138,116 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                     {
                         map.Reset();
                         block = DataAccess.Match(block)[0];
+
+
+                        List<Product> products = Session.Get<List<Product>>("AddingProducts");
+
+                        for (int index = 0; index < products.Count; index++)
+                        {
+                            BlockItem item = new BlockItem();
+                            item.BlockId = block;
+                            item.ProducId = products[index];
+                            item.Quantity = 1;
+
+                            DataAccess.Insert(item);
+                        }
+                        Session.Set<List<Product>>("AddingProducts", null);
                         ViewManager.ShowFlash(string.Format("Block added with ID: {0}", block.BlockId), FlashMessageType.Good);
                         Logger.Log(LogLevel.Info, "Added block with ID {0}", block.BlockId);
-                        ViewManager.Show("Blocks", map);
+                        ViewManager.Show("AddBlocks", map);
                     }
                     else
                     {
                         ViewManager.ShowFlash("Failed to add block: \n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
                         Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
-                        ViewManager.Show("Blocks", map);
+                        ViewManager.Show("AddBlocks", map);
                     }
                 }
             }
         }
+
+        /// <summary>
+        /// Handles updating a single block
+        /// </summary>
+        [BusinessAction("update_block")]
+        [AuthAttrib("General Manager", "Planner")]
+        public void Update()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            string msg = "";
+            if (!Validate(ref msg))
+            {
+                ViewManager.ShowFlash(string.Format("Error Adding Block:\n{0}", msg), FlashMessageType.Bad);
+                ViewManager.Show("ViewEditBlock", map);
+            }
+            else
+            {
+
+                if (Session.Get<List<Product>>("AddingProducts") == null)
+                {
+                    ViewManager.ShowFlash("Please select at least one product to order", FlashMessageType.Neutral);
+                    return;
+                }
+                else
+                {
+                    Block block = map.GetInput<Block>("Block");
+
+                    if (block != null)
+                    {
+                        block.Title = map.GetInput<string>("Block.Title");
+                        block.SeriesId = map.GetInput<BlockSeries>("Block.Series");
+                        block.ShipByDate = map.GetInput<DateTime>("Block.ShipByDate");
+                        block.Description = map.GetInput<string>("Block.Description");
+
+                        if (DataAccess.Update(block) > 0)
+                        {
+                            map.Reset();
+                            block = DataAccess.Match(block)[0];
+                            
+                            List<Product> products = Session.Get<List<Product>>("AddingProducts");
+
+                            for (int index = 0; index < products.Count; index++)
+                            {
+                                BlockItem item = new BlockItem();
+                                item.BlockId = block;
+                                item.ProducId = products[index];
+
+                                if (DataAccess.Match(item).Length > 0)
+                                {
+                                    item.Quantity = 1;
+
+                                    DataAccess.Update(item);
+                                }
+                                else
+                                {
+                                    item.Quantity = 1;
+                                    DataAccess.Insert(item);
+                                }
+                            }
+
+                            Session.Set<List<Product>>("AddingProducts", null);
+                            ViewManager.ShowFlash(string.Format("Block updated with ID: {0}", block.BlockId), FlashMessageType.Good);
+                            Logger.Log(LogLevel.Info, "Updated block with ID {0}", block.BlockId);
+                            map.Reset();
+                            ViewManager.Show("BlockQueries", map);
+                        }
+                        else
+                        {
+                            ViewManager.ShowFlash("Failed to add block: \n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                            Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
+                            ViewManager.Show("ViewEditBlock", map);
+                        }
+                    }
+                    else
+                    {
+                        ViewManager.ShowFlash("Failed to add block: \nNo block selected", FlashMessageType.Bad);
+                        ViewManager.Show("ViewEditBlock", map);
+                    }
+                }
+            }
+        }
+
 
         [BusinessAction("insert_block_item")]
         [AuthAttrib("General Manager", "Planner")]
@@ -167,7 +267,31 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                 items.Add(map.GetInput<Product>("ProductToAdd"));
                 map.SetInput<Product>("ProductToAdd", null);
 
-                ViewManager.Show("Blocks", map);
+                ViewManager.Show("AddBlocks", map);
+            }
+            else
+                ViewManager.ShowFlash("Please select a product to add", FlashMessageType.Neutral);
+        }
+
+        [BusinessAction("insert_block_item_edit")]
+        [AuthAttrib("General Manager", "Planner")]
+        public void InsertProductEdit()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            if (Session.Get<List<Product>>("AddingProducts") == null)
+            {
+                Session.Set("AddingProducts", new List<Product>());
+            }
+
+            List<Product> items = Session.Get<List<Product>>("AddingProducts");
+
+            if (map.HasInput<Product>("ProductToAdd"))
+            {
+                items.Add(map.GetInput<Product>("ProductToAdd"));
+                map.SetInput<Product>("ProductToAdd", null);
+
+                ViewManager.Show("ViewEditBlock", map);
             }
             else
                 ViewManager.ShowFlash("Please select a product to add", FlashMessageType.Neutral);

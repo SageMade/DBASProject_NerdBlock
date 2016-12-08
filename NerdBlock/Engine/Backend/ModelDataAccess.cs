@@ -313,6 +313,12 @@ namespace NerdBlock.Engine.Backend
 
                 if (myModelProperties[index].GetCustomAttribute<PrimaryKey>() != null)
                 {
+                    if (myModelProperties[index].GetCustomAttribute<ForeignKey>() != null)
+                    {
+                        // Use the DataAccess to get the primary key value for the instance
+                        pValue = DataAccess.GetPrimaryKeyWeak(myModelProperties[index].PropertyType, pValue);
+                    }
+
                     if (pValue == null)
                         throw new ArgumentException("Cannot update without primary key set. Has this record been retreived from the DB?");
 
