@@ -32,9 +32,11 @@
             this.dgvInventory = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(240, 18);
+            this.label7.Location = new System.Drawing.Point(45, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 16);
             this.label7.TabIndex = 7;
@@ -56,15 +58,17 @@
             this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmId,
             this.clmName,
-            this.clmQty,
-            this.clmLoc,
-            this.clmPrice});
-            this.dgvInventory.Location = new System.Drawing.Point(38, 48);
+            this.clmDesc,
+            this.clmWidth,
+            this.clmHeight,
+            this.clmDepth,
+            this.clmStock});
+            this.dgvInventory.Location = new System.Drawing.Point(36, 45);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.RowHeadersVisible = false;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(504, 216);
+            this.dgvInventory.Size = new System.Drawing.Size(710, 360);
             this.dgvInventory.TabIndex = 8;
             // 
             // clmId
@@ -79,23 +83,35 @@
             this.clmName.Name = "clmName";
             this.clmName.ReadOnly = true;
             // 
-            // clmQty
+            // clmDesc
             // 
-            this.clmQty.HeaderText = "Quantity";
-            this.clmQty.Name = "clmQty";
-            this.clmQty.ReadOnly = true;
+            this.clmDesc.HeaderText = "Description";
+            this.clmDesc.Name = "clmDesc";
+            this.clmDesc.ReadOnly = true;
             // 
-            // clmLoc
+            // clmWidth
             // 
-            this.clmLoc.HeaderText = "Location";
-            this.clmLoc.Name = "clmLoc";
-            this.clmLoc.ReadOnly = true;
+            this.clmWidth.HeaderText = "Width";
+            this.clmWidth.Name = "clmWidth";
+            this.clmWidth.ReadOnly = true;
             // 
-            // clmPrice
+            // clmHeight
             // 
-            this.clmPrice.HeaderText = "Price";
-            this.clmPrice.Name = "clmPrice";
-            this.clmPrice.ReadOnly = true;
+            this.clmHeight.HeaderText = "Height";
+            this.clmHeight.Name = "clmHeight";
+            this.clmHeight.ReadOnly = true;
+            // 
+            // clmDepth
+            // 
+            this.clmDepth.HeaderText = "Depth";
+            this.clmDepth.Name = "clmDepth";
+            this.clmDepth.ReadOnly = true;
+            // 
+            // clmStock
+            // 
+            this.clmStock.HeaderText = "Stock";
+            this.clmStock.Name = "clmStock";
+            this.clmStock.ReadOnly = true;
             // 
             // Inventory
             // 
@@ -104,7 +120,7 @@
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.label7);
             this.Name = "Inventory";
-            this.Size = new System.Drawing.Size(575, 284);
+            this.Size = new System.Drawing.Size(793, 431);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,8 +132,10 @@
         private Implementation.DataGridDisplayView dgvInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmLoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmWidth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStock;
     }
 }
