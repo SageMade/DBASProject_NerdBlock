@@ -108,6 +108,10 @@ namespace NerdBlock.Engine.Frontend
         {
             CurrentMap.Reset();
 
+            // Clear out existing view
+            if (myViewStack.Count > 0)
+                myViewStack.Pop();
+
             if (myViewStack.Count > 0)
                 Implementation.ShowView(myViewStack.Pop(), CurrentMap);
             else
