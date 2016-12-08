@@ -41,9 +41,9 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 {
                     DataGridViewRow row = dgvExtraProduct.Rows[dgvExtraProduct.Rows.Add()];
 
-                    row.Cells["ProdName"].Value = items[index].ProductId.Name;
-                    row.Cells["Quantity"].Value = items[index].Quantity;
-                    row.Cells["Price"].Value = items[index].Price;
+                    row.Cells["iName"].Value = items[index].Name;
+                    row.Cells["iQuantity"].Value = items[index].Stock;
+                    row.Cells["iDescription"].Value = items[index].Description;
 
                 }
             }

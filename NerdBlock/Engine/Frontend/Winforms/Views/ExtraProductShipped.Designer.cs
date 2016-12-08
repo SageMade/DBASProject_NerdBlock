@@ -30,21 +30,21 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.dgvExtraProduct = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
-            this.ProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvAddExtra = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.btnAddProductToOverStock = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
-            this.dgvAddExtra = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtraProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddExtra)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -63,9 +63,9 @@
             this.dgvExtraProduct.AllowUserToDeleteRows = false;
             this.dgvExtraProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExtraProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProdName,
-            this.Quantity,
-            this.Price});
+            this.iName,
+            this.iQuantity,
+            this.iDescription});
             this.dgvExtraProduct.Location = new System.Drawing.Point(18, 50);
             this.dgvExtraProduct.Name = "dgvExtraProduct";
             this.dgvExtraProduct.ReadOnly = true;
@@ -73,33 +73,6 @@
             this.dgvExtraProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExtraProduct.Size = new System.Drawing.Size(471, 168);
             this.dgvExtraProduct.TabIndex = 68;
-            // 
-            // ProdName
-            // 
-            this.ProdName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProdName.DataPropertyName = "Name";
-            this.ProdName.FillWeight = 40F;
-            this.ProdName.HeaderText = "Name";
-            this.ProdName.Name = "ProdName";
-            this.ProdName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.FillWeight = 30F;
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Price.DataPropertyName = "Price";
-            this.Price.FillWeight = 30F;
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -112,6 +85,23 @@
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Extra Product";
+            // 
+            // dgvAddExtra
+            // 
+            this.dgvAddExtra.AllowUserToAddRows = false;
+            this.dgvAddExtra.AllowUserToDeleteRows = false;
+            this.dgvAddExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddExtra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pName,
+            this.pQuantity,
+            this.pDescription});
+            this.dgvAddExtra.Location = new System.Drawing.Point(6, 19);
+            this.dgvAddExtra.Name = "dgvAddExtra";
+            this.dgvAddExtra.ReadOnly = true;
+            this.dgvAddExtra.RowHeadersVisible = false;
+            this.dgvAddExtra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAddExtra.Size = new System.Drawing.Size(264, 99);
+            this.dgvAddExtra.TabIndex = 70;
             // 
             // btnAddProductToOverStock
             // 
@@ -139,49 +129,59 @@
             this.txtProductName.Size = new System.Drawing.Size(177, 20);
             this.txtProductName.TabIndex = 3;
             // 
-            // dgvAddExtra
+            // iName
             // 
-            this.dgvAddExtra.AllowUserToAddRows = false;
-            this.dgvAddExtra.AllowUserToDeleteRows = false;
-            this.dgvAddExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAddExtra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dgvAddExtra.Location = new System.Drawing.Point(6, 19);
-            this.dgvAddExtra.Name = "dgvAddExtra";
-            this.dgvAddExtra.ReadOnly = true;
-            this.dgvAddExtra.RowHeadersVisible = false;
-            this.dgvAddExtra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddExtra.Size = new System.Drawing.Size(264, 99);
-            this.dgvAddExtra.TabIndex = 70;
+            this.iName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iName.DataPropertyName = "Name";
+            this.iName.FillWeight = 40F;
+            this.iName.HeaderText = "Name";
+            this.iName.Name = "iName";
+            this.iName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // iQuantity
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.FillWeight = 40F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iQuantity.DataPropertyName = "Quantity";
+            this.iQuantity.FillWeight = 30F;
+            this.iQuantity.HeaderText = "Quantity";
+            this.iQuantity.Name = "iQuantity";
+            this.iQuantity.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // iDescription
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn2.FillWeight = 30F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.iDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iDescription.DataPropertyName = "Description";
+            this.iDescription.FillWeight = 30F;
+            this.iDescription.HeaderText = "Description";
+            this.iDescription.Name = "iDescription";
+            this.iDescription.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // pName
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn3.FillWeight = 30F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.pName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pName.DataPropertyName = "Name";
+            this.pName.FillWeight = 40F;
+            this.pName.HeaderText = "Name";
+            this.pName.Name = "pName";
+            this.pName.ReadOnly = true;
+            // 
+            // pQuantity
+            // 
+            this.pQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pQuantity.DataPropertyName = "Quantity";
+            this.pQuantity.FillWeight = 30F;
+            this.pQuantity.HeaderText = "Quantity";
+            this.pQuantity.Name = "pQuantity";
+            this.pQuantity.ReadOnly = true;
+            // 
+            // pDescription
+            // 
+            this.pDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pDescription.DataPropertyName = "Description";
+            this.pDescription.FillWeight = 30F;
+            this.pDescription.HeaderText = "Description";
+            this.pDescription.Name = "pDescription";
+            this.pDescription.ReadOnly = true;
             // 
             // ExtraProductShipped
             // 
@@ -194,9 +194,9 @@
             this.Size = new System.Drawing.Size(509, 368);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtraProduct)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddExtra)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAddExtra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +205,16 @@
         #endregion
         private System.Windows.Forms.Label label5;
         private Implementation.DataGridDisplayView dgvExtraProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProdName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.GroupBox groupBox1;
         private Implementation.DataGridDisplayView dgvAddExtra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btnAddProductToOverStock;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDescription;
     }
 }

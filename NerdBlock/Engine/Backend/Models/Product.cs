@@ -27,6 +27,9 @@ namespace NerdBlock.Engine.Backend.Models
         [DataField("depth", QueryParamType.Double)]
         public decimal? Depth { get; set; }
 
+        [DataField("stock", QueryParamType.Integer), Nullable]
+        public int? Stock { get; set; }
+
         [DataField("numdamaged", QueryParamType.Integer), Nullable]
         public int? NumDamaged { get; set; }
     }
