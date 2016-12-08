@@ -29,5 +29,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Outputs.Add(new DataGridOutput("Items", dgvItems));
 
         }
+
+        protected override void LoadMyViewContext(IoMap map)
+        {
+
+        }
+
+
     }
 }

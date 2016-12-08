@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NerdBlock.Engine.Frontend.Winforms.Implementation;
 using NerdBlock.Properties;
 using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Backend.Models;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -29,11 +30,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 1
             btnView.Click += (X, Y) =>
             {
-                ViewManager.CurrentMap.SetInput("TargetItem", dgvOrders.SelectedRows[0]);
+
+                ViewManager.CurrentMap.SetInput("Order.Selected", DataAccess.FromPrimaryKey<Order>(dgvOrders.SelectedRows[0].Cells["clmOrderID"].Value));
                 AttemptAction("goto_order_edit");
             };
-
-
         }
 
         protected override void LoadMyViewContext(IoMap map)
