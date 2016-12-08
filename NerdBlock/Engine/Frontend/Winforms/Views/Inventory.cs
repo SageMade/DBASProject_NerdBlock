@@ -26,7 +26,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         protected override void LoadMyViewContext(IoMap map)
         {
-            //map.SetOutput("Items", DataAccess.Execute("Select * from products", new[] { new QueryParam("orderId", QueryParamType.Integer) }, new object[] { order.OrderId.Value }));
+            map.SetOutput("Inventory", DataAccess.Execute(Resources.SelectInventoryLevels));
         }
     }
 }

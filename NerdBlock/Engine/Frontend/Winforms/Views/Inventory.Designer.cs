@@ -73,42 +73,49 @@
             // 
             // clmId
             // 
+            this.clmId.DataPropertyName = "productid";
             this.clmId.HeaderText = "Product ID";
             this.clmId.Name = "clmId";
             this.clmId.ReadOnly = true;
             // 
             // clmName
             // 
+            this.clmName.DataPropertyName = "name";
             this.clmName.HeaderText = "Product Name";
             this.clmName.Name = "clmName";
             this.clmName.ReadOnly = true;
             // 
             // clmDesc
             // 
+            this.clmDesc.DataPropertyName = "description";
             this.clmDesc.HeaderText = "Description";
             this.clmDesc.Name = "clmDesc";
             this.clmDesc.ReadOnly = true;
             // 
             // clmWidth
             // 
+            this.clmWidth.DataPropertyName = "width";
             this.clmWidth.HeaderText = "Width";
             this.clmWidth.Name = "clmWidth";
             this.clmWidth.ReadOnly = true;
             // 
             // clmHeight
             // 
+            this.clmHeight.DataPropertyName = "height";
             this.clmHeight.HeaderText = "Height";
             this.clmHeight.Name = "clmHeight";
             this.clmHeight.ReadOnly = true;
             // 
             // clmDepth
             // 
+            this.clmDepth.DataPropertyName = "depth";
             this.clmDepth.HeaderText = "Depth";
             this.clmDepth.Name = "clmDepth";
             this.clmDepth.ReadOnly = true;
             // 
             // clmStock
             // 
+            this.clmStock.DataPropertyName = "stock";
             this.clmStock.HeaderText = "Stock";
             this.clmStock.Name = "clmStock";
             this.clmStock.ReadOnly = true;
