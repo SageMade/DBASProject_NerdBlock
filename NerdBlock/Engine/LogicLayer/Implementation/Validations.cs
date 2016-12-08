@@ -91,7 +91,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation
 
         private static void ValidatePostalCode(string postalCode, ref string error)
         {
-            if (!myPhoneRegex.IsMatch(postalCode))
+            if (!myPostalCodeRegex.IsMatch(postalCode))
             {
                 error += "Postal code is invalid\n";
             }

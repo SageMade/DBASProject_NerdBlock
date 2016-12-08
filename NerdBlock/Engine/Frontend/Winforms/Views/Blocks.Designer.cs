@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.grpBlockSummary = new System.Windows.Forms.GroupBox();
+            this.dtpShipDate = new System.Windows.Forms.DateTimePicker();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtpShipDate = new System.Windows.Forms.DateTimePicker();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).BeginInit();
@@ -92,6 +92,13 @@
             this.grpBlockSummary.TabIndex = 4;
             this.grpBlockSummary.TabStop = false;
             this.grpBlockSummary.Text = "Add Block";
+            // 
+            // dtpShipDate
+            // 
+            this.dtpShipDate.Location = new System.Drawing.Point(87, 86);
+            this.dtpShipDate.Name = "dtpShipDate";
+            this.dtpShipDate.Size = new System.Drawing.Size(219, 23);
+            this.dtpShipDate.TabIndex = 1;
             // 
             // txtDescription
             // 
@@ -225,13 +232,6 @@
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Block info";
-            // 
-            // dtpShipDate
-            // 
-            this.dtpShipDate.Location = new System.Drawing.Point(87, 86);
-            this.dtpShipDate.Name = "dtpShipDate";
-            this.dtpShipDate.Size = new System.Drawing.Size(219, 23);
-            this.dtpShipDate.TabIndex = 1;
             // 
             // Blocks
             // 

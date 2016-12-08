@@ -27,7 +27,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput("Contact.FirstName", txtFirst));
             Inputs.Add(new TextBoxInput("Contact.LastName", txtLast));
             Inputs.Add(new TextBoxInput("Contact.Email", txtEmail));
-            Inputs.Add(new TextBoxInput("Contact.Phone", txtContactPhone));
 
             btnAdd.Click += (X, Y) => AttemptAction("insert_supplier");
         }
