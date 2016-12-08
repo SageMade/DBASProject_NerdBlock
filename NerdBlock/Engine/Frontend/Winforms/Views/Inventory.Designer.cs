@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridDisplayView1 = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.dgvInventory = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -48,24 +48,24 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Inventory";
             // 
-            // dataGridDisplayView1
+            // dgvInventory
             // 
-            this.dataGridDisplayView1.AllowUserToAddRows = false;
-            this.dataGridDisplayView1.AllowUserToDeleteRows = false;
-            this.dataGridDisplayView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDisplayView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInventory.AllowUserToAddRows = false;
+            this.dgvInventory.AllowUserToDeleteRows = false;
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmId,
             this.clmName,
             this.clmQty,
             this.clmLoc,
             this.clmPrice});
-            this.dataGridDisplayView1.Location = new System.Drawing.Point(38, 48);
-            this.dataGridDisplayView1.Name = "dataGridDisplayView1";
-            this.dataGridDisplayView1.ReadOnly = true;
-            this.dataGridDisplayView1.RowHeadersVisible = false;
-            this.dataGridDisplayView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridDisplayView1.Size = new System.Drawing.Size(504, 216);
-            this.dataGridDisplayView1.TabIndex = 8;
+            this.dgvInventory.Location = new System.Drawing.Point(38, 48);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.ReadOnly = true;
+            this.dgvInventory.RowHeadersVisible = false;
+            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventory.Size = new System.Drawing.Size(504, 216);
+            this.dgvInventory.TabIndex = 8;
             // 
             // clmId
             // 
@@ -101,11 +101,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridDisplayView1);
+            this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.label7);
             this.Name = "Inventory";
             this.Size = new System.Drawing.Size(575, 284);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +113,7 @@
 
         #endregion
         private System.Windows.Forms.Label label7;
-        private Implementation.DataGridDisplayView dataGridDisplayView1;
+        private Implementation.DataGridDisplayView dgvInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmQty;
