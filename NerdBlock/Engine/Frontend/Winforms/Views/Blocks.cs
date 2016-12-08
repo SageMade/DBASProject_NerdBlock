@@ -19,7 +19,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Outputs.Add(new ModelPopulatedComboBox<Model.BlockSeries>("Series", cbSeries));
 
             //Controls - 4 DONE
-            btnDelete.Click += (X, Y) => AttemptAction("delete_block");
+            
             btnSave.Click += (X, Y) => AttemptAction("insert_block");
             
         }

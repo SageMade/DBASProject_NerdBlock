@@ -1,4 +1,6 @@
-﻿using NerdBlock.Engine.Frontend;
+﻿using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Backend.Models;
+using NerdBlock.Engine.Frontend;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +36,6 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
             string contactFirstName = map.GetInput<string>("Contact.FirstName");
             string contactLastName = map.GetInput<string>("Contact.LastName");
-            string contactPhone = map.GetInput<string>("Contact.Phone");
             string contactEmail = map.GetInput<string>("Contact.Email");
                         
             string error = "";
@@ -44,55 +45,57 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             if (companyPhone == null || string.IsNullOrWhiteSpace(companyPhone))
                 error += "You must enter a company phone number\n";
 
+            if (string.IsNullOrWhiteSpace(contactFirstName))
+                error += "You must enter a contact first name\n";
+            if (string.IsNullOrWhiteSpace(contactLastName))
+                error += "You must enter a contact last name\n";
+            if (string.IsNullOrWhiteSpace(contactEmail))
+                error += "You must enter a contact email address\n";
+
             Validations.ValidateAddressFromMap(map, "Address", ref error);
-
-            /*
-            if (productWidth == null || string.IsNullOrWhiteSpace(productWidth))
-                error += "You must enter a product width\n";
-            if (productHeight == null || string.IsNullOrWhiteSpace(productHeight))
-                error += "You must enter a product height\n";
-            if (productDepth == null || string.IsNullOrWhiteSpace(productDepth))
-                error += "You must enter a product depth\n";
-
-            if (productDescription == null || string.IsNullOrWhiteSpace(productDescription))
-                error += "You must enter a product description\n";
+            companyPhone = Validations.ValidatePhone(companyPhone, ref error);
 
             if (error == "")
             {
-                if (!decimal.TryParse(productWidth, out width))
-                    error += "Width must be numeric\n";
-                if (!decimal.TryParse(productWidth, out height))
-                    error += "Width must be numeric\n";
-                if (!decimal.TryParse(productWidth, out depth))
-                    error += "Width must be numeric\n";
-            }
+                Supplier supplier = new Supplier();
+                supplier.Company = companyName;
+                supplier.Phone = long.Parse(companyPhone);
+                supplier.ContactFirstName = contactFirstName;
+                supplier.ContactLastName = contactLastName;
+                supplier.ContactEmail = contactEmail;
 
-            if (error == "")
-            {
-                Model.Product item = new Model.Product()
-                {
-                    Name = productName,
-                    Description = productDescription,
-                    Width = width,
-                    Height = height,
-                    Depth = depth
-                };
+                Address address = new Address();
+                address.StreetAddress = map.GetInput<string>("Address.Street");
+                address.Country = map.GetInput<string>("Address.Country");
+                address.State = map.GetInput<string>("Address.State");
+                address.PostalCode = map.GetInput<string>("Address.PostalCode");
+                address.City = map.GetInput<string>("Address.City");
 
-                if (DataAccess.Insert(item))
+                int aptNum = -1;
+                if (int.TryParse(map.GetInput<string>("Address.AptNum"), out aptNum))
+                    address.ApartmentNumber = aptNum;
+                else
+                    address.ApartmentNumber = null;
+
+                supplier.Address = address;
+
+                if (DataAccess.Insert(supplier))
                 {
-                    ViewManager.ShowFlash("Product has been added", FlashMessageType.Good);
+                    map.Reset();
+                    ViewManager.ShowFlash("Supplier has been added.", FlashMessageType.Good);
+                    ViewManager.Show("AddSupplier");
                 }
                 else
                 {
-                    ViewManager.ShowFlash("Failed to add product: " + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                    ViewManager.ShowFlash("Failed to add supplier: \n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                    return;
                 }
             }
             else
             {
-                ViewManager.ShowFlash(error, FlashMessageType.Bad);
+                ViewManager.ShowFlash("Failed to add supplier: \n" + error, FlashMessageType.Bad);
                 return;
             }
-            */
         }
     }
 }

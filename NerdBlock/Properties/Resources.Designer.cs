@@ -110,6 +110,22 @@ namespace NerdBlock.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select 
+        ///       product.productId as ProductId,
+        ///       product.Name as ProductName,
+        ///       line.batchcost as Cost,
+        ///       line.quantity as Quantity
+        ///       from tblorderlineitem as line
+        ///           inner join tblproduct as product on line.productid=product.productid
+        ///	   where line.orderid=@orderId;.
+        /// </summary>
+        internal static string SelectProductInfo {
+            get {
+                return ResourceManager.GetString("SelectProductInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to select series.title as Name,
         ///    series.seriesid as SeriesId,
         ///    series.subscriptionprice as Price,

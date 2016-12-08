@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblNumberOfEmployees = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
-            this.btnView = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.dgvEmployeeList = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,48 +36,6 @@
             this.clmEmployeePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Number of Employees";
-            // 
-            // lblNumberOfEmployees
-            // 
-            this.lblNumberOfEmployees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNumberOfEmployees.Location = new System.Drawing.Point(146, 27);
-            this.lblNumberOfEmployees.Name = "lblNumberOfEmployees";
-            this.lblNumberOfEmployees.Size = new System.Drawing.Size(57, 13);
-            this.lblNumberOfEmployees.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Employee ID";
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(301, 25);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(100, 20);
-            this.txtEmployeeID.TabIndex = 3;
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(407, 23);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(57, 23);
-            this.btnView.TabIndex = 4;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
@@ -103,11 +56,12 @@
             this.clmEmployeeName,
             this.clmRole,
             this.clmEmployeePhone});
-            this.dgvEmployeeList.Location = new System.Drawing.Point(33, 52);
+            this.dgvEmployeeList.Location = new System.Drawing.Point(33, 19);
             this.dgvEmployeeList.Name = "dgvEmployeeList";
             this.dgvEmployeeList.ReadOnly = true;
             this.dgvEmployeeList.RowHeadersVisible = false;
-            this.dgvEmployeeList.Size = new System.Drawing.Size(431, 398);
+            this.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployeeList.Size = new System.Drawing.Size(431, 431);
             this.dgvEmployeeList.TabIndex = 47;
             // 
             // clmEmployeeId
@@ -152,26 +106,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvEmployeeList);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnView);
-            this.Controls.Add(this.txtEmployeeID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblNumberOfEmployees);
-            this.Controls.Add(this.label1);
             this.Name = "EmployeeSearch";
             this.Size = new System.Drawing.Size(500, 482);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblNumberOfEmployees;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmployeeID;
-        private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnEdit;
         private Implementation.DataGridDisplayView dgvEmployeeList;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmEmployeeId;

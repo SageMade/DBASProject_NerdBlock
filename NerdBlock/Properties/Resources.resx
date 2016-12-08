@@ -149,7 +149,16 @@ inner join tblsupplier as supplier on pOrder.supplierid=supplier.supplierid
 inner join tblemployees as employee on pOrder.orderedby=employee.employeeid
 inner join tblorderlineitem as lineitem on lineitem.orderid=pOrder.orderid
 group by pOrder.orderid, employee.employeeid, supplier.supplierid;</value>
-    <comment> </comment>
+  </data>
+  <data name="SelectProductInfo" xml:space="preserve">
+    <value>select 
+       product.productId as ProductId,
+       product.Name as ProductName,
+       line.batchcost as Cost,
+       line.quantity as Quantity
+       from tblorderlineitem as line
+           inner join tblproduct as product on line.productid=product.productid
+	   where line.orderid=@orderId;</value>
   </data>
   <data name="SelectSeriesInfoQuery" xml:space="preserve">
     <value>select series.title as Name,
