@@ -138,6 +138,10 @@
 	left outer join tblblockseries as series on series.genreid=genre.genreid
 		group by genre.genreid;</value>
   </data>
+  <data name="SelectInventoryLevels" xml:space="preserve">
+    <value>Select Product.ProductId, Product.Name, Product.Description, Product.Width, Product.height, Product.depth, Product.stock
+	FROM tblProduct as Product</value>
+  </data>
   <data name="SelectOrderInfoQuery" xml:space="preserve">
     <value>select pOrder.orderid as OrderId,
        pOrder.dateOrdered as OrderDate,

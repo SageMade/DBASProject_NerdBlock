@@ -92,6 +92,16 @@ namespace NerdBlock.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Product.ProductId, Product.Name, Product.Description, Product.Width, Product.height, Product.depth, Product.stock
+        ///	FROM tblProduct as Product.
+        /// </summary>
+        internal static string SelectInventoryLevels {
+            get {
+                return ResourceManager.GetString("SelectInventoryLevels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to select pOrder.orderid as OrderId,
         ///       pOrder.dateOrdered as OrderDate,
         ///       concat(employee.firstname, &apos; &apos;, employee.lastname) as OrderBy,

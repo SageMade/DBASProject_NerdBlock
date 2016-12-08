@@ -70,6 +70,64 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         }
 
         /// <summary>
+        /// Handles updating an employee in the database
+        /// </summary>
+        [BusinessAction("update_employee")]
+        [AuthAttrib("Human Resources", "General Manager")]
+        public void Update()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            string msg = "";
+            if (!Validate(ref msg))
+            {
+                ViewManager.ShowFlash(string.Format("Error updating Employee:\n{0}", msg), FlashMessageType.Bad);
+                ViewManager.Show("ViewEditEmployee", map);
+            }
+            else
+            {
+                Employee employee = map.GetInput<Employee>("Employee.Info");
+
+                employee.FirstName = map.GetInput<string>("Employee.FirstName");
+                employee.LastName = map.GetInput<string>("Employee.LastName");
+                employee.SIN = map.GetInput<string>("Employee.SIN");
+                employee.Email = map.GetInput<string>("Employee.Email");
+                employee.Phone = long.Parse(map.GetInput<string>("Employee.Phone").Replace(" ", "").Replace("-", ""));
+                employee.DateJoined = DateTime.Now;
+                employee.HashedPassword = PasswordSecurity.PasswordStorage.CreateHash(employee.SIN);
+                
+                employee.HomeAddress.StreetAddress = map.GetInput<string>("Address.StreetAddress");
+                employee.HomeAddress.Country = map.GetInput<string>("Address.Country");
+                employee.HomeAddress.State = map.GetInput<string>("Address.State");
+                employee.HomeAddress.PostalCode = map.GetInput<string>("Address.PostalCode");
+                employee.HomeAddress.City = map.GetInput<string>("Address.City");
+
+                int aptNum = -1;
+                if (int.TryParse(map.GetInput<string>("Address.AptNum"), out aptNum))
+                    employee.HomeAddress.ApartmentNumber = aptNum;
+                else
+                    employee.HomeAddress.ApartmentNumber = null;
+                employee.HomeAddress = employee.HomeAddress;
+
+                employee.Role = map.GetInput<EmployeeRole>("Employee.Role");
+
+                if (DataAccess.Insert(employee))
+                {
+                    employee = DataAccess.Match(employee)[0];
+                    ViewManager.ShowFlash(string.Format("Employee added with ID: {0}\nTheir password will be their SIN until they change it.", employee.EmployeeId), FlashMessageType.Good);
+                    Logger.Log(LogLevel.Info, "Added employee with ID {0}", employee.EmployeeId);
+                    ViewManager.Show("AddEmployee", map);
+                }
+                else
+                {
+                    ViewManager.ShowFlash("Failed to add employee:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                    Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
+                    ViewManager.Show("AddEmployee", map);
+                }
+            }
+        }
+
+        /// <summary>
         /// Handles showing the employee add view
         /// </summary>
         [BusinessAction("goto_employee_add")]

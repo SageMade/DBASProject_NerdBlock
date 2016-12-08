@@ -351,7 +351,7 @@
             this.Controls.Add(this.btnTerminate);
             this.Controls.Add(this.btnEdit);
             this.Name = "ViewEditEmployee";
-            this.Size = new System.Drawing.Size(498, 296);
+            this.Size = new System.Drawing.Size(498, 262);
             this.ResumeLayout(false);
             this.PerformLayout();
 
