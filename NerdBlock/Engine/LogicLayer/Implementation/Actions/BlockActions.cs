@@ -3,6 +3,7 @@ using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
 using NerdBlock.Properties;
 using System;
+using System.Collections.Generic;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
@@ -130,6 +131,29 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                     ViewManager.Show("Blocks", map);
                 }
             }
+
+        }
+
+        [BusinessAction("insert_product")]
+        [AuthAttrib("General Manager", "Planner")]
+        public void InsertProduct()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            if (Session.Get<List<Product>>("AddingProduct") == null)
+            { 
+                Session.Set("AddingProduct", new List<Product>());
+
+                List<Product> items = Session.Get<List<Product>>("AddingProduct");
+            }
+
+            else
+            {
+                ViewManager.ShowFlash("Could not add product", FlashMessageType.Bad);
+                ViewManager.Show("Blocks", map);
+            }
+            
+
 
         }
 

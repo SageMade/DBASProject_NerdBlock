@@ -25,6 +25,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 4 DONE
 
             btnSave.Click += (X, Y) => AttemptAction("insert_block");
+            btnAddProductToBlock.Click += (X, Y) => AttemptAction("insert_product");
             
         }
 
