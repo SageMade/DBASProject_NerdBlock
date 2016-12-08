@@ -38,8 +38,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         protected override void LoadMyViewContext(IoMap map)
         {
-            map.SetOutput("Data", DataAccess.Execute(
-                Resources.SelectBlockInfoQuery));
+            map.SetOutput("Orders", DataAccess.Execute(Resources.SelectOrderInfoQuery));
         }
 
         private void OrderPage_Load(object sender, EventArgs e)
