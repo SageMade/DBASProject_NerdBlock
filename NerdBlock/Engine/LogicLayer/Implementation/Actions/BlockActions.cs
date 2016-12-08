@@ -110,28 +110,43 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             }
             else
             {
-                Block block = new Block();
-                block.Title = map.GetInput<string>("Block.Title");
-                block.SeriesId = map.GetInput<BlockSeries>("Block.Series");
-                block.ShipByDate = map.GetInput<DateTime>("Block.ShipByDate");
-                block.Description = map.GetInput<string>("Block.Description");
 
-                if (DataAccess.Insert(block))
+                if (Session.Get<List<Product>>("AddingProducts") == null)
                 {
-                    map.Reset();
-                    block = DataAccess.Match(block)[0];
-                    ViewManager.ShowFlash(string.Format("Block added with ID: {0}", block.BlockId), FlashMessageType.Good);
-                    Logger.Log(LogLevel.Info, "Added block with ID {0}", block.BlockId);
-                    ViewManager.Show("Blocks", map);
+                    ViewManager.ShowFlash("Please select at least one product to order", FlashMessageType.Neutral);
+                    return;
                 }
                 else
                 {
-                    ViewManager.ShowFlash("Failed to add block: \n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
-                    Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
-                    ViewManager.Show("Blocks", map);
+                    List<Product> products = Session.Get<List<Product>>("AddingProducts");
+
+                    for(int index = 0; index < products.Count; index ++)
+                    {
+
+                    }
+
+                    Block block = new Block();
+                    block.Title = map.GetInput<string>("Block.Title");
+                    block.SeriesId = map.GetInput<BlockSeries>("Block.Series");
+                    block.ShipByDate = map.GetInput<DateTime>("Block.ShipByDate");
+                    block.Description = map.GetInput<string>("Block.Description");
+
+                    if (DataAccess.Insert(block))
+                    {
+                        map.Reset();
+                        block = DataAccess.Match(block)[0];
+                        ViewManager.ShowFlash(string.Format("Block added with ID: {0}", block.BlockId), FlashMessageType.Good);
+                        Logger.Log(LogLevel.Info, "Added block with ID {0}", block.BlockId);
+                        ViewManager.Show("Blocks", map);
+                    }
+                    else
+                    {
+                        ViewManager.ShowFlash("Failed to add block: \n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                        Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
+                        ViewManager.Show("Blocks", map);
+                    }
                 }
             }
-
         }
 
         [BusinessAction("insert_block_item")]
