@@ -34,82 +34,87 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lstExtraProduct = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 77);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(44, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 77);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(152, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Product ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(331, 77);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(248, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Quantity";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(445, 77);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(334, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 17);
+            this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Address Shipped To";
             // 
             // lstExtraProduct
             // 
             this.lstExtraProduct.FormattingEnabled = true;
-            this.lstExtraProduct.ItemHeight = 16;
-            this.lstExtraProduct.Location = new System.Drawing.Point(62, 113);
-            this.lstExtraProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstExtraProduct.Location = new System.Drawing.Point(46, 92);
             this.lstExtraProduct.Name = "lstExtraProduct";
-            this.lstExtraProduct.Size = new System.Drawing.Size(559, 228);
+            this.lstExtraProduct.Size = new System.Drawing.Size(420, 186);
             this.lstExtraProduct.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(222, 27);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(166, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 20);
+            this.label5.Size = new System.Drawing.Size(186, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Brick and Mortar Shipping";
             // 
+            // lblComingSoon
+            // 
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(67, 122);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(375, 55);
+            this.lblComingSoon.TabIndex = 18;
+            this.lblComingSoon.Text = "COMING SOON";
+            // 
             // ExtraProductShipped
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblComingSoon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lstExtraProduct);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExtraProductShipped";
-            this.Size = new System.Drawing.Size(679, 367);
+            this.Size = new System.Drawing.Size(509, 298);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +128,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstExtraProduct;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }

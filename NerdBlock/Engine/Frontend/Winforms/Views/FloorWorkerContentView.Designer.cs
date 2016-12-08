@@ -35,6 +35,7 @@
             this.btnViewProduct = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,10 +102,22 @@
             this.dgvInventory.Size = new System.Drawing.Size(495, 220);
             this.dgvInventory.TabIndex = 15;
             // 
+            // lblComingSoon
+            // 
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(91, 169);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(375, 55);
+            this.lblComingSoon.TabIndex = 18;
+            this.lblComingSoon.Text = "COMING SOON";
+            // 
             // FloorWorkerContentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblComingSoon);
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnViewProduct);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.Button btnViewProduct;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvInventory;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }

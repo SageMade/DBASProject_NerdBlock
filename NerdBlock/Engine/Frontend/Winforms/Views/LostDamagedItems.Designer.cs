@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvDmgInventory = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +40,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.lblGrandTotal = new System.Windows.Forms.Label();
-            this.dgvDmgInventory = new System.Windows.Forms.DataGridView();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDmgInventory)).BeginInit();
             this.SuspendLayout();
@@ -48,12 +49,20 @@
             // 
             this.groupBox1.Controls.Add(this.dgvDmgInventory);
             this.groupBox1.Location = new System.Drawing.Point(2, 72);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(566, 277);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // dgvDmgInventory
+            // 
+            this.dgvDmgInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDmgInventory.Location = new System.Drawing.Point(10, 19);
+            this.dgvDmgInventory.Name = "dgvDmgInventory";
+            this.dgvDmgInventory.Size = new System.Drawing.Size(551, 253);
+            this.dgvDmgInventory.TabIndex = 0;
             // 
             // label1
             // 
@@ -124,7 +133,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(377, 9);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 24);
             this.btnAdd.TabIndex = 6;
@@ -134,7 +143,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(475, 9);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 24);
             this.btnDelete.TabIndex = 7;
@@ -162,18 +171,22 @@
             this.lblGrandTotal.Size = new System.Drawing.Size(135, 14);
             this.lblGrandTotal.TabIndex = 10;
             // 
-            // dgvDmgInventory
+            // lblComingSoon
             // 
-            this.dgvDmgInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDmgInventory.Location = new System.Drawing.Point(10, 19);
-            this.dgvDmgInventory.Name = "dgvDmgInventory";
-            this.dgvDmgInventory.Size = new System.Drawing.Size(551, 253);
-            this.dgvDmgInventory.TabIndex = 0;
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(98, 166);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(375, 55);
+            this.lblComingSoon.TabIndex = 18;
+            this.lblComingSoon.Text = "COMING SOON";
             // 
             // LostDamagedItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblComingSoon);
             this.Controls.Add(this.lblGrandTotal);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
@@ -185,7 +198,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LostDamagedItems";
             this.Size = new System.Drawing.Size(571, 386);
             this.groupBox1.ResumeLayout(false);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblGrandTotal;
         private System.Windows.Forms.DataGridView dgvDmgInventory;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }

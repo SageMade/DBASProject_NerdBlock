@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.grpSubscriptions = new System.Windows.Forms.GroupBox();
             this.dgvActiveSubs = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             this.grpInfo.SuspendLayout();
             this.grpSubscriptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActiveSubs)).BeginInit();
@@ -54,6 +55,7 @@
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.lblComingSoon);
             this.grpInfo.Controls.Add(this.lblJoined);
             this.grpInfo.Controls.Add(this.lblShipAdd);
             this.grpInfo.Controls.Add(this.lblHomeAddr);
@@ -275,6 +277,17 @@
             this.dgvActiveSubs.Size = new System.Drawing.Size(524, 180);
             this.dgvActiveSubs.TabIndex = 0;
             // 
+            // lblComingSoon
+            // 
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(91, 64);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(375, 55);
+            this.lblComingSoon.TabIndex = 17;
+            this.lblComingSoon.Text = "COMING SOON";
+            // 
             // CustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,5 +326,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblID;
         private Implementation.DataGridDisplayView dgvActiveSubs;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }

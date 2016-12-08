@@ -36,6 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvShippings = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShippings)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -135,13 +136,25 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
+            // lblComingSoon
+            // 
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(180, 194);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(375, 55);
+            this.lblComingSoon.TabIndex = 18;
+            this.lblComingSoon.Text = "COMING SOON";
+            // 
             // Shipping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblComingSoon);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Shipping";
             this.Size = new System.Drawing.Size(735, 442);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShippings)).EndInit();
@@ -161,5 +174,6 @@
         private System.Windows.Forms.Label label5;
         private Implementation.DataGridDisplayView dgvShippings;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }

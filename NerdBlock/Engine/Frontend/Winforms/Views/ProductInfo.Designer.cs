@@ -40,6 +40,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtProdDesc = new System.Windows.Forms.TextBox();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -142,10 +143,22 @@
             this.txtProdDesc.Size = new System.Drawing.Size(267, 122);
             this.txtProdDesc.TabIndex = 16;
             // 
+            // lblComingSoon
+            // 
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(28, 92);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(375, 55);
+            this.lblComingSoon.TabIndex = 18;
+            this.lblComingSoon.Text = "COMING SOON";
+            // 
             // ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblComingSoon);
             this.Controls.Add(this.txtProdDesc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEdit);
@@ -179,5 +192,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtProdDesc;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }
