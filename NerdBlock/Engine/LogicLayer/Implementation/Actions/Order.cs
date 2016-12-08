@@ -1,6 +1,12 @@
+
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Frontend;
 using NerdBlock.Properties;
+
+﻿using NerdBlock.Engine.Backend.Models;
+using NerdBlock.Engine.Frontend;
+using System.Collections.Generic;
+
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
@@ -8,7 +14,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
     /// Handles actions related to products
     /// </summary>
     [BusinessActionContainer]
-    public class Order
+    public class OrderActions
     {
         /// <summary>
         /// Show the order add view
@@ -34,10 +40,12 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         /// <summary>
         /// Show the order search page
         /// </summary>
-        [BusinessAction("insert_order")]
+        [BusinessAction("order_insert")]
         [AuthAttrib("Shipper", "General Manager")]
         public void InsertOrder()
         {
+            List<OrderLineitem> items = Session.Get<List<OrderLineitem>>("WorkingOrderItems");
+
             ViewManager.Show("OrderPage");
         }
 

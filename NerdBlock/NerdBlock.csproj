@@ -87,6 +87,8 @@
     <Compile Include="Engine\Frontend\Winforms\Implementation\AddressEntry.Designer.cs">
       <DependentUpon>AddressEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Engine\INamed.cs" />
+    <Compile Include="Engine\NamedCollection.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.cs">
       <SubType>UserControl</SubType>
     </Compile>

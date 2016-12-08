@@ -18,10 +18,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Listbox Output
 
             //Controls - 4 DONE
-            btnAddItem.Click += (X, Y) => AttemptAction("add_block");
+            //btnAddItem.Click += (X, Y) => AttemptAction("add_block");
             btnDelete.Click += (X, Y) => AttemptAction("delete_block");
             btnSave.Click += (X, Y) => AttemptAction("update_block");
-            btnNew.Click += (X, Y) => AttemptAction("clear_block_view");
+            //btnNew.Click += (X, Y) => AttemptAction("clear_block_view");
             
         }
 
@@ -29,5 +29,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
 
         }
+
     }
 }
