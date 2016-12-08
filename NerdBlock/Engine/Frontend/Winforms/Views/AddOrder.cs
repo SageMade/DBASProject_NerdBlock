@@ -49,6 +49,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         protected override void LoadMyViewContext(IoMap map)
         {
+            dgvOrder.Rows.Clear();
+
             List<OrderLineitem> items = Session.Get<List<OrderLineitem>>("WorkingOrderItems");
 
             decimal totalCost = 0;

@@ -3,6 +3,7 @@ using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
@@ -53,12 +54,6 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
             if (error == "")
             {
-                for(int index = 0; index < items.Count; index ++)
-                {
-                    DataAccess.Insert(items[index].ProductId);
-                    DataAccess.Insert(items[index]);
-                }
-
                 Order order = new Order();
                 order.SupplierId = supplier;
                 order.OrderedBy = Auth.User as Employee;
@@ -66,10 +61,33 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
                 if (DataAccess.Insert(order))
                 {
-                    Session.Set<List<OrderLineitem>>("WorkingOrderItems", null);
-                    ViewManager.CurrentMap.Reset();
-                    ViewManager.ShowFlash("Added order", FlashMessageType.Good);
-                    ViewManager.Show("AddOrder");
+                    order = DataAccess.Match(order)[0];
+
+                    bool failed = false;
+
+                    for (int index = 0; index < items.Count; index++)
+                    {
+                        items[index].OrderId = order;
+
+                        DataAccess.Insert(items[index].ProductId);
+                        items[index].ProductId = DataAccess.Match(items[index].ProductId).FirstOrDefault();
+
+                        if (!DataAccess.Insert(items[index]))
+                            failed = true;
+                    }
+
+                    if (!failed)
+                    {
+                        Session.Set("WorkingOrderItems", new List<OrderLineitem>());
+                        ViewManager.CurrentMap.Reset();
+                        ViewManager.ShowFlash("Added order", FlashMessageType.Good);
+                        ViewManager.Show("AddOrder");
+                    }
+                    else
+                    {
+                        ViewManager.ShowFlash("Failed to add order:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                        ViewManager.Show("AddOrder");
+                    }
                 }
                 else
                 {

@@ -170,6 +170,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
                 ValueType[] values = DataAccess.SelectAll<ValueType>();
 
                 ComboBox target = targetObject as ComboBox;
+                target.Items.Clear();
 
                 for(int index = 0; index < values.Length; index ++)
                 {
@@ -193,6 +194,7 @@ namespace NerdBlock.Engine.Frontend.Winforms
             if (typeof(TargetType) == typeof(ComboBox))
             {
                 ComboBox target = targetObject as ComboBox;
+                target.Items.Clear();
 
                 for (int index = 0; index < query.NumRows; index++)
                 {

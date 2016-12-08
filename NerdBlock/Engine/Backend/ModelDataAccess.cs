@@ -133,7 +133,7 @@ namespace NerdBlock.Engine.Backend
             string query = string.Format("insert into {0} ({1}) VALUES ({2})", myTableName, insertLeft.Trim(','), insertRight.Trim(','));
             // Execute the query
             int results = DataAccess.ExecuteStatement(query, queryParams.ToArray(), insertParams.ToArray());
-
+            
             // Return true if at least one row was effected
             return results > 0;
         }
