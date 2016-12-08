@@ -1,4 +1,6 @@
-﻿using NerdBlock.Engine.Frontend;
+﻿using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Frontend;
+using NerdBlock.Properties;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
@@ -26,6 +28,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         public void ShowUpdate()
         {
             ViewManager.Show("OrderPage");
+            ViewManager.CurrentMap.SetOutput("Orders", DataAccess.Execute(Resources.SelectOrderInfoQuery));
         }
 
         /// <summary>
