@@ -3,13 +3,8 @@
     /// <summary>
     /// Represents an input element on a view
     /// </summary>
-    public interface IInput
+    public interface IInput : INamed
     {
-        /// <summary>
-        /// Gets the name that this input uses. This will be put into the context before performing an action
-        /// </summary>
-        string Name { get; }
-
         /// <summary>
         /// Gets or sets the value from the input
         /// </summary>

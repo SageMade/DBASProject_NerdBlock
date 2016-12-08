@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System;
 using System.Drawing;
 using System.ComponentModel;
+using NerdBlock.Engine.Frontend.Winforms.Implementation;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -23,7 +24,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         /// Gets the list of Input elements for this view. These are items that
         /// provide an input to the IoMap
         /// </summary>
-        protected virtual List<IInput> Inputs
+        protected virtual NamedCollection<IInput> Inputs
         {
             get;
             set;
@@ -32,7 +33,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         /// Gets the list of Output elements for this view. These are items that
         /// display a value from the IoMap
         /// </summary>
-        protected virtual List<IOutput> Outputs
+        protected virtual NamedCollection<IOutput> Outputs
         {
             get;
             set;
@@ -43,8 +44,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         /// </summary>
         public ViewBase()
         {
-            Inputs = new List<IInput>();
-            Outputs = new List<IOutput>();
+            Inputs = new NamedCollection<IInput>();
+            Outputs = new NamedCollection<IOutput>();
 
             BackColor = SystemColors.ControlLight;
             BorderStyle = BorderStyle.FixedSingle;

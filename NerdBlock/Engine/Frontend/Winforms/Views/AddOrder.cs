@@ -25,57 +25,33 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-
-            
-
             //Outputs.Add(new ModelPopulatedComboBox<Product>("ProductId", cbProductID));
 
             Outputs.Add(new ModelPopulatedComboBox<Supplier>("SupplierId", cbSupplierID));
+            Outputs.Add(new DataGridOutput("Order", dgvOrder));
+
             Inputs.Add(new TextBoxInput("QuantityOrdered", txtQuantityOrdered));
             Inputs.Add(new TextBoxInput("ProductName", txtProductName));
             Inputs.Add(new TextBoxInput("Width", txtWidth));
             Inputs.Add(new TextBoxInput("Height", txtHeight));
             Inputs.Add(new TextBoxInput("Depth", txtDepth));
             Inputs.Add(new TextBoxInput("Description", txtDescription));
-            Outputs.Add(new DataGridOutput("Order", dgvOrder));
 
             //ViewManager.PopulateFromQuery(cbProductID, DataAccess.Execute("select productid from tblproduct group by productid order by productid"));
             //ViewManager.PopulateFromQuery(cbSupplierID, DataAccess.Execute("select supplierid from tblsupplier group by supplierid order by supplierid"));
 
             btnAddOrder.Click += (X, Y) => AttemptAction("insert_order");
 
-            btnAdd.Click += (X, Y) => AttemptAction("insert_product");
+            btnAdd.Click += AddProductClicked; ;
 
             //btnAddProduct.Click += (X, Y) => AttemptAction("goto_inventory_add");
 
             btnAddSupplier.Click += (X, Y) => AttemptAction("goto_supplier_add");
         }
 
-        private void txtDateArrived_TextChanged(object sender, EventArgs e)
+        private void AddProductClicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddOrder_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        //Goes to AddSupplier
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Goes to AddProduct
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-
+            string quantitiyText = Inputs["QuantityOrdered"].Value as string;
         }
     }
 }
