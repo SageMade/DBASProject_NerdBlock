@@ -10,7 +10,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
     /// Stores actions related to blocks
     /// </summary>
     [BusinessActionContainer]
-    public class Blocks
+    public class BlockActions
     {
         /// <summary>
         /// Handles moving to the blocks add view
@@ -110,13 +110,14 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             else
             {
                 Block block = new Block();
-                block.Title = map.GetInput<string>("Title");
-                block.SeriesId = map.GetInput<BlockSeries>("Series");
-                block.ShipByDate = map.GetInput<DateTime>("ShipByDate");
-                block.Description = map.GetInput<string>("Description");
+                block.Title = map.GetInput<string>("Block.Title");
+                block.SeriesId = map.GetInput<BlockSeries>("Block.Series");
+                block.ShipByDate = map.GetInput<DateTime>("Block.ShipByDate");
+                block.Description = map.GetInput<string>("Block.Description");
 
                 if (DataAccess.Insert(block))
                 {
+                    map.Reset();
                     block = DataAccess.Match(block)[0];
                     ViewManager.ShowFlash(string.Format("Block added with ID: {0}", block.BlockId), FlashMessageType.Good);
                     Logger.Log(LogLevel.Info, "Added block with ID {0}", block.BlockId);
@@ -138,9 +139,10 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 
             IoMap map = ViewManager.CurrentMap;
 
-            string title = map.GetInput<string>("Title");
-            string shipDate = map.GetInput<string>("ShipByDate");
-            string description = map.GetInput<string>("Description");
+            string title = map.GetInput<string>("Block.Title");
+            DateTime shipDate = map.GetInput<DateTime>("Block.ShipByDate");
+            string description = map.GetInput<string>("Block.Description");
+            BlockSeries series = map.GetInput<BlockSeries>("Block.Series");
 
             if (string.IsNullOrWhiteSpace(title) || title.Length < 3)
             {
@@ -148,7 +150,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
                 reason += "Title must be at least 3 characters" + Environment.NewLine;
             }
 
-            if (string.IsNullOrWhiteSpace(shipDate))
+            if (shipDate == default(DateTime))
             {
                 result = false;
                 reason += "Ship Date must be filled" + Environment.NewLine;
@@ -158,6 +160,12 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             {
                 result = false;
                 reason += "Description must be filled" + Environment.NewLine;
+            }
+
+            if (series == null)
+            {
+                result = false;
+                reason += "A series must be selected" + Environment.NewLine;
             }
 
             return result;

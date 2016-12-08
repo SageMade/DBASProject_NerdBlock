@@ -45,7 +45,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtShipDate = new System.Windows.Forms.TextBox();
+            this.dtpShipDate = new System.Windows.Forms.DateTimePicker();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).BeginInit();
@@ -75,8 +75,8 @@
             // 
             // grpBlockSummary
             // 
+            this.grpBlockSummary.Controls.Add(this.dtpShipDate);
             this.grpBlockSummary.Controls.Add(this.txtDescription);
-            this.grpBlockSummary.Controls.Add(this.txtShipDate);
             this.grpBlockSummary.Controls.Add(this.cbSeries);
             this.grpBlockSummary.Controls.Add(this.txtTitle);
             this.grpBlockSummary.Controls.Add(this.label5);
@@ -84,21 +84,21 @@
             this.grpBlockSummary.Controls.Add(this.label4);
             this.grpBlockSummary.Controls.Add(this.label1);
             this.grpBlockSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBlockSummary.Location = new System.Drawing.Point(2, 316);
+            this.grpBlockSummary.Location = new System.Drawing.Point(8, 36);
             this.grpBlockSummary.Margin = new System.Windows.Forms.Padding(2);
             this.grpBlockSummary.Name = "grpBlockSummary";
             this.grpBlockSummary.Padding = new System.Windows.Forms.Padding(2);
-            this.grpBlockSummary.Size = new System.Drawing.Size(540, 138);
+            this.grpBlockSummary.Size = new System.Drawing.Size(726, 138);
             this.grpBlockSummary.TabIndex = 4;
             this.grpBlockSummary.TabStop = false;
             this.grpBlockSummary.Text = "Add Block";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(249, 43);
+            this.txtDescription.Location = new System.Drawing.Point(326, 45);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(286, 68);
+            this.txtDescription.Size = new System.Drawing.Size(395, 74);
             this.txtDescription.TabIndex = 18;
             // 
             // cbSeries
@@ -107,7 +107,7 @@
             this.cbSeries.Location = new System.Drawing.Point(86, 51);
             this.cbSeries.Margin = new System.Windows.Forms.Padding(2);
             this.cbSeries.Name = "cbSeries";
-            this.cbSeries.Size = new System.Drawing.Size(155, 25);
+            this.cbSeries.Size = new System.Drawing.Size(220, 25);
             this.cbSeries.TabIndex = 1;
             // 
             // txtTitle
@@ -115,7 +115,7 @@
             this.txtTitle.Location = new System.Drawing.Point(86, 21);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(156, 23);
+            this.txtTitle.Size = new System.Drawing.Size(220, 23);
             this.txtTitle.TabIndex = 16;
             // 
             // label5
@@ -133,7 +133,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(245, 19);
+            this.label6.Location = new System.Drawing.Point(322, 22);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
@@ -144,11 +144,11 @@
             // 
             this.groupBox2.Controls.Add(this.dgvBlocks);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 47);
+            this.groupBox2.Location = new System.Drawing.Point(8, 178);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(534, 264);
+            this.groupBox2.Size = new System.Drawing.Size(726, 446);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Items";
@@ -168,7 +168,7 @@
             this.dgvBlocks.ReadOnly = true;
             this.dgvBlocks.RowHeadersVisible = false;
             this.dgvBlocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBlocks.Size = new System.Drawing.Size(524, 238);
+            this.dgvBlocks.Size = new System.Drawing.Size(715, 238);
             this.dgvBlocks.TabIndex = 0;
             // 
             // clmTitle
@@ -197,7 +197,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(283, 458);
+            this.btnSave.Location = new System.Drawing.Point(480, 628);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 35);
@@ -207,7 +207,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(419, 458);
+            this.btnDelete.Location = new System.Drawing.Point(616, 628);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(118, 35);
@@ -226,12 +226,12 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Block info";
             // 
-            // txtShipDate
+            // dtpShipDate
             // 
-            this.txtShipDate.Location = new System.Drawing.Point(87, 88);
-            this.txtShipDate.Name = "txtShipDate";
-            this.txtShipDate.Size = new System.Drawing.Size(155, 23);
-            this.txtShipDate.TabIndex = 17;
+            this.dtpShipDate.Location = new System.Drawing.Point(87, 86);
+            this.dtpShipDate.Name = "dtpShipDate";
+            this.dtpShipDate.Size = new System.Drawing.Size(219, 23);
+            this.dtpShipDate.TabIndex = 1;
             // 
             // Blocks
             // 
@@ -244,7 +244,7 @@
             this.Controls.Add(this.grpBlockSummary);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Blocks";
-            this.Size = new System.Drawing.Size(548, 500);
+            this.Size = new System.Drawing.Size(736, 665);
             this.Load += new System.EventHandler(this.AddEditBlock_Load);
             this.grpBlockSummary.ResumeLayout(false);
             this.grpBlockSummary.PerformLayout();
@@ -274,6 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSeries;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShipDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDescription;
-        private System.Windows.Forms.TextBox txtShipDate;
+        private System.Windows.Forms.DateTimePicker dtpShipDate;
     }
 }

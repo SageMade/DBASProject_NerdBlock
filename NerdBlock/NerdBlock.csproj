@@ -86,6 +86,7 @@
     <Compile Include="Engine\Frontend\Winforms\Implementation\AddressEntry.Designer.cs">
       <DependentUpon>AddressEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Engine\Frontend\Winforms\Implementation\DateTimeInput.cs" />
     <Compile Include="Engine\INamed.cs" />
     <Compile Include="Engine\NamedCollection.cs" />
     <Compile Include="Engine\Frontend\Winforms\Views\FloorWorkerContentView.cs">
@@ -205,7 +206,7 @@
     <Compile Include="Engine\LogicLayer\BusinessRule.cs" />
     <Compile Include="Engine\LogicLayer\IAuthImplementation.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Application.cs" />
-    <Compile Include="Engine\LogicLayer\Implementation\Actions\Blocks.cs" />
+    <Compile Include="Engine\LogicLayer\Implementation\Actions\BlockActions.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Customer.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\Employee.cs" />
     <Compile Include="Engine\LogicLayer\Implementation\Actions\OrderActions.cs" />

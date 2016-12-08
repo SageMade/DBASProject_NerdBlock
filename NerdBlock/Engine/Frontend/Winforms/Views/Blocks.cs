@@ -1,5 +1,6 @@
 ﻿using System;
 using NerdBlock.Engine.Frontend.Winforms.Implementation;
+using Model = NerdBlock.Engine.Backend.Models;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -9,19 +10,16 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
             //Input - 4 DONE
-            Inputs.Add(new TextBoxInput("Block.title", txtTitle));
-            Inputs.Add(new TextBoxInput("Block.description", txtDescription));
-            Inputs.Add(new TextBoxInput("Block.shipdate", txtShipDate));
-            Inputs.Add(new ComboBoxTextInput("Block.Series", cbSeries));
+            Inputs.Add(new TextBoxInput("Block.Title", txtTitle));
+            Inputs.Add(new TextBoxInput("Block.Description", txtDescription));
+            Inputs.Add(new DateTimeInput("Block.ShipByDate", dtpShipDate));
+            Inputs.Add(new ComboBoxValueInput("Block.Series", cbSeries));
 
             //Output - 1
-            //Listbox Output
+            Outputs.Add(new ModelPopulatedComboBox<Model.BlockSeries>("Series", cbSeries));
 
             //Controls - 4 DONE
-            //btnAddItem.Click += (X, Y) => AttemptAction("add_block");
             btnDelete.Click += (X, Y) => AttemptAction("delete_block");
-            btnSave.Click += (X, Y) => AttemptAction("update_block");
-            //btnNew.Click += (X, Y) => AttemptAction("clear_block_view");
             btnSave.Click += (X, Y) => AttemptAction("insert_block");
             
         }

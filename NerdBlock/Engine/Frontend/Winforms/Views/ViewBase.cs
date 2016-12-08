@@ -102,6 +102,18 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             LogicManager.TryPerformAction(actionName);
         }
 
+        protected override void OnRegionChanged(EventArgs e)
+        {
+            if (Top < 0)
+                Top = 0;
+            if (Left < 0)
+                Left = 0;
+
+            Parent?.PerformLayout();
+
+            base.OnRegionChanged(e);
+        }
+
         private void InitializeComponent()
         {
             this.SuspendLayout();
