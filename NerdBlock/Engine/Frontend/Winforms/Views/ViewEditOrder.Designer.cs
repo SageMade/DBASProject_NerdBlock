@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvItems = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -41,11 +40,13 @@
             this.lblOrderCost = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblOrderId = new System.Windows.Forms.Label();
-            this.clmProdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmBatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvItems = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.clmProdId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,25 +59,13 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "View Order";
             // 
-            // dgvItems
-            // 
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmProdID,
-            this.clmBatch,
-            this.clmQuantity});
-            this.dgvItems.Location = new System.Drawing.Point(44, 20);
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.Size = new System.Drawing.Size(350, 223);
-            this.dgvItems.TabIndex = 81;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvItems);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(436, 260);
+            this.groupBox1.Size = new System.Drawing.Size(475, 260);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Items";
@@ -171,20 +160,47 @@
             this.lblOrderId.Size = new System.Drawing.Size(45, 16);
             this.lblOrderId.TabIndex = 87;
             // 
-            // clmProdID
+            // dgvItems
             // 
-            this.clmProdID.HeaderText = "Product ID";
-            this.clmProdID.Name = "clmProdID";
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmProdId,
+            this.clmProdName,
+            this.clmCost,
+            this.clmQuantity});
+            this.dgvItems.Location = new System.Drawing.Point(28, 20);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItems.Size = new System.Drawing.Size(408, 234);
+            this.dgvItems.TabIndex = 0;
             // 
-            // clmBatch
+            // clmProdId
             // 
-            this.clmBatch.HeaderText = "Batch Cost";
-            this.clmBatch.Name = "clmBatch";
+            this.clmProdId.HeaderText = "Product ID";
+            this.clmProdId.Name = "clmProdId";
+            this.clmProdId.ReadOnly = true;
+            // 
+            // clmProdName
+            // 
+            this.clmProdName.HeaderText = "Product Name";
+            this.clmProdName.Name = "clmProdName";
+            this.clmProdName.ReadOnly = true;
+            // 
+            // clmCost
+            // 
+            this.clmCost.HeaderText = "Batch Cost";
+            this.clmCost.Name = "clmCost";
+            this.clmCost.ReadOnly = true;
             // 
             // clmQuantity
             // 
             this.clmQuantity.HeaderText = "Quantity";
             this.clmQuantity.Name = "clmQuantity";
+            this.clmQuantity.ReadOnly = true;
             // 
             // ViewEditOrder
             // 
@@ -203,9 +219,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "ViewEditOrder";
-            this.Size = new System.Drawing.Size(453, 394);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            this.Size = new System.Drawing.Size(491, 394);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +229,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvItems;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label34;
@@ -225,8 +240,10 @@
         private System.Windows.Forms.Label lblOrderCost;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblOrderId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProdID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmBatch;
+        private Implementation.DataGridDisplayView dgvItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProdId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProdName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
     }
 }
