@@ -34,15 +34,17 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddProductToOverStock = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lblQuantityOrdered = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.dgvAddExtra = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtraProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddExtra)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -64,7 +66,7 @@
             this.ProdName,
             this.Quantity,
             this.Price});
-            this.dgvExtraProduct.Location = new System.Drawing.Point(18, 67);
+            this.dgvExtraProduct.Location = new System.Drawing.Point(18, 50);
             this.dgvExtraProduct.Name = "dgvExtraProduct";
             this.dgvExtraProduct.ReadOnly = true;
             this.dgvExtraProduct.RowHeadersVisible = false;
@@ -101,78 +103,85 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtPrice);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblQuantityOrdered);
-            this.groupBox1.Controls.Add(this.txtQuantity);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtProductName);
-            this.groupBox1.Location = new System.Drawing.Point(18, 254);
+            this.groupBox1.Controls.Add(this.dgvAddExtra);
+            this.groupBox1.Controls.Add(this.btnAddProductToOverStock);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Location = new System.Drawing.Point(18, 224);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 103);
+            this.groupBox1.Size = new System.Drawing.Size(471, 128);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Extra Product";
             // 
+            // btnAddProductToOverStock
+            // 
+            this.btnAddProductToOverStock.Location = new System.Drawing.Point(276, 76);
+            this.btnAddProductToOverStock.Name = "btnAddProductToOverStock";
+            this.btnAddProductToOverStock.Size = new System.Drawing.Size(189, 42);
+            this.btnAddProductToOverStock.TabIndex = 8;
+            this.btnAddProductToOverStock.Text = "Add Product to Overstock\r\n";
+            this.btnAddProductToOverStock.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtProductName);
+            this.groupBox2.Location = new System.Drawing.Point(276, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(189, 51);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search Products";
+            // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(93, 31);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProductName.Location = new System.Drawing.Point(6, 19);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(84, 20);
-            this.txtProductName.TabIndex = 61;
+            this.txtProductName.Size = new System.Drawing.Size(177, 20);
+            this.txtProductName.TabIndex = 3;
             // 
-            // label4
+            // dgvAddExtra
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "Product Name";
+            this.dgvAddExtra.AllowUserToAddRows = false;
+            this.dgvAddExtra.AllowUserToDeleteRows = false;
+            this.dgvAddExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddExtra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgvAddExtra.Location = new System.Drawing.Point(6, 19);
+            this.dgvAddExtra.Name = "dgvAddExtra";
+            this.dgvAddExtra.ReadOnly = true;
+            this.dgvAddExtra.RowHeadersVisible = false;
+            this.dgvAddExtra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAddExtra.Size = new System.Drawing.Size(264, 99);
+            this.dgvAddExtra.TabIndex = 70;
             // 
-            // btnAdd
+            // dataGridViewTextBoxColumn1
             // 
-            this.btnAdd.Location = new System.Drawing.Point(241, 56);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 71;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.FillWeight = 40F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // lblQuantityOrdered
+            // dataGridViewTextBoxColumn2
             // 
-            this.lblQuantityOrdered.AutoSize = true;
-            this.lblQuantityOrdered.Location = new System.Drawing.Point(44, 59);
-            this.lblQuantityOrdered.Name = "lblQuantityOrdered";
-            this.lblQuantityOrdered.Size = new System.Drawing.Size(46, 13);
-            this.lblQuantityOrdered.TabIndex = 72;
-            this.lblQuantityOrdered.Text = "Quantity";
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn2.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // txtQuantity
+            // dataGridViewTextBoxColumn3
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(93, 56);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(84, 20);
-            this.txtQuantity.TabIndex = 73;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(204, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Price";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(241, 31);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtPrice.TabIndex = 75;
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn3.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // ExtraProductShipped
             // 
@@ -185,7 +194,9 @@
             this.Size = new System.Drawing.Size(509, 368);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtraProduct)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddExtra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,12 +209,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Implementation.DataGridDisplayView dgvAddExtra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btnAddProductToOverStock;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblQuantityOrdered;
-        private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -67,39 +67,25 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             IoMap map = ViewManager.CurrentMap;
 
-            string productName = map.GetInput<string>("Product.Name");
-            string quantityText = map.GetInput<string>("Product.Quantity");
-            string priceText = map.GetInput<string>("Product.Price");
-
-            string error = "";
-
-            if (string.IsNullOrWhiteSpace(productName))
-                error += "You must enter a product name\n";
-
-            decimal price = 0;
-
-            int quantity;
-
-            if (error == "")
+            if (Session.Get<List<Model.Product>>("AddingProducts") == null)
             {
-                if (!decimal.TryParse(priceText, out price))
-                    error += "Product price must be numeric\n";
-
-                if (!int.TryParse(quantityText, out quantity))
-                    error += "Quantity must be an integer\n";
+                Session.Set("AddingProducts", new List<Model.Product>());
             }
 
-            if (error == "")
-            {
-                
-            }
+            List<Model.Product> items = Session.Get<List<Model.Product>>("AddingProducts");
 
+            if (map.HasInput<Model.Product>("ProductToAdd"))
+            {
+                items.Add(map.GetInput<Model.Product>("ProductToAdd"));
+                map.SetInput<Model.Product>("ProductToAdd", null);
+
+                ViewManager.Show("AddBlocks", map);
+            }
             else
-            {
-                ViewManager.ShowFlash("Could not add product: \n" + error, FlashMessageType.Bad);
-                ViewManager.Show("ExtraProductShipped", map);
+                ViewManager.ShowFlash("Please select a product to add", FlashMessageType.Neutral);
             }
-        }
+    
+    
 
 
         /// <summary>

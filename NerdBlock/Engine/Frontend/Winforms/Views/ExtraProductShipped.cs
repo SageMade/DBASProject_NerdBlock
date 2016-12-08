@@ -21,11 +21,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             InitializeComponent();
 
-            Inputs.Add(new TextBoxInput("Product.Name", txtProductName));
-            Inputs.Add(new TextBoxInput("Product.Quantity", txtQuantity));
-            Inputs.Add(new TextBoxInput("Product.Price", txtPrice));
+            //Inputs.Add(new TextBoxInput("Product.Name", txtProductName));
+            
 
-            btnAdd.Click += (X, Y) => AttemptAction("insert_extra_product");
+            btnAddProductToOverStock.Click += (X, Y) => AttemptAction("insert_extra_product");
 
         }
 
@@ -33,9 +32,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             dgvExtraProduct.Rows.Clear();
 
-            List<OrderLineitem> items = Session.Get<List<OrderLineitem>>("WorkingOrderItems");
+            List<Product> items = Session.Get<List<Product>>("AddingProducts");
 
-            decimal totalCost = 0;
 
             if (items != null)
             {
@@ -45,11 +43,15 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
                     row.Cells["ProdName"].Value = items[index].ProductId.Name;
                     row.Cells["Quantity"].Value = items[index].Quantity;
-                    row.Cells["Price"].Value = items[index].BatchCost;
+                    row.Cells["Price"].Value = items[index].Price;
 
-                    totalCost += items[index].BatchCost.Value;
                 }
             }
+        }
+
+        private void txtProductName_TextChanged(object sender, EventArgs e)
+        {
+            (dgvAddExtra.DataSource as BindingSource).Filter = string.Format("Name LIKE '%{0}%'", txtProductName.Text);
         }
     }
 }
