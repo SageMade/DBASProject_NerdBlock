@@ -24,7 +24,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Inputs.Add(new TextBoxInput("Product.Name", txtProductName));
             
 
-            btnAddProductToOverStock.Click += (X, Y) => AttemptAction("insert_extra_product");
+            //btnAddProductToOverStock.Click += (X, Y) => AttemptAction("insert_extra_product");
 
         }
 
@@ -51,7 +51,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
         private void txtProductName_TextChanged(object sender, EventArgs e)
         {
-            (dgvAddExtra.DataSource as BindingSource).Filter = string.Format("Name LIKE '%{0}%'", txtProductName.Text);
+            (dgvAddExtra.DataSource as BindingSource).Filter = string.Format("Name LIKE '%{0}%' OR Description LIKE '%{0}%'", txtProductName.Text);
         }
     }
 }

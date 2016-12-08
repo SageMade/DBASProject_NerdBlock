@@ -41,6 +41,7 @@
             this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblComingSoon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtraProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddExtra)).BeginInit();
@@ -183,10 +184,22 @@
             this.pDescription.Name = "pDescription";
             this.pDescription.ReadOnly = true;
             // 
+            // lblComingSoon
+            // 
+            this.lblComingSoon.AutoSize = true;
+            this.lblComingSoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComingSoon.ForeColor = System.Drawing.Color.Red;
+            this.lblComingSoon.Location = new System.Drawing.Point(46, 167);
+            this.lblComingSoon.Name = "lblComingSoon";
+            this.lblComingSoon.Size = new System.Drawing.Size(421, 73);
+            this.lblComingSoon.TabIndex = 71;
+            this.lblComingSoon.Text = "Coming Soon";
+            // 
             // ExtraProductShipped
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblComingSoon);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvExtraProduct);
             this.Controls.Add(this.label5);
@@ -216,5 +229,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pName;
         private System.Windows.Forms.DataGridViewTextBoxColumn pQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn pDescription;
+        private System.Windows.Forms.Label lblComingSoon;
     }
 }

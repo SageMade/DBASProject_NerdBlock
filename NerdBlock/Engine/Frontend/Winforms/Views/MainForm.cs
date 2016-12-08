@@ -52,7 +52,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
 
             __Tie(tsiAddOrder, "goto_order_add");
             __Tie(tsiSearchOrders, "goto_order_search");
-            __Tie(tsiOrderEdit, "goto_order_edit");
+            //__Tie(tsiOrderEdit, "goto_order_edit");
 
             __Tie(tsiEmployeeBreakdown, "goto_employee_breakdown");
             __Tie(tsiSeriesBreakdown, "goto_series_breakdown");

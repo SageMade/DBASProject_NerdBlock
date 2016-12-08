@@ -70,6 +70,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             if (Session.Get<List<Model.Product>>("AddingProducts") == null)
             {
                 Session.Set("AddingProducts", new List<Model.Product>());
+
             }
 
             List<Model.Product> items = Session.Get<List<Model.Product>>("AddingProducts");
