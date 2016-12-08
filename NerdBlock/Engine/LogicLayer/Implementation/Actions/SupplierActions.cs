@@ -17,7 +17,6 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib("General Manager", "Planner")]
         public void ShowAddSupplier()
         {
-            ViewManager.CurrentMap.Reset();
             ViewManager.Show("AddSupplier");
         }
 

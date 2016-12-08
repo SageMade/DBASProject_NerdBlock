@@ -1,5 +1,7 @@
-﻿using NerdBlock.Engine.Backend.Models;
+﻿using NerdBlock.Engine.Backend;
+using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
+using System;
 using System.Collections.Generic;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
@@ -37,13 +39,53 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         [AuthAttrib("Shipper", "General Manager")]
         public void InsertOrder()
         {
+            IoMap map = ViewManager.CurrentMap;
             List<OrderLineitem> items = Session.Get<List<OrderLineitem>>("WorkingOrderItems");
 
-            ViewManager.Show("OrderPage");
+            Supplier supplier = map.GetInput<Supplier>("Order.Supplier");
+            
+            string error = "";
+
+            if (supplier == null)
+                error += "You must select a supplier\n";
+            if (items == null || items.Count == 0)
+                error += "You must enter at least one item";
+
+            if (error == "")
+            {
+                for(int index = 0; index < items.Count; index ++)
+                {
+                    DataAccess.Insert(items[index].ProductId);
+                    DataAccess.Insert(items[index]);
+                }
+
+                Order order = new Order();
+                order.SupplierId = supplier;
+                order.OrderedBy = Auth.User as Employee;
+                order.DateOrdered = DateTime.Now;
+
+                if (DataAccess.Insert(order))
+                {
+                    Session.Set<List<OrderLineitem>>("WorkingOrderItems", null);
+                    ViewManager.CurrentMap.Reset();
+                    ViewManager.ShowFlash("Added order", FlashMessageType.Good);
+                    ViewManager.Show("AddOrder");
+                }
+                else
+                {
+                    ViewManager.ShowFlash("Failed to add order:\n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                    ViewManager.Show("AddOrder");
+                }
+            }
+            else
+            {
+                ViewManager.ShowFlash("Failed to add order:\n" + error, FlashMessageType.Bad);
+                ViewManager.Show("AddOrder");
+            }
         }
 
         /// <summary>
-        /// Show the order search page
+        /// Handles inserting an item on the current working order
         /// </summary>
         [BusinessAction("order_insert_item")]
         [AuthAttrib("Shipper", "General Manager")]
@@ -133,7 +175,7 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
             }
 
         }
-
+                
         /// <summary>
         /// Show the order edit page
         /// </summary>

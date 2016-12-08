@@ -18,7 +18,7 @@ namespace NerdBlock.Engine.Backend.Models
         [DataField("orderedby", QueryParamType.Integer), ForeignKey("tblemployees", "employeeid")]
         public Employee OrderedBy { get; set; }
 
-        [DataField("supplierid", QueryParamType.Integer), ForeignKey("tblsuppliercontact", "contactid")]
-        public SupplierContact SupplierId { get; set; }
+        [DataField("supplierid", QueryParamType.Integer), ForeignKey("tblsupplier", "supplierid")]
+        public Supplier SupplierId { get; set; }
     }
 }

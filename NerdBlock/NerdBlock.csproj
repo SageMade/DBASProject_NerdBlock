@@ -75,7 +75,6 @@
     <Compile Include="Engine\Backend\Models\Subscription.cs" />
     <Compile Include="Engine\Backend\Models\SubscriptionFullfillment.cs" />
     <Compile Include="Engine\Backend\Models\Supplier.cs" />
-    <Compile Include="Engine\Backend\Models\SupplierContact.cs" />
     <Compile Include="Engine\Backend\Models\Transfer.cs" />
     <Compile Include="Engine\Backend\Models\TransferLineItem.cs" />
     <Compile Include="Engine\Frontend\FlashMessageType.cs" />

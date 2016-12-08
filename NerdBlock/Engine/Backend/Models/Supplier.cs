@@ -15,7 +15,16 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("phone", QueryParamType.Long)]
         public long? Phone { get; set; }
-        
+
+        [DataField("contact_first_name", QueryParamType.VarChar)]
+        public string ContactFirstName { get; set; }
+
+        [DataField("contact_last_name", QueryParamType.VarChar)]
+        public string ContactLastName { get; set; }
+
+        [DataField("contact_email", QueryParamType.VarChar)]
+        public string ContactEmail { get; set; }
+
         public override string ToString()
         {
             return Company;

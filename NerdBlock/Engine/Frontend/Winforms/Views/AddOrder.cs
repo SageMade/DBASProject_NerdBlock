@@ -27,6 +27,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             
             Outputs.Add(new ModelPopulatedComboBox<Supplier>("SupplierId", cbSupplierID));
 
+            Inputs.Add(new ComboBoxValueInput("Order.Supplier", cbSupplierID));
+
             Inputs.Add(new TextBoxInput("Product.QuantityOrdered", txtQuantityOrdered));
             Inputs.Add(new TextBoxInput("Product.Name", txtProductName));
             Inputs.Add(new TextBoxInput("Product.Width", txtWidth));
@@ -49,6 +51,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
         {
             List<OrderLineitem> items = Session.Get<List<OrderLineitem>>("WorkingOrderItems");
 
+            decimal totalCost = 0;
+
             if (items != null)
             {
                 for(int index = 0; index < items.Count; index ++)
@@ -58,6 +62,8 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                     row.Cells["ProdName"].Value = items[index].ProductId.Name;
                     row.Cells["Quantity"].Value = items[index].Quantity;
                     row.Cells["Price"].Value = items[index].BatchCost;
+
+                    totalCost += items[index].BatchCost.Value;
                 }
             }
         }
