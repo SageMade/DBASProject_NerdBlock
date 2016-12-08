@@ -31,24 +31,39 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.grpBlockSummary = new System.Windows.Forms.GroupBox();
+            this.dtpShipDate = new System.Windows.Forms.DateTimePicker();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvBlocks = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
-            this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmShipDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvItems = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtpShipDate = new System.Windows.Forms.DateTimePicker();
+            this.grpAddItem = new System.Windows.Forms.GroupBox();
+            this.clmProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAddItem = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddProductToBlock = new System.Windows.Forms.Button();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            this.grpAddItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddItem)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -92,6 +107,13 @@
             this.grpBlockSummary.TabIndex = 4;
             this.grpBlockSummary.TabStop = false;
             this.grpBlockSummary.Text = "Add Block";
+            // 
+            // dtpShipDate
+            // 
+            this.dtpShipDate.Location = new System.Drawing.Point(87, 86);
+            this.dtpShipDate.Name = "dtpShipDate";
+            this.dtpShipDate.Size = new System.Drawing.Size(219, 23);
+            this.dtpShipDate.TabIndex = 1;
             // 
             // txtDescription
             // 
@@ -142,78 +164,45 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvBlocks);
+            this.groupBox2.Controls.Add(this.dgvItems);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 178);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(726, 446);
+            this.groupBox2.Size = new System.Drawing.Size(726, 273);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Items";
+            this.groupBox2.Text = "Products";
             // 
-            // dgvBlocks
+            // dgvItems
             // 
-            this.dgvBlocks.AllowUserToAddRows = false;
-            this.dgvBlocks.AllowUserToDeleteRows = false;
-            this.dgvBlocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBlocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmTitle,
-            this.clmSeries,
-            this.clmShipDate,
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmProductName,
+            this.clmWidth,
+            this.clmHeight,
+            this.clmDepth,
             this.clmDescription});
-            this.dgvBlocks.Location = new System.Drawing.Point(5, 21);
-            this.dgvBlocks.Name = "dgvBlocks";
-            this.dgvBlocks.ReadOnly = true;
-            this.dgvBlocks.RowHeadersVisible = false;
-            this.dgvBlocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBlocks.Size = new System.Drawing.Size(715, 238);
-            this.dgvBlocks.TabIndex = 0;
-            // 
-            // clmTitle
-            // 
-            this.clmTitle.HeaderText = "Title";
-            this.clmTitle.Name = "clmTitle";
-            this.clmTitle.ReadOnly = true;
-            // 
-            // clmSeries
-            // 
-            this.clmSeries.HeaderText = "Series";
-            this.clmSeries.Name = "clmSeries";
-            this.clmSeries.ReadOnly = true;
-            // 
-            // clmShipDate
-            // 
-            this.clmShipDate.HeaderText = "Ship Date";
-            this.clmShipDate.Name = "clmShipDate";
-            this.clmShipDate.ReadOnly = true;
-            // 
-            // clmDescription
-            // 
-            this.clmDescription.HeaderText = "Description";
-            this.clmDescription.Name = "clmDescription";
-            this.clmDescription.ReadOnly = true;
+            this.dgvItems.Location = new System.Drawing.Point(5, 21);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItems.Size = new System.Drawing.Size(715, 238);
+            this.dgvItems.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(480, 628);
+            this.btnSave.Location = new System.Drawing.Point(607, 628);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 35);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(616, 628);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(118, 35);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -226,30 +215,164 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Block info";
             // 
-            // dtpShipDate
+            // grpAddItem
             // 
-            this.dtpShipDate.Location = new System.Drawing.Point(87, 86);
-            this.dtpShipDate.Name = "dtpShipDate";
-            this.dtpShipDate.Size = new System.Drawing.Size(219, 23);
-            this.dtpShipDate.TabIndex = 1;
+            this.grpAddItem.Controls.Add(this.btnAddProductToBlock);
+            this.grpAddItem.Controls.Add(this.dgvAddItem);
+            this.grpAddItem.Controls.Add(this.groupBox1);
+            this.grpAddItem.Location = new System.Drawing.Point(8, 470);
+            this.grpAddItem.Name = "grpAddItem";
+            this.grpAddItem.Size = new System.Drawing.Size(726, 153);
+            this.grpAddItem.TabIndex = 16;
+            this.grpAddItem.TabStop = false;
+            this.grpAddItem.Text = "Add Product";
+            // 
+            // clmProductName
+            // 
+            this.clmProductName.HeaderText = "Product Name";
+            this.clmProductName.Name = "clmProductName";
+            this.clmProductName.ReadOnly = true;
+            // 
+            // clmWidth
+            // 
+            this.clmWidth.HeaderText = "Width";
+            this.clmWidth.Name = "clmWidth";
+            this.clmWidth.ReadOnly = true;
+            // 
+            // clmHeight
+            // 
+            this.clmHeight.HeaderText = "Height";
+            this.clmHeight.Name = "clmHeight";
+            this.clmHeight.ReadOnly = true;
+            // 
+            // clmDepth
+            // 
+            this.clmDepth.HeaderText = "Depth";
+            this.clmDepth.Name = "clmDepth";
+            this.clmDepth.ReadOnly = true;
+            // 
+            // clmDescription
+            // 
+            this.clmDescription.HeaderText = "Description";
+            this.clmDescription.Name = "clmDescription";
+            this.clmDescription.ReadOnly = true;
+            // 
+            // dgvAddItem
+            // 
+            this.dgvAddItem.AllowUserToAddRows = false;
+            this.dgvAddItem.AllowUserToDeleteRows = false;
+            this.dgvAddItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dgvAddItem.Location = new System.Drawing.Point(11, 19);
+            this.dgvAddItem.Name = "dgvAddItem";
+            this.dgvAddItem.ReadOnly = true;
+            this.dgvAddItem.RowHeadersVisible = false;
+            this.dgvAddItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAddItem.Size = new System.Drawing.Size(503, 128);
+            this.dgvAddItem.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Width";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Height";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Depth";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Product Name";
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(3, 38);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(100, 20);
+            this.txtProductName.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(109, 35);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtProductName);
+            this.groupBox1.Location = new System.Drawing.Point(520, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(189, 67);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search Products";
+            // 
+            // btnAddProductToBlock
+            // 
+            this.btnAddProductToBlock.Location = new System.Drawing.Point(520, 94);
+            this.btnAddProductToBlock.Name = "btnAddProductToBlock";
+            this.btnAddProductToBlock.Size = new System.Drawing.Size(189, 42);
+            this.btnAddProductToBlock.TabIndex = 6;
+            this.btnAddProductToBlock.Text = "Add Product to Block";
+            this.btnAddProductToBlock.UseVisualStyleBackColor = true;
             // 
             // Blocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpBlockSummary);
+            this.Controls.Add(this.grpAddItem);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Blocks";
-            this.Size = new System.Drawing.Size(736, 665);
+            this.Size = new System.Drawing.Size(736, 671);
             this.Load += new System.EventHandler(this.AddEditBlock_Load);
             this.grpBlockSummary.ResumeLayout(false);
             this.grpBlockSummary.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            this.grpAddItem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddItem)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,17 +386,29 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSeries;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescription;
-        private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvBlocks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSeries;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmShipDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescription;
+        private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvItems;
         private System.Windows.Forms.DateTimePicker dtpShipDate;
+        private System.Windows.Forms.GroupBox grpAddItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmWidth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescription;
+        private System.Windows.Forms.Label label2;
+        private Implementation.DataGridDisplayView dgvAddItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button btnAddProductToBlock;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtProductName;
     }
 }
