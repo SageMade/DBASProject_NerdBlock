@@ -22,6 +22,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             btnDelete.Click += (X, Y) => AttemptAction("delete_block");
             btnSave.Click += (X, Y) => AttemptAction("update_block");
             //btnNew.Click += (X, Y) => AttemptAction("clear_block_view");
+            btnSave.Click += (X, Y) => AttemptAction("insert_block");
             
         }
 

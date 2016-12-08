@@ -2,6 +2,7 @@
 using NerdBlock.Engine.Backend.Models;
 using NerdBlock.Engine.Frontend;
 using NerdBlock.Properties;
+using System;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
 {
@@ -89,6 +90,77 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         public void ShowSeries()
         {
             ViewManager.Show("BlockSeries");
+        }
+        
+        /// <summary>
+        /// Add Block
+        /// </summary>
+        [BusinessAction("insert_block")]
+        [AuthAttrib("General Manager", "Planner")]
+        public void Add()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            string msg = "";
+            if (!Validate(ref msg))
+            {
+                ViewManager.ShowFlash(string.Format("Error Adding Block:\n{0}", msg), FlashMessageType.Bad);
+                ViewManager.Show("Blocks", map);
+            }
+            else
+            {
+                Block block = new Block();
+                block.Title = map.GetInput<string>("Title");
+                block.SeriesId = map.GetInput<BlockSeries>("Series");
+                block.ShipByDate = map.GetInput<DateTime>("ShipByDate");
+                block.Description = map.GetInput<string>("Description");
+
+                if (DataAccess.Insert(block))
+                {
+                    block = DataAccess.Match(block)[0];
+                    ViewManager.ShowFlash(string.Format("Block added with ID: {0}", block.BlockId), FlashMessageType.Good);
+                    Logger.Log(LogLevel.Info, "Added block with ID {0}", block.BlockId);
+                    ViewManager.Show("Blocks", map);
+                }
+                else
+                {
+                    ViewManager.ShowFlash("Failed to add block: \n" + DataAccess.Database.LastFailReason.Message, FlashMessageType.Bad);
+                    Logger.Log(LogLevel.Error, DataAccess.Database.LastFailReason.Message);
+                    ViewManager.Show("Blocks", map);
+                }
+            }
+
+        }
+
+        public static bool Validate(ref string reason)
+        {
+            bool result = true;
+
+            IoMap map = ViewManager.CurrentMap;
+
+            string title = map.GetInput<string>("Title");
+            string shipDate = map.GetInput<string>("ShipByDate");
+            string description = map.GetInput<string>("Description");
+
+            if (string.IsNullOrWhiteSpace(title) || title.Length < 3)
+            {
+                result = false;
+                reason += "Title must be at least 3 characters" + Environment.NewLine;
+            }
+
+            if (string.IsNullOrWhiteSpace(shipDate))
+            {
+                result = false;
+                reason += "Ship Date must be filled" + Environment.NewLine;
+            }
+
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                result = false;
+                reason += "Description must be filled" + Environment.NewLine;
+            }
+
+            return result;
         }
     }
 }
