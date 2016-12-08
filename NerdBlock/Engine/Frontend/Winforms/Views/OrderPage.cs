@@ -30,7 +30,6 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Controls - 1
             btnView.Click += (X, Y) =>
             {
-
                 ViewManager.CurrentMap.SetInput("Order.Selected", DataAccess.FromPrimaryKey<Order>(dgvOrders.SelectedRows[0].Cells["clmOrderID"].Value));
                 AttemptAction("goto_order_edit");
             };

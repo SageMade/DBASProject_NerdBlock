@@ -43,5 +43,10 @@ namespace NerdBlock.Engine.Backend.Models
 
         [DataField("roleid", QueryParamType.Integer), ForeignKey("tblemployeerole", "roleid")]
         public EmployeeRole Role { get; set; }
+
+        public override string ToString()
+        {
+            return FirstName + " " + LastName;
+        }
     }
 }

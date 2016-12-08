@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvItems = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.label3 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.lblOrderCost = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblOrderId = new System.Windows.Forms.Label();
-            this.dgvItems = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
             this.clmProdId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +69,24 @@
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Items";
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmProdId,
+            this.clmProdName,
+            this.clmCost,
+            this.clmQuantity});
+            this.dgvItems.Location = new System.Drawing.Point(28, 20);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItems.Size = new System.Drawing.Size(408, 234);
+            this.dgvItems.TabIndex = 0;
             // 
             // label3
             // 
@@ -160,44 +178,30 @@
             this.lblOrderId.Size = new System.Drawing.Size(45, 16);
             this.lblOrderId.TabIndex = 87;
             // 
-            // dgvItems
-            // 
-            this.dgvItems.AllowUserToAddRows = false;
-            this.dgvItems.AllowUserToDeleteRows = false;
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmProdId,
-            this.clmProdName,
-            this.clmCost,
-            this.clmQuantity});
-            this.dgvItems.Location = new System.Drawing.Point(28, 20);
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.ReadOnly = true;
-            this.dgvItems.RowHeadersVisible = false;
-            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(408, 234);
-            this.dgvItems.TabIndex = 0;
-            // 
             // clmProdId
             // 
+            this.clmProdId.DataPropertyName = "ProductId";
             this.clmProdId.HeaderText = "Product ID";
             this.clmProdId.Name = "clmProdId";
             this.clmProdId.ReadOnly = true;
             // 
             // clmProdName
             // 
+            this.clmProdName.DataPropertyName = "ProductName";
             this.clmProdName.HeaderText = "Product Name";
             this.clmProdName.Name = "clmProdName";
             this.clmProdName.ReadOnly = true;
             // 
             // clmCost
             // 
+            this.clmCost.DataPropertyName = "Cost";
             this.clmCost.HeaderText = "Batch Cost";
             this.clmCost.Name = "clmCost";
             this.clmCost.ReadOnly = true;
             // 
             // clmQuantity
             // 
+            this.clmQuantity.DataPropertyName = "Quantity";
             this.clmQuantity.HeaderText = "Quantity";
             this.clmQuantity.Name = "clmQuantity";
             this.clmQuantity.ReadOnly = true;
