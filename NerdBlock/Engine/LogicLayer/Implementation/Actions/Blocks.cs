@@ -91,13 +91,13 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         {
             ViewManager.Show("BlockSeries");
         }
-        
+
         /// <summary>
-        /// Add Block
+        /// Handles inserting a new block into the database, assumes that there is valid block information in the context
         /// </summary>
         [BusinessAction("insert_block")]
         [AuthAttrib("General Manager", "Planner")]
-        public void Add()
+        public void Insert()
         {
             IoMap map = ViewManager.CurrentMap;
 

@@ -11,7 +11,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Input - 4 DONE
             Inputs.Add(new TextBoxInput("Block.title", txtTitle));
             Inputs.Add(new TextBoxInput("Block.description", txtDescription));
-            Inputs.Add(new TextBoxInput("Block.custcost", txtCustCost));
+            Inputs.Add(new TextBoxInput("Block.shipdate", txtShipDate));
             Inputs.Add(new ComboBoxTextInput("Block.Series", cbSeries));
 
             //Output - 1

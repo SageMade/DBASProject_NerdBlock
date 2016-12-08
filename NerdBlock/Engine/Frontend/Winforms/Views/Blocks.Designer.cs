@@ -32,20 +32,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.grpBlockSummary = new System.Windows.Forms.GroupBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtCustCost = new System.Windows.Forms.TextBox();
             this.cbSeries = new System.Windows.Forms.ComboBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvBlocks = new NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmShipDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtShipDate = new System.Windows.Forms.TextBox();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).BeginInit();
@@ -76,7 +76,7 @@
             // grpBlockSummary
             // 
             this.grpBlockSummary.Controls.Add(this.txtDescription);
-            this.grpBlockSummary.Controls.Add(this.txtCustCost);
+            this.grpBlockSummary.Controls.Add(this.txtShipDate);
             this.grpBlockSummary.Controls.Add(this.cbSeries);
             this.grpBlockSummary.Controls.Add(this.txtTitle);
             this.grpBlockSummary.Controls.Add(this.label5);
@@ -100,13 +100,6 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(286, 68);
             this.txtDescription.TabIndex = 18;
-            // 
-            // txtCustCost
-            // 
-            this.txtCustCost.Location = new System.Drawing.Point(87, 88);
-            this.txtCustCost.Name = "txtCustCost";
-            this.txtCustCost.Size = new System.Drawing.Size(155, 23);
-            this.txtCustCost.TabIndex = 17;
             // 
             // cbSeries
             // 
@@ -162,6 +155,8 @@
             // 
             // dgvBlocks
             // 
+            this.dgvBlocks.AllowUserToAddRows = false;
+            this.dgvBlocks.AllowUserToDeleteRows = false;
             this.dgvBlocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBlocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmTitle,
@@ -170,8 +165,35 @@
             this.clmDescription});
             this.dgvBlocks.Location = new System.Drawing.Point(5, 21);
             this.dgvBlocks.Name = "dgvBlocks";
+            this.dgvBlocks.ReadOnly = true;
+            this.dgvBlocks.RowHeadersVisible = false;
+            this.dgvBlocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBlocks.Size = new System.Drawing.Size(524, 238);
             this.dgvBlocks.TabIndex = 0;
+            // 
+            // clmTitle
+            // 
+            this.clmTitle.HeaderText = "Title";
+            this.clmTitle.Name = "clmTitle";
+            this.clmTitle.ReadOnly = true;
+            // 
+            // clmSeries
+            // 
+            this.clmSeries.HeaderText = "Series";
+            this.clmSeries.Name = "clmSeries";
+            this.clmSeries.ReadOnly = true;
+            // 
+            // clmShipDate
+            // 
+            this.clmShipDate.HeaderText = "Ship Date";
+            this.clmShipDate.Name = "clmShipDate";
+            this.clmShipDate.ReadOnly = true;
+            // 
+            // clmDescription
+            // 
+            this.clmDescription.HeaderText = "Description";
+            this.clmDescription.Name = "clmDescription";
+            this.clmDescription.ReadOnly = true;
             // 
             // btnSave
             // 
@@ -204,29 +226,12 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Block info";
             // 
-            // clmTitle
+            // txtShipDate
             // 
-            this.clmTitle.HeaderText = "Title";
-            this.clmTitle.Name = "clmTitle";
-            this.clmTitle.ReadOnly = true;
-            // 
-            // clmSeries
-            // 
-            this.clmSeries.HeaderText = "Series";
-            this.clmSeries.Name = "clmSeries";
-            this.clmSeries.ReadOnly = true;
-            // 
-            // clmShipDate
-            // 
-            this.clmShipDate.HeaderText = "Ship Date";
-            this.clmShipDate.Name = "clmShipDate";
-            this.clmShipDate.ReadOnly = true;
-            // 
-            // clmDescription
-            // 
-            this.clmDescription.HeaderText = "Description";
-            this.clmDescription.Name = "clmDescription";
-            this.clmDescription.ReadOnly = true;
+            this.txtShipDate.Location = new System.Drawing.Point(87, 88);
+            this.txtShipDate.Name = "txtShipDate";
+            this.txtShipDate.Size = new System.Drawing.Size(155, 23);
+            this.txtShipDate.TabIndex = 17;
             // 
             // Blocks
             // 
@@ -262,7 +267,6 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSeries;
-        private System.Windows.Forms.TextBox txtCustCost;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescription;
         private NerdBlock.Engine.Frontend.Winforms.Implementation.DataGridDisplayView dgvBlocks;
@@ -270,5 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSeries;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmShipDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDescription;
+        private System.Windows.Forms.TextBox txtShipDate;
     }
 }
