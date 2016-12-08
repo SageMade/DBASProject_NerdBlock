@@ -138,6 +138,19 @@
 	left outer join tblblockseries as series on series.genreid=genre.genreid
 		group by genre.genreid;</value>
   </data>
+  <data name="SelectOrderInfoQuery" xml:space="preserve">
+    <value>select pOrder.orderid as OrderId,
+       pOrder.dateOrdered as OrderDate,
+       concat(employee.firstname, ' ', employee.lastname) as OrderBy,
+       supplier.company as SuppCompany,
+       Sum(lineitem.batchcost) as TotalCost
+from tblorder as pOrder
+inner join tblsupplier as supplier on pOrder.supplierid=supplier.supplierid
+inner join tblemployees as employee on pOrder.orderedby=employee.employeeid
+inner join tblorderlineitem as lineitem on lineitem.orderid=pOrder.orderid
+group by pOrder.orderid, employee.employeeid, supplier.supplierid;</value>
+    <comment> </comment>
+  </data>
   <data name="SelectSeriesInfoQuery" xml:space="preserve">
     <value>select series.title as Name,
     series.seriesid as SeriesId,

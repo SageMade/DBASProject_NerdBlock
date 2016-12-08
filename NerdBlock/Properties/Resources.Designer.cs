@@ -92,6 +92,24 @@ namespace NerdBlock.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select pOrder.orderid as OrderId,
+        ///       pOrder.dateOrdered as OrderDate,
+        ///       concat(employee.firstname, &apos; &apos;, employee.lastname) as OrderBy,
+        ///       supplier.company as SuppCompany,
+        ///       Sum(lineitem.batchcost) as TotalCost
+        ///from tblorder as pOrder
+        ///inner join tblsupplier as supplier on pOrder.supplierid=supplier.supplierid
+        ///inner join tblemployees as employee on pOrder.orderedby=employee.employeeid
+        ///inner join tblorderlineitem as lineitem on lineitem.orderid=pOrder.orderid
+        ///group by pOrder.orderid, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SelectOrderInfoQuery {
+            get {
+                return ResourceManager.GetString("SelectOrderInfoQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to select series.title as Name,
         ///    series.seriesid as SeriesId,
         ///    series.subscriptionprice as Price,
