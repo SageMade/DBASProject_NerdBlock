@@ -28,7 +28,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             Inputs.Add(new TextBoxInput(      "Employee.SIN", txtSIN));
             Inputs.Add(new ComboBoxValueInput("Employee.Role", cbRole));
 
-            Inputs.Add(new TextBoxInput(     "Address.StreetAddress", txtStreet));
+            Inputs.Add(new TextBoxInput(     "Address.Street", txtStreet));
             Inputs.Add(new ComboBoxTextInput("Address.Country", cbCountry));
             Inputs.Add(new ComboBoxTextInput("Address.State", cbState));
             Inputs.Add(new ComboBoxTextInput("Address.City", cbCity));
@@ -53,20 +53,26 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             //Pulling from the session
             Employee instance = map.GetInput<Employee>("Employee.Info");
 
-            //Setting the inputs on load
-            map.SetInput("Employee.FirstName", instance.FirstName);
-            map.SetInput("Employee.LastName", instance.LastName);
-            map.SetInput("Employee.Email", instance.Email);
-            map.SetInput("Employee.Phone", instance.Phone);
-            map.SetInput("Employee.SIN", instance.SIN);
-            map.SetInput("Employee.Role", instance.Role);
+            if (instance != null)
+            {
+                //Setting the inputs on load
+                map.SetInput("Employee.FirstName", instance.FirstName);
+                map.SetInput("Employee.LastName", instance.LastName);
+                map.SetInput("Employee.Email", instance.Email);
+                map.SetInput("Employee.Phone", instance.Phone);
+                map.SetInput("Employee.SIN", instance.SIN);
+                map.SetInput("Employee.Role", instance.Role);
 
-            map.SetInput("Address.StreetAddress", instance.HomeAddress.StreetAddress);
-            map.SetInput("Address.Country", instance.HomeAddress.Country);
-            map.SetInput("Address.State", instance.HomeAddress.State);
-            map.SetInput("Address.City", instance.HomeAddress.City);
-            map.SetInput("Address.PostalCode", instance.HomeAddress.PostalCode);
-            map.SetInput("Address.AptNum", instance.HomeAddress.ApartmentNumber);
+                map.SetInput("Address.Street", instance.HomeAddress.StreetAddress);
+                map.SetInput("Address.Country", instance.HomeAddress.Country);
+                map.SetInput("Address.State", instance.HomeAddress.State);
+                map.SetInput("Address.City", instance.HomeAddress.City);
+                map.SetInput("Address.PostalCode", instance.HomeAddress.PostalCode);
+                map.SetInput("Address.AptNum", instance.HomeAddress.ApartmentNumber);
+
+                map.SetInput("Employee", instance);
+                map.SetInput<Employee>("Employee.Info", null);
+            }
 
         }
     }

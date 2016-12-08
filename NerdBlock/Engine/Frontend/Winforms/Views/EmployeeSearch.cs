@@ -20,5 +20,10 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
                 AttemptAction("goto_employee_update");
             };
         }
+
+        protected override void LoadMyViewContext(IoMap map)
+        {
+            map.SetOutput("AllEmployees", DataAccess.SelectAll<Employee>());
+        }
     }
 }
