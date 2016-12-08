@@ -38,23 +38,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lstItems = new System.Windows.Forms.ListBox();
-            this.btnNew = new System.Windows.Forms.Button();
+            this.dgvBlocks = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAddItem = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblOurCost = new System.Windows.Forms.Label();
+            this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmShipDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBlockSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 51);
+            this.label1.Location = new System.Drawing.Point(7, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 20);
@@ -64,13 +65,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 109);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 89);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 17);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Customer Cost";
+            this.label4.Text = "Ship Date";
             // 
             // grpBlockSummary
             // 
@@ -80,8 +81,6 @@
             this.grpBlockSummary.Controls.Add(this.txtTitle);
             this.grpBlockSummary.Controls.Add(this.label5);
             this.grpBlockSummary.Controls.Add(this.label6);
-            this.grpBlockSummary.Controls.Add(this.lblOurCost);
-            this.grpBlockSummary.Controls.Add(this.label3);
             this.grpBlockSummary.Controls.Add(this.label4);
             this.grpBlockSummary.Controls.Add(this.label1);
             this.grpBlockSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,21 +91,21 @@
             this.grpBlockSummary.Size = new System.Drawing.Size(540, 138);
             this.grpBlockSummary.TabIndex = 4;
             this.grpBlockSummary.TabStop = false;
-            this.grpBlockSummary.Text = "Block Summary";
+            this.grpBlockSummary.Text = "Add Block";
             // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(249, 43);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(286, 90);
+            this.txtDescription.Size = new System.Drawing.Size(286, 68);
             this.txtDescription.TabIndex = 18;
             // 
             // txtCustCost
             // 
-            this.txtCustCost.Location = new System.Drawing.Point(125, 109);
+            this.txtCustCost.Location = new System.Drawing.Point(87, 88);
             this.txtCustCost.Name = "txtCustCost";
-            this.txtCustCost.Size = new System.Drawing.Size(115, 23);
+            this.txtCustCost.Size = new System.Drawing.Size(155, 23);
             this.txtCustCost.TabIndex = 17;
             // 
             // cbSeries
@@ -130,7 +129,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 23);
+            this.label5.Location = new System.Drawing.Point(7, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 20);
@@ -150,7 +149,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lstItems);
+            this.groupBox2.Controls.Add(this.dgvBlocks);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 47);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -161,25 +160,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Items";
             // 
-            // lstItems
+            // dgvBlocks
             // 
-            this.lstItems.FormattingEnabled = true;
-            this.lstItems.ItemHeight = 17;
-            this.lstItems.Location = new System.Drawing.Point(4, 21);
-            this.lstItems.Margin = new System.Windows.Forms.Padding(2);
-            this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(525, 225);
-            this.lstItems.TabIndex = 0;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(283, 8);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(121, 35);
-            this.btnNew.TabIndex = 8;
-            this.btnNew.Text = "New Block";
-            this.btnNew.UseVisualStyleBackColor = true;
+            this.dgvBlocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBlocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmTitle,
+            this.clmSeries,
+            this.clmShipDate,
+            this.clmDescription});
+            this.dgvBlocks.Location = new System.Drawing.Point(5, 21);
+            this.dgvBlocks.Name = "dgvBlocks";
+            this.dgvBlocks.Size = new System.Drawing.Size(524, 238);
+            this.dgvBlocks.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -201,16 +193,6 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btnAddItem
-            // 
-            this.btnAddItem.Location = new System.Drawing.Point(416, 8);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(121, 35);
-            this.btnAddItem.TabIndex = 11;
-            this.btnAddItem.Text = "Add item";
-            this.btnAddItem.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -222,36 +204,37 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Block info";
             // 
-            // label3
+            // clmTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 84);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Our Cost";
+            this.clmTitle.HeaderText = "Title";
+            this.clmTitle.Name = "clmTitle";
+            this.clmTitle.ReadOnly = true;
             // 
-            // lblOurCost
+            // clmSeries
             // 
-            this.lblOurCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblOurCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblOurCost.Location = new System.Drawing.Point(125, 84);
-            this.lblOurCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblOurCost.Name = "lblOurCost";
-            this.lblOurCost.Size = new System.Drawing.Size(115, 16);
-            this.lblOurCost.TabIndex = 4;
+            this.clmSeries.HeaderText = "Series";
+            this.clmSeries.Name = "clmSeries";
+            this.clmSeries.ReadOnly = true;
+            // 
+            // clmShipDate
+            // 
+            this.clmShipDate.HeaderText = "Ship Date";
+            this.clmShipDate.Name = "clmShipDate";
+            this.clmShipDate.ReadOnly = true;
+            // 
+            // clmDescription
+            // 
+            this.clmDescription.HeaderText = "Description";
+            this.clmDescription.Name = "clmDescription";
+            this.clmDescription.ReadOnly = true;
             // 
             // Blocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpBlockSummary);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -261,6 +244,7 @@
             this.grpBlockSummary.ResumeLayout(false);
             this.grpBlockSummary.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBlocks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,19 +256,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox grpBlockSummary;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ListBox lstItems;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSeries;
-        private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.TextBox txtCustCost;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label lblOurCost;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvBlocks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSeries;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmShipDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescription;
     }
 }
