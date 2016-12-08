@@ -1,5 +1,6 @@
 ﻿using NerdBlock.Engine.Backend;
 using NerdBlock.Engine.Frontend;
+using System.Collections.Generic;
 using Model = NerdBlock.Engine.Backend.Models;
 
 namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
@@ -58,6 +59,46 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         public void ShowOverstock()
         {
             ViewManager.Show("ExtraProductShipped");
+        }
+
+        [BusinessAction("insert_extra_product")]
+        [AuthAttrib("General Manager", "Shipper")]
+        public void InsertExtraProduct()
+        {
+            IoMap map = ViewManager.CurrentMap;
+
+            string productName = map.GetInput<string>("Product.Name");
+            string quantityText = map.GetInput<string>("Product.Quantity");
+            string priceText = map.GetInput<string>("Product.Price");
+
+            string error = "";
+
+            if (string.IsNullOrWhiteSpace(productName))
+                error += "You must enter a product name\n";
+
+            decimal price = 0;
+
+            int quantity;
+
+            if (error == "")
+            {
+                if (!decimal.TryParse(priceText, out price))
+                    error += "Product price must be numeric\n";
+
+                if (!int.TryParse(quantityText, out quantity))
+                    error += "Quantity must be an integer\n";
+            }
+
+            if (error == "")
+            {
+                
+            }
+
+            else
+            {
+                ViewManager.ShowFlash("Could not add product: \n" + error, FlashMessageType.Bad);
+                ViewManager.Show("ExtraProductShipped", map);
+            }
         }
 
 
