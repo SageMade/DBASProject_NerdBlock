@@ -40,7 +40,6 @@
             this.clmOrderedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmOrderLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,8 +105,7 @@
             this.clmOrderDaate,
             this.clmOrderedBy,
             this.clmTotalCost,
-            this.clmSupplier,
-            this.clmOrderLoc});
+            this.clmSupplier});
             this.dgvOrders.Location = new System.Drawing.Point(33, 76);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
@@ -118,39 +116,38 @@
             // 
             // clmOrderID
             // 
+            this.clmOrderID.DataPropertyName = "orderid";
             this.clmOrderID.HeaderText = "Order ID";
             this.clmOrderID.Name = "clmOrderID";
             this.clmOrderID.ReadOnly = true;
             // 
             // clmOrderDaate
             // 
+            this.clmOrderDaate.DataPropertyName = "orderdate";
             this.clmOrderDaate.HeaderText = "Order Date";
             this.clmOrderDaate.Name = "clmOrderDaate";
             this.clmOrderDaate.ReadOnly = true;
             // 
             // clmOrderedBy
             // 
+            this.clmOrderedBy.DataPropertyName = "orderby";
             this.clmOrderedBy.HeaderText = "Ordered By";
             this.clmOrderedBy.Name = "clmOrderedBy";
             this.clmOrderedBy.ReadOnly = true;
             // 
             // clmTotalCost
             // 
+            this.clmTotalCost.DataPropertyName = "totalcost";
             this.clmTotalCost.HeaderText = "Total Cost";
             this.clmTotalCost.Name = "clmTotalCost";
             this.clmTotalCost.ReadOnly = true;
             // 
             // clmSupplier
             // 
+            this.clmSupplier.DataPropertyName = "suppcompany";
             this.clmSupplier.HeaderText = "Supplier";
             this.clmSupplier.Name = "clmSupplier";
             this.clmSupplier.ReadOnly = true;
-            // 
-            // clmOrderLoc
-            // 
-            this.clmOrderLoc.HeaderText = "Order Location";
-            this.clmOrderLoc.Name = "clmOrderLoc";
-            this.clmOrderLoc.ReadOnly = true;
             // 
             // OrderPage
             // 
@@ -186,6 +183,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmOrderedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotalCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSupplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmOrderLoc;
     }
 }

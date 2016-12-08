@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NerdBlock.Engine.Frontend.Winforms.Implementation;
+using NerdBlock.Properties;
+using NerdBlock.Engine.Backend;
 
 namespace NerdBlock.Engine.Frontend.Winforms.Views
 {
@@ -32,6 +34,12 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             };
 
 
+        }
+
+        protected override void LoadMyViewContext(IoMap map)
+        {
+            map.SetOutput("Data", DataAccess.Execute(
+                Resources.SelectBlockInfoQuery));
         }
 
         private void OrderPage_Load(object sender, EventArgs e)

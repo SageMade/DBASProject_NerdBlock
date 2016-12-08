@@ -34,7 +34,6 @@ namespace NerdBlock.Engine.LogicLayer.Implementation.Actions
         public void ShowUpdate()
         {
             ViewManager.Show("OrderPage");
-            ViewManager.CurrentMap.SetOutput("Orders", DataAccess.Execute(Resources.SelectOrderInfoQuery));
         }
 
         /// <summary>
