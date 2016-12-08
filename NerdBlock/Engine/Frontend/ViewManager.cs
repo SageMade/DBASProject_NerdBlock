@@ -113,9 +113,9 @@ namespace NerdBlock.Engine.Frontend
                 myViewStack.Pop();
 
             if (myViewStack.Count > 0)
-                Implementation.ShowView(myViewStack.Pop(), CurrentMap);
+                Show(myViewStack.Pop(), CurrentMap);
             else
-                Implementation.ShowView(myInitialView, CurrentMap);
+                Show(myInitialView, CurrentMap);
         }
 
         /// <summary>

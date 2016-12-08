@@ -261,13 +261,13 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             // tsiAddOrder
             // 
             this.tsiAddOrder.Name = "tsiAddOrder";
-            this.tsiAddOrder.Size = new System.Drawing.Size(152, 22);
+            this.tsiAddOrder.Size = new System.Drawing.Size(109, 22);
             this.tsiAddOrder.Text = "Add ";
             // 
             // tsiSearchOrders
             // 
             this.tsiSearchOrders.Name = "tsiSearchOrders";
-            this.tsiSearchOrders.Size = new System.Drawing.Size(152, 22);
+            this.tsiSearchOrders.Size = new System.Drawing.Size(109, 22);
             this.tsiSearchOrders.Text = "Search";
             // 
             // tsmReports
@@ -356,6 +356,7 @@ namespace NerdBlock.Engine.Frontend.Winforms.Views
             this.Controls.Add(this.pnlMainContent);
             this.Controls.Add(this.tsApplicationInfo);
             this.Controls.Add(this.mnuMainBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMainBar;
             this.Name = "MainForm";
             this.Text = "NerdBlock";
